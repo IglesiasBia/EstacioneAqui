@@ -1,9 +1,7 @@
 <?php
   	$nivel_necessario = 2;
     include "../base/testa_nivel.php";
-    //include "../base/con.php"; 
-    //include "../base/con_escola.php";
-    // include "../base/ch_pages.php";
+
 ?>
 
 <!-- INICIO CONTENT -->
@@ -42,33 +40,33 @@
                 echo "</tr></thead><tbody>";
                
                 while($info = mysqli_fetch_array($data_all)){ 
-                  if($info["ativo"] == 1){
-                  echo "<tr>";
-                  echo "<td>".$info['id']."</td>";
-                  echo "<td>".$info['nome']."</td>";
-                  echo "<td>".$info['email']."</td>";
-                  echo "<td>".$info['nivel']."</td>";
-                  if($info["nivel"] == 1){
-                    echo "<td>Funcionário Usuário</td>";
-                  }else if($info["nivel"] == 2){
-                    echo "<td>Administrador</td>";
-                  }else if($info["nivel"] == 3){
-                      echo "<td>Funcionário não-usuário</td>";
+                  if($info["ativo"] == 0){
+                    echo "<tr>";
+                    echo "<td>".$info['id']."</td>";
+                    echo "<td>".$info['nome']."</td>";
+                    echo "<td>".$info['email']."</td>";
+                    echo "<td>".$info['nivel']."</td>";
+                    if($info["nivel"] == 1){
+                      echo "<td>Funcionário Usuário</td>";
+                    }else if($info["nivel"] == 2){
+                      echo "<td>Administrador</td>";
+                    }else if($info["nivel"] == 3){
+                        echo "<td>Funcionário não-usuário</td>";
+                    }
+                    if($info['ativo'] == 1){
+                      echo "<td>Ativo</td>";
+                    }else if($info['ativo'] == 0){
+                      echo "<td>Inativo</td>";
+                    }
+                    echo "<td><div class='btn-group btn-group-xs'>";
+                    echo "<a class='btn btn-info btn-xs' href=?page=view_func&id=".$info['id']."> Detalhar </a>";
+                    echo "<a class='btn btn-warning btn-xs' href=?page=form_att_func&id=".$info['id']."> Editar </a>";
+                    if($info['ativo'] == 1){
+                      echo "<a class='btn btn-danger btn-xs'  href=?page=att_status_func&id=".$info['id']."> Desativar </a>";
+                    }else if($info['ativo'] == 0){
+                      echo "<a class='btn btn-success btn-xs'  href=?page=att_status_func&id=".$info['id'].">&nbsp;&nbsp;&nbsp;Ativar&nbsp;&nbsp;</a></div></td>";
+                    }
                   }
-                  if($info['ativo'] == 1){
-                    echo "<td>Ativo</td>";
-                  }else if($info['ativo'] == 0){
-                    echo "<td>Inativo</td>";
-                  }
-                  echo "<td><div class='btn-group btn-group-xs'>";
-                  echo "<a class='btn btn-info btn-xs' href=?page=view_func&id=".$info['id']."> Detalhar </a>";
-                  echo "<a class='btn btn-warning btn-xs' href=?page=form_att_func&id=".$info['id']."> Editar </a>";
-                  if($info['ativo'] == 1){
-                    echo "<a class='btn btn-danger btn-xs'  href=?page=att_status_func&id=".$info['id']."> Desativar </a>";
-                  }else if($info['ativo'] == 0){
-                    echo "<a class='btn btn-success btn-xs'  href=?page=att_status_func&id=".$info['id'].">&nbsp;&nbsp;&nbsp;Ativar&nbsp;&nbsp;</a></div></td>";
-                  }
-                }
                 }
                 echo "</tr></tbody></table>";
               ?>
@@ -92,21 +90,21 @@
             $posterior = (($pagina+1) >= $totalpagina) ? $totalpagina : $pagina+1;
 
             echo "<ul class='pagination'>";
-            echo "<li class='page-item'><a class='page-link' href='?page=lista_func&pagina=1'> Pri</a></li> "; 
-            echo "<li class='page-item'><a class='page-link' href=\"?page=lista_func&pagina=$anterior\"> Ant</a></li> ";
+            echo "<li class='page-item'><a class='page-link' href='?page=lista_func_inativo&pagina=1'> Pri</a></li> "; 
+            echo "<li class='page-item'><a class='page-link' href=\"?page=lista_func_inativo&pagina=$anterior\"> Ant</a></li> ";
 
-            echo "<li class='page-item'><a class='page-link' href='?page=lista_func&pagina=".$pagina."'><strong>".$pagina."</strong></a></li> ";
+            echo "<li class='page-item'><a class='page-link' href='?page=lista_func_inativo&pagina=".$pagina."'><strong>".$pagina."</strong></a></li> ";
 
             for($i = $pagina+1; $i < $pagina+$exibir; $i++){
               if($i <= $totalpagina)
-              echo "<li class='page-item'><a class='page-link' href='?page=lista_func&pagina=".$i."'> ".$i." </a></li> ";
+              echo "<li class='page-item'><a class='page-link' href='?page=lista_func_inativo&pagina=".$i."'> ".$i." </a></li> ";
             }
 
-            echo "<li class='page-item'><a class='page-link' href=\"?page=lista_func&pagina=$posterior\"> Próx</a></li> ";
-            echo "<li class='page-item'><a class='page-link' href=\"?page=lista_func&pagina=$totalpagina\"> Últ</a></li></ul>";
+            echo "<li class='page-item'><a class='page-link' href=\"?page=lista_func_inativo&pagina=$posterior\"> Próx</a></li> ";
+            echo "<li class='page-item'><a class='page-link' href=\"?page=lista_func_inativo&pagina=$totalpagina\"> Últ</a></li></ul>";
 
           ?>	
         </div>
-        <a href="?page=lista_func_inativo" class="btn btn-danger pull-right h2">Inativos</a>  
+        <a href="?page=lista_func" class="btn btn-danger pull-right h2">Ativos</a> 
   </div><!--bottom-->
  

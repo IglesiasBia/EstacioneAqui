@@ -25,13 +25,23 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-6">
+		<div class="col-md-5">
 			<p><strong>E-mail</strong></p>
 			<p><?php echo $row['email'];?></p>
 		</div>
-		<div class="col-md-6">
+		<div class="col-md-3">
 			<p><strong>Nível de Acesso</strong></p>
 			<p><?php echo $row['nivel'];?></p>
+		</div>
+		<div class="col-md-3">
+			<p><strong>Status</strong></p>
+			<?php 
+				if($row['ativo'] == 1){
+					echo "<td>Ativo</td>";
+				}elseif($row['ativo'] ==  0){
+					echo "<td>Inativo</td>";
+				}
+			?>
 		</div>
 	</div>
 	<hr/>

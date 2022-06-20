@@ -37,13 +37,14 @@
 
         <div class="form-group col-md-2">
 			<label for="nivel_func">Nível</label>
-			<select class="form-control" name="nivel_func">
-				<?php 
-                    if($info["nivel"] == 1){
+			
+			<select class="form-control" name="nivel">
+				<?php
+					if($row["nivel"] == 1){
                         echo "<td>Funcionário Usuário</td>";
-                    }else if($info["nivel"] == 2){
+                    }else if($row["nivel"] == 2){
                         echo "<td>Administrador</td>";
-                    }else if($info["nivel"] == 3){
+                    }else if($row["nivel"] == 3){
                         echo "<td>Funcionário não-usuário</td>";
                     }
 				?>
@@ -53,19 +54,15 @@
         <div class="form-group col-md-6">
 				<label for="status_func">Status</label><br>
 				<?php 
-					if($info["ativo"]== 1){
+					if($row["ativo"]== 1){
 						echo "<input type='radio' name='status_func' value='1' checked> Ativo ";
 						echo "<input type='radio' name='status_func' value='0'> Inativo";
-					}elseif($info["status"]== 0){
+					}elseif($row["ativo"]== 0){
 						echo "<input type='radio' name='status_func' value='1'> Ativo ";
 						echo "<input type='radio' name='status_func' value='0' checked> Inativo";
 					}
 				?>
-				<!-- <select class="form-control" name="status">
-					<option> --------- </option>
-					<option value="1">Ativo</option>
-					<option value="0">Inativo</option>
-				</select> -->
+
 			</div>
 		</div>
 	</div>
