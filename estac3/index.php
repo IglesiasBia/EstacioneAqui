@@ -46,12 +46,10 @@
                 <form action="?page=validacao" method="post" class=" user login100-form validate-form p-b-33 p-t-5">
                   <form role="form" class="text-start">
                     <div class="input-group input-group-outline my-3">
-                      <label class="form-label">Usuário</label>
-                      <input type="text" class="form-control" name="usuario">
+                      <input type="text" class="form-control" name="usuario" placeholder="usuário">
                     </div>
                     <div class="input-group input-group-outline mb-3">
-                      <label class="form-label">Senha</label>
-                      <input type="password" class="form-control" name="senha">
+                      <input type="password" class="form-control" name="senha" placeholder="senha">
                     </div>
                     <div class="text-center">
                       <button type="submit" class="btn bg-gradient-danger w-100 my-4 mb-2">Entrar</button>

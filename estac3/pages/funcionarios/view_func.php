@@ -25,30 +25,20 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-5">
+		<div class="col-md-6">
 			<p><strong>E-mail</strong></p>
 			<p><?php echo $row['email'];?></p>
 		</div>
-		<div class="col-md-3">
+		<div class="col-md-6">
 			<p><strong>Nível de Acesso</strong></p>
 			<p><?php echo $row['nivel'];?></p>
-		</div>
-		<div class="col-md-3">
-			<p><strong>Status</strong></p>
-			<?php 
-				if($row['ativo'] == 1){
-					echo "<td>Ativo</td>";
-				}elseif($row['ativo'] ==  0){
-					echo "<td>Inativo</td>";
-				}
-			?>
 		</div>
 	</div>
 	<hr/>
 	<div id="actions" class="row">
 		<div class="col-md-12">
 			<a href="?page=lista_func" class="btn btn-default">Voltar</a>
-				<?php echo "<a href=?page=form_att_func&id=".$row['id']." class='btn btn-primary'>Editar</a>";?>
+				<?php echo "<a href=?page=form_att_func&id=".$row['id']." class='btn btn-danger'>Editar</a>";?>
 				<?php
                 //  echo "<a href=?page=excluir_cli&id=".$row['id']." class='btn btn-danger'>Excluir</a>";
                  ?>
