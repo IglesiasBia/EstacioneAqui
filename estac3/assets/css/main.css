@@ -261,12 +261,12 @@ sup {
 }
 
 a {
-  color: #e91e63;
+  color: white;
   text-decoration: none;
 }
 
 a:hover {
-  color: #e91e63;
+  color: white;
   text-decoration: none;
 }
 
@@ -522,7 +522,7 @@ progress {
 }
 
 .imglogo{
-  margin-left: 6.5em;
+  margin-left: 8.5em;
 }
 
 .lead {
@@ -703,7 +703,6 @@ progress {
     max-width: 720px;
   }
 }
-
 @media (min-width: 992px) {
 
   .container,
@@ -736,7 +735,6 @@ progress {
     max-width: 1320px;
   }
 }
-
 .row {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
@@ -746,7 +744,6 @@ progress {
   margin-right: calc(-.5 * var(--bs-gutter-x));
   margin-left: calc(-.5 * var(--bs-gutter-x));
 }
-
 .row>* {
   flex-shrink: 0;
   width: 100%;
@@ -759,7 +756,6 @@ progress {
 .col {
   flex: 1 0 0%;
 }
-
 .row-cols-auto>* {
   flex: 0 0 auto;
   width: auto;

@@ -9,9 +9,9 @@
 <!-- INICIO CONTENT -->
   <div class="container-fluid py-4 ">
     <div class="row">
-      <div class="col-md-1">
+      <div class="col-md-1" >
         <!-- Chama o Formulário para adicionar funcionário -->
-        <a href="?page=fadd_func" class="btn btn-danger pull-right h2">Novo Funcionário</a> 
+         <a href="?page=fadd_func" class="btn bg-gradient-danger btn-sm text, buttonfunc">Novo Funcionário</a> 
       </div>
         <div class="col-12">
           <div class="card my-4">
@@ -21,7 +21,7 @@
               </div>
             </div>
             <div class="card-body px-0 pb-2">
-              <div class="table-responsive p-0">
+              <div class="table-responsive p-0, table">
                 <?php
     
                   $quantidade = 5;

@@ -20,6 +20,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
   <!-- CSS Files -->
   <link id="pagestyle" href="../assets/css/main.css" rel="stylesheet" />
+  <link id="pagestyle" href="../assets/css/main2.css" rel="stylesheet" />
 </head>
 
 <body class="g-sidenav-show  bg-gray-200">

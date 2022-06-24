@@ -70,7 +70,7 @@
 		<hr />
 		<div id="actions" class="row">
 			<div class="col-md-12">
-				<button type="submit" class="btn btn-primary">Salvar</button>
+				<button type="submit" class="btn btn-dark">Salvar</button>
 				<a href="?page=lista_func" class="btn btn-danger">Cancelar</a>
 			</div>
 		</div>
