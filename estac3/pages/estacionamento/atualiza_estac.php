@@ -10,11 +10,11 @@
     if($resultado){
         // echo "foi";
         // include "dash.php?page=atualiza_estac";
-        // header('Location: /estac3/pages/dash.php?page=view_estac&msg=2');
+        header('Location: /estac3/pages/dash.php?page=view_estac&msg=2');
         mysqli_close($con);
     }else{
-        echo "nao";
-        // header('Location: \siscrud/index.php?page=lista_cli&msg=4');
+        //echo "nao";
+        header('Location: \siscrud/index.php?page=view_estac&msg=4');
         mysqli_close($con);
     }
 

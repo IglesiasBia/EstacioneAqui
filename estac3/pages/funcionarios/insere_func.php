@@ -1,5 +1,5 @@
 <?php
-    include "../../base/con_escola.php";
+    //include "../../base/con_escola.php";
     //include "../../base/con.php";
 
     $nome = $_POST["nome_func"];
