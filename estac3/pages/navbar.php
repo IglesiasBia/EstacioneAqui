@@ -2,7 +2,7 @@
   include "../base/testa_nivel.php";
   $link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
-  if($_SESSION['UsuarioNivel'] == 1){
+  if($_SESSION['UsuarioNivel'] == 1) {
     if($link == "http://localhost:8080/estacione/estac3/pages/dash.php"){
       echo '<div class="container-fluid py-1 px-3">
               <nav aria-label="breadcrumb">
