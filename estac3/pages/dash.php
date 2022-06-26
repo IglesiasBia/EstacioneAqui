@@ -55,7 +55,7 @@
             include "../base/con_escola.php";
             include "../base/ch_pages.php";
             $link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-            if($link == "http://localhost:8080/estac3/pages/dash.php"){
+            if($link == "http://localhost:8080/estacione/estac3/pages/dash.php"){
               include "usuarios/cards_rest1.php";
             }
           ?>

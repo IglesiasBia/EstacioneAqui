@@ -3,7 +3,7 @@
   $link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
   if($_SESSION['UsuarioNivel'] == 1){
-    if($link == "http://localhost:8080/estac3/pages/dash.php"){
+    if($link == "http://localhost:8080/estacione/estac3/pages/dash.php"){
       echo '<div class="container-fluid py-1 px-3">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
@@ -23,7 +23,7 @@
                 </ul>
               </div>
             </div>';
-    }elseif($link == "http://localhost:8080/estac3/pages/dash.php?page=form_att_cliente"){
+    }elseif($link == "http://localhost:8080/estacione/estac3/pages/dash.php?page=form_att_cliente"){
       echo '<div class="container-fluid py-1 px-3">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
@@ -43,7 +43,7 @@
                 </ul>
               </div>
             </div>';
-    }elseif($link == "http://localhost:8080/estac3/pages/dash.php?page=perfil_usu"){
+    }elseif($link == "http://localhost:8080/estacione/estac3/pages/dash.php?page=perfil_usu"){
       echo '<div class="container-fluid py-1 px-3">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
@@ -63,7 +63,7 @@
                 </ul>
               </div>
             </div>';
-    }elseif($link == "http://localhost:8080/estac3/pages/dash.php?page=form_altera_senha_usu"){
+    }elseif($link == "http://localhost:8080/estacione/estac3/pages/dash.php?page=form_altera_senha_usu"){
       echo '<div class="container-fluid py-1 px-3">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
@@ -85,7 +85,7 @@
             </div>';
     }
   }elseif($_SESSION['UsuarioNivel'] == 2){
-    if($link == "http://localhost:8080/estac3/pages/dash.php"){
+    if($link == "http://localhost:8080/estacione/estac3/pages/dash.php"){
       echo '<div class="container-fluid py-1 px-3">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
@@ -105,7 +105,7 @@
                 </ul>
               </div>
             </div>';
-    }elseif($link == "http://localhost:8080/estac3/pages/dash.php?page=view_estac"){
+    }elseif($link == "http://localhost:8080/estacione/estac3/pages/dash.php?page=view_estac"){
       echo '<div class="container-fluid py-1 px-3">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
@@ -125,7 +125,7 @@
                 </ul>
               </div>
             </div>';
-    }elseif($link == "http://localhost:8080/estac3/pages/dash.php?page=lista_func" || $link == "http://localhost:8080/estac3/pages/dash.php?page=lista_func_inativo"){
+    }elseif($link == "http://localhost:8080/estacione/estac3/pages/dash.php?page=lista_func" || $link == "http://localhost:8080/estacione/estac3/pages/dash.php?page=lista_func_inativo"){
       echo '<div class="container-fluid py-1 px-3">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
