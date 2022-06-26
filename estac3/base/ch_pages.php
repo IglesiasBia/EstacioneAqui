@@ -38,6 +38,9 @@
             case "att_status_func":
                 include "funcionarios/atualiza_status_func.php";
                 break;
+            case "lista_func_inativo":
+                include "funcionarios/lista_func_inativo.php";
+                break;
 
             //CRUD Estacionamento  
             case "atualiza":
@@ -59,6 +62,12 @@
                     break;
                 case "form_att_cliente":
                     include "usuarios/form_att_cliente.php";
+                    break;
+                case "form_altera_senha_usu":
+                    include "usuarios/form_altera_senha_usu.php";
+                    break;
+                case "altera_senha_usu":
+                    include "usuarios/altera_senha_usu.php";
                     break;
             
             default:

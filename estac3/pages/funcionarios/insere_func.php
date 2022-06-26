@@ -9,11 +9,10 @@
     $nivel = $_POST["nivel_func"];
     $status = $_POST["status_func"];
     date_default_timezone_set('America/Sao_Paulo');    
-    $cadastro = date('Y-d-m h:i:s ', time());  
+    $cadastro = date('Y-m-d h:i:s ', time());  
     $sql = "insert into usuarios values(0, '$nome', '$usu' , '$senha', '$email', '$nivel', '$status', '$cadastro');";
     $resultado = mysqli_query($con, $sql);
 
-    echo $sql;
     if($resultado){
         echo "foi";
         header('Location: \estac3/pages/dash.php?page=lista_func&msg=1');
