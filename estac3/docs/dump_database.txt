@@ -1,0 +1,7 @@
+cd /Applications/MySQLWorkbench.app/Contents/MacOS
+
+./mysqldump  --host=192.168.64.3 --port=3306 --default-character-set=utf8 --user=beatriz --protocol=tcp --column-statistics=0 "sistema"  -p > /Users/beatriziglesias/Documents/dump_projeto.sql
+
+senha do banco de banco de dados.
+
+
