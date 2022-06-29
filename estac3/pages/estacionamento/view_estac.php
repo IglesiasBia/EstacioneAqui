@@ -25,6 +25,28 @@
                             <input type="text" class="form-control" name="nome_estac" value="<?php echo $row["nome_estac"]; ?>">
                         </div>
                         <div class="form-group col-md-4">
+                            <label for="sigla">CNPJ</label>
+                            <input type="text" class="form-control" name="cnpj_estac" value="<?php echo $row["cnpj_estac"]; ?>">
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label for="sigla">Número do Estacionamento</label>
+                            <input type="text" class="form-control" name="num_estac" value="<?php echo $row["num_estac"]; ?>">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="sigla">Preco Inicial</label>
+                            <input type="text" class="form-control" name="preco_estac" value="<?php echo $row["preco_estac"]; ?>">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="sigla">Fracao por Hora</label>
+                            <input type="text" class="form-control" name="frac_hr_estac" value="<?php echo $row["frac_hr_estac"]; ?>">
+                        </div>
+
+                    </div>
+                    <div class="row">
+                    <div class="form-group col-md-4">
                             <label for="sigla">Quantidade de vagas</label>
                             <input type="number" class="form-control" name="quant_vaga" value="<?php echo $row["quant_vaga"]; ?>">
                         </div>

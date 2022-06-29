@@ -29,7 +29,7 @@
                 $pagina = (isset($_GET['pagina'])) ? (int)$_GET['pagina'] : 1;
                 $inicio = ($quantidade * $pagina) - $quantidade;
 
-                $data_all = mysqli_query($con, "select * from usuarios order by id asc limit $inicio, $quantidade;") or die(mysqli_error($con));
+                $data_all = mysqli_query($con, "select * from funcionario order by id_func asc limit $inicio, $quantidade;") or die(mysqli_error($con));
                 // $data_all = mysqli_query($con, "select * from usuarios order by id;") or die(mysqli_error($con));
                 echo "<table class='table align-items-center mb-0'>";
                 echo "<thead><tr>";
@@ -42,31 +42,31 @@
                 echo "</tr></thead><tbody>";
                
                 while($info = mysqli_fetch_array($data_all)){ 
-                  if($info["ativo"] == 1){
+                  if($info["status_func"] == 1){
                   echo "<tr>";
-                  echo "<td>".$info['id']."</td>";
-                  echo "<td>".$info['nome']."</td>";
-                  echo "<td>".$info['email']."</td>";
-                  echo "<td>".$info['nivel']."</td>";
-                  if($info["nivel"] == 1){
+                  echo "<td>".$info['id_func']."</td>";
+                  echo "<td>".$info['nome_func']."</td>";
+                  echo "<td>".$info['email_func']."</td>";
+                  echo "<td>".$info['nivel_func']."</td>";
+                  if($info["nivel_func"] == 1){
                     echo "<td>Funcionário Usuário</td>";
-                  }else if($info["nivel"] == 2){
+                  }else if($info["nivel_func"] == 2){
                     echo "<td>Administrador</td>";
-                  }else if($info["nivel"] == 3){
+                  }else if($info["nivel_func"] == 3){
                       echo "<td>Funcionário não-usuário</td>";
                   }
-                  if($info['ativo'] == 1){
+                  if($info['status_func'] == 1){
                     echo "<td>Ativo</td>";
-                  }else if($info['ativo'] == 0){
+                  }else if($info['status_func'] == 0){
                     echo "<td>Inativo</td>";
                   }
                   echo "<td><div class='btn-group btn-group-xs'>";
-                  echo "<a class='btn btn-info btn-xs' href=?page=view_func&id=".$info['id']."> Detalhar </a>";
-                  echo "<a class='btn btn-warning btn-xs' href=?page=form_att_func&id=".$info['id']."> Editar </a>";
-                  if($info['ativo'] == 1){
-                    echo "<a class='btn btn-danger btn-xs'  href=?page=att_status_func&id=".$info['id']."> Desativar </a>";
-                  }else if($info['ativo'] == 0){
-                    echo "<a class='btn btn-success btn-xs'  href=?page=att_status_func&id=".$info['id'].">&nbsp;&nbsp;&nbsp;Ativar&nbsp;&nbsp;</a></div></td>";
+                  echo "<a class='btn btn-info btn-xs' href=?page=view_func&id=".$info['id_func']."> Detalhar </a>";
+                  echo "<a class='btn btn-warning btn-xs' href=?page=form_att_func&id=".$info['id_func']."> Editar </a>";
+                  if($info['status_func'] == 1){
+                    echo "<a class='btn btn-danger btn-xs'  href=?page=att_status_func&id=".$info['id_func']."> Desativar </a>";
+                  }else if($info['status_func'] == 0){
+                    echo "<a class='btn btn-success btn-xs'  href=?page=att_status_func&id=".$info['id_func'].">&nbsp;&nbsp;&nbsp;Ativar&nbsp;&nbsp;</a></div></td>";
                   }
                 }
                 }
@@ -81,7 +81,7 @@
       <div id="bottom" class="row">
         <div class="col-md-12">
           <?php
-            $sqlTotal 		= "select id from usuarios;";
+            $sqlTotal 		= "select id_func from funcionario;";
             $qrTotal  		= mysqli_query($con, $sqlTotal);
             $numTotal 		= mysqli_num_rows($qrTotal);
             $totalpagina = (ceil($numTotal/$quantidade)<=0) ? 1 : ceil($numTotal/$quantidade);

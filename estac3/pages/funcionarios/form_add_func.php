@@ -12,22 +12,10 @@
 				<label for="nome_func">Nome Completo</label>
 				<input type="text" class="form-control" name="nome_func">
 			</div>
-			<div class="form-group col-md-3">
-				<label for="usu_func">Usuário</label>
-				<input type="text" class="form-control" name="usu_func">
+			<div class="form-group col-md-5">
+				<label for="cpf_func">CPF</label>
+				<input type="text" class="form-control" name="cpf_func">
 			</div>
-			<div class="form-group col-md-3">
-				<label for="senha_usu">Senha</label>
-				<input type="text" class="form-control" name="senha_usu">
-			</div>
-			<div class="form-group col-md-3">
-				<label for="email_func">E-mail</label>
-				<input type="text" class="form-control" name="email_func">
-			</div>
-
-		</div>
-		<!-- 2ª LINHA -->
-		<div class="row"> 
 			<div class="form-group col-md-2">
 				<label for="nivel_func">Nível</label>
 				<select class="form-control" name="nivel_func">
@@ -37,7 +25,15 @@
 					<option value="3">Funcionário não usuário</option>
 				</select>
 			</div>
-			<div class="form-group col-md-6">
+
+		</div>
+		<!-- 2ª LINHA -->
+		<div class="row"> 
+			<div class="form-group col-md-3">
+				<label for="email_func">E-mail</label>
+				<input type="text" class="form-control" name="email_func">
+			</div>
+			<div class="form-group col-md-3">
 				<label for="status_func">Status</label><br>
 				<input type="radio" name="status_func" value="1"> Ativo
 				<input type="radio" name="status_func" value="0"> Inativo
@@ -46,6 +42,14 @@
 					<option value="1">Ativo</option>
 					<option value="0">Inativo</option>
 				</select> -->
+			</div>
+			<div class="form-group col-md-3">
+				<label for="senha_usu">Senha</label>
+				<input type="text" class="form-control" name="senha_usu">
+			</div>
+			<div class="form-group col-md-3">
+				<label for="func_usu">Usuário</label>
+				<input type="text" class="form-control" name="func_usu">
 			</div>
             <!-- <div class="form-group col-md-6">
                 <label for="escolaridade">Escolaridade</label>

@@ -4,20 +4,14 @@ if (!empty($_POST) and (empty($_POST['usuario']) or empty($_POST['senha']))) {
 	header("Location: ../index.php"); exit;
 }
 // Tenta se conectar ao servidor MySQL e ao DB
-$con = mysqli_connect('localhost', 'root', '', 'sistema_ge') or trigger_error(mysqli_error($con));
+$con = mysqli_connect('localhost', 'root', '', 'sistema') or trigger_error(mysqli_error($con));
 
 $usuario = mysqli_real_escape_string($con, $_POST['usuario']);
 $senha = mysqli_real_escape_string($con, $_POST['senha']);
 
 // Validação do usuário/senha digitados
-// $sql  = "select id, nome, nivel from usuarios where (usuario = '". $usuario ."') ";
-// $sql .= "and (senha = '". $senha ."') and (ativo = 1) limit 1";
-
-$sql = "select funcionario.id_func, func_usu.usuario, funcionario.nivel_func 
-from funcionario 
-join func_usu
-on funcionario.id_func = func_usu.id_func 
-where func_usu.usuario = '$usuario' and func_usu.senha_func='$senha' and funcionario.status_func='1';";
+$sql  = "select id, nome, nivel from usuarios where (usuario = '". $usuario ."') ";
+$sql .= "and (senha = '". $senha ."') and (ativo = 1) limit 1";
 
 $query = mysqli_query($con, $sql);
 
@@ -37,9 +31,9 @@ if (mysqli_num_rows($query) != 1) {
 	if (!isset($_SESSION)) session_start();
 
 	// Salva os dados encontrados na sessão
-	$_SESSION['UsuarioID'] = $resultado['id_func'];
-	$_SESSION['Usuario'] = $resultado['usuario'];
-	$_SESSION['UsuarioNivel'] = $resultado['nivel_func'];
+	$_SESSION['UsuarioID'] = $resultado['id'];
+	$_SESSION['UsuarioNome'] = $resultado['nome'];
+	$_SESSION['UsuarioNivel'] = $resultado['nivel'];
 
 	header("Location: ./pages/dash.php"); exit;
 	// Redireciona o visitante

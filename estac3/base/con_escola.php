@@ -1,5 +1,5 @@
 <?php
-	define('DB_NAME', 'sistema');
+	define('DB_NAME', 'sistema_ge');
 	define('DB_USER', 'root');
 	define('DB_PASS', '');
 	define('DB_HOST', 'localhost');
