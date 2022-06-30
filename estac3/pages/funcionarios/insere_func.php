@@ -27,7 +27,7 @@
     $resultado3 = mysqli_query($con, $sql3);
 
     if($resultado && $resultado2 && $resultado3){
-        header('Location: \estac3/pages/dash.php?page=lista_func&msg=1');
+        header('Location: /estacione/estac3/pages/dash.php?page=lista_func&msg=1');
         mysqli_close($con);
     }else{
         echo "nao";

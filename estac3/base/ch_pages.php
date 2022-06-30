@@ -42,6 +42,7 @@
                 include "funcionarios/lista_func_inativo.php";
                 break;
 
+
             //CRUD Estacionamento  
             case "atualiza":
                 include "atualiza.php";
@@ -69,6 +70,13 @@
                 case "altera_senha_usu":
                     include "usuarios/altera_senha_usu.php";
                     break;
+                case "insere_card":
+                    include "usuarios/insere_card.php";
+                    break;
+                case "faz_ticket":
+                    include "usuarios/faz_ticket.php";
+                    break;
+                
             
             default:
                 include "dash.php";

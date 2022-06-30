@@ -54,10 +54,14 @@
           <?php 
             include "../base/con_escola.php";
             include "../base/ch_pages.php";
+            include "usuarios/mensagens_cli_usu.php";
             $link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
             if($link == "http://localhost:8080/estacione/estac3/pages/dash.php"){
               include "usuarios/cards_rest1.php";
-            }
+             }elseif($link == "http://localhost:8080/estacione/estac3/pages/dash.php?msg=1"){
+              include "usuarios/cards_rest1.php";
+             }
+            
           ?>
     </div>
     <!-- FIM CONTENT -->

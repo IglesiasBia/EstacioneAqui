@@ -13,11 +13,11 @@ $senha = mysqli_real_escape_string($con, $_POST['senha']);
 // $sql  = "select id, nome, nivel from usuarios where (usuario = '". $usuario ."') ";
 // $sql .= "and (senha = '". $senha ."') and (ativo = 1) limit 1";
 
-$sql = "select funcionario.id_func, func_usu.usuario, funcionario.nivel_func 
+$sql = "select funcionario.id_func, func_usu.func_usu, funcionario.nivel_func 
 from funcionario 
 join func_usu
 on funcionario.id_func = func_usu.id_func 
-where func_usu.usuario = '$usuario' and func_usu.senha_func='$senha' and funcionario.status_func='1';";
+where func_usu.func_usu = '$usuario' and func_usu.senha_func='$senha' and funcionario.status_func='1';";
 
 $query = mysqli_query($con, $sql);
 
@@ -38,7 +38,7 @@ if (mysqli_num_rows($query) != 1) {
 
 	// Salva os dados encontrados na sessão
 	$_SESSION['UsuarioID'] = $resultado['id_func'];
-	$_SESSION['Usuario'] = $resultado['usuario'];
+	$_SESSION['Usuario'] = $resultado['func_usu'];
 	$_SESSION['UsuarioNivel'] = $resultado['nivel_func'];
 
 	header("Location: ./pages/dash.php"); exit;

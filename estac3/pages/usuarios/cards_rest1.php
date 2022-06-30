@@ -15,10 +15,37 @@
         <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
               <div class="card">
                   <div class="card-body">
-                    <form action="">
+                    <form action="?page=insere_card" method="post">
+                      <h5 class="card-title">Digite a placa para inserir no sistema</h5>
+                        <div class="input-group mb-3">
+                          <input type="text" class="form-control" placeholder="Digite aqui"  aria-describedby="basic-addon2" name="placa_veic">
+                        </div>
+                        <div class="form-group col-md-3">
+                          <label for="tipo_veic">Tipo</label>
+                          <select class="form-control" name="tipo_veic">
+                            <option> --------- </option>
+                            <option value="1">Carro</option>
+                            <option value="0">Motocicleta</option>
+                          </select>
+                        </div>
+                        <div class="form-group col-md-3">
+                          <label for="chave">Deixou Chave:</label><br>
+                          <input type="radio" name="chave" value="1">Sim
+                          <input type="radio" name="chave" value="0">Não
+
+                        </div>
+                      <button class="btn btn-primary" type="submit">Inserir</button>
+                    </form>
+                  </div>
+              </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+              <div class="card">
+                  <div class="card-body">
+                    <form action="?page=faz_ticket" method="post">
                       <h5 class="card-title">Digite a placa para gerar nota fiscal</h5>
                         <div class="input-group mb-3">
-                          <input type="text" class="form-control" placeholder="Digite aqui"  aria-describedby="basic-addon2">
+                          <input type="text" class="form-control" placeholder="Digite aqui"  aria-describedby="basic-addon2" name="placa_veic">
                         </div>
                       <button class="btn btn-primary" type="submit">Gerar</button>
                     </form>
