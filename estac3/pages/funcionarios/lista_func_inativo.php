@@ -8,7 +8,7 @@
   <div class="container-fluid py-4">
   <div class="col-md-1">
 			<!-- Chama o Formulário para adicionar funcionário -->
-			<a href="?page=fadd_func" class="btn btn-danger pull-right h2">Novo Funcionário</a> 
+      <a href="?page=fadd_func" class="btn bg-gradient-danger btn-sm text, buttonfunc">Novo Funcionário</a> 
 		</div>
     <div class="row">
       <div class="col-12">
@@ -55,15 +55,15 @@
                     }
                     if($info['status_func'] == 1){
                       echo "<td>Ativo</td>";
-                    }else if($info['ativo'] == 0){
+                    }else if($info['status_func'] == 0){
                       echo "<td>Inativo</td>";
                     }
                     echo "<td><div class='btn-group btn-group-xs'>";
                     echo "<a class='btn btn-info btn-xs' href=?page=view_func&id=".$info['id_func']."> Detalhar </a>";
                     echo "<a class='btn btn-warning btn-xs' href=?page=form_att_func&id=".$info['id_func']."> Editar </a>";
-                    if($info['ativo'] == 1){
+                    if($info['status_func'] == 1){
                       echo "<a class='btn btn-danger btn-xs'  href=?page=att_status_func&id=".$info['id_func']."> Desativar </a>";
-                    }else if($info['ativo'] == 0){
+                    }else if($info['status_func'] == 0){
                       echo "<a class='btn btn-success btn-xs'  href=?page=att_status_func&id=".$info['id_func'].">&nbsp;&nbsp;&nbsp;Ativar&nbsp;&nbsp;</a></div></td>";
                     }
                   }
