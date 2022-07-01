@@ -7,31 +7,32 @@
 <div id="main" class="container-fluid">
 	<h3 class="page-header">Visualizar registro do Usuário - <?php echo $id; ?> </h3>
 	<div class="row">
-		<div class="col-md-2">
+		<div class="col-md-4">
 			<p><strong>ID</strong></p>
 			<p><?php echo $row['id'];?></p>
 		</div>
-		<div class="col-md-5">
+		<div class="col-md-4">
 			<p><strong>Nome Completo</strong></p>
 			<p><?php echo $row['nome'];?></p>
 		</div>
-		<div class="col-md-3">
-			<p><strong>Usuário</strong></p>
-			<p><?php echo $row['usuario'] ;?></p>
-		</div>
-		<div class="col-md-2">
-			<p><strong>Senha</strong></p>
-			<p><?php echo $row['senha'];?></p>
+		<div class="col-md-4">
+			<p><strong>Nível de Acesso</strong></p>
+			<p><?php echo $row['nivel'];?></p>
 		</div>
 	</div>
+
 	<div class="row">
-		<div class="col-md-6">
+		<div class="col-md-4">
 			<p><strong>E-mail</strong></p>
 			<p><?php echo $row['email'];?></p>
 		</div>
-		<div class="col-md-6">
-			<p><strong>Nível de Acesso</strong></p>
-			<p><?php echo $row['nivel'];?></p>
+		<div class="col-md-4">
+			<p><strong>Usuário</strong></p>
+			<p><?php echo $row['usuario'] ;?></p>
+		</div>
+		<div class="col-md-4">
+			<p><strong>Senha</strong></p>
+			<p><?php echo $row['senha'];?></p>
 		</div>
 	</div>
 	<hr/>

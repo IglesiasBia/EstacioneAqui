@@ -53,7 +53,7 @@ echo "<td>" . $row['hr_entrada'] . "</td>";
 echo "<td>" . $row['hr_saida'] . "</td>";
 // echo "<td>" . $row['tempo'] . "</td>";
 $total = 5;
-if($row['tempo'] == "01:00:00"){
+if($row['tempo'] <= "01:00:00"){
     echo "<td>" . $total . "</td>";
 }elseif($row['tempo'] > "01:00:00"){
     $total += 1;
@@ -67,6 +67,6 @@ if($row['chave'] == 0){
 echo "<td>" . $row['placa_veic'] . "</td>";
 echo "<td>" . $row['id_vaga'] . "</td>";
 echo "</tr>";
-echo "<tr><button class='btn btn-primary' type='submit'>Imprimir</button></tr>";
+echo "<tr><button class='btn btn-danger' type='submit'>Imprimir</button></tr>";
 echo "</table>";
 ?>

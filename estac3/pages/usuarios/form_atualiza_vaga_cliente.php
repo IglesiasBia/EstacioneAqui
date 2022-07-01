@@ -63,7 +63,7 @@ $row2 = mysqli_fetch_array($resultado2);
                 <input type="text" class="form-control" name="id_cli" value="<?php echo $row["id_cli"]; ?>" readonly>
             </div>
             <!-- Fazer input nome e CPF só aparecerem se apertar um botão-->
-            * Inserir CPF e nome 
+            <!-- * Inserir CPF e nome  -->
             <div class="form-group col-md-4">
                 <label for="nome_cli">Nome Cliente</label>
                 <input type="text" class="form-control" name="nome_cli" placeholder="cliente não declarado" value="<?php echo $row["nome_cli"]; ?>">
