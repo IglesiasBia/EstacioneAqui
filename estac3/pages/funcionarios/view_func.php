@@ -37,7 +37,7 @@
 	<hr/>
 	<div id="actions" class="row">
 		<div class="col-md-12">
-			<a href="?page=lista_func" class="btn btn-default">Voltar</a>
+			<a href="?page=lista_func" class="btn btn-dark">Voltar</a>
 				<?php echo "<a href=?page=form_att_func&id=".$row['id']." class='btn btn-danger'>Editar</a>";?>
 				<?php
                 //  echo "<a href=?page=excluir_cli&id=".$row['id']." class='btn btn-danger'>Excluir</a>";

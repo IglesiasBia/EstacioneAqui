@@ -21,7 +21,7 @@
               </div>
             </div>
             <div class="card-body px-0 pb-2">
-              <div class="table-responsive p-0, table">
+              <div class="table-responsive ">
               <?php
   
                 $quantidade = 5;
@@ -35,9 +35,9 @@
                 echo "<thead><tr>";
                 echo "<th class='text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>ID</th>";
                 echo "<th class='text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2'>Nome do funcionário</th>";
-                echo "<th class='text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>E-mai</th>";
-                echo "<th class='text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Nível</th>";
-                echo "<th class='text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Status</th>";
+                echo "<th class='text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 d-none d-md-table-cell'>E-mail</th>";
+                echo "<th class='text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 d-none d-md-table-cell'>Nível</th>";
+                echo "<th class='text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 d-none d-md-table-cell'>Status</th>";
                 echo "<th class='text-secondary opacity-7'></th>";
                 echo "</tr></thead><tbody>";
                
@@ -46,19 +46,19 @@
                   echo "<tr>";
                   echo "<td>".$info['id_func']."</td>";
                   echo "<td>".$info['nome_func']."</td>";
-                  echo "<td>".$info['email_func']."</td>";
-                  echo "<td>".$info['nivel_func']."</td>";
+                  echo "<td class='d-none d-md-table-cell'>".$info['email_func']."</td>";
+                  echo "<td class='d-none d-md-table-cell'>".$info['nivel_func']."</td>";
                   if($info["nivel_func"] == 1){
-                    echo "<td>Funcionário Usuário</td>";
+                    echo "<td class='d-none d-md-table-cell'>Funcionário Usuário</td>";
                   }else if($info["nivel_func"] == 2){
-                    echo "<td>Administrador</td>";
+                    echo "<td class='d-none d-md-table-cell'>Administrador</td>";
                   }else if($info["nivel_func"] == 3){
-                      echo "<td>Funcionário não-usuário</td>";
+                      echo "<td class='d-none d-md-table-cell'>Funcionário não-usuário</td>";
                   }
                   if($info['status_func'] == 1){
-                    echo "<td>Ativo</td>";
+                    echo "<td class='d-none d-md-table-cell'>Ativo</td>";
                   }else if($info['status_func'] == 0){
-                    echo "<td>Inativo</td>";
+                    echo "<td class='d-none d-md-table-cell'>Inativo</td>";
                   }
                   echo "<td><div class='btn-group btn-group-xs'>";
                   echo "<a class='btn btn-info btn-xs' href=?page=view_func&id=".$info['id_func']."> Detalhar </a>";

@@ -40,7 +40,7 @@
                             <input type="text" class="form-control" name="preco_estac" value="<?php echo $row["preco_estac"]; ?>">
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="sigla">Fracao por Hora</label>
+                            <label for="sigla">Fração por Hora</label>
                             <input type="text" class="form-control" name="frac_hr_estac" value="<?php echo $row["frac_hr_estac"]; ?>">
                         </div>
 
