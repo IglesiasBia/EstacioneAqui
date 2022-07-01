@@ -27,7 +27,7 @@ CREATE TABLE `cliente` (
   `nome_cli` varchar(50) DEFAULT NULL,
   `cpf_cli` char(11) DEFAULT NULL,
   PRIMARY KEY (`id_cli`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -36,6 +36,7 @@ CREATE TABLE `cliente` (
 
 LOCK TABLES `cliente` WRITE;
 /*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
+INSERT INTO `cliente` VALUES (1,'gio','99999'),(2,'esse','555'),(3,'Cliente não declarado','0'),(4,'Cliente não declarado','0'),(5,'Cliente não declarado','0'),(6,'Cliente não declarado','0'),(7,'Cliente não declarado','0'),(8,'Cliente não declarado','0'),(9,'Cliente não declarado','0'),(10,'Cliente não declarado','0'),(11,'Cliente não declarado','0'),(12,'Cliente não declarado','0'),(13,'Cliente não declarado','0'),(14,'Cliente não declarado','0'),(15,'Cliente não declarado','0'),(16,'Cliente não declarado','0'),(17,'Cliente não declarado','0'),(18,'Cliente não declarado','0'),(19,'Cliente não declarado','0'),(20,'Cliente não declarado','0'),(21,'Cliente não declarado','0'),(22,'Cliente não declarado','0'),(23,'Cliente não declarado','0'),(24,'Cliente não declarado','0'),(25,'Cliente não declarado','0'),(26,'Cliente não declarado','0'),(27,'Cliente não declarado','0'),(28,'Cliente não declarado','0'),(29,'Cliente não declarado','0');
 /*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -82,7 +83,7 @@ CREATE TABLE `func_usu` (
   `func_usu` varchar(30) DEFAULT NULL,
   KEY `id_func` (`id_func`),
   CONSTRAINT `func_usu_ibfk_1` FOREIGN KEY (`id_func`) REFERENCES `funcionario` (`id_func`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -91,7 +92,7 @@ CREATE TABLE `func_usu` (
 
 LOCK TABLES `func_usu` WRITE;
 /*!40000 ALTER TABLE `func_usu` DISABLE KEYS */;
-INSERT INTO `func_usu` VALUES ('bia3',1,NULL),('bia3',2,NULL),('rapha3',3,'rapha'),('leth3',7,'leth');
+INSERT INTO `func_usu` VALUES ('bia3',1,'bia'),('leth3',7,'leth'),('rapha3',8,'rapha'),('lucas3',9,'lucas'),('amanda3',10,'amanda');
 /*!40000 ALTER TABLE `func_usu` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -111,7 +112,7 @@ CREATE TABLE `funcionario` (
   `dt_cadastro_func` datetime DEFAULT NULL,
   `cpf_func` varchar(11) DEFAULT NULL,
   PRIMARY KEY (`id_func`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -120,7 +121,7 @@ CREATE TABLE `funcionario` (
 
 LOCK TABLES `funcionario` WRITE;
 /*!40000 ALTER TABLE `funcionario` DISABLE KEYS */;
-INSERT INTO `funcionario` VALUES (1,'bia','2','bia@gmail.com','1','2022-09-06 06:33:58',NULL),(2,'bia',NULL,NULL,NULL,NULL,NULL),(3,'Raphaela','1','rapha@gmail.com','1','2022-06-28 08:50:15','18181818'),(4,'Raphaela','1','rapha@gmail.com','1','2022-06-28 08:51:32','18181818'),(5,'Raphaela','1','rapha@gmail.com','1','2022-06-28 08:52:40','18181818'),(7,'Lethicia','3','leth@gmail.com','1','2022-06-28 09:09:57','18181818');
+INSERT INTO `funcionario` VALUES (1,'bia','2','bia@gmail.com','1','2022-09-06 06:33:58',NULL),(7,'Lethicia','3','leth@gmail.com','1','2022-06-28 09:09:57','18181818'),(8,'Raphaela','1','rapha@gmail.com','1','2022-06-29 05:09:15','18181818'),(9,'lucas','3','lucas@.vom','0','2022-06-29 05:10:47','18181818'),(10,'amanda','3','amanda@gmail.com','0','2022-06-29 08:57:46','18181818');
 /*!40000 ALTER TABLE `funcionario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -144,7 +145,7 @@ CREATE TABLE `ticket` (
   KEY `id_vaga` (`id_vaga`),
   CONSTRAINT `id_vaga` FOREIGN KEY (`id_vaga`) REFERENCES `vagas` (`id_vagas`),
   CONSTRAINT `placa_veic` FOREIGN KEY (`placa_veic`) REFERENCES `veiculo` (`placa_veic`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -153,6 +154,7 @@ CREATE TABLE `ticket` (
 
 LOCK TABLES `ticket` WRITE;
 /*!40000 ALTER TABLE `ticket` DISABLE KEYS */;
+INSERT INTO `ticket` VALUES (1,'2022-09-06 06:33:58','2022-09-06 06:33:58',0,'1','$placa',1),(2,'2022-06-29 09:04:56','2022-06-30 11:53:05',0,'1','999',2),(3,'2022-06-30 11:58:37','2022-07-01 12:03:04',0,'1','2',1),(4,'2022-06-30 11:59:22','2022-06-30 11:59:22',0,'','6',2);
 /*!40000 ALTER TABLE `ticket` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -172,7 +174,7 @@ CREATE TABLE `vagas` (
   PRIMARY KEY (`id_vagas`),
   KEY `id_estac` (`id_estac`),
   CONSTRAINT `vagas_ibfk_1` FOREIGN KEY (`id_estac`) REFERENCES `estacionamento` (`id_estac`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -181,6 +183,7 @@ CREATE TABLE `vagas` (
 
 LOCK TABLES `vagas` WRITE;
 /*!40000 ALTER TABLE `vagas` DISABLE KEYS */;
+INSERT INTO `vagas` VALUES (1,'1','0','0',1),(2,'1','0','0',1);
 /*!40000 ALTER TABLE `vagas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -207,6 +210,7 @@ CREATE TABLE `veiculo` (
 
 LOCK TABLES `veiculo` WRITE;
 /*!40000 ALTER TABLE `veiculo` DISABLE KEYS */;
+INSERT INTO `veiculo` VALUES ('$placa','$tipo',1),('2','0',28),('6','0',29),('666','1',13),('7','0',15),('777','1',20),('888','0',19),('999','1',26);
 /*!40000 ALTER TABLE `veiculo` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -219,4 +223,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-28 21:44:57
+-- Dump completed on 2022-07-01  0:07:37

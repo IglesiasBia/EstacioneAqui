@@ -37,7 +37,7 @@ $hr_entrada = date('Y-m-d h:i:s ', time());
 
 $sql4 = "insert into ticket values(0,'$hr_entrada','$hr_entrada','0', '$chave', '$placa','1');";
 $resultado = mysqli_query($con, $sql4);
-
+echo $sql4;
 
 if($resultado){
     header('Location: /estacione/estac3/pages/dash.php?msg=1');

@@ -64,6 +64,12 @@
                 case "form_att_cliente":
                     include "usuarios/form_att_cliente.php";
                     break;
+                case "form_atualiza_vaga_cliente":
+                    include "usuarios/form_atualiza_vaga_cliente.php";
+                    break;
+                case "atualiza_vaga_cliente":
+                    include "usuarios/atualiza_vaga_cliente.php";
+                    break;
                 case "form_altera_senha_usu":
                     include "usuarios/form_altera_senha_usu.php";
                     break;

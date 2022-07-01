@@ -5,14 +5,14 @@
 		</div>
 
 	</div>
-	<form action="?page=insere_cli" method="post">
+	<form action="?page=form_atualiza_vaga_cliente" method="post">
 		<!-- 1ª LINHA -->	
 		<div class="row"> 
 			<div class="form-group col-md-3">
 				<label for="placa_veic">Placa</label>
 				<input type="text" class="form-control" name="placa_veic">
 			</div>
-			<div class="form-group col-md-3">
+			<!-- <div class="form-group col-md-3">
 				<label for="tipo_veic">Tipo</label>
 				<select class="form-control" name="tipo_veic">
 					<option> --------- </option>
@@ -23,7 +23,7 @@
 			<div class="form-group col-md-3">
 				<label for="id_vaga">Vaga Utilizada</label>
 				<input type="text" class="form-control" name="id_vaga">
-			</div>
+			</div> -->
 			<!-- <div class="form-group col-md-3">
 				<label for="modelo_carro">Modelo</label>
 				<input type="text" class="form-control" name="modelo_carro">
@@ -47,31 +47,12 @@
 			</div> -->
 
 		</div>
-		<!-- 2ª LINHA -->
-		<!-- <div class="row"> 
-			<div class="form-group col-md-2">
-				<label for="nivel_func">Nível</label>
-				<select class="form-control" name="nivel_func">
-					<option> --------- </option>
-					<option value="1">Funcionário Usuário</option>
-					<option value="2">Administrador</option>
-					<option value="3">Funcionário não usuário</option>
-				</select>
-			</div>
-			<div class="form-group col-md-6">
-				<label for="status_func">Status</label>
-				<select class="form-control" name="status_func">
-					<option> --------- </option>
-					<option value="1">Ativo</option>
-					<option value="0">Inativo</option>
-				</select>
-			</div>
-		</div> -->
+
 		<hr />
 		<div id="actions" class="row">
 			<div class="col-md-12">
-				<button type="submit" class="btn btn-dark">Salvar</button>
-				<a href="?page=lista_func" class="btn btn-danger">Cancelar</a>
+				<button type="submit" class="btn btn-dark">Buscar</button>
+				<a href="dash.php" class="btn btn-danger">Cancelar</a>
 			</div>
 		</div>
 	</form> 
