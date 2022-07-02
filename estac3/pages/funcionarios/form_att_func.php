@@ -1,6 +1,6 @@
 <?php
     //include "../../base/con_escola.php";
-    include "../../base/con.php";
+    //include "../../base/con.php";
 	$id = (int) $_GET['id'];
 	$sql = mysqli_query($con, "select * from funcionario where id_func = '".$id."';");
 	$row = mysqli_fetch_array($sql);
@@ -23,34 +23,18 @@
 
 	<!-- 1ª LINHA -->	
 	<div class="row"> 
-		<div class="form-group col-md-2">
+		<div class="form-group col-md-4">
 			<label for="id">ID</label>
 			<input type="text" class="form-control" name="id_func" value="<?php echo $row["id_func"]; ?> "readonly>
 		</div>
-		<div class="form-group col-md-5">
+		<div class="form-group col-md-4">
 			<label for="nome">Nome Completo</label>
 			<input type="text" class="form-control" name="nome_func" value="<?php echo $row["nome_func"]; ?>">
 		</div>
-		<div class="form-group col-md-2">
-			<label for="nivel_func">Nível</label>
-			<select class="form-control" name="nivel_func">
-				<?php 
-                    if($row["nivel_func"] == 1){
-                        //echo "<td>Funcionário Usuário</td>";
-						echo "<option value=''>Funcionário Usuário</option>";
-                    }else if($row["nivel_func"] == 2){
-                        //echo "<td>Administrador</td>";
-						echo "<option value='1'>Administrador</option>";
-						echo "<option value='3'>Funcionário não-usuário</option>";
-                    }else if($row["nivel_func"] == 3){
-                        //echo "<td>Funcionário não-usuário</td>";
-						echo "<option value=''>Funcionário não-usuário</option>";
-                    }
-				?>
-			</select>
-
+		<div class="form-group col-md-4">
+			<label for="cpf_func">CPF</label>
+			<input type="text" class="form-control" name="cpf_func" value="<?php echo $row["cpf_func"]; ?>">
 		</div>
-
 	</div>
 
 	<!-- 2ª LINHA -->
@@ -59,7 +43,14 @@
 			<label for="email">E-mail</label>
 			<input type="text" class="form-control" name="email_func" value="<?php echo $row["email_func"]; ?>">
 		</div>
-
+		<div class="col-md-4">
+			<?php
+				if($row["nivel_func"] == 1 || $row["nivel_func"] == 2){
+					echo "<label for='func_usu'>Usuário</label>";
+					echo "<input type='text' class='form-control' name='func_usu' value='" . $row2["func_usu"] . "'>";
+				}
+			?>
+		</div>
         <div class="form-group col-md-4">
 			<label for="status_func">Status</label><br>
 			<?php 
@@ -72,17 +63,30 @@
 				}
 			?>
 		</div>
-		<div class="form-group col-md-4">
-			<label for="cpf_func">CPF</label>
-			<input type="text" class="form-control" name="cpf_func" value="<?php echo $row["cpf_func"]; ?>">
-		</div>
-		<div class="col-md-4">
-			<?php
-				if($row["nivel_func"] == 1 || $row["nivel_func"] == 2){
-					echo "<label for='func_usu'>Usuário</label>";
-					echo "<input type='text' class='form-control' name='func_usu' value='" . $row2["func_usu"] . "'>";
-				}
-			?>
+		<div class="form-group col-md-2">
+			<label for="nivel_func">Nível</label>
+			<!-- <select class="form-control" name="nivel_func">
+				<?php 
+                    // if($row["nivel_func"] == 1){
+                    //     //echo "<td>Funcionário Usuário</td>";
+					// 	echo "<option value=''>Funcionário Usuário</option>";
+                    // }else if($row["nivel_func"] == 2){
+                    //     //echo "<td>Administrador</td>";
+					// 	echo "<option value='1'>Administrador</option>";
+					// 	echo "<option value='3'>Funcionário não-usuário</option>";
+                    // }else if($row["nivel_func"] == 3){
+                    //     //echo "<td>Funcionário não-usuário</td>";
+					// 	echo "<option value=''>Funcionário não-usuário</option>";
+                    // }
+				?>
+			</select> -->
+			<!-- Estudar esse select -->
+			<select class="form-control" name="nivel_func">
+				<option value="1"<?php if (!(strcmp(1, htmlentities($row['nivel_func'], ENT_COMPAT, 'utf-8')))) {echo "SELECTED";} ?>>Funcionário Usuário</option>
+				<option value="2"<?php if (!(strcmp(2, htmlentities($row['nivel_func'], ENT_COMPAT, 'utf-8')))) {echo "SELECTED";} ?>>Administrador</option>
+				<option value="3"<?php if (!(strcmp(3, htmlentities($row['nivel_func'], ENT_COMPAT, 'utf-8')))) {echo "SELECTED";} ?>>Fncionário não usuário</option>		
+			</select>
+
 		</div>
 	</div>
 	

@@ -1,4 +1,19 @@
-      <!-- PRIMEIRO -->
+<?php
+  //Pega quantidade total de vagas do estacionamanto 
+  $sql = "select quant_vaga from estacionamento where id_estac ='1';";
+  $resultado = mysqli_query($con,$sql);
+  $row = mysqli_fetch_array($resultado);
+  
+  //Pega quantidade de vagas ocupadas
+  $sql2 = "select status_vaga,
+  count(*) as qtd
+  from vagas WHERE status_vaga='1';";
+  $resultado2 = mysqli_query($con,$sql2);
+  $row2 = mysqli_fetch_array($resultado2);
+
+?>
+
+<!-- PRIMEIRO -->
 <div class="row">    
         <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
           <div class="card">
@@ -8,7 +23,7 @@
               </div>
               <div class="text-end pt-1 textcard">
                 <p class="text-sm mb-0 text-capitalize">Vagas Ocupadas</p>
-                <h4 class="mb-0">50/150</h4>
+                <h4 class="mb-0"><?php echo $row2["qtd"]."/".$row["quant_vaga"];?></h4>
               </div>
             </div>
           </div>

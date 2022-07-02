@@ -9,6 +9,12 @@
 .buttonfunc{
     width: 11em;
     height: 4.5em;
+    margin-left: 85%;
+}
+@media (max-width:900px) {
+    .buttonfunc{
+        margin-left: 70%;
+    }
 }
 .imgdash{
     height: 50px;

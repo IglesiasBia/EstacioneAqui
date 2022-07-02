@@ -3393,7 +3393,7 @@ textarea.form-control.is-valid {
 .was-validated .form-select:valid:focus,
 .form-select.is-valid:focus {
   border-color: #66d432;
-  box-shadow: 0 0 0 2px rgba(102, 212, 50, 0.25);
+  box-shadow: 0 0 0 2px rgba(255, 2, 2, 0.25);
 }
 
 .was-validated .form-check-input:valid,
@@ -3408,7 +3408,7 @@ textarea.form-control.is-valid {
 
 .was-validated .form-check-input:valid:focus,
 .form-check-input.is-valid:focus {
-  box-shadow: 0 0 0 2px rgba(102, 212, 50, 0.25);
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.25);
 }
 
 .was-validated .form-check-input:valid~.form-check-label,
@@ -3691,7 +3691,7 @@ fieldset:disabled .btn {
   color: #000;
   background-color: #67bb6a;
   border-color: #5eb762;
-  box-shadow: 0 0 0 0.2rem rgba(65, 149, 68, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(254, 0, 0, 0.5);
 }
 
 .btn-check:checked+.btn-success,
@@ -3709,7 +3709,7 @@ fieldset:disabled .btn {
 .btn-success:active:focus,
 .btn-success.active:focus,
 .show>.btn-success.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(65, 149, 68, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.5);
 }
 
 .btn-success:disabled,
@@ -4060,7 +4060,7 @@ fieldset:disabled .btn {
 .btn-outline-secondary:active:focus,
 .btn-outline-secondary.active:focus,
 .btn-outline-secondary.dropdown-toggle.show:focus {
-  box-shadow: 0 0 0 0.2rem rgba( 128, 154, 0.5);
+  box-shadow: 0 0 0 0.2rem rgb(255, 3, 3);
 }
 
 .btn-outline-secondary:disabled,
@@ -4082,7 +4082,7 @@ fieldset:disabled .btn {
 
 .btn-check:focus+.btn-outline-success,
 .btn-outline-success:focus {
-  box-shadow: 0 0 0 0.2rem rgba(76, 175, 80, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(255, 2, 2, 0.5);
 }
 
 .btn-check:checked+.btn-outline-success,
@@ -4100,7 +4100,7 @@ fieldset:disabled .btn {
 .btn-outline-success:active:focus,
 .btn-outline-success.active:focus,
 .btn-outline-success.dropdown-toggle.show:focus {
-  box-shadow: 0 0 0 0.2rem rgba(76, 175, 80, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.5);
 }
 
 .btn-outline-success:disabled,
