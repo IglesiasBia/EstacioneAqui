@@ -1,19 +1,28 @@
 <?php
-$placa = $_POST["placa_veic"];
+    $placa = $_POST["placa_veic"];
 
-$sql = "select * from veiculo 
-join cliente 
-on veiculo.id_cli = cliente.id_cli
-where placa_veic='$placa';";
-$resultado = mysqli_query($con, $sql);
-$row = mysqli_fetch_array($resultado);
+    $sql = "select * from veiculo 
+    join cliente 
+    on veiculo.id_cli = cliente.id_cli
+    where placa_veic='$placa';";
+    $resultado = mysqli_query($con, $sql);
+    $row = mysqli_fetch_array($resultado);
 
-$sql2 ="select * from veiculo 
-join ticket 
-on veiculo.placa_veic = ticket.placa_veic
-where veiculo.placa_veic='$placa';";
-$resultado2 = mysqli_query($con, $sql2);
-$row2 = mysqli_fetch_array($resultado2);
+    $sql2 ="select * from veiculo 
+    join ticket 
+    on veiculo.placa_veic = ticket.placa_veic
+    where veiculo.placa_veic='$placa';";
+    $resultado2 = mysqli_query($con, $sql2);
+    $row2 = mysqli_fetch_array($resultado2);
+
+    //Pega os dados da vaga o veículo estava
+    $sql3 = "select pav_vaga, setor_vaga, num_vaga
+    from vagas
+    join ticket
+    on vagas.id_vaga = ticket.id_vaga
+    where ticket.placa_veic = '$placa';";
+    $resultado3 = mysqli_query($con, $sql3);
+    $row3 = mysqli_fetch_array($resultado3);
 ?>
 
 <div id="main" class="container-fluid">
@@ -76,8 +85,16 @@ $row2 = mysqli_fetch_array($resultado2);
         
         <div class="row"> 
             <div class="form-group col-md-4">
-                <label for="id_vaga">ID Vaga</label>
-                <input type="text" class="form-control" name="id_vaga" value="<?php echo $row2["id_vaga"]; ?>">
+                <label for="id_vaga">Pavimento</label>
+                <input type="text" class="form-control" name="pav_vaga" value="<?php echo $row3["pav_vaga"]; ?>">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="id_vaga">Setor</label>
+                <input type="text" class="form-control" name="setor_vaga" value="<?php echo $row3["setor_vaga"]; ?>">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="id_vaga">Número</label>
+                <input type="text" class="form-control" name="num_vaga" value="<?php echo $row3["num_vaga"]; ?>">
             </div>
         </div>
         <button type="submit" class="btn btn-danger">Atualizar</button>

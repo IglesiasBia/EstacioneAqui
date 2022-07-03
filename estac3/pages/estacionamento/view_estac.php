@@ -4,9 +4,25 @@
     //include "../base/con_escola.php";
     //include "../base/con.php";
 
-    $sql = mysqli_query($con, "select * from estacionamento where id_estac='1';");
+    //Pega os dados do estacinamento
+    $sql = mysqli_query($con, "select * 
+    from estacionamento 
+    where id_estac='1';");
     $row = mysqli_fetch_array($sql);
 
+    //Pega o total de vagas para carro
+    $sql2 = "select tipo_vaga, 
+    count(*) as total_vagas_carro 
+    from vagas where tipo_vaga ='1';";
+    $resultado2 = mysqli_query($con, $sql2);
+    $row2 = mysqli_fetch_array($resultado2); 
+
+    //Pega o total de vagas para motocicleta 
+    $sql3 = "select tipo_vaga, 
+    count(*) as total_vagas_moto 
+    from vagas where tipo_vaga ='0';";
+    $resultado3 = mysqli_query($con, $sql3);
+    $row3 = mysqli_fetch_array($resultado3); 
 ?>
 <div><?php include "mensagens_estac.php"; ?> </div>
 
@@ -46,12 +62,14 @@
 
                     </div>
                     <div class="row">
-                    <div class="form-group col-md-4">
-                            <label for="sigla">Quantidade de vagas</label>
-                            <input type="number" class="form-control" name="quant_vaga" value="<?php echo $row["quant_vaga"]; ?>">
+                        <div class="form-group col-md-4">
+                            <label for="sigla">Quantidade de vagas:</label>
+                            <p>Carro: <?php echo $row2["total_vagas_carro"];?></p>
+                            <p>Motocicleta: <?php echo $row3["total_vagas_moto"];?></p>
                         </div>
                     </div>
                     <hr>
                     <button type="submit" class="btn btn-danger">Alterar</button>
                 </form>
+                
 </div>
