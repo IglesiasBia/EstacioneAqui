@@ -1,8 +1,9 @@
 <?php
-
 $placa = $_POST["placa_veic"];
 $tipo = $_POST["tipo_veic"];
 $chave = $_POST["chave"];
+$marca = $_POST["marca_veic"];
+$modelo = $_POST["modelo_veic"];
 
 // Cria um novo cliete
 $sql = "insert into cliente values(0,'Cliente não declarado','0');";
@@ -26,21 +27,20 @@ $idCli = $final["id_cli"];
 // $final = mysqli_result($resultado2);
 
 //Cria o veículo 
-$sql3 = "insert into veiculo values('$placa','$tipo',$idCli);";
+$sql3 = "insert into veiculo values('$placa','$tipo',$idCli, '$marca','$modelo');";
 $resultado = mysqli_query($con, $sql3);
 
-//Pgea horário atual do sistema
+//Pega horário atual do sistema
 date_default_timezone_set('America/Sao_Paulo');    
 $hr_entrada = date('Y-m-d h:i:s ', time());  
 
 //Cria ticket
-
-$sql4 = "insert into ticket values(0,'$hr_entrada','$hr_entrada','0', '$chave', '$placa','1');";
+$sql4 = "insert into ticket values(0,'$hr_entrada','$hr_entrada','0', '$chave', '$placa','1','0');";
 $resultado = mysqli_query($con, $sql4);
 // echo $sql4;
 
 if($resultado){
-    header('Location: /estacione/estac3/pages/dash.php?msg=1');
+    header('Location: http://localhost:8080/estacione/estac3/pages/dash.php?msg=1');
     mysqli_close($con);
 }else{
     echo "nao";

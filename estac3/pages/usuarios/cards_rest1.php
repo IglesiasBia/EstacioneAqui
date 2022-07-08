@@ -51,6 +51,14 @@
                     <input type="radio" name="chave" value="1">Sim <br>
                     <input type="radio" name="chave" value="0">Não
                 </div>
+                <label for="marca_veic">Marca</label>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" aria-describedby="basic-addon2" name="marca_veic">
+                </div>
+                <label for="modelo_veic">Modelo</label>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" aria-describedby="basic-addon2" name="modelo_veic">
+                </div>
                   <button class="btn btn-danger" type="submit">Inserir</button>
               </form>
             </div>
@@ -72,4 +80,5 @@
           </div>
         </div>
         <!-- FIM TERCEIRO -->
+
 </div>

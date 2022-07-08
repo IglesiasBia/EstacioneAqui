@@ -24,7 +24,10 @@
     $resultado3 = mysqli_query($con, $sql3);
     $row3 = mysqli_fetch_array($resultado3); 
 ?>
-<div><?php include "mensagens_estac.php"; ?> </div>
+<div><?php 
+// include "mensagens_estac.php"; 
+include "./../base/mensagens.php"; 
+?> </div>
 
 <div id="container-fluid py-4">
 

@@ -53,6 +53,12 @@
             case "atualiza_estac":
                 include "estacionamento/atualiza_estac.php";
                 break;
+            case "form_add_vaga":
+                include "estacionamento/form_add_vaga.php";
+                break;
+            case "insere_vaga":
+                include "estacionamento/insere_vaga.php";
+                break;
 
             //Parte funcionario
                 case "perfil_usu":

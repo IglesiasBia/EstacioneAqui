@@ -7,5 +7,12 @@
 			</div>
 
 
+			<hr />
+		<div id="actions" class="row">
+			<div class="col-md-12">
+				<button type="submit" class="btn btn-dark">Buscar</button>
+
+			</div>
+		</div>
     </form>
 </div>

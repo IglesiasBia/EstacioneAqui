@@ -1,3 +1,6 @@
+<?php
+  ob_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -44,7 +47,7 @@
     
     <!-- INÍCIO NAVBAR -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
-     <?php include "navbar.php"; ?>
+     <?php include "../base/navbar.php"; ?>
     </nav>
   
     <!-- FIM NAVBAR -->
@@ -339,3 +342,6 @@
 </body>
 
 </html>
+<?php
+  ob_end_flush();
+?>

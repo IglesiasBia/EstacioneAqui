@@ -33,7 +33,8 @@
     echo "<th class='text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Chave</th>";
     echo "<th class='text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Placa</th>";
     echo "<th class='text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Pavimento</th>";
-    echo "<th class='text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Vaga</th>";
+    echo "<th class='text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Vaga</th>";    
+    echo "<th class='text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Status Pagamento</th>";
     echo "<th class='text-secondary opacity-7'></th>";
     echo "</tr></thead><tbody>";
 
@@ -57,6 +58,12 @@
     echo "<td>" . $row['placa_veic'] . "</td>";
     echo "<td>" . $row3['pav_vaga'] . "</td>";
     echo "<td>" . $row3['setor_vaga'], $row3['num_vaga'] . "</td>";
+    if($row['status_pg'] == 0){
+        echo "<td> Não Pago</td>";
+    }elseif($row['status_pg'] ==1){
+        echo "<td> Pago</td>";
+    }
+    // echo "<td>" . $row['status_pg'] . "</td>";
     echo "</tr>";
     echo "<tr><button class='btn btn-danger' type='submit'>Imprimir</button></tr>";
     echo "</table>";
