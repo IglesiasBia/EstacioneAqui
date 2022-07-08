@@ -17,7 +17,7 @@
     <div class="collapse navbar-collapse  w-auto  max-height-vh-100" id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link text-white active bg-gradient-danger" href="dash.php">
+          <a class="nav-link text-white click" id="btn"href="dash.php">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">dashboard</i>
             </div>
@@ -26,7 +26,7 @@
         </li>
         <!-- Abrir parte de atualizar dados do estaci -->
         <li class="nav-item">
-          <a class="nav-link text-white " href="dash.php?page=view_estac">
+          <a class="nav-link text-white click" id="btn"href="dash.php?page=view_estac">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <!-- <i class="material-icons opacity-10">table_view</i> -->
               <img src="../assets/img/stop.png" alt="" width="25px">
@@ -35,7 +35,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="?page=lista_func">
+          <a class="nav-link text-white click"id="btn" href="?page=lista_func">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">receipt_long</i>
             </div>
@@ -43,7 +43,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="dash.php?page=form_att_cliente">
+          <a class="nav-link text-white click" id="btn"href="dash.php?page=form_att_cliente">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">table_view</i>
             </div>
@@ -51,7 +51,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="dash.php?page=form_add_vaga">
+          <a class="nav-link text-white click" id="btn"href="dash.php?page=form_add_vaga">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">table_view</i>
             </div>
@@ -59,7 +59,7 @@
           </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-white " href="?page=perfil_usu">
+            <a class="nav-link text-white click" id="btn"href="?page=perfil_usu">
                 <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                     <i class="material-icons opacity-10">notifications</i>
                 </div>
