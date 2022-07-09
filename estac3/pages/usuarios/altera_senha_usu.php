@@ -9,6 +9,6 @@
         mysqli_close($con);
     }else{
         echo "nao";
-        header('Location: http://localhost:8080/estacione/estac3/pages/dash.php?page=perfil_usu&msg=5')
+        header('Location: http://localhost:8080/estacione/estac3/pages/dash.php?page=perfil_usu&msg=5');
     }
 ?>

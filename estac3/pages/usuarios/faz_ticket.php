@@ -6,9 +6,21 @@
     date_default_timezone_set('America/Sao_Paulo');    
     $hr_saida = date('Y-m-d h:i:s ', time());  
 
-    //Atualiza o horário de saída 
-    $sql = "update ticket set hr_saida = '$hr_saida' where placa_veic='$placa';";
-    $resultado = mysqli_query($con, $sql);
+    $sql4 = "select status_pg from ticket where placa_veic='$placa';";
+    // echo $sql4;
+    $resultado4 = mysqli_query($con, $sql4);
+    $row4 = mysqli_fetch_array($resultado4);   
+    $statusPg = $row4["status_pg"];
+   
+    //Atualiza o horário de saída se o ticket não estiver pago
+    if($statusPg == '0'){
+        $sql = "update ticket set hr_saida = '$hr_saida' where placa_veic='$placa';";
+        $resultado = mysqli_query($con, $sql);
+    }
+
+    // //Atualiza o horário de saída 
+    // $sql = "update ticket set hr_saida = '$hr_saida' where placa_veic='$placa';";
+    // $resultado = mysqli_query($con, $sql);
 
     //Pega todos os dados do ticket selecionado
     $sql2 = "select *, TIMEDIFF(hr_saida, hr_entrada) as tempo  from ticket where placa_veic='$placa';";
@@ -23,6 +35,11 @@
     where ticket.placa_veic = '$placa';";
     $resultado3 = mysqli_query($con, $sql3);
     $row3 = mysqli_fetch_array($resultado3);
+
+    //Pega o preco inicial e a fracao por hora do estacionamento
+    $sql5 = "select preco_estac, frac_hr_estac from estacionamento where id_estac='1';";
+    $resultado5 = mysqli_query($con, $sql5);
+    $row5 = mysqli_fetch_array($resultado5);
 
     echo "<table class='table align-items-center mb-0'>";
     echo "<thead><tr>";
@@ -43,11 +60,19 @@
     echo "<td>" . $row['hr_entrada'] . "</td>";
     echo "<td>" . $row['hr_saida'] . "</td>";
     // echo "<td>" . $row['tempo'] . "</td>";
-    $total = 5;
+    // $total = 5;
+    //TERMINAR PRECO
+    $precoInicial = $row5['preco_estac'];
     if($row['tempo'] <= "01:00:00"){
-        echo "<td>" . $total . "</td>";
+        echo "<td>" . $row5['preco_estac'] . "</td>";
     }elseif($row['tempo'] > "01:00:00"){
-        $total += 1;
+        $tempo= $row['tempo'];
+        $total = substr($tempo,-8,2);
+        $i=1;
+
+        echo $precoInicial;
+        echo $row['tempo'];
+        // $total += 1;
         echo "<td>" . $total . "</td>";
     }
     if($row['chave'] == 0){
