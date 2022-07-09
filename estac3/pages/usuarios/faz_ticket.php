@@ -4,7 +4,8 @@
 
     //Pega data e horário atual
     date_default_timezone_set('America/Sao_Paulo');    
-    $hr_saida = date('Y-m-d h:i:s ', time());  
+    $hr_saida = date('Y-m-d H:i:s ', time());  
+    //echo $hr_saida;
 
     $sql4 = "select status_pg from ticket where placa_veic='$placa';";
     // echo $sql4;
@@ -22,7 +23,7 @@
     // $sql = "update ticket set hr_saida = '$hr_saida' where placa_veic='$placa';";
     // $resultado = mysqli_query($con, $sql);
 
-    //Pega todos os dados do ticket selecionado
+    // Pega todos os dados do ticket selecionado
     $sql2 = "select *, TIMEDIFF(hr_saida, hr_entrada) as tempo  from ticket where placa_veic='$placa';";
     $resultado2 = mysqli_query($con, $sql2);
     $row = mysqli_fetch_array($resultado2);
@@ -57,24 +58,51 @@
 
     echo "<tr>";
     echo "<td>" . $row['id_ticket'] . "</td>";
-    echo "<td>" . $row['hr_entrada'] . "</td>";
-    echo "<td>" . $row['hr_saida'] . "</td>";
-    // echo "<td>" . $row['tempo'] . "</td>";
-    // $total = 5;
+    //$data = strtotime($row['hr_entrada']);
+    // echo $data;
+    //echo $data->format('d-m-Y H:i:s');
+    //Formatando hora entrada para o padrao brasileiro
+    $hrEntrada = $row['hr_entrada'];
+    $hrEntradaFormat = strtotime($hrEntrada);
+    $hrEntradaFinal = date('d-m-y H:i:s', $hrEntradaFormat);
+    echo "<td>" . $hrEntradaFinal . "</td>";
+    //Formatando hora saida para o padrao brasileiro
+    $hrSaida = $row['hr_saida'];
+    $hrSaidaFormat = strtotime($hrSaida);
+    $hrSaidaFinal = date('d-m-y H:i:s', $hrSaidaFormat);
+    echo "<td>" . $hrSaidaFinal . "</td>";
+
+    // $horaEntrada = $row['hr_entrada'];
+    // $hrSaida = $row['hr_saida'];
+    // $interval = $hrSaida->diff($horaEntrada);
+    
+    // echo ($interval->format("%a") * 24) + $interval->format("%h"). " hours". $interval->format(" %i minutes ");
     //TERMINAR PRECO
     $precoInicial = $row5['preco_estac'];
-    if($row['tempo'] <= "01:00:00"){
-        echo "<td>" . $row5['preco_estac'] . "</td>";
-    }elseif($row['tempo'] > "01:00:00"){
-        $tempo= $row['tempo'];
-        $total = substr($tempo,-8,2);
-        $i=1;
+    //echo $row['tempo'];
+    //Pega o tempo total que ficou no estacionamento
+    $tempo = $row['tempo'];
+    //Pega os dois primeiros digitos de tempo(hora) e passa pra number
+    $total = substr($tempo,-8,2);
 
-        echo $precoInicial;
-        echo $row['tempo'];
-        // $total += 1;
-        echo "<td>" . $total . "</td>";
+    //Se tempo for menor ou igual uma hora
+    if($total <= "01:00:00"){
+        echo "<td>" . $row5['preco_estac'] . "</td><br>";
     }
+    //Se tempo passar de uma hora
+    elseif($total > "01:00:00"){
+        //echo $total;
+        //Pega a fracao por hora
+        $fracHora = $row5['frac_hr_estac'];
+        //Calcula enquanto hora for maior que contador uma fracao sera adicionada
+        $i=1;
+        while($total > $i){
+            $precoInicial += $fracHora;
+            $i++;
+        }
+        echo "<td>" . $precoInicial . "</td>";
+    }
+
     if($row['chave'] == 0){
         echo "<td> Deixou </td>";
     }else{
