@@ -6,11 +6,12 @@
 
 <!-- INICIO CONTENT -->
   <div class="container-fluid py-4">
-  <div class="col-md-1">
-			<!-- Chama o Formulário para adicionar funcionário -->
-      <a href="?page=fadd_func" class="btn bg-gradient-danger btn-sm text, buttonfunc">Novo Funcionário</a> 
-		</div>
+  
     <div class="row">
+
+        <!-- Chama o Formulário para adicionar funcionário -->
+        <a href="?page=fadd_func" class="btn bg-gradient-danger buttonfunc ">Novo Funcionário</a>
+
       <div class="col-12">
         <div class="card my-4">
           <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">

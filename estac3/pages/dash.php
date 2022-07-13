@@ -336,11 +336,25 @@
       }
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
+    
+    function setColor(btn, color){
+  var count=1;
+  var property = document.getElementById(btn);
+  if (count == 0){
+      property.style.backgroundColor = "#FFFFFF"
+      count=1;        
+  }
+  else{
+      property.style.backgroundColor = "#F44335"
+      count=0;
+  }
+
+}
   </script>
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="./assets/js/material-dashboard.min.js"></script>
+  <script src="./assets/js/main.js"></script>
 </body>
 
 </html>
