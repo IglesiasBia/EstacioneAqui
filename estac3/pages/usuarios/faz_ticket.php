@@ -16,6 +16,7 @@
     //Atualiza o horário de saída se o ticket não estiver pago
     if($statusPg == '0'){
         $sql = "update ticket set hr_saida = '$hr_saida' where placa_veic='$placa';";
+        echo $sql;
         $resultado = mysqli_query($con, $sql);
     }
 
@@ -24,9 +25,12 @@
     // $resultado = mysqli_query($con, $sql);
 
     // Pega todos os dados do ticket selecionado
-    $sql2 = "select *, TIMEDIFF(hr_saida, hr_entrada) as tempo  from ticket where placa_veic='$placa';";
-    $resultado2 = mysqli_query($con, $sql2);
-    $row = mysqli_fetch_array($resultado2);
+    $sql2 = "select *,
+    IF(ROUND(TIMESTAMPDIFF(MINUTE, hr_saida, hr_entrada)/60,3)<ROUND(TIMESTAMPDIFF(MINUTE, hr_saida, hr_entrada)/60), ABS(ROUND(TIMESTAMPDIFF(MINUTE, hr_saida, hr_entrada)/60))+1, ABS(ROUND(TIMESTAMPDIFF(MINUTE, hr_saida, hr_entrada)/60))) as tempo_estacionamento 
+     ,day(hr_saida) - day(hr_entrada) as pernoite  
+    from ticket where placa_veic='$placa' and status_pg = 0;";
+    $resultadoTicket = mysqli_query($con, $sql2);
+    $row = mysqli_fetch_array($resultadoTicket);
 
     //Pega os dados da vaga o veículo estava
     $sql3 = "select pav_vaga, setor_vaga, num_vaga
@@ -38,9 +42,9 @@
     $row3 = mysqli_fetch_array($resultado3);
 
     //Pega o preco inicial e a fracao por hora do estacionamento
-    $sql5 = "select preco_estac, frac_hr_estac from estacionamento where id_estac='1';";
+    $sql5 = "select preco_estac, frac_hr_estac, preco_pernoite from estacionamento where id_estac='1';";
     $resultado5 = mysqli_query($con, $sql5);
-    $row5 = mysqli_fetch_array($resultado5);
+    $resultadoEstac = mysqli_fetch_array($resultado5);
 
     echo "<table class='table align-items-center mb-0'>";
     echo "<thead><tr>";
@@ -55,6 +59,14 @@
     echo "<th class='text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Status Pagamento</th>";
     echo "<th class='text-secondary opacity-7'></th>";
     echo "</tr></thead><tbody>";
+
+
+   
+
+    if($row==0){
+        header('Location: http://localhost:8080/estacione/estac3/pages/dash.php?msg=10');
+        mysqli_close($con);
+    }else{
 
     echo "<tr>";
     echo "<td>" . $row['id_ticket'] . "</td>";
@@ -78,29 +90,23 @@
     
     // echo ($interval->format("%a") * 24) + $interval->format("%h"). " hours". $interval->format(" %i minutes ");
     //TERMINAR PRECO
-    $precoInicial = $row5['preco_estac'];
-    //echo $row['tempo'];
+    $precoInicial = $resultadoEstac['preco_estac'];
     //Pega o tempo total que ficou no estacionamento
-    $tempo = $row['tempo'];
-    //Pega os dois primeiros digitos de tempo(hora) e passa pra number
+    $tempo = $row['tempo_estacionamento'];
+    //Pega os dois primeiros digitos de tempo(hora)
     $total = substr($tempo,-8,2);
 
-    //Se tempo for menor ou igual uma hora
-    if($total <= "01:00:00"){
-        echo "<td>" . $row5['preco_estac'] . "</td><br>";
-    }
-    //Se tempo passar de uma hora
-    elseif($total > "01:00:00"){
-        //echo $total;
-        //Pega a fracao por hora
-        $fracHora = $row5['frac_hr_estac'];
-        //Calcula enquanto hora for maior que contador uma fracao sera adicionada
-        $i=1;
-        while($total > $i){
-            $precoInicial += $fracHora;
-            $i++;
-        }
-        echo "<td>" . $precoInicial . "</td>";
+    $pernoite = $row['pernoite'];
+    if($pernoite == 0){
+        $valorfracHora = $resultadoEstac['frac_hr_estac'];
+        $total_valor_fracao = $valorfracHora * ($row['tempo_estacionamento'] - 1) ; 
+        $precoFinal = $precoInicial + $total_valor_fracao;
+        echo "<td>" . $precoFinal . "</td>";
+        
+    }else{
+        $precoPernoite = $resultadoEstac['preco_pernoite'] * $pernoite;
+        echo "<td>" . $precoPernoite . "</td>";
+        
     }
 
     if($row['chave'] == 0){
@@ -119,5 +125,6 @@
     // echo "<td>" . $row['status_pg'] . "</td>";
     echo "</tr>";
     echo "<tr><button class='btn btn-danger' type='submit'>Imprimir</button></tr>";
+}
     echo "</table>";
 ?>

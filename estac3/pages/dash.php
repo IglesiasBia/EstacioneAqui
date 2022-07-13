@@ -48,6 +48,7 @@
     <!-- INÍCIO NAVBAR -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
      <?php include "../base/navbar.php"; ?>
+     
     </nav>
   
     <!-- FIM NAVBAR -->
@@ -55,9 +56,10 @@
     <!-- INICIO CONTENT -->
     <div class="container-fluid py-4">
           <?php 
+            include "../base/mensagens.php";
             include "../base/con_escola.php";
             include "../base/ch_pages.php";
-            include "usuarios/mensagens_cli_usu.php";
+            
             $link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
             if($link == "http://localhost:8080/estacione/estac3/pages/dash.php"){
               include "usuarios/cards_rest1.php";

@@ -32,7 +32,7 @@ $resultado = mysqli_query($con, $sql3);
 
 //Pega horário atual do sistema
 date_default_timezone_set('America/Sao_Paulo');    
-$hr_entrada = date('Y-m-d h:i:s ', time());  
+$hr_entrada = date('Y-m-d H:i:s ', time());  
 
 //Cria ticket
 $sql4 = "insert into ticket values(0,'$hr_entrada','$hr_entrada','0', '$chave', '$placa','1','0');";
