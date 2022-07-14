@@ -41,7 +41,14 @@
             case "lista_func_inativo":
                 include "funcionarios/lista_func_inativo.php";
                 break;
-
+            
+                //Relatório
+            case "form_relatorio":
+                include "funcionarios/form_relatorio.php";
+                break;
+            case "gera_relatorio":
+                include "funcionarios/gera_relatorio.php";
+                break;
 
             //CRUD Estacionamento  
             case "atualiza":
@@ -87,9 +94,7 @@
                     break;
                 case "faz_ticket":
                     include "usuarios/faz_ticket.php";
-                    break;
-                
-            
+                    break;                
             default:
                 include "dash.php";
                 break;
