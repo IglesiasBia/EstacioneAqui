@@ -1,11 +1,10 @@
 <?php
-    //include "../base/con_escola.php";
-    //include "../base/con.php";
     $nome = $_POST["nome_estac"];
     $cnpj = $_POST["cnpj_estac"];
     $num = $_POST["num_estac"];
     $preco = $_POST["preco_estac"];
     $fracao = $_POST["frac_hr_estac"];
+    $pernoite = $_POST["preco_pernoite"];
     
     //Pega quantidade total de vagas
     $sql = "select id_vaga, 
@@ -16,7 +15,7 @@
     $quantVaga = $row["total_vagas"];
 
     $sql2 = "update estacionamento 
-    set id_estac='1', nome_estac='$nome', cnpj_estac='$cnpj',num_estac='$num', preco_estac='$preco', frac_hr_estac='$fracao' ,quant_vaga='$quantVaga' 
+    set id_estac='1', nome_estac='$nome', cnpj_estac='$cnpj',num_estac='$num', preco_estac='$preco', frac_hr_estac='$fracao',quant_vaga='$quantVaga', preco_pernoite='$pernoite' 
     where id_estac='1';";  
     $resultado2 = mysqli_query($con, $sql2);
 

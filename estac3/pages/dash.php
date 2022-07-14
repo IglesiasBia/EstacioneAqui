@@ -61,9 +61,9 @@
             include "../base/ch_pages.php";
             
             $link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-            if($link == "http://localhost:8080/estacione/estac3/pages/dash.php"){
+            if($link == "http://localhost:8080/estacione/estac3/pages/dash.php" || $link == "http://localhost:8080/estacione/estac3/pages/dash.php?msg=10"){
               include "usuarios/cards_rest1.php";
-             }elseif($link == "http://localhost:8080/estacione/estac3/pages/dash.php?msg=1"){
+             }elseif($link == "http://localhost:8080/estacione/estac3/pages/dash.php?msg=1" || $link == "http://localhost:8080/estacione/estac3/pages/dash.php?msg=10"){
               include "usuarios/cards_rest1.php";
              }
             

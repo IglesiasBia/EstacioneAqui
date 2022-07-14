@@ -51,15 +51,15 @@ include "./../base/mensagens.php";
                     </div>
                     <div class="row">
                         <div class="form-group col-md-4">
-                            <label for="sigla">Número do Estacionamento</label>
+                            <label for="num_estac">Número do Estacionamento</label>
                             <input type="text" class="form-control" name="num_estac" value="<?php echo $row["num_estac"]; ?>">
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="sigla">Preco Inicial</label>
+                            <label for="preco_estac">Preço Inicial</label>
                             <input type="text" class="form-control" name="preco_estac" value="<?php echo $row["preco_estac"]; ?>">
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="sigla">Fração por Hora</label>
+                            <label for="frac_hr_estac">Fração por Hora</label>
                             <input type="text" class="form-control" name="frac_hr_estac" value="<?php echo $row["frac_hr_estac"]; ?>">
                         </div>
 
@@ -69,6 +69,10 @@ include "./../base/mensagens.php";
                             <label for="sigla">Quantidade de vagas:</label>
                             <p>Carro: <?php echo $row2["total_vagas_carro"];?></p>
                             <p>Motocicleta: <?php echo $row3["total_vagas_moto"];?></p>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="preco_pernoite">Preço Pernoite</label>
+                            <input type="text" class="form-control" name="preco_pernoite" value="<?php echo $row["preco_pernoite"]; ?>">
                         </div>
                     </div>
                     <hr>

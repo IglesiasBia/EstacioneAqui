@@ -1,3 +1,5 @@
+<!-- Quero que seja um modal -->
+
 <div>
     <form action="?page=altera_senha_usu" method="post">
         <div class="row"> 
@@ -5,7 +7,6 @@
 				<label for="senha">Nova senha</label>
 				<input type="text" class="form-control" name="senha">
 			</div>
-
 
 			<hr />
 		<div id="actions" class="row">

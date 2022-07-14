@@ -1,9 +1,16 @@
 <?php
 
+    if($statusPg == '0'){
+        $sql = "update ticket set hr_saida = '$hr_saida' where placa_veic='$placa';";
+        $resultadoAlteraHora = mysqli_query($con, $sql);
+    }
+    
     //Dados da tabela veiculo 
     $placa = $_POST["placa_veic"];
     $tipo = $_POST["tipo_veic"];
     $chave = $_POST["chave"];
+    $marca = $_POST["marca_veic"];
+    $modelo = $_POST["modelo_veic"];
 
     //Dados da tabela cliente
     $id = $_POST["id_cli"];
@@ -19,7 +26,7 @@
     $statusPg = $_POST["status_pg"];
 
     //Atualiza tabela veiculo
-    $sqlVeic = "update veiculo set placa_veic='$placa', tipo_veic ='$tipo',id_cli='$id' where placa_veic='$placa';";
+    $sqlVeic = "update veiculo set placa_veic='$placa', tipo_veic ='$tipo',id_cli='$id', marca_veic='$marca', modelo_veic='$modelo' where placa_veic='$placa';";
     $resultado = mysqli_query($con, $sqlVeic);
 
     //Atualiza tabela cliente
