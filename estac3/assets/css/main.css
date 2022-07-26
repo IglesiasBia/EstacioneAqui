@@ -97,18 +97,7 @@ hr:not([size]) {
   height: 1px;
 }
 
-h1,
-.h1,
-h2,
-.h2,
-h3,
-.h3,
-h4,
-.h4,
-h5,
-.h5,
-h6,
-.h6 {
+h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
   font-weight: 400;
@@ -116,8 +105,7 @@ h6,
   color: #344767;
 }
 
-h1,
-.h1 {
+h1,.h1 {
   font-size: calc(1.425rem + 2.1vw);
 }
 

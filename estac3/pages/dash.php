@@ -29,7 +29,7 @@
 <body class="g-sidenav-show  bg-gray-200">
 
   <!-- INÍCIO SIDEBAR -->
-  <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark" id="sidenav-main">
+  <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-radius-xl my-2 fixed-start ms-3   bg-gradient-dark" id="sidenav-main">
       <?php
         	if (!isset($_SESSION)) session_start();
           switch($_SESSION['UsuarioNivel']){
@@ -47,6 +47,14 @@
     
     <!-- INÍCIO NAVBAR -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
+              
+    
+              <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+              </div>
+
      <?php include "../base/navbar.php"; ?>
      
     </nav>

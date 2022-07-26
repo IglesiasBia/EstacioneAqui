@@ -12,6 +12,7 @@
         <img src="../assets/img/logo-provisoria.png" class="navbar-brand-img h-150" alt="main_logo">
         <span class="ms-1 font-weight-bold text-white">ESTACIONE AQUI</span>
       </a>
+      
 </div>
 <hr class="horizontal light mt-0 mb-2">
 <div class="collapse navbar-collapse  w-auto  max-height-vh-100" id="sidenav-collapse-main">
