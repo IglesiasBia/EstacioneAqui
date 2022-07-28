@@ -40,3 +40,23 @@ cardsbaixo{
     background: rgb(51, 49, 65);
     margin: 8px;
 }
+/* .sidenav{
+    height:100%;
+    width: 14em;
+    border-radius: 5%;
+    position: absolute;
+    top: 0.5vh;
+    bottom: 0.5vh;
+    left: 1vh;
+    
+} */
+/* @media(max-width:999px) {
+    .sidenav{
+        position:absolute;
+        top:1vh;
+        left:1vh;
+        bottom:1vh;
+        height: 100%;
+        width: 17vw;
+    }
+} */

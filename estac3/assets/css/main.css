@@ -5304,11 +5304,13 @@ fieldset:disabled .btn {
   }
 
   .navbar-expand-xl .navbar-toggler {
-    display: none;
+    display: flex;
+    flex-basis: auto;
   }
 
   .navbar-expand-xl .offcanvas-header {
-    display: none;
+    display: flex;
+    flex-basis: auto;
   }
 
   .navbar-expand-xl .offcanvas {
@@ -5431,7 +5433,7 @@ fieldset:disabled .btn {
 }
 
 .navbar-expand .navbar-toggler {
-  display: none;
+  display: flex;
 }
 
 .navbar-expand .offcanvas-header {
@@ -21356,7 +21358,7 @@ body.dark-version {
 
 @media (max-width: 991.98px) {
   .navbar-toggler+.navbar-collapse .dropdown:not(.nav-item) .dropdown-menu {
-    display: block;
+    display: flex;
     opacity: 0;
     top: 0;
     transform-origin: 0 0;
@@ -21364,7 +21366,7 @@ body.dark-version {
     transform: scale(0.95) !important;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
     -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
+    backface-visibility: visible;
     will-change: transform, box-shadow;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   }
@@ -22793,7 +22795,7 @@ hr.horizontal.gray-light {
     animation-duration: 1.5s;
     transform: scale(0.6);
     left: 18% !important;
-    position: absolute;
+    position: relative;
   }
 }
 
