@@ -26,10 +26,10 @@
   <link id="pagestyle" href="../assets/css/main2.css" rel="stylesheet" />
 </head>
 
-<body class="bg-gray-200">
+<body class="g-sidenav-show bg-gray-200">
 
   <!-- INÍCIO SIDEBAR -->
-  <aside class="sidenav navbar navbar-vertical border-radius-xl navbar-expand-xs  my-2 fixed-start ms-3 fixed-start bg-gradient-dark" id="sidenav-main">
+  <aside class="sidenav navbar navbar-vertical border-radius-xl navbar-expand-xs  my-2 fixed-start ms-3 bg-gradient-dark" id="sidenav-main">
       <?php
         	if (!isset($_SESSION)) session_start();
           switch($_SESSION['UsuarioNivel']){
@@ -337,20 +337,6 @@
       }
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
-    
-    function setColor(btn, color){
-  var count=1;
-  var property = document.getElementById(btn);
-  if (count == 0){
-      property.style.backgroundColor = "#FFFFFF"
-      count=1;        
-  }
-  else{
-      property.style.backgroundColor = "#F44335"
-      count=0;
-  }
-
-}
   </script>
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
