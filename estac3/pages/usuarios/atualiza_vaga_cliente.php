@@ -35,12 +35,16 @@
 
 
     //Pega id da nova vaga
-    $sqlVaga = "select id_vaga 
+    $sqlVaga = "select id_vaga, status_vaga
     from vagas 
     where pav_vaga='$pav' and setor_vaga ='$setor' and num_vaga='$numVaga';";
     $resultadoVaga = mysqli_query($con, $sqlVaga);
     $row = mysqli_fetch_array($resultadoVaga);
     $idVaga = $row["id_vaga"];
+
+    // Atualiza status da nova vaga 
+    $sqlAtulizaStatusVaga = "update vagas set status_vaga=1 where id_vaga='$idVaga';";
+    $resultadoAtulizaStatusVaga = mysqli_query($con,$sqlAtulizaStatusVaga);
 
     //Atualiza tabela ticket
     $sqlTicket = "update ticket set id_vaga='$idVaga', status_pg='$statusPg'  where placa_veic='$placa';";

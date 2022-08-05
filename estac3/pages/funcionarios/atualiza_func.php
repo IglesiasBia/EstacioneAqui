@@ -34,4 +34,11 @@
 
                 $resultado4 = mysqli_query($con,$sql4);
         }
+        if($resultado){
+                header('Location: /estacione/estac3/pages/dash.php?page=lista_func&msg=6');
+                mysqli_close($con);
+            }else{
+                header('Location: /estacione/estac3/pages/dash.php?page=lista_func&msg=7');
+                mysqli_close($con);
+            }
 ?>

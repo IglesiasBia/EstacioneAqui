@@ -59,6 +59,12 @@
                 Placa não encontrada.
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">X</button></div>';
                 break;
+            // Sobre vaga
+            case 11:
+                echo '	<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                Insira uma vaga vazia.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">X</button></div>';
+            break;
         }
         $msg = 0;
     }

@@ -94,7 +94,10 @@
                     break;
                 case "faz_ticket":
                     include "usuarios/faz_ticket.php";
-                    break;                
+                    break; 
+                case "pagar_ticket":
+                    include "usuarios/pagar_ticket.php";
+                    break;               
             default:
                 include "dash.php";
                 break;

@@ -7,7 +7,7 @@
     $hr_saida = date('Y-m-d H:i:s ', time());  
 
     //Pega o status do pagamento do veículo pela placa
-    $sql4 = "select status_pg from ticket where placa_veic='$placa';";
+    $sql4 = "select status_pg, id_ticket from ticket where placa_veic='$placa';";
     $resultado4 = mysqli_query($con, $sql4);
     $resultadoStatusPg = mysqli_fetch_array($resultado4);   
     $statusPg = $resultadoStatusPg["status_pg"];
@@ -101,7 +101,7 @@
         echo "<td>" . $precoPernoite . "</td>";
     }
 
-    if($dadosTicket['chave'] == 0){
+    if($dadosTicket['chave'] == 1){
         echo "<td> Deixou </td>";
     }else{
         echo "<td> Não deixou </td>";
@@ -122,6 +122,10 @@
     }
 
     echo "</tr>";
+    if($dadosTicket['status_pg'] == 0){
+        echo "<a class='btn btn-warning btn-xs' href=?page=pagar_ticket&id_ticket=".$resultadoStatusPg['id_ticket']."> Pagar </a>";
+    }
+
     echo "<tr><button class='btn btn-danger' type='submit'>Imprimir</button></tr>";
 }
     echo "</table>";
