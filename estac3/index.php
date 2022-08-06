@@ -2,7 +2,7 @@
     include "base/ch_pages.php";
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="utf-8" />
@@ -46,10 +46,10 @@
                 <form action="?page=validacao" method="post" class=" user login100-form validate-form p-b-33 p-t-5">
                   <form role="form" class="text-start">
                     <div class="input-group input-group-outline my-3">
-                      <input type="text" class="form-control" name="usuario" placeholder="usuário">
+                      <input type="text" class="form-control" name="usuario" placeholder="usuário" id="usuario" required>
                     </div>
                     <div class="input-group input-group-outline mb-3">
-                      <input type="password" class="form-control" name="senha" placeholder="senha">
+                      <input type="password" class="form-control" name="senha" placeholder="senha" required> 
                     </div>
                     <div class="text-center">
                       <button type="submit" class="btn bg-gradient-danger w-100 my-4 mb-2">Entrar</button>
@@ -91,5 +91,4 @@
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/main.js"></script>
 </body>
-
 </html>
