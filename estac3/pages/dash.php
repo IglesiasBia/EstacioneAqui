@@ -31,13 +31,15 @@
   <!-- INÍCIO SIDEBAR -->
   <aside class="sidenav navbar navbar-vertical border-radius-xl navbar-expand-xs  my-2 fixed-start ms-3 bg-gradient-dark" id="sidenav-main">
       <?php
+          // Inicia uma sessão se já nào estiver iniciada
         	if (!isset($_SESSION)) session_start();
+          // Altera menu dependendo do nível
           switch($_SESSION['UsuarioNivel']){
             case 1:
-              include "menu_rest1.php";
+              include "administrador/menu_administrador.php";
               break;
             case 2:
-              include "menu_rest2.php";
+              include "funcionario_usuario/menu_func_usu.php";
               break;
           }
       ?>
@@ -61,11 +63,12 @@
             include "../base/con_escola.php";
             include "../base/ch_pages.php";
             
+            // Adiciona cards dependendo da URL
             $link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-            if($link == "http://localhost:8080/estacione/estac3/pages/dash.php" || $link == "http://localhost:8080/estacione/estac3/pages/dash.php?msg=10"){
-              include "usuarios/cards_rest1.php";
+            if($link == "http://localhost:8080/estacione/estac3/pages/dash.php" || $link == "http://localhost:8080/estacione/estac3/pages/dash.php?msg=10" || $link == "http://localhost:8080/estacione/estac3/pages/dash.php?msg=14" || $link == "http://localhost:8080/estacione/estac3/pages/dash.php?msg=15"){
+              include "../base/cards.php";
              }elseif($link == "http://localhost:8080/estacione/estac3/pages/dash.php?msg=1" || $link == "http://localhost:8080/estacione/estac3/pages/dash.php?msg=10"){
-              include "usuarios/cards_rest1.php";
+              include "../base/cards.php";
              }
             
           ?>

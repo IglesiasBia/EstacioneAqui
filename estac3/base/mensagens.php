@@ -17,7 +17,7 @@
                 break;
             case 3:
                 echo '	<div class="alert alert-warning alert-dismissible fade show" role="alert">
-                Erro durante acesso a Base de dados! Contate o administrador.
+                Só é possível alterar clientes que estejam dentro do estabelecimento.
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">X</button></div>';
                 break;
             //Sobe alteração de senha
@@ -63,6 +63,24 @@
             case 11:
                 echo '	<div class="alert alert-danger alert-dismissible fade show" role="alert">
                 Insira uma vaga vazia.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">X</button></div>';
+            break;
+            // Login inválido 
+            case 12:
+                echo '	<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                Login inválido. 
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">X</button></div>';
+            break;
+            // MENSAGEM DE ERRO SE JÁ HOUVER VEÍCULO COM A PLACA INSERIDA DENTRO DO ESTACIONAMENTO
+            case 14:
+                echo '	<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                Insira uma placa que esteja dento do estabelecimento. 
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">X</button></div>';
+            break;
+            // Pagamento feito
+            case 15:
+                echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                Pagamento realizado com sucesso!
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">X</button></div>';
             break;
         }

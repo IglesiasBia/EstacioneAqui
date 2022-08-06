@@ -1,9 +1,9 @@
 <?php
 
-    if($statusPg == '0'){
-        $sql = "update ticket set hr_saida = '$hr_saida' where placa_veic='$placa';";
-        $resultadoAlteraHora = mysqli_query($con, $sql);
-    }
+    // if($statusPg == '0'){
+    //     $sql = "update ticket set hr_saida = '$hr_saida' where placa_veic='$placa';";
+    //     $resultadoAlteraHora = mysqli_query($con, $sql);
+    // }
     
     //Dados da tabela veiculo 
     $placa = $_POST["placa_veic"];

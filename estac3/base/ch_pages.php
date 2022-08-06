@@ -97,7 +97,14 @@
                     break; 
                 case "pagar_ticket":
                     include "usuarios/pagar_ticket.php";
-                    break;               
+                    break;  
+                case "insere_cli":
+                    include "usuarios/insere_cli.php";
+                    break;    
+                //Geral
+                case "busca_cliente":
+                    include "busca_cliente.php";
+                break;  
             default:
                 include "dash.php";
                 break;
