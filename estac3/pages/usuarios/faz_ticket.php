@@ -6,19 +6,34 @@
     date_default_timezone_set('America/Sao_Paulo');    
     $hr_saida = date('Y-m-d H:i:s ', time());  
 
-    //Pega o status do pagamento do veículo pela placa
-    $sql4 = "select status_pg from ticket where placa_veic='$placa';";
-    $resultado4 = mysqli_query($con, $sql4);
-    $resultadoStatusPg = mysqli_fetch_array($resultado4);   
-    $statusPg = $resultadoStatusPg["status_pg"];
-   
-    //Atualiza o horário de saída se o ticket não estiver pago
-    if($statusPg == '0'){
-        $sql = "update ticket set hr_saida = '$hr_saida' where placa_veic='$placa';";
-        $resultadoAlteraHora = mysqli_query($con, $sql);
+    // Pega id_ticket de uma certa placa não paga
+    $sqlIdTicket = mysqli_query($con, "select id_ticket from ticket where status_pg='0' and placa_veic='$placa'");
+    $resultadoIdTicket = mysqli_fetch_array($sqlIdTicket);
+    $idTicket = $resultadoIdTicket["id_ticket"];
+
+    // Se não existir um veículo com essa placa estacionado entra aqui 
+    if($resultadoIdTicket["id_ticket"] == ""){
+        header('Location: http://localhost:8080/estacione/estac3/pages/dash.php?msg=14');
     }
 
-    //Pega todos os dados do ticket selecionado, pega quanto tempo o veículo ficou estacionado (primeiro pego a diferenca da hora de saída com a hora de entrada com tres dígitos após a vírgula, se ele for maior do que a diferenca da hora de saída com a hora de entrada com somente um dígito isso significa que ele passou um determinado tempo em horas e mais alguns minutos e isso significa que ele pagará aqueles minutos como uma nova hora completa, por isso adiciono um na hora total) e pega se ele pernoitou
+    //Atualiza o horário de saída do ticket
+    $sqlAlteraHoraSaida = "update ticket set hr_saida = '$hr_saida' where placa_veic='$placa';";
+    $resultadoAlteraHora = mysqli_query($con, $sqlAlteraHoraSaida);
+
+
+    // //Pega o status do pagamento do veículo pela placa
+    // $sqlStatusPagamento = "select status_pg, id_ticket from ticket where placa_veic='$placa';";
+    // $resultadoStatusPagamento = mysqli_query($con, $sqlStatusPagamento);
+    // $resultadoStatusPagamento = mysqli_fetch_array($resultadoStatusPagamento);   
+    // $statusPg = $resultadoStatusPagamento["status_pg"];
+   
+    //Atualiza o horário de saída se o ticket não estiver pago
+    // if($statusPg == '0'){
+    //     $sql = "update ticket set hr_saida = '$hr_saida' where placa_veic='$placa';";
+    //     $resultadoAlteraHora = mysqli_query($con, $sql);
+    // }
+
+//     //Pega todos os dados do ticket selecionado, pega quanto tempo o veículo ficou estacionado (primeiro pego a diferenca da hora de saída com a hora de entrada com tres dígitos após a vírgula, se ele for maior do que a diferenca da hora de saída com a hora de entrada com somente um dígito isso significa que ele passou um determinado tempo em horas e mais alguns minutos e isso significa que ele pagará aqueles minutos como uma nova hora completa, por isso adiciono um na hora total) e pega se ele pernoitou
     $sql2 = "select *,
     IF(ROUND(TIMESTAMPDIFF(MINUTE, hr_saida, hr_entrada)/60,3)<ROUND(TIMESTAMPDIFF(MINUTE, hr_saida, hr_entrada)/60), ABS(ROUND(TIMESTAMPDIFF(MINUTE, hr_saida, hr_entrada)/60))+1, ABS(ROUND(TIMESTAMPDIFF(MINUTE, hr_saida, hr_entrada)/60))) as tempo_estacionamento,
     day(hr_saida) - day(hr_entrada) as pernoite  
@@ -43,7 +58,7 @@
     $resultadoCliVeic = mysqli_query($con,$sql4);
     $dadosCliVeic = mysqli_fetch_array($resultadoCliVeic); 
 
-    //Pega o preco inicial e a fracao por hora do estacionamento
+    //Pega o precos do estacionamento
     $sql5 = "select preco_estac, frac_hr_estac, preco_pernoite from estacionamento where id_estac='1';";
     $resultadoEstac = mysqli_query($con, $sql5);
     $dadosEstac = mysqli_fetch_array($resultadoEstac);
@@ -87,6 +102,7 @@
     $hrSaidaFinal = date('d-m-y H:i:s', $hrSaidaFormat);
     echo "<td>" . $hrSaidaFinal . "</td>";
 
+    $precoFinal;
     $pernoite = $dadosTicket['pernoite'];
     if($pernoite == 0){
         $precoInicial = $dadosEstac['preco_estac'];
@@ -95,13 +111,19 @@
         $totalValorFracao = $valorfracHora * ($dadosTicket['tempo_estacionamento'] - 1) ; 
         $precoFinal = $precoInicial + $totalValorFracao;
         echo "<td>" . $precoFinal . "</td>";
+
+        // // Altera no banco o valor final
+        // $sqlPrecoFinal = mysqli_query($con,"update ticket set valor_total_ticket='$precoFinal' where id_ticket='$idTicket';");
         
     }else{
-        $precoPernoite = $dadosEstac['preco_pernoite'] * $pernoite;
-        echo "<td>" . $precoPernoite . "</td>";
+        $precoFinal = $dadosEstac['preco_pernoite'] * $pernoite;
+        echo "<td>" . $precoFinal . "</td>";
+
+        // // Altera no banco o valor final
+        // $sqlPrecoFinal = mysqli_query($con,"update ticket set valor_total_ticket='$precoPernoite' where id_ticket='$idTicket';");
     }
 
-    if($dadosTicket['chave'] == 0){
+    if($dadosTicket['chave'] == 1){
         echo "<td> Deixou </td>";
     }else{
         echo "<td> Não deixou </td>";
@@ -122,6 +144,10 @@
     }
 
     echo "</tr>";
+    if($dadosTicket['status_pg'] == 0){
+        echo "<a class='btn btn-warning btn-xs' href=?page=pagar_ticket&id_ticket=".$idTicket."&preco_final=".$precoFinal."> Pagar </a>";
+    }
+
     echo "<tr><button class='btn btn-danger' type='submit'>Imprimir</button></tr>";
 }
     echo "</table>";

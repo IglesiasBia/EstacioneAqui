@@ -1,4 +1,5 @@
 <?php
+include "mensagens.php";
 // Verifica se houve POST e se o usuário ou a senha estão vazios
 if (!empty($_POST) and (empty($_POST['usuario']) or empty($_POST['senha']))) {
 	header("Location: ./index.php"); exit;
@@ -7,6 +8,7 @@ if (!empty($_POST) and (empty($_POST['usuario']) or empty($_POST['senha']))) {
 // Tenta se conectar ao servidor MySQL e ao DB
 $con = mysqli_connect('localhost', 'root', '', 'sistema_ge') or trigger_error(mysqli_error($con));
 
+// Faz com que caracteres especiais sejam válidos na query do SQL
 $usuario = mysqli_real_escape_string($con, $_POST['usuario']);
 $senha = mysqli_real_escape_string($con, $_POST['senha']);
 
@@ -24,9 +26,11 @@ $query = mysqli_query($con, $sql);
 
 if (mysqli_num_rows($query) != 1) {
 	// Mensagem de erro quando os dados são inválidos e/ou o usuário não foi encontrado
-	header('Content-Type: text/html; charset=utf-8');
-	echo "Login invalido!"; 
-	echo $sql;
+	// header('Content-Type: text/html; charset=utf-8');
+	// echo "Login invalido!"; 
+	// echo $sql;
+	// header("Location: /estacione/estac3/index.php?msg=2");
+	header('Location: /estacione/estac3/index.php?msg=12');
 	exit;
 } else {
 	// Salva os dados encontados na variável $resultado

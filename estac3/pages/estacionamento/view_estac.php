@@ -26,7 +26,7 @@
 ?>
 <div><?php 
 // include "mensagens_estac.php"; 
-include "./../base/mensagens.php"; 
+// include "./../base/mensagens.php"; 
 ?> </div>
 
 <div id="container-fluid py-4">
@@ -70,10 +70,10 @@ include "./../base/mensagens.php";
                             <p>Carro: <?php echo $row2["total_vagas_carro"];?></p>
                             <p>Motocicleta: <?php echo $row3["total_vagas_moto"];?></p>
                         </div>
-                        <!-- <div class="form-group col-md-4">
+                        <div class="form-group col-md-4">
                             <label for="preco_pernoite">Preço Pernoite</label>
                             <input type="text" class="form-control" name="preco_pernoite" value="<?php echo $row["preco_pernoite"]; ?>">
-                        </div> -->
+                        </div>
                     </div>
                     <hr>
                     <button type="submit" class="btn btn-danger">Alterar</button>
