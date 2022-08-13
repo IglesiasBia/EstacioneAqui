@@ -83,6 +83,11 @@
                 Pagamento realizado com sucesso!
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">X</button></div>';
             break;
+            case 16:
+                echo '	<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                Selecione um tipo de relatório. 
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">X</button></div>';
+            break;
         }
         $msg = 0;
     }
