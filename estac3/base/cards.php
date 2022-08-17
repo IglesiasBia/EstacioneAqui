@@ -15,7 +15,7 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-md-12 um" >
+        <div class="col-md-12 carddash" >
 
             <div class="card">
               <div>
@@ -31,9 +31,9 @@
 
         </div>
       </div>
-      <div class="row" >
-        <div class="col-md-6 dois">
           
+          <div class="row">
+            <div class="col-md-12 carddash">
               <div class="card ">
                 <div class="card-body ">
                   <form action="?page=insere_card" method="post">
@@ -81,10 +81,11 @@
                   </form>
                 </div>
               </div>
-
-        </div>
-        <div class="col-md-6 tres">
+            </div>
+          </div>
           
+          <div class="row">
+            <div class="col-md-12 tres">
               <div class="card ">
                 <div class="card-body" >
                   <form action="?page=faz_ticket" method="post">
@@ -97,10 +98,10 @@
                 </div>
               </div>
             </div>
-
-        </div>
-      </div>
+          </div>
+      
     </div>
+    
 
 
 

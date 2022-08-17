@@ -62,46 +62,53 @@
     $sql5 = "select preco_estac, frac_hr_estac, preco_pernoite from estacionamento where id_estac='1';";
     $resultadoEstac = mysqli_query($con, $sql5);
     $dadosEstac = mysqli_fetch_array($resultadoEstac);
-
-    echo "<table class='table align-items-center mb-0'>";
-    echo "<thead><tr>";
-    echo "<th class='text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>ID</th>";
-    echo "<th class='text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2'>Hora Entrada</th>";
-    echo "<th class='text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Hora Saída</th>";
-    echo "<th class='text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Valor Total</th>";
-    echo "<th class='text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Chave</th>";
-    echo "<th class='text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Placa</th>";
-    echo "<th class='text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Marca</th>";
-    echo "<th class='text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Modelo</th>";
-    if($dadosCliVeic['cpf_cli'] != 0){
-        echo "<th class='text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Nome</th>";
-        echo "<th class='text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>CPF</th>";
-    }
-    echo "<th class='text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Pavimento</th>";
-    echo "<th class='text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Vaga</th>";    
-    echo "<th class='text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Status Pagamento</th>";
-    echo "<th class='text-secondary opacity-7'></th>";
-    echo "</tr></thead><tbody>";   
-
-    if($dadosTicket == 0){
-        header('Location: http://localhost:8080/estacione/estac3/pages/dash.php?msg=10');
-        mysqli_close($con);
-    }else{
-
-    echo "<tr>";
-    echo "<td>" . $dadosTicket['id_ticket'] . "</td>";
-
+    
     //Formatando hora entrada para o padrao brasileiro
     $hrEntrada = $dadosTicket['hr_entrada'];
     $hrEntradaFormat = strtotime($hrEntrada);
     $hrEntradaFinal = date('d-m-y H:i:s', $hrEntradaFormat);
-    echo "<td>" . $hrEntradaFinal . "</td>";
+
     //Formatando hora saida para o padrao brasileiro
     $hrSaida = $dadosTicket['hr_saida'];
     $hrSaidaFormat = strtotime($hrSaida);
     $hrSaidaFinal = date('d-m-y H:i:s', $hrSaidaFormat);
-    echo "<td>" . $hrSaidaFinal . "</td>";
 
+    
+    
+    
+    if($dadosTicket['status_pg'] == 0){
+        echo "<div class='row'><div class='col-md-2'><a class='btn btn-warning btn-xs' href=?page=pagar_ticket&id_ticket=".$idTicket."&preco_final=".$precoFinal."> Pagar </a></div>";
+    }
+
+
+    echo "<div class='col-md-2'><button class='btn btn-danger' type='submit'>Imprimir</button></div></div>";
+    echo "<div class='row'> <div class='col-md-2 notatitulo'> <span> ESTACIONE AQUI </span> </div> </div>";
+    echo "<div class='row'> <div class='col-md-2 text-secondary text-xs font-weight-bolder opacity-7'>ID</div> ";
+    echo "<div class='col-md-2'>" . $dadosTicket['id_ticket'] . "</div></div>";
+    echo "<div class='row'> <div class='col-md-2 text-secondary text-xxs font-weight-bolder opacity-7 '>HORA ENTRADA</div> ";
+    echo "<div class='col-md-2'>" . $hrEntradaFinal . "</div></div>";
+    echo "<div class='row'> <div class='col-md-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Hora Saída</div> ";
+    echo "<div class='col-md-2'>" . $hrSaidaFinal . "</div></div>";
+    echo "<div class='row'><div class='col-md-12'>-----------------------------------------------------------------------------------</div></div>";
+    echo "<div class='row'><div class='col-md-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Placa</div>";
+    echo "<div class='col-md-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Chave</div></div>";
+    echo "<div class='row'><div class='col-md-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Marca</div>";
+    echo "<div class='col-md-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Modelo</div></div>";
+    echo "<div class='row'><div class='col-md-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Pavimento</div>";
+    echo "<div class='col-md-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Vaga</div></div>"; 
+    echo "<div class='row'><div class='col-md-12'>-----------------------------------------------------------------------------------</div></div>"; 
+    if($dadosCliVeic['cpf_cli'] != 0){
+        echo "<div class='row'><div class='col-md-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Nome</div>";
+        echo "<div class='col-md-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>CPF</div></div>";
+    }    
+    echo "<div class='row'><div class='col-md-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Status Pagamento</div>";
+    if($dadosTicket['status_pg'] == 0){
+        echo "<div class='col-md-2'> Não Pago</div>";
+    }else{
+        echo "<div class='col-md-2'> Pago</div></div>";
+    }
+    echo "<div class='row'><div class='col-md-12'>-----------------------------------------------------------------------------------</div></div>"; 
+    echo "<div class='row'><div class='col-md-2 text-uppercase  text-sm font-weight-bolder '>Valor Total</div>";
     $precoFinal;
     $pernoite = $dadosTicket['pernoite'];
     if($pernoite == 0){
@@ -110,18 +117,36 @@
 
         $totalValorFracao = $valorfracHora * ($dadosTicket['tempo_estacionamento'] - 1) ; 
         $precoFinal = $precoInicial + $totalValorFracao;
-        echo "<td>" . $precoFinal . "</td>";
+        echo "<div class='col-md-2'>" . $precoFinal . "</div>";
 
         // // Altera no banco o valor final
         // $sqlPrecoFinal = mysqli_query($con,"update ticket set valor_total_ticket='$precoFinal' where id_ticket='$idTicket';");
         
     }else{
         $precoFinal = $dadosEstac['preco_pernoite'] * $pernoite;
-        echo "<td>" . $precoFinal . "</td>";
+        echo "<div class='col-md-2'>" . $precoFinal . "</div></div>";
 
         // // Altera no banco o valor final
         // $sqlPrecoFinal = mysqli_query($con,"update ticket set valor_total_ticket='$precoPernoite' where id_ticket='$idTicket';");
     }
+    echo "</tr></thead><tbody>";   
+
+    if($dadosTicket == 0){
+        header('Location: http://localhost:8080/estacione/estac3/pages/dash.php?msg=10');
+        mysqli_close($con);
+    }else{
+
+    echo "<th class='text-secondary opacity-7'></div>";
+
+    
+    echo "<tr>";
+    
+
+    
+    
+    
+
+    
 
     if($dadosTicket['chave'] == 1){
         echo "<td> Deixou </td>";
@@ -137,18 +162,10 @@
     }
     echo "<td>" . $dadosVagasTicket['pav_vaga'] . "</td>";
     echo "<td>" . $dadosVagasTicket['setor_vaga'], $dadosVagasTicket['num_vaga'] . "</td>";
-    if($dadosTicket['status_pg'] == 0){
-        echo "<td> Não Pago</td>";
-    }else{
-        echo "<td> Pago</td>";
-    }
+    
 
     echo "</tr>";
-    if($dadosTicket['status_pg'] == 0){
-        echo "<a class='btn btn-warning btn-xs' href=?page=pagar_ticket&id_ticket=".$idTicket."&preco_final=".$precoFinal."> Pagar </a>";
-    }
-
-    echo "<tr><button class='btn btn-danger' type='submit'>Imprimir</button></tr>";
+    
 }
-    echo "</table>";
+    echo "</div>";
 ?>

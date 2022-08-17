@@ -1,4 +1,7 @@
-.col-md-1{
+
+.respnota{
+    margin-left: -2em;
+}.col-md-1{
     margin-bottom: 0.5em;
     margin-top: -1.4em;
     margin-left: 66.6em;
@@ -27,9 +30,10 @@
 cardsbaixo{
     margin-bottom: 2em;
 }
-.um{
+.carddash{
     margin-bottom: 2em;
 }
+
 .mobile-menu{
     cursor: pointer;
     display: none;
@@ -60,3 +64,4 @@ cardsbaixo{
         width: 17vw;
     }
 } */
+
