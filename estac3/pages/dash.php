@@ -36,10 +36,10 @@
           // Altera menu dependendo do nível
           switch($_SESSION['UsuarioNivel']){
             case 1:
-              include "administrador/menu_administrador.php";
+              include "funcionario_usuario/menu_func_usu.php";
               break;
             case 2:
-              include "funcionario_usuario/menu_func_usu.php";
+              include "administrador/menu_administrador.php";
               break;
           }
       ?>

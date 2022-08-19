@@ -13,41 +13,38 @@
                 include "dash.php";
                 break;
 
-            // CRUD Funcionários
-            case "lista_func":
-                include "funcionarios/lista_func.php";
-                break;
-            case "fadd_func":
-                include "funcionarios/form_add_func.php";
-                break;
-            case "view_func":
-                include "funcionarios/view_func.php";
-                break;
-            case "fadd_fun":
-                include "fun.php";
-                break;  
-            case "insere_func":
-                include "funcionarios/insere_func.php";
-                break;
-            case "form_att_func":
-                include "funcionarios/form_att_func.php";
-                break;
-            case "atualiza_func":
-                include "funcionarios/atualiza_func.php";
-                break;
-            case "att_status_func":
-                include "funcionarios/atualiza_status_func.php";
-                break;
-            case "lista_func_inativo":
-                include "funcionarios/lista_func_inativo.php";
-                break;
-            
-                //Relatório
+            //Administrador
             case "form_relatorio":
-                include "funcionarios/form_relatorio.php";
+                include "administrador/form_relatorio.php";
                 break;
             case "gera_relatorio":
-                include "funcionarios/gera_relatorio.php";
+                include "administrador/gera_relatorio.php";
+                break;
+
+            // CRUD Funcionários
+            case "lista_func":
+                include "administrador/lista_func.php";
+                break;
+            case "fadd_func":
+                include "administrador/form_add_func.php";
+                break;
+            case "view_func":
+                include "administrador/view_func.php";
+                break; 
+            case "insere_func":
+                include "administrador/insere_func.php";
+                break;
+            case "form_att_func":
+                include "administrador/form_att_func.php";
+                break;
+            case "atualiza_func":
+                include "administrador/atualiza_func.php";
+                break;
+            case "att_status_func":
+                include "administrador/atualiza_status_func.php";
+                break;
+            case "lista_func_inativo":
+                include "administrador/lista_func_inativo.php";
                 break;
 
             //CRUD Estacionamento  
@@ -103,8 +100,11 @@
                     break;    
                 //Geral
                 case "busca_cliente":
-                    include "busca_cliente.php";
+                    include "geral/busca_cliente.php";
                 break;  
+                case "busca_vaga_veic":
+                    include "geral/busca_vaga_veic.php";
+                break;
             default:
                 include "dash.php";
                 break;
