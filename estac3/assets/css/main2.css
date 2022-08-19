@@ -44,6 +44,9 @@ cardsbaixo{
     background: rgb(51, 49, 65);
     margin: 8px;
 }
+.btnvaga{
+    margin: 0.5em;
+}
 /* .sidenav{
     height:100%;
     width: 14em;

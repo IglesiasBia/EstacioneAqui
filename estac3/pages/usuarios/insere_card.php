@@ -5,7 +5,7 @@
     $marca = $_POST["marca_veic"];
     $modelo = $_POST["modelo_veic"];
 
-    // Cria um novo cliete
+    // Cria um novo cliente
     $sqlCriaCliente = "insert into cliente values(0,'Cliente não declarado','0');";
     $resultadoCriaCliente = mysqli_query($con, $sqlCriaCliente);
 
@@ -15,8 +15,8 @@
     $final = mysqli_fetch_array($resultadoUltimoCliente);
     $idCli = $final["id_cli"];
 
-    // Pesquisa na query se já existe uma placa 
-    $sqlExistePlaca = mysqli_query($con, "select placa_veic from veiculo where placa_veic='$placa';");
+    // Pesquisa na query se já existe uma placa e o status_pg
+    $sqlExistePlaca = mysqli_query($con, "select veiculo.placa_veic, ticket.status_pg from veiculo join ticket on veiculo.placa_veic = ticket.placa_veic where veiculo.placa_veic='$placa';");
     $resultadoExistePlaca = mysqli_fetch_array($sqlExistePlaca);
 
     // Se não existir placa
@@ -25,19 +25,29 @@
         $sqlCriaVeiculo = "insert into veiculo values('$placa','$tipo',$idCli, '$marca','$modelo');";
         echo $sqlCriaVeiculo;
         $resultadoCriaVeiculo = mysqli_query($con, $sqlCriaVeiculo);
-        
     }
-    // Atualiza id_cli da tabela veiculo
+
+    // Roda todos o tickets com essa placa
+    while($dadosPlaca = mysqli_fetch_array($sqlExistePlaca)){
+        // Se algum ticket não estiver pago da erro
+        if($dadosPlaca["status_pg"] == 0){
+            header('Location: http://localhost:8080/estacione/estac3/pages/dash.php?msg=13');
+            exit;
+        }
+    }
+    
+    // Se o status_pg for pago insere dados no sistema 
     $sqlAtulizaIDCli = mysqli_query($con ,"update veiculo set id_cli='$idCli' where placa_veic='$placa';");
 
     //Pega horário atual do sistema
     date_default_timezone_set('America/Sao_Paulo');    
-    $hr_entrada = date('Y-m-d H:i:s ', time());  
+        $hr_entrada = date('Y-m-d H:i:s ', time());  
 
-    //Cria ticket
-    $sqlCriaTicket = "insert into ticket values(0,'$hr_entrada','$hr_entrada','0', '$chave', '$placa','1','0');";
-    echo $sqlCriaTicket;
-    $resultadoCriaTicket = mysqli_query($con, $sqlCriaTicket);
+        //Cria ticket
+        $sqlCriaTicket = "insert into ticket values(0,'$hr_entrada','$hr_entrada',0, '$chave', '$placa',1,0);";
+        echo $sqlCriaTicket;
+        $resultadoCriaTicket = mysqli_query($con, $sqlCriaTicket);
+
     
     if($resultadoCriaTicket){
         header('Location: http://localhost:8080/estacione/estac3/pages/dash.php?msg=1');

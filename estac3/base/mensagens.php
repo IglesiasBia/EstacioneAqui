@@ -71,6 +71,11 @@
                 Login inválido. 
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">X</button></div>';
             break;
+            case 13:
+                echo '	<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                Placa inválida! Veículo esta dentro do estacionamento. 
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">X</button></div>';
+            break;
             // MENSAGEM DE ERRO SE JÁ HOUVER VEÍCULO COM A PLACA INSERIDA DENTRO DO ESTACIONAMENTO
             case 14:
                 echo '	<div class="alert alert-danger alert-dismissible fade show" role="alert">

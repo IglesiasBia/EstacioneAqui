@@ -76,12 +76,12 @@
     
     
     
-    if($dadosTicket['status_pg'] == 0){
-        echo "<div class='row'><div class='col-md-2'><a class='btn btn-warning btn-xs' href=?page=pagar_ticket&id_ticket=".$idTicket."&preco_final=".$precoFinal."> Pagar </a></div>";
-    }
+    // if($dadosTicket['status_pg'] == 0){
+    //     echo "<div class='row'><div class='col-md-2'><a class='btn btn-warning btn-xs' href=?page=pagar_ticket&id_ticket=".$idTicket."&preco_final=".$precoFinal."> Pagar </a></div>";
+    // }
 
 
-    echo "<div class='col-md-2'><button class='btn btn-danger' type='submit'>Imprimir</button></div></div>";
+    // echo "<div class='col-md-2'><button class='btn btn-danger' type='submit'>Imprimir</button></div></div>";
     echo "<div class='row'> <div class='col-md-2 notatitulo'> <span> ESTACIONE AQUI </span> </div> </div>";
     echo "<div class='row'> <div class='col-md-2 text-secondary text-xs font-weight-bolder opacity-7'>ID</div> ";
     echo "<div class='col-md-2'>" . $dadosTicket['id_ticket'] . "</div></div>";
@@ -130,7 +130,10 @@
         // $sqlPrecoFinal = mysqli_query($con,"update ticket set valor_total_ticket='$precoPernoite' where id_ticket='$idTicket';");
     }
     echo "</tr></thead><tbody>";   
-
+    if($dadosTicket['status_pg'] == 0){
+        echo "<div class='row'><div class='col-md-2'><a class='btn btn-warning btn-xs' href=?page=pagar_ticket&id_ticket=".$idTicket."&preco_final=".$precoFinal."> Pagar </a></div>";
+    }
+    echo "<div class='col-md-2'><button class='btn btn-danger' type='submit'>Imprimir</button></div></div>";
     if($dadosTicket == 0){
         header('Location: http://localhost:8080/estacione/estac3/pages/dash.php?msg=10');
         mysqli_close($con);
