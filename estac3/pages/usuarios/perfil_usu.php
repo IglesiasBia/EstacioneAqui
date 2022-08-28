@@ -38,7 +38,10 @@
 		<div class="col-md-4">
 			<p><strong>Senha</strong></p>
 			<p><?php echo $row2['senha_func'];?></p>
-            <a href="?page=form_altera_senha_usu" class="senha" data-bs-toggle="modal" data-bs-target="#final">Alterar senha</a>
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalExemplo">
+			Alterar senha</button>
+
+            <!-- <a href="?page=form_altera_senha_usu" class="senha" data-bs-toggle="modal" data-bs-target="#final">Alterar senha</a> -->
 			<!-- <button type="button" class="btn btn-primary botao" data-bs-toggle="modal" data-bs-target="#final">Finalizar</button> -->
 
 		</div>
@@ -97,3 +100,9 @@
     </div>
   </div>
 </div> -->
+<!-- Botão para acionar modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ <?php include "form_altera_senha_usu.php"; ?>
+</div>

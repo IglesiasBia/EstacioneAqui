@@ -77,6 +77,10 @@
                     </div>
                     <hr>
                     <button type="submit" class="btn btn-danger">Alterar</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Adicionar nova vaga</button>  
                 </form>
-                
+    
 </div>
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <?php include "form_add_vaga.php"; ?>
+</div>  

@@ -68,3 +68,7 @@ cardsbaixo{
     }
 } */
 
+.meuModal{
+    position: absolute !important;
+    z-index : 10000 !important;
+}

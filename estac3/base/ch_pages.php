@@ -108,6 +108,9 @@
                 case "lista_vagas":
                     include "geral/lista_vagas.php";
                 break;
+                case "lista_vagas":
+                    include "lista_vagas.php";
+                break;
             default:
                 include "dash.php";
                 break;
