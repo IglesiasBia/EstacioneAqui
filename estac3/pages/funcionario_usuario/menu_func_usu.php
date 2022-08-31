@@ -28,12 +28,13 @@
         </li>
             <!-- Abrir parte de atualizar dados do estaci -->
         <li class="nav-item">
-        <a class="nav-link text-white " href="dash.php?page=form_att_cliente">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                <i class="material-icons opacity-10">table_view</i>
-            </div>
-            <span class="nav-link-text ms-1">Clientes</span>
-            </a>
+          <a class="nav-link text-white click" id="btn"href="dash.php?page=form_att_cliente">
+            <!-- <div class="text-white text-center me-2 d-flex align-items-center justify-content-center"> -->
+              <!-- <i class="material-icons opacity-10">table_view</i> -->
+              <img src="../assets/img/icons/carro.png" alt="" width="25rem">
+            <!-- </div> -->
+            <span class="nav-link-text ms-1 ">Clientes</span>
+          </a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-white click" id="btn"href="dash.php?page=lista_vagas">
@@ -44,10 +45,11 @@
           </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-white " href="?page=perfil_usu">
-                <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                    <i class="material-icons opacity-10">notifications</i>
-                </div>
+            <a class="nav-link text-white click" id="btn"href="?page=perfil_usu">
+                <!-- <div class="text-white text-center me-2 d-flex align-items-center justify-content-center"> -->
+                    <!-- <i class="material-icons opacity-10">notifications</i> -->
+                    <img src="../assets/img/icons/perfil.png" alt="" width="24rem">
+                <!-- </div> -->
                 <span class="nav-link-text ms-1">Perfil</span>
             </a>
         </li>
