@@ -10,14 +10,14 @@
     color: white;
 }
 .buttonfunc{
-    width: 11em;
-    height: 4.5em;
+    width: 14em;
+    height: 3.5em;
     margin-left: 85%;
 }
-@media (max-width:900px) {
-    .buttonfunc{
-        margin-left: 70%;
-    }
+.btnrel{
+    width: 10.5em;
+    margin-top: 1em;
+    margin-left: 1em;
 }
 .imgdash{
     height: 50px;
@@ -33,7 +33,9 @@ cardsbaixo{
 .carddash{
     margin-bottom: 2em;
 }
-
+.selectcard{
+    padding: 1em;
+}
 .mobile-menu{
     cursor: pointer;
     display: none;
@@ -47,27 +49,18 @@ cardsbaixo{
 .btnvaga{
     margin: 0.5em;
 }
-/* .sidenav{
-    height:100%;
-    width: 14em;
-    border-radius: 5%;
-    position: absolute;
-    top: 0.5vh;
-    bottom: 0.5vh;
-    left: 1vh;
-    
-} */
-/* @media(max-width:999px) {
-    .sidenav{
-        position:absolute;
-        top:1vh;
-        left:1vh;
-        bottom:1vh;
-        height: 100%;
-        width: 17vw;
+.addvaga{
+    padding: 1em;
+}
+.selectrel{
+    width: 9em;
+    height: 2.8em;
+}
+@media (max-width:900px) {
+    .buttonfunc{
+        margin-left: 70%;
     }
-} */
-
+}
 .meuModal{
     position: absolute !important;
     z-index : 10000 !important;

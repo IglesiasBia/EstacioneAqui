@@ -91,15 +91,27 @@
     echo "<div class='col-md-2'>" . $hrSaidaFinal . "</div></div>";
     echo "<div class='row'><div class='col-md-12'>-----------------------------------------------------------------------------------</div></div>";
     echo "<div class='row'><div class='col-md-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Placa</div>";
-    echo "<div class='col-md-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Chave</div></div>";
+    echo "<div class='col-md-2'>". $dadosTicket['placa_veic'] ."</div></div>";
+    echo "<div class='row'><div class='col-md-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Chave</div>";
+    if($dadosTicket['chave'] == 1){
+        echo "<div class='col-md-2'> Deixou </div></div>";
+    }else{
+        echo "<div class='col-md-2'> Não deixou </div></div>";
+    }
     echo "<div class='row'><div class='col-md-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Marca</div>";
-    echo "<div class='col-md-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Modelo</div></div>";
+    echo "<div class='col-md-2'>". $dadosCliVeic['marca_veic'] . "</div></div>";
+    echo "<div class='row'><div class='col-md-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Modelo</div>";
+    echo "<div class='col-md-2'>" . $dadosCliVeic['modelo_veic'] . "</div></div>";
     echo "<div class='row'><div class='col-md-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Pavimento</div>";
-    echo "<div class='col-md-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Vaga</div></div>"; 
+    echo "<div class='col-md-2'>" . $dadosVagasTicket['pav_vaga'] . "</div></div>";
+    echo "<div class='row'><div class='col-md-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Vaga</div>"; 
+    echo "<div class='col-md-2'>" . $dadosVagasTicket['setor_vaga'], $dadosVagasTicket['num_vaga'] . "</div></div>";
     echo "<div class='row'><div class='col-md-12'>-----------------------------------------------------------------------------------</div></div>"; 
     if($dadosCliVeic['cpf_cli'] != 0){
         echo "<div class='row'><div class='col-md-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Nome</div>";
-        echo "<div class='col-md-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>CPF</div></div>";
+        echo "<div class='col-md-2'>" . $dadosCliVeic['nome_cli'] . "</div></div>";
+        echo "<div class='row'><div class='col-md-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>CPF</div>";
+        echo "<div class='col-md-2'>" . $dadosCliVeic['cpf_cli'] . "</div></div>";
     }    
     echo "<div class='row'><div class='col-md-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Status Pagamento</div>";
     if($dadosTicket['status_pg'] == 0){
@@ -140,34 +152,6 @@
     }else{
 
     echo "<th class='text-secondary opacity-7'></div>";
-
-    
-    echo "<tr>";
-    
-
-    
-    
-    
-
-    
-
-    if($dadosTicket['chave'] == 1){
-        echo "<td> Deixou </td>";
-    }else{
-        echo "<td> Não deixou </td>";
-    }
-    echo "<td>" . $dadosTicket['placa_veic'] . "</td>";
-    echo "<td>" . $dadosCliVeic['marca_veic'] . "</td>";
-    echo "<td>" . $dadosCliVeic['modelo_veic'] . "</td>";
-    if($dadosCliVeic['cpf_cli'] != 0){
-        echo "<td>" . $dadosCliVeic['nome_cli'] . "</td>";
-        echo "<td>" . $dadosCliVeic['cpf_cli'] . "</td>";
-    }
-    echo "<td>" . $dadosVagasTicket['pav_vaga'] . "</td>";
-    echo "<td>" . $dadosVagasTicket['setor_vaga'], $dadosVagasTicket['num_vaga'] . "</td>";
-    
-
-    echo "</tr>";
     
 }
     echo "</div>";

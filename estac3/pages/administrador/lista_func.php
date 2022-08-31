@@ -8,11 +8,12 @@
 
 <!-- INICIO CONTENT -->
 <div class="container-fluid py-4 ">
-    <div class="row">
+    
      
         <!-- Chama o Formulário para adicionar funcionário -->
-         <a href="?page=fadd_func" class="btn bg-gradient-danger buttonfunc ">Novo Funcionário</a> 
-      
+      <div class="row"><a href="?page=fadd_func" class="btn bg-gradient-danger buttonfunc ">Novo Funcionário</a> </div>
+         
+      <div class="row">
         <div class="col-12">
           <div class="card my-4">
             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">

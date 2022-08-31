@@ -58,7 +58,7 @@
                       <div class="row">
                         <div class="form-group col-md-4">
                             <label for="tipo_veic">Tipo</label>
-                              <select class="form-control" name="tipo_veic">
+                              <select class="form-control selectcard" name="tipo_veic">
                                 <option> --------- </option>
                                 <option value="1">Carro</option>
                                 <option value="0">Motocicleta</option>
@@ -66,7 +66,7 @@
                         </div>
                         <div class="form-group col-md-4">
                           <label for="chave">Deixou Chave:</label>
-                            <select class="form-control" name="chave">
+                            <select class="form-control selectcard" name="chave">
                               <option> --------- </option>
                               <option value="1">Sim</option>
                               <option value="0">Não</option>
@@ -85,23 +85,8 @@
           </div>
           
           <div class="row">
-            <div class="col-md-12 tres">
-              <div class="card ">
-                <div class="card-body" >
-                  <form action="?page=faz_ticket" method="post">
-                    <h5 class="card-title">Digite a placa para gerar nota fiscal</h5>
-                    <div class="input-group mb-3">
-                      <input type="text" class="form-control" placeholder="Digite aqui"  aria-describedby="basic-addon2" name="placa_veic">
-                    </div>
-                    <button class="btn btn-danger" type="submit">Gerar</button>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="row">
-            <div class="col-md-12 tres">
+            
+          <div class="col-md-6 tres">
               <div class="card ">
                 <div class="card-body" >
                   <form action="?page=busca_vaga_veic" method="post">
@@ -114,6 +99,21 @@
                 </div>
               </div>
             </div>
+
+            <div class="col-md-6 tres">
+              <div class="card ">
+                <div class="card-body" >
+                  <form action="?page=faz_ticket" method="post">
+                    <h5 class="card-title">Digite a placa para gerar nota fiscal</h5>
+                    <div class="input-group mb-3">
+                      <input type="text" class="form-control" placeholder="Digite aqui"  aria-describedby="basic-addon2" name="placa_veic">
+                    </div>
+                    <button class="btn btn-danger" type="submit">Gerar</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          
           </div>
       
     </div>

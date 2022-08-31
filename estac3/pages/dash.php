@@ -9,6 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png"> -->
   <link rel="icon" type="image/png" href="./assets/img/logo provisória.png">
+  <link rel="shortcut icon" href="../assets/img/logos/logo.ico" type="image/x-icon">
   <title>
     Estacione Aqui
   </title>

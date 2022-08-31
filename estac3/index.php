@@ -9,6 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <link rel="shortcut icon" href="assets/img/logos/logo.ico" type="image/x-icon">
   <title>
     Estacione Aqui
   </title>
@@ -38,7 +39,7 @@
             <div class="card z-index-0 fadeIn3 fadeInBottom">
               <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                 <div class="bg-gradient-danger shadow-danger border-radius-lg py-3 pe-1">
-                  <img src="assets/img/logo-provisoria.png" height="100px" class="imglogo">
+                  <img src="assets/img/logos/logo.png" height="100px" class="imglogo">
                   <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">Login</h4>
                 </div>
               </div>

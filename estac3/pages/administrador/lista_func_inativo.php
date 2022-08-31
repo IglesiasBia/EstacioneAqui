@@ -10,7 +10,7 @@
     <div class="row">
 
         <!-- Chama o Formulário para adicionar funcionário -->
-        <a href="?page=fadd_func" class="btn bg-gradient-danger buttonfunc ">Novo Funcionário</a>
+        <div class="row"><a href="?page=fadd_func" class="btn bg-gradient-danger buttonfunc ">Novo Funcionário</a> </div>
 
       <div class="col-12">
         <div class="card my-4">

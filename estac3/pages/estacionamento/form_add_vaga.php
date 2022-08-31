@@ -44,14 +44,13 @@
 
 <div class="modal-dialog modal-lg">
 	<div class="modal-content">
-			<div id="top" class="row">
+		<div id="top" class="row addvaga">
 			<div class="col-md-11">
 				<h2>Vagas</h2>
 				<hr>
 			</div>
-
 		</div>
-		<form action="?page=insere_vaga" method="post"> 
+		<form action="?page=insere_vaga" class="addvaga" method="post"> 
 			<!-- 1ª LINHA -->	
 			<div class="row"> 
 				<div class="form-group col-md-3">
