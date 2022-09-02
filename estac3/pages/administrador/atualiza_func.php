@@ -1,6 +1,4 @@
 <?php
-        //include "../../base/con_escola.php";
-        //include "../../base/con.php";
         $id = $_POST["id_func"];
         
         //Peguei a data cadastro do banco, pois é imutável

@@ -46,7 +46,7 @@
       echo "</br>";
     }
     
-    if ($dadosPegaVagas["status_vaga"] == 0) {
+    if ($dadosVaga["status_vaga"] == 0) {
       echo "<button type='button' class='btn btn-success btnvaga'>
             <img src='../assets/img/icons/carlayout.png' width='30em'alt=''> " . $dadosVaga["setor_vaga"] . $dadosVaga["num_vaga"] . "
             </button>";

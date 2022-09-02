@@ -24,15 +24,8 @@
     $resultado3 = mysqli_query($con, $sql3);
     $row3 = mysqli_fetch_array($resultado3); 
 ?>
-<div><?php 
-// include "mensagens_estac.php"; 
-// include "./../base/mensagens.php"; 
-?> </div>
 
 <div id="container-fluid py-4">
-
-                <br><h3 class="page-header">Editar registro do Estacionamento - <?php echo $row["nome_estac"];?></h3>
-
                 <form action="?page=atualiza_estac" method="post">
                     <div class="row"> 
                         <div class="form-group col-md-4">
@@ -77,10 +70,18 @@
                     </div>
                     <hr>
                     <button type="submit" class="btn btn-danger">Alterar</button>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Adicionar nova vaga</button>  
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#NovaVaga" > Adicionar nova vaga</button> 
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#alterarLayout">Alterar layout</button>   
                 </form>
     
 </div>
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+
+<!-- Modal para adicionar nova vaga -->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="NovaVaga">
     <?php include "form_add_vaga.php"; ?>
+</div>
+
+<!-- Modal para alterar layout -->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="alterarLayout">
+    <?php include "opcoes-layout.php"; ?>
 </div>  

@@ -63,6 +63,11 @@
             include "../base/mensagens.php";
             include "../base/con_escola.php";
             include "../base/ch_pages.php";
+
+            if(isset($_GET['modal'])){
+              // include "busca_vaga_veic.php";
+            }
+
             
             // Adiciona cards dependendo da URL
             $link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
@@ -71,6 +76,11 @@
              }elseif($link == "http://localhost:8080/estacione/estac3/pages/dash.php?msg=1" || $link == "http://localhost:8080/estacione/estac3/pages/dash.php?msg=10"|| $link == "http://localhost:8080/estacione/estac3/pages/dash.php?msg=13"){
               include "../base/cards.php";
              }
+
+            //  if(str_contains($link,"modal=resultadoBuscaVaga")){
+            //   include "../base/cards.php";
+            //   include "../pages/geral/busca_vaga_veic.php";
+            //  }
             
           ?>
     </div>

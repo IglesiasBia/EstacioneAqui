@@ -89,12 +89,14 @@
           <div class="col-md-6 tres">
               <div class="card ">
                 <div class="card-body" >
-                  <form action="?page=busca_vaga_veic" method="post">
+                  <form action="?page=redireciona-modal" method="post">
+                    <?php $modal = "modal=resultadoBuscaVaga"?>
                     <h5 class="card-title">Digite a placa para buscar veículo</h5>
                     <div class="input-group mb-3">
                       <input type="text" class="form-control" placeholder="Digite aqui"  aria-describedby="basic-addon2" name="placa_veic">
+
                     </div>
-                    <button class="btn btn-danger" type="submit">Buscar</button>
+                    <button class="btn btn-danger" data-toggle="modal" data-target="#resultadoBuscaVaga" type="submit">Buscar</button>
                   </form>
                 </div>
               </div>
@@ -118,8 +120,10 @@
       
     </div>
     
-
-
+<!-- <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="resultadoBuscaVaga">
+    <?php include "busca_vaga_veic.php"; ?>
+</div> -->
+    
 
       <!-- PRIMEIRO
       <div class="container">

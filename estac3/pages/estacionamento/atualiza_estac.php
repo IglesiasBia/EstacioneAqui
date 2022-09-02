@@ -14,6 +14,8 @@
     $row = mysqli_fetch_array($resultado);
     $quantVaga = $row["total_vagas"];
 
+    
+
     $sql2 = "update estacionamento 
     set id_estac='1', nome_estac='$nome', cnpj_estac='$cnpj',num_estac='$num', preco_estac='$preco', frac_hr_estac='$fracao',quant_vaga='$quantVaga', preco_pernoite='$pernoite' 
     where id_estac='1';";  
