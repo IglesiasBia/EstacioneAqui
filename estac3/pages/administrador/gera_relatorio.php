@@ -49,6 +49,47 @@
                 $creditoTotal = $dadosRelatorioQuantidade["total_veiculos"];
 
 
+        }elseif($tipoRelatorio == "entradaSaida"){
+            $sqlListaVeiculos = mysqli_query($con, "select * from ticket join veiculo on ticket.placa_veic = veiculo.placa_veic where status_pg=1 and hr_saida between '$dtInicio' and '$dtFinal';");
+            
+            echo "
+            <div class='cabecalho'>
+            <div class='imgcab'><img src='../assets/img/logo-provisoria.png'></div>
+            <div class='titcab'>
+                Estacione Aqui
+                <br>
+                Relatório de entrada/saída
+            </div>
+            </div>";
+            // Cabecalho da tabela de relatório
+            echo "<table class='table align-items-center mb-0'>";
+            echo "<thead><tr>";
+            echo "<th class='text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Placa</th>";
+            echo "<th class='text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2'>Tipo Veículo</th>";
+            echo "<th class='text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 d-none d-md-table-cell'>Marca</th>";
+            echo "<th class='text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 d-none d-md-table-cell'>Modelo</th>";
+            echo "<th class='text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 d-none d-md-table-cell'>Hora Entrada</th>";
+            echo "<th class='text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 d-none d-md-table-cell'>Hora Saída</th>";
+            // echo "<th class='text-secondary opacity-7'>Hora Saída</th>";
+            echo "</tr></thead><tbody>";
+            while($resultadoListaVeiculos = mysqli_fetch_array($sqlListaVeiculos)){
+                echo "<tr>";
+                  echo "<td>".$resultadoListaVeiculos['placa_veic']."</td>";
+                  if($resultadoListaVeiculos['tipo_veic']==1){
+                    echo "<td>Carro</td>";
+                  }else{
+                    echo "<td>Moto</td>";
+                  }
+                  
+                  echo "<td class='d-none d-md-table-cell'>".$resultadoListaVeiculos['marca_veic']."</td>";
+                  echo "<td class='d-none d-md-table-cell'>".$resultadoListaVeiculos['modelo_veic']."</td>";
+                  echo "<td class='d-none d-md-table-cell'>".$resultadoListaVeiculos['hr_entrada']."</td>";
+                  echo "<td class='d-none d-md-table-cell'>".$resultadoListaVeiculos['hr_saida']."</td>";
+
+
+                }
+            echo "</tr></tbody></table>";
+
         }
     }
     

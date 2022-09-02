@@ -10,6 +10,7 @@
                 <option value="fatura">Fatura</option>
                 <option value="quantidade">Quantidade de veículos</option>
                 <option value="faturaEQuantidade">Fatura e quantidade</option>
+                <option value="entradaSaida">Entrada/Saída</option>
             </select>
         </div>
 

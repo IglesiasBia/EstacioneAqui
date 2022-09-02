@@ -28,7 +28,7 @@
                 $pagina = (isset($_GET['pagina'])) ? (int)$_GET['pagina'] : 1;
                 $inicio = ($quantidade * $pagina) - $quantidade;
 
-                $data_all = mysqli_query($con, "select * from funcionario order by id_func asc limit $inicio, $quantidade;") or die(mysqli_error($con));
+                $data_all = mysqli_query($con, "select * from funcionario where status_func= 0 order by id_func asc limit $inicio, $quantidade;") or die(mysqli_error($con));
                 // $data_all = mysqli_query($con, "select * from usuarios order by id;") or die(mysqli_error($con));
                 echo "<table class='table align-items-center mb-0'>";
                 echo "<thead><tr>";
