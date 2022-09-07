@@ -89,8 +89,8 @@
           <div class="col-md-6 tres">
               <div class="card ">
                 <div class="card-body" >
-                  <form action="?page=redireciona-modal" method="post">
-                    <?php $modal = "modal=resultadoBuscaVaga"?>
+                  <form action="?page=busca_vaga_veic" method="post">
+                    <?php //$modal = "modal=resultadoBuscaVaga"?>
                     <h5 class="card-title">Digite a placa para buscar veículo</h5>
                     <div class="input-group mb-3">
                       <input type="text" class="form-control" placeholder="Digite aqui"  aria-describedby="basic-addon2" name="placa_veic">
@@ -121,7 +121,32 @@
     </div>
     
 <!-- <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="resultadoBuscaVaga">
-    <?php include "busca_vaga_veic.php"; ?>
+    <?php //include "modal.php"; ?>
+    <div class="modal-dialog modal-lg">
+	<div class="modal-content">
+		<div id="top" class="row addvaga">
+			<div class="col-md-11">
+				<h2>Vagas</h2>
+				<hr>
+			</div>
+		</div>
+		<form action="?page=insere_vaga" class="addvaga" method="post">  -->
+			<!-- 1ª LINHA -->	
+			<?php 
+            // echo $modal; 
+	// 			echo "Pavimento: $pavVaga <br>";
+	// echo "Setor: $setorVaga <br>";
+	// echo "Número: $numVaga";
+			?>
+			<!-- <hr />
+			<div id="actions" class="row">
+				<div class="col-md-12">
+					<button type="submit" class="btn btn-dark">Salvar</button>
+				</div>
+			</div>
+		</form> 
+    </div>
+</div>
 </div> -->
     
 

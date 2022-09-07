@@ -3,23 +3,20 @@
     $tipoRelatorio = $_POST["tipoRelatorio"];
     $dtInicio = $_POST["dt_inicio"];
     $dtFinal = $_POST["dt_final"];
+    echo $tipoRelatorio;
+    echo $dtInicio;
+    echo $dtFinal;
 
-    if($tipoRelatorio == ""){
+    if($tipoRelatorio == "Selecione" || $dtInicio == "" || $dtFinal == ""){
         header("Location:  /estacione/estac3/pages/dash.php?page=form_relatorio&msg=16");
-    }elseif($tipoRelatorio != "" && $dtInicio != "" && $dtFinal != ""){
+    }elseif($tipoRelatorio != "Selecione" && $dtInicio != "" && $dtFinal != ""){
 
-        if($tipoRelatorio == "fatura" || $tipoRelatorio == "faturaEQuantidade"){
+        if($tipoRelatorio != "entradaSaida"){
             // Soma o valor total de todos os tickets que utilizaram o estacionamento em um determinado espaco de tempo
             $sqlRelatorioFatura = "select sum(valor_total_ticket) as credito_total from ticket where hr_saida between '$dtInicio' and '$dtFinal';";
             $resultadoRelatorioFatura = mysqli_query($con,$sqlRelatorioFatura);
             $dadosRelatorioFatura = mysqli_fetch_array($resultadoRelatorioFatura);
 
-            if($tipoRelatorio == "fatura"){
-                echo $dadosRelatorioFatura["credito_total"];
-            }
-            $creditoTotal = $dadosRelatorioFatura["credito_total"];
-            
-        }elseif($tipoRelatorio == "quantidade" || $tipoRelatorio == "faturaEQuantidade"){
             // Pega placa_veic que utilizaram o estacionamento durante um período de tempo 
             $resultadoRelatorioQuantidade = mysqli_query($con,"select placa_veic from ticket where hr_saida between '$dtInicio' and '$dtFinal';");
 
@@ -41,13 +38,16 @@
                     $moto += 1;
                 }
             }
-            echo "$carro carros e $moto motocicletas utilizaram o estacionamento durante o período de $dtInicio a $dtFinal";
 
-            if($tipoRelatorio == "quantidade"){
-                echo $dadosRelatorioQuantidade["total_veiculos"];
-                }
-                $creditoTotal = $dadosRelatorioQuantidade["total_veiculos"];
-
+            if($tipoRelatorio == "fatura"){
+                echo $dadosRelatorioFatura["credito_total"];
+            }elseif($tipoRelatorio == "quantidade"){
+                echo "$carro carros e $moto motocicletas utilizaram o estacionamento durante o período de $dtInicio a $dtFinal";
+            }else{
+                echo $dadosRelatorioFatura["credito_total"];
+                echo "$carro carros e $moto motocicletas utilizaram o estacionamento durante o período de $dtInicio a $dtFinal";
+            }
+            
 
         }elseif($tipoRelatorio == "entradaSaida"){
             $sqlListaVeiculos = mysqli_query($con, "select * from ticket join veiculo on ticket.placa_veic = veiculo.placa_veic where status_pg=1 and hr_saida between '$dtInicio' and '$dtFinal';");

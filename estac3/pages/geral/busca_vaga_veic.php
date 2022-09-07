@@ -1,5 +1,5 @@
 <?php
-	$placaVeic = $GET["placa_veic"];
+	$placaVeic = $_POST["placa_veic"];
 
 	// Pega id_vaga pela placa
 	$sqlBuscaIdVagaVeiculo = mysqli_query($con,"select id_vaga from ticket where placa_veic='$placaVeic' and status_pg=0;");
@@ -19,34 +19,15 @@
 	$setorVaga = $resultadoDadosVaga["setor_vaga"];
 	$numVaga = $resultadoDadosVaga["num_vaga"];
 
-	// echo "Pavimento: $pavVaga <br>";
-	// echo "Setor: $setorVaga <br>";
-	// echo "Número: $numVaga";
-
-	// header('Location: /estacione/estac3/pages/dash.php?modal='.$modal.'&placa='.$placaVeic);
 ?>
 
-<div class="modal-dialog modal-lg">
-	<div class="modal-content">
-		<div id="top" class="row addvaga">
-			<div class="col-md-11">
-				<h2>Vagas</h2>
-				<hr>
-			</div>
-		</div>
-		<form action="?page=insere_vaga" class="addvaga" method="post"> 
-			<!-- 1ª LINHA -->	
-			<?php echo $modal; 
-				echo "Pavimento: $pavVaga <br>";
-	echo "Setor: $setorVaga <br>";
-	echo "Número: $numVaga";
-			?>
-			<hr />
-			<div id="actions" class="row">
-				<div class="col-md-12">
-					<button type="submit" class="btn btn-dark">Salvar</button>
-				</div>
-			</div>
-		</form> 
-    </div>
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="resultadoBuscaVaga">
+    <?php  include "modal.php"; ?>
 </div>
+
+<!-- Faz modal abrir assim que a página carrega -->
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+   $('#resultadoBuscaVaga').modal('show');
+});
+</script>

@@ -21,6 +21,11 @@
                 <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">X</button></div>';
                 break;
             //Sobe alteração de senha
+            case "senhaVazia":
+                echo '	<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                A senha não pode ser nula.
+                <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">X</button></div>';
+                break;  
             case 4:
                 echo '	<div class="alert alert-success alert-dismissible fade show" role="alert">
                 Senha atualizada com sucesso.
@@ -53,6 +58,17 @@
                 Estacionamento atualizado com sucesso!
                 <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">X</button></div>';
                 break;
+            // Sobre inserir uma nova vaga
+            case "erroInserirVaga":
+                echo '	<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                Preencha todos os campos para inserir uma nova vaga.
+                <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">X</button></div>';
+                break;
+            case "sucessoInserirVaga":
+                echo '<div class="alert alert-info alert-dismissible fade show" role="alert">
+                Nova vaga inserida com sucesso!
+                <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">X</button></div>';
+            break;
             // Se existe ticket
             case 10:
                 echo '	<div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -90,9 +106,10 @@
             break;
             case 16:
                 echo '	<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                Selecione um tipo de relatório. 
+                Preencha todos os dados. 
                 <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">X</button></div>';
             break;
+
         }
         $msg = 0;
     }

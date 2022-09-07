@@ -3,7 +3,7 @@
   $link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
   if($_SESSION['UsuarioNivel'] == 1) {
-    if($link == "http://localhost:8080/estacione/estac3/pages/dash.php"){
+    if($link == "http://localhost:8080/estacione/estac3/pages/dash.php" || $link == "http://localhost:8080/estacione/estac3/pages/dash.php?page=busca_vaga_veic"){
       echo '<div class="container-fluid py-1 px-3">
               
               <nav aria-label="breadcrumb">
@@ -123,7 +123,7 @@
             </div>';
     }
   }elseif($_SESSION['UsuarioNivel'] == 2){
-    if($link == "http://localhost:8080/estacione/estac3/pages/dash.php"){
+    if($link == "http://localhost:8080/estacione/estac3/pages/dash.php" || $link == "http://localhost:8080/estacione/estac3/pages/dash.php?page=busca_vaga_veic"){
       echo '<div class="container-fluid py-1 px-3">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
