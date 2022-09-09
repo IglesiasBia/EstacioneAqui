@@ -5,6 +5,10 @@
     $marca = $_POST["marca_veic"];
     $modelo = $_POST["modelo_veic"];
 
+    if($placa == "" || $tipo == "" || $chave == "" || $marca == "" || $modelo == ""){
+        header('Location: http://localhost:8080/estacione/estac3/pages/dash.php?msg=dadosIncompletos');
+    }
+
     // Cria um novo cliente
     $sqlCriaCliente = "insert into cliente values(0,'Cliente não declarado','0');";
     $resultadoCriaCliente = mysqli_query($con, $sqlCriaCliente);

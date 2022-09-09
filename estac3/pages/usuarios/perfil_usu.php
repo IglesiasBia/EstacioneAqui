@@ -38,7 +38,7 @@
 		<div class="col-md-4">
 			<p><strong>Senha</strong></p>
 			<p><?php echo $row2['senha_func'];?></p>
-			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalExemplo">
+			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalExemplo">
 			Alterar senha</button>
 
             <!-- <a href="?page=form_altera_senha_usu" class="senha" data-bs-toggle="modal" data-bs-target="#final">Alterar senha</a> -->

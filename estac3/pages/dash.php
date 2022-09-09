@@ -63,25 +63,14 @@
             include "../base/mensagens.php";
             include "../base/con_escola.php";
             include "../base/ch_pages.php";
-
-            if(isset($_GET['modal'])){
-              // include "busca_vaga_veic.php";
-            }
-
             
             // Adiciona cards dependendo da URL
             $link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-            if($link == "http://localhost:8080/estacione/estac3/pages/dash.php" || $link == "http://localhost:8080/estacione/estac3/pages/dash.php?msg=10" || $link == "http://localhost:8080/estacione/estac3/pages/dash.php?msg=14" || $link == "http://localhost:8080/estacione/estac3/pages/dash.php?msg=15" || $link == "http://localhost:8080/estacione/estac3/pages/dash.php?msg=13" || $link =="http://localhost:8080/estacione/estac3/pages/dash.php?page=busca_vaga_veic"){
+            if(str_contains($link, "http://localhost:8080/estacione/estac3/pages/dash.php?msg=") || $link == "http://localhost:8080/estacione/estac3/pages/dash.php" || $link =="http://localhost:8080/estacione/estac3/pages/dash.php?page=busca_vaga_veic"){
               include "../base/cards.php";
-             }elseif($link == "http://localhost:8080/estacione/estac3/pages/dash.php?msg=1" || $link == "http://localhost:8080/estacione/estac3/pages/dash.php?msg=10"|| $link == "http://localhost:8080/estacione/estac3/pages/dash.php?msg=13" || $link =="http://localhost:8080/estacione/estac3/pages/dash.php?page=busca_vaga_veic"){
+            }elseif(str_contains($link, "http://localhost:8080/estacione/estac3/pages/dash.php?msg=") || $link =="http://localhost:8080/estacione/estac3/pages/dash.php?page=busca_vaga_veic" || $link == "http://localhost:8080/estacione/estac3/pages/dash.php"){
               include "../base/cards.php";
-             }
-
-            //  if(str_contains($link,"modal=resultadoBuscaVaga")){
-            //   include "../base/cards.php";
-            //   include "../pages/geral/busca_vaga_veic.php";
-            //  }
-            
+            }
           ?>
     </div>
     <!-- FIM CONTENT -->

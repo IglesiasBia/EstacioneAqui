@@ -27,51 +27,55 @@
 
 <div id="container-fluid py-4">
                 <form action="?page=atualiza_estac" method="post">
+                    <div class="row">
+                    <h3 class="page-header">Atualizar registro do Estacionamento </h3>
+                    </div>
                     <div class="row"> 
                         <div class="form-group col-md-4">
-                            <label for="id_estac">ID</label>
+                            <div class='text-secondary text-md font-weight-bolder opacity-7'>ID</div>
+                            <!-- <label for="id_estac">ID</label> -->
                             <input type="text" class="form-control" name="id_estac" value="<?php echo $row["id_estac"]; ?>" readonly>
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="nome">Nome Estacionamento</label>
+                            <div class='text-secondary text-md font-weight-bolder opacity-7'>Nome Estacionamento</div>
                             <input type="text" class="form-control" name="nome_estac" value="<?php echo $row["nome_estac"]; ?>">
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="sigla">CNPJ</label>
+                            <div class='text-secondary text-md font-weight-bolder opacity-7'>CNPJ</div>
                             <input type="text" class="form-control" name="cnpj_estac" value="<?php echo $row["cnpj_estac"]; ?>">
                         </div>
 
                     </div>
                     <div class="row">
                         <div class="form-group col-md-4">
-                            <label for="num_estac">Número do Estacionamento</label>
+                            <div class='text-secondary text-md font-weight-bolder opacity-7'>Número do Estacionamento</div>
                             <input type="text" class="form-control" name="num_estac" value="<?php echo $row["num_estac"]; ?>">
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="preco_estac">Preço Inicial</label>
+                            <div class='text-secondary text-md font-weight-bolder opacity-7'>Preço Inicial</div>
                             <input type="text" class="form-control" name="preco_estac" value="<?php echo $row["preco_estac"]; ?>">
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="frac_hr_estac">Fração por Hora</label>
+                            <div class='text-secondary text-md font-weight-bolder opacity-7'>Fração por Hora</div>
                             <input type="text" class="form-control" name="frac_hr_estac" value="<?php echo $row["frac_hr_estac"]; ?>">
                         </div>
 
                     </div>
                     <div class="row">
                         <div class="form-group col-md-4">
-                            <label for="sigla">Quantidade de vagas:</label>
+                            <div class='text-secondary text-md font-weight-bolder opacity-7'>Quantidade de Vagas</div>
                             <p>Carro: <?php echo $row2["total_vagas_carro"];?></p>
                             <p>Motocicleta: <?php echo $row3["total_vagas_moto"];?></p>
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="preco_pernoite">Preço Pernoite</label>
+                            <div class='text-secondary text-md font-weight-bolder opacity-7'>Preço Pernoite</div>
                             <input type="text" class="form-control" name="preco_pernoite" value="<?php echo $row["preco_pernoite"]; ?>">
                         </div>
                     </div>
                     <hr>
-                    <button type="submit" class="btn btn-danger">Alterar</button>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#NovaVaga" > Adicionar nova vaga</button> 
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#alterarLayout">Alterar layout</button>   
+                    <button type="submit" class="btn btn-dark">Alterar</button>
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#NovaVaga" > Adicionar nova vaga</button> 
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#alterarLayout">Alterar layout</button>   
                 </form>
     
 </div>
