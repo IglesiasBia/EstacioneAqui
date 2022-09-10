@@ -22,10 +22,10 @@
   // Pegar o primeiro pavimento
   $pavimento = $dadosPrimeiraVaga['pav_vaga'];
   echo "</br>";
-  echo "Pavimento: " . $pavimento;
+  echo " <p class='text-secondary fs-5 font-weight-bolder'>Pavimento:".$pavimento."</p>";
   echo "</br>";
   echo "</br>";
-  echo "Setor: " . $setor;
+  echo "<p class='text-secondary fs-5 font-weight-bolder'>Setor: " . $setor. "</p>";
   echo "</br>";
 
   while ($dadosVaga = mysqli_fetch_array($sqlPegaVagas)) {
@@ -35,14 +35,14 @@
       $pavimento = $dadosVaga["pav_vaga"];
       echo "</br>";
       echo "</br>";
-      echo "Pavimento: " . $pavimento;
+      echo "<p class='text-secondary fs-5 font-weight-bolder'>Setor: Pavimento: " . $pavimento."</p>";
       echo "</br>";
     }
 
     if ($dadosVaga["setor_vaga"] != $setor ) {
       $setor = $dadosVaga["setor_vaga"];
       echo "</br>";
-      echo "Setor: " . $setor;
+      echo "<p class='text-secondary fs-5 font-weight-bolder'>Setor: " . $setor."</p>";
       echo "</br>";
     }
     

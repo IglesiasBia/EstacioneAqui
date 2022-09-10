@@ -10,64 +10,96 @@
 ?>
 
 <div id="main" class="container-fluid">
-	<h3 class="page-header">Visualizar registro do Usuário - <?php echo $nome; ?> </h3>
+	<div class="row"><h3 class="page-header estactitle">Seja bem vindo(a)  <?php echo $nome; ?>! </h3></div>
+		
+		<div class="card my-4">
+        	<div class="card-body px-0 pb-2 ">
+			<div class="cardperfil">
+				<div class="row">
+					<div class="col-md-4">
+						<img src="../assets/img/bea.png" class="rounded-circle imgperfil">
+					</div>
+					<div class="col-md-4">
+						<p class="fs-4"><strong>ID</strong></p>
+						<p class="fs-4 estacdados"><?php echo $row['id_func'];?></p>
+					</div>
+					<div class="col-md-4">
+						<p class="fs-4"><strong>Nome Completo</strong></p>
+						<p class="fs-4 estacdados"><?php echo $row['nome_func'];?></p>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-md-4">
+						<p class="fs-4"><strong>CPF</strong></p>
+						<p class="fs-4 estacdados"><?php echo $row['cpf_func'];?></p>
+					</div>
+					<div class="col-md-4">
+						<p class="fs-4"><strong>E-mail</strong></p>
+						<p class="fs-4 estacdados"><?php echo $row['email_func'];?></p>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-md-3">
+						<p class="fs-4"><strong>Usuário</strong></p>
+						<p class="fs-4 estacdados"><?php echo $row2['func_usu'];?></p>
+					</div>
+					<div class="col-md-3">
+						<p class="fs-4"><strong>Senha</strong></p>
+						<p class="fs-4 estacdados"><?php echo $row2['senha_func'];?></p>
+						<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalExemplo">
+						Alterar senha</button>
+
+            			<!-- <a href="?page=form_altera_senha_usu" class="senha" data-bs-toggle="modal" data-bs-target="#final">Alterar senha</a> -->
+						<!-- <button type="button" class="btn btn-primary botao" data-bs-toggle="modal" data-bs-target="#final">Finalizar</button> -->
+					</div>
+					<div class="col-md-3">
+						<p class="fs-4"><strong>Nível de Acesso</strong></p>
+            			<?php
+                			if($row["nivel_func"] == 1){
+                    			echo "<td>
+								<p class='fs-4 estacdados'>Funcionário Usuário</p></td>";
+                			}else if($row["nivel_func"] == 2){
+                    			echo "<td><p class='fs-4 estacdados'>Administrador </p></td>";
+                			}
+            			?>
+					</div>
+					<div class="col-md-3">
+						<p class="fs-4"><strong>Status</strong></p>
+						<?php 
+							if($row['status_func'] == 1){
+								echo "<td><p class='fs-4 estacdados'>Ativo</p></td>";
+							}elseif($row['status_func'] ==  0){
+								echo "<td><p class='fs-4 estacdados'>Inativo</p></td>";
+							}
+						?>
+					</div>
+				</div>
+
+				</div>
+        	</div>
+        </div>
+	
+		  
+	
+	
+	
 	<div class="row">
-		<div class="col-md-4">
-			<p><strong>ID</strong></p>
-			<p><?php echo $row['id_func'];?></p>
-		</div>
-		<div class="col-md-4">
-			<p><strong>Nome Completo</strong></p>
-			<p><?php echo $row['nome_func'];?></p>
-		</div>
-		<div class="col-md-4">
-			<p><strong>CPF</strong></p>
-			<p><?php echo $row['cpf_func'];?></p>
-		</div>
+		
+		
+		
 	</div>
 	
 	<div class="row">
-		<div class="col-md-4">
-			<p><strong>E-mail</strong></p>
-			<p><?php echo $row['email_func'];?></p>
-		</div>
-		<div class="col-md-4">
-			<p><strong>Usuário</strong></p>
-			<p><?php echo $row2['func_usu'];?></p>
-		</div>
-		<div class="col-md-4">
-			<p><strong>Senha</strong></p>
-			<p><?php echo $row2['senha_func'];?></p>
-			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalExemplo">
-			Alterar senha</button>
-
-            <!-- <a href="?page=form_altera_senha_usu" class="senha" data-bs-toggle="modal" data-bs-target="#final">Alterar senha</a> -->
-			<!-- <button type="button" class="btn btn-primary botao" data-bs-toggle="modal" data-bs-target="#final">Finalizar</button> -->
-
-		</div>
+		
+		
+		
 	</div>
 	
 	<div class="row">
-		<div class="col-md-4">
-			<p><strong>Nível de Acesso</strong></p>
-            <?php
-                if($row["nivel_func"] == 1){
-                    echo "<td>Funcionário Usuário</td>";
-                }else if($row["nivel_func"] == 2){
-                    echo "<td>Administrador</td>";
-                }
-            ?>
-		</div>
-		<div class="col-md-4">
-			<p><strong>Status</strong></p>
-			<?php 
-				if($row['status_func'] == 1){
-					echo "<td>Ativo</td>";
-				}elseif($row['status_func'] ==  0){
-					echo "<td>Inativo</td>";
-				}
-			?>
-		</div>
+		
+		
 	</div>
 	<hr/>
 	<!-- <div id="actions" class="row">

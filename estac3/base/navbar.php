@@ -26,8 +26,8 @@
                     </a>
                   </li>
                   <li class="nav-item d-flex align-items-center">
-                    <a class="dropdown-item" href="../base/logout.php" data-target="#logoutModal">
-                      <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                    <a class="dropdown-item " href="../base/logout.php" data-target="#logoutModal">
+                      <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400 "></i>
                       Logout
                     </a>
                   </li>

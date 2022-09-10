@@ -26,50 +26,50 @@
 ?>
 
 <div id="container-fluid py-4">
-                <form action="?page=atualiza_estac" method="post">
-                    <div class="row">
-                    <h3 class="page-header">Atualizar registro do Estacionamento </h3>
+            <form action="?page=atualiza_estac" method="post">
+                <div class="row">
+                <h3 class="page-header estactitle">Atualizar Registro do Estacionamento </h3>
+                </div>
+                <div class="row"> 
+                    <div class="form-group col-md-4">
+                        <p class="fs-4"><strong>ID</strong></p>
+                        <!-- <label for="id_estac">ID</label> -->
+                        <input type="text" class="form-control fs-4 estacdados" name="id_estac" value="<?php echo $row["id_estac"]; ?>" readonly>
                     </div>
-                    <div class="row"> 
-                        <div class="form-group col-md-4">
-                            <div class='text-secondary text-md font-weight-bolder opacity-7'>ID</div>
-                            <!-- <label for="id_estac">ID</label> -->
-                            <input type="text" class="form-control" name="id_estac" value="<?php echo $row["id_estac"]; ?>" readonly>
-                        </div>
-                        <div class="form-group col-md-4">
-                            <div class='text-secondary text-md font-weight-bolder opacity-7'>Nome Estacionamento</div>
-                            <input type="text" class="form-control" name="nome_estac" value="<?php echo $row["nome_estac"]; ?>">
-                        </div>
-                        <div class="form-group col-md-4">
-                            <div class='text-secondary text-md font-weight-bolder opacity-7'>CNPJ</div>
-                            <input type="text" class="form-control" name="cnpj_estac" value="<?php echo $row["cnpj_estac"]; ?>">
-                        </div>
+                    <div class="form-group col-md-4">
+                        <p class="fs-4"><strong>Nome Estacionamento</strong></p>
+                        <input type="text" class="form-control fs-4 estacdados" name="nome_estac" value="<?php echo $row["nome_estac"]; ?>">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <p class="fs-4"><strong>CNPJ</strong></p>
+                        <input type="text" class="form-control fs-4 estacdados" name="cnpj_estac" value="<?php echo $row["cnpj_estac"]; ?>">
+                    </div>
+
+                    </div>
+                <div class="row">
+                    <div class="form-group col-md-4">
+                    <p class="fs-4"><strong>Número do Estacionamento</strong></p>
+                        <input type="text" class="form-control fs-4 estacdados" name="num_estac" value="<?php echo $row["num_estac"]; ?>">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <p class="fs-4"><strong>Preço do Estacionamento</strong></p>
+                        <input type="text" class="form-control fs-4 estacdados" name="preco_estac" value="<?php echo $row["preco_estac"]; ?>">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <p class="fs-4"><strong>Fração por Hora</strong></p>
+                        <input type="text" class="form-control fs-4 estacdados" name="frac_hr_estac" value="<?php echo $row["frac_hr_estac"]; ?>">
+                    </div>
 
                     </div>
                     <div class="row">
                         <div class="form-group col-md-4">
-                            <div class='text-secondary text-md font-weight-bolder opacity-7'>Número do Estacionamento</div>
-                            <input type="text" class="form-control" name="num_estac" value="<?php echo $row["num_estac"]; ?>">
+                            <p class="fs-4"><strong>Quantidade de Vagas</strong></p>
+                            <p class="fs-4">Carro: <?php echo $row2["total_vagas_carro"];?></p>
+                            <p class="fs-4 estacdados">Motocicleta: <?php echo $row3["total_vagas_moto"];?></p>
                         </div>
                         <div class="form-group col-md-4">
-                            <div class='text-secondary text-md font-weight-bolder opacity-7'>Preço Inicial</div>
-                            <input type="text" class="form-control" name="preco_estac" value="<?php echo $row["preco_estac"]; ?>">
-                        </div>
-                        <div class="form-group col-md-4">
-                            <div class='text-secondary text-md font-weight-bolder opacity-7'>Fração por Hora</div>
-                            <input type="text" class="form-control" name="frac_hr_estac" value="<?php echo $row["frac_hr_estac"]; ?>">
-                        </div>
-
-                    </div>
-                    <div class="row">
-                        <div class="form-group col-md-4">
-                            <div class='text-secondary text-md font-weight-bolder opacity-7'>Quantidade de Vagas</div>
-                            <p>Carro: <?php echo $row2["total_vagas_carro"];?></p>
-                            <p>Motocicleta: <?php echo $row3["total_vagas_moto"];?></p>
-                        </div>
-                        <div class="form-group col-md-4">
-                            <div class='text-secondary text-md font-weight-bolder opacity-7'>Preço Pernoite</div>
-                            <input type="text" class="form-control" name="preco_pernoite" value="<?php echo $row["preco_pernoite"]; ?>">
+                            <p class="fs-4"><strong>Preço Pernoite</strong></p>
+                            <input type="text" class="form-control fs-4 estacdados" name="preco_pernoite" value="<?php echo $row["preco_pernoite"]; ?>">
                         </div>
                     </div>
                     <hr>

@@ -11,14 +11,14 @@
     
      
         <!-- Chama o Formulário para adicionar funcionário -->
-      <div class="row"><a href="?page=fadd_func" class="btn bg-gradient-danger buttonfunc ">Novo Funcionário</a> </div>
+      <div class="row"><a href="?page=fadd_func" class="btn bg-gradient-danger fs-6 buttonfunc ">Novo Funcionário</a> </div>
          
       <div class="row">
         <div class="col-12">
           <div class="card my-4">
             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
               <div class="bg-gradient-danger shadow-danger border-radius-lg pt-4 pb-3">
-                <h6 class="text-white text-capitalize ps-3">Funcionários</h6>
+                <h6 class="text-white text-capitalize ps-3 fs-4">Funcionários</h6>
               </div>
             </div>
             <div class="card-body px-0 pb-2">
@@ -34,11 +34,11 @@
                 // $data_all = mysqli_query($con, "select * from usuarios order by id;") or die(mysqli_error($con));
                 echo "<table class='table align-items-center mb-0'>";
                 echo "<thead><tr>";
-                echo "<th class='text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>ID</th>";
-                echo "<th class='text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2'>Nome do funcionário</th>";
-                echo "<th class='text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 d-none d-md-table-cell'>E-mail</th>";
-                echo "<th class='text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 d-none d-md-table-cell'>Nível</th>";
-                echo "<th class='text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 d-none d-md-table-cell'>Status</th>";
+                echo "<th class='text-uppercase text-secondary fs-5 font-weight-bolder opacity-7'>ID</th>";
+                echo "<th class='text-uppercase text-secondary fs-5 font-weight-bolder opacity-7 ps-2'>Nome do funcionário</th>";
+                echo "<th class='text-center text-uppercase text-secondary fs-5 font-weight-bolder opacity-7 d-none d-md-table-cell'>E-mail</th>";
+                echo "<th class='text-center text-uppercase text-secondary fs-5 font-weight-bolder opacity-7 d-none d-md-table-cell'>Nível</th>";
+                echo "<th class='text-center text-uppercase text-secondary fs-5 font-weight-bolder opacity-7 d-none d-md-table-cell'>Status</th>";
                 echo "<th class='text-secondary opacity-7'></th>";
                 echo "</tr></thead><tbody>";
                

@@ -9,15 +9,15 @@
 		<!-- 1ª LINHA -->	
 		<div class="row"> 
 			<div class="form-group col-md-3">
-				<label for="placa_veic">Placa</label>
-				<input type="text" class="form-control" name="placa_veic">
+				<label  class="fs-4" for="placa_veic">Placa</label>
+				<input type="text" class="form-control fs-4" name="placa_veic">
 			</div>
 		</div>
 
 		<hr />
 		<div id="actions" class="row">
 			<div class="col-md-12">
-				<button type="submit" class="btn btn-dark">Buscar</button>
+				<button type="submit" class="btn btn-dark fs-6">Buscar</button>
 				<!-- <a href="dash.php" class="btn btn-danger">Cancelar</a> -->
 			</div>
 		</div>

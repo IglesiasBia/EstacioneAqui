@@ -4,7 +4,7 @@
 <!-- PRIMEIRA LINHA -->
     <div class="row">  
         <div class="form-group col-md-4">
-            <label for="dt_inicio">Tipo Relatório</label>
+            <label class="fs-4"for="dt_inicio">Tipo Relatório</label>
             <select class="form-select selectrel" name="tipoRelatorio" id="" required>
                 <option selected>Selecione</option>
                 <option value="fatura">Fatura</option>
@@ -14,13 +14,13 @@
             </select>
         </div>
 
-        <div class="form-group col-md-4">
-            <label for="dt_inicio">Data Inicio</label>
+        <div class="form-group col-md-4 ">
+            <label class="fs-4" for="dt_inicio">Data Inicio</label>
             <input type="date" name="dt_inicio">
         </div>
 
-        <div class="form-group col-md-4">
-            <label for="dt_final">Data Final</label>
+        <div class="form-group col-md-4 ">
+            <label class="fs-4" for="dt_final">Data Final</label>
             <input type="date" name="dt_final">
         </div>
     </div>

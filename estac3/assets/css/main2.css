@@ -12,7 +12,7 @@
 .buttonfunc{
     width: 14em;
     height: 3.5em;
-    margin-left: 85%;
+    margin-left: 78%;
 }
 .btnrel{
     width: 10.5em;
@@ -27,6 +27,13 @@
     margin-top: 0.6em;
     margin-bottom: 0.6em;
 }
+.estactitle{
+    margin-bottom: 2em;
+    
+}
+.estacdados{
+    margin-bottom: 1em;
+}
 cardsbaixo{
     margin-bottom: 2em;
 }
@@ -35,6 +42,7 @@ cardsbaixo{
 }
 .selectcard{
     padding: 1em;
+    border-radius: 1em;
 }
 .mobile-menu{
     cursor: pointer;
@@ -52,9 +60,16 @@ cardsbaixo{
 .cardpadding{
     padding: 1em;
 }
+.imgperfil{
+    height: 15em;
+    width: 16em;
+}
 .selectrel{
-    width: 9em;
+    width: 7em;
     height: 2.8em;
+}
+.cardperfil{
+    padding: 2em;
 }
 @media (max-width:900px) {
     .buttonfunc{
