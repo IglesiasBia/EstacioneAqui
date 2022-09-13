@@ -1,4 +1,3 @@
-<!-- Quero que seja um modal -->
 <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -14,10 +13,12 @@
 			<div class="form-group col-md-3">
 				<label for="senha">Nova senha</label>
 				<input type="text" class="form-control" name="senha">
+        <label for="file">Nova foto de perfil</label>
+        <input id="uploadImage" type="file" name="foto" id="file" type="hidden">
 			</div>
 
 			<hr />
-			<button type="submit" class="btn btn-dark">Alterar senha</button>
+			<button type="submit" class="btn btn-dark">Salvar</button>
     </form>
 </div>
       </div>

@@ -26,8 +26,12 @@
 					<input type="text" class="form-control" name="setor_vaga">
 				</div>
 				<div class="form-group col-md-3">
-					<label for="num_vaga">Número Vaga</label>
-					<input type="text" class="form-control" name="num_vaga">
+					<label for="num_vaga">Número Vaga Inicial</label>
+					<input type="number" class="form-control" name="num_vaga_inicial" min="1">
+				</div>
+				<div class="form-group col-md-3">
+					<label for="num_vaga">Número Vaga Final</label>
+					<input type="number" class="form-control" name="num_vaga_final" min="0">
 				</div>
 			</div>
 			<hr />

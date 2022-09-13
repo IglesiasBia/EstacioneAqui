@@ -69,6 +69,9 @@
             case "altera_layout":
                 include "estacionamento/altera_layout.php";
             break;
+            case "layout":
+                include "estacionamento/layout.php";
+            break;
 
             //Parte funcionario
                 case "perfil_usu":

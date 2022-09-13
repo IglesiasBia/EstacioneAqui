@@ -74,5 +74,14 @@
                 <span class="nav-link-text ms-1 ">Relatório</span>
             </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link text-white click" id="btn"href="?page=layout">
+                <!-- <div class="text-white text-center me-2 d-flex align-items-center justify-content-center"> -->
+                    <!-- <i class="material-icons opacity-10">notifications</i> -->
+                    <img src="../assets/img/icons/relatorio.png" alt="" width="24rem">
+                <!-- </div> -->
+                <span class="nav-link-text ms-1 "> TESTE Layout</span>
+            </a>
+        </li>
       </ul>
     </div>

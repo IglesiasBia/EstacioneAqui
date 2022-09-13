@@ -64,6 +64,22 @@
                 <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">X</button></div>';
                 break;
             // Sobre inserir uma nova vaga
+            // RAPHELA ME AJUDA A ACHAR UM TEXTO MELHOR PARA ESSAS MENSAGEM
+            case "numFinalMenorNumInicial":
+                echo '	<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                O número da vaga final deve ser maior que número o número da vaga inicial!
+                <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">X</button></div>';
+            break;
+            case "numVagaInvalido":
+                echo '	<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                O número da vaga inicial deve ser somente um número maior que a última vaga existente
+                <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">X</button></div>';
+            break;
+            case "VagaExistente":
+                echo '	<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    Vaga já existente.
+                <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">X</button></div>';
+            break;
             case "erroInserirVaga":
                 echo '	<div class="alert alert-danger alert-dismissible fade show" role="alert">
                 Preencha todos os campos para inserir uma nova vaga.

@@ -89,3 +89,13 @@
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="alterarLayout">
     <?php include "opcoes-layout.php"; ?>
 </div>  
+
+<script>
+    function exibeInput(){
+    console.log("oi");
+    // if (document.getElementById("layout").value == "1")
+    //   document.getElementById("layout2").visibility = "hidden";
+
+    //   document.getElementById("layout2").visibility = "visible";
+}
+</script>
