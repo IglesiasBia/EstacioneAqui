@@ -1,5 +1,5 @@
 <div class="modal-dialog modal-lg">
-	<div class="modal-content">
+	<div class="modal-content cardpadding">
 		<div id="top" class="row addvaga">
 			<div class="col-md-11">
 				<h2>Layout das Vagas</h2>

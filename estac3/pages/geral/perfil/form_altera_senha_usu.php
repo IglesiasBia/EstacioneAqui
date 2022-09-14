@@ -18,7 +18,7 @@
 			</div>
 
 			<hr />
-			<button type="submit" class="btn btn-dark">Salvar</button>
+			<button type="submit" class="btn btn-danger">Salvar</button>
     </form>
 </div>
       </div>
