@@ -34,7 +34,7 @@
                 </ul>
               </div>
             </div>';
-    }elseif($link == "http://localhost:8080/estacione/estac3/pages/dash.php?page=form_att_cliente" || $link == "http://localhost:8080/estacione/estac3/pages/dash.php?page=form_atualiza_vaga_cliente"){
+    }elseif($link == "http://localhost:8080/estacione/estac3/pages/dash.php?page=busca_cliente_atualizar" || $link == "http://localhost:8080/estacione/estac3/pages/dash.php?page=form_atualiza_dados_cliente"){
       echo '<div class="container-fluid py-1 px-3">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
@@ -268,7 +268,7 @@
                 </ul>
               </div>
             </div>';
-    }    elseif($link == "http://localhost:8080/estacione/estac3/pages/dash.php?page=form_att_cliente" || $link == "http://localhost:8080/estacione/estac3/pages/dash.php?page=form_atualiza_vaga_cliente"){
+    }    elseif($link == "http://localhost:8080/estacione/estac3/pages/dash.php?page=busca_cliente_atualizar" || $link == "http://localhost:8080/estacione/estac3/pages/dash.php?page=form_atualiza_dados_cliente"){
       echo '<div class="container-fluid py-1 px-3">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">

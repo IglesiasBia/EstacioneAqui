@@ -1,7 +1,9 @@
 <?php
-// MAdar $quantidadeLinhas para o banco
+
+    $quantidadePavimentos = $_POST["quantidadePavimentos"];
 
 ?>
+
 
 <div class="modal-dialog modal-lg ">
 	<div class="modal-content cardpadding">
@@ -21,22 +23,22 @@
 			</div>
 		</div>
 		<!-- 1ª LINHA -->
-		<form action="?page=insere_dados_layout" method="post">
+		<form action="?page=insere_setor_layout" method="post">
 		<?php
-		echo $quantidadeLinhas ;
-		$contador = 1;
-		while ($contador <= $quantidadeLinhas) {
-			echo
+        $contador = 1;
+        while( $contador <= $quantidadePavimentos){
+            echo
 			'<div class="row">
 				<div class="form-group col-md-12">
 					<label for="">
-						Digite o número de vagas na linha ' . $contador . '
+						Quantas linhas/setores existem no pavimento ' . $contador . '
 					</label>
 					<input type="text" name="vagasLinha' . $contador . '">
 				</div>
 			</div>';
 			$contador++;
-		}
+        }
+
 		?>
 		<button type="submit" class="btn btn-danger">Salvar</button>
 		</form>

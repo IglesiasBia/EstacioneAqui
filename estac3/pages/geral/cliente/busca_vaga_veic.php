@@ -22,7 +22,7 @@
 ?>
 
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="resultadoBuscaVaga">
-    <?php  include "modal.php"; ?>
+    <?php  include "modal_dados_vaga_cliente.php"; ?>
 </div>
 
 <!-- Faz modal abrir assim que a página carrega -->

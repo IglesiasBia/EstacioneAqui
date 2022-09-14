@@ -1,15 +1,10 @@
 <?php
   	$nivel_necessario = 2;
     include "../base/testa_nivel.php";
-    //include "../base/con.php"; 
-    //include "../base/con_escola.php";
-    // include "../base/ch_pages.php";
 ?>
 
 <!-- INICIO CONTENT -->
 <div class="container-fluid py-4 ">
-    
-     
         <!-- Chama o Formulário para adicionar funcionário -->
       <div class="row"><a href="?page=fadd_func" class="btn bg-gradient-danger fs-6 buttonfunc ">Novo Funcionário</a> </div>
          
@@ -109,5 +104,5 @@
           ?>	
         </div>
         <a href="?page=lista_func_inativo" class="btn btn-danger pull-right h2">Inativos</a>  
-  </div><!--bottom-->
+  </div>
  

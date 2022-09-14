@@ -1,5 +1,6 @@
 <?php
-    include "base/ch_pages.php";
+include "base/ch_pages.php";
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -23,7 +24,7 @@
   <!-- Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
   <!-- CSS Files -->
-  <link  href="assets/css/main.css" rel="stylesheet" />
+  <link href="assets/css/main.css" rel="stylesheet" />
 </head>
 
 <body class="bg-gray-200">
@@ -44,13 +45,16 @@
                 </div>
               </div>
               <div class="card-body">
+                <?php
+                  include "./base/mensagens.php";
+                ?>
                 <form action="?page=validacao" method="post" class=" user login100-form validate-form p-b-33 p-t-5">
                   <form role="form" class="text-start">
                     <div class="input-group input-group-outline my-3">
                       <input type="text" class="form-control" name="usuario" placeholder="usuário" id="usuario" required>
                     </div>
                     <div class="input-group input-group-outline mb-3">
-                      <input type="password" class="form-control" name="senha" placeholder="senha" required> 
+                      <input type="password" class="form-control" name="senha" placeholder="senha" required>
                     </div>
                     <div class="text-center">
                       <button type="submit" class="btn bg-gradient-danger w-100 my-4 mb-2">Entrar</button>
@@ -92,4 +96,5 @@
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/main.js"></script>
 </body>
+
 </html>

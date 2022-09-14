@@ -1,7 +1,4 @@
 <?php
-    //include "../../base/con_escola.php";
-    //include "../../base/con.php";
-
     $nome = $_POST["nome_func"];
     
     $nivel = $_POST["nivel_func"];

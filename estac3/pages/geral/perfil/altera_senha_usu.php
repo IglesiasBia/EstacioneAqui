@@ -3,10 +3,10 @@
     $senha = $_POST["senha"];
 
 
-    $file = $_FILES["local_doc"]["tmp_name"];
-    $dir = "estacione/estac3/assets/img/foto-perfil" . $_FILES["local_doc"]["name"];
+    // $file = $_FILES["local_doc"]["tmp_name"];
+    // $dir = "estacione/estac3/assets/img/foto-perfil" . $_FILES["local_doc"]["name"];
 
-    copy($file, $dir);
+    // copy($file, $dir);
     // Mensagem de erro se a senha for nula
     if($senha == ""){
         header('Location: http://localhost:8080/estacione/estac3/pages/dash.php?page=perfil_usu&msg=senhaVazia');

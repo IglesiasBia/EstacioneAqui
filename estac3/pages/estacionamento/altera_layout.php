@@ -1,6 +1,10 @@
 <?php
     $layout = $_POST["layout"];
     
+    if($layout == "1"){
+        $quantidadeLinhas = $_POST["quantidadeLinhas"];
+        
+    }
     // $sqlEstacionamentoLayout = mysqli_query($con, "UPDATE estacionamento SET tipo_layout = ".$layout.";");
 
     // if($layout == 1){
@@ -9,13 +13,13 @@
 ?>
 
 
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="configLayout">
-    <?php  include "modal-config-layout.php"; ?>
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="dadosPavimento">
+    <?php  include "modal_dados_pavimento.php"; ?>
 </div>
 
 <!-- Faz modal abrir assim que a página carrega -->
 <script>
 document.addEventListener("DOMContentLoaded", function(){
-   $('#configLayout').modal('show');
+   $('#dadosPavimento').modal('show');
 });
 </script>

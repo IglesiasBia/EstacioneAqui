@@ -1,4 +1,8 @@
+<!-- NAO SEI SE USO ISSO -->
+
+
 <?php
+
     $placa = $_POST["placa_veic"];
 
     //Pega pela placa os dados da tebela veículo e cliente com o mesmo id 
@@ -27,7 +31,7 @@
     $vagasTicket = mysqli_fetch_array($resultadoVagasTicket);
 
     if($veiculoCliente == 0){
-        header('Location: http://localhost:8080/estacione/estac3/pages/dash.php?page=form_att_cliente&msg=10');
+        header('Location: http://localhost:8080/estacione/estac3/pages/dash.php?page=busca_cliente_atualizar&msg=10');
         mysqli_close($con);
     }
 ?>

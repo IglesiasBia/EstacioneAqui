@@ -1,4 +1,8 @@
-
+<?php
+	// Somente nível administrador possui acesso
+  	$nivel_necessario = 2;
+    include "../base/testa_nivel.php";
+?> 
 <form action="?page=gera_relatorio" method="post">
    
 <!-- PRIMEIRA LINHA -->

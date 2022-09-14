@@ -29,25 +29,23 @@
                     <input type="radio" id="layout6" name="layout" value="6">
                 </div>
             </div>
+            <div class="row"> 
+                <div class="form-group col-md-4" id="quantidadePavimentos" style="display: none;">
+                    <label for="quantidadePavimentos">Insira quantos pavimentos existem
+                    
+                    </label>
+                    <input type="text"  name="quantidadePavimentos" >
+                    
+                </div>
+            </div>
+
 			<hr />
 			<div id="actions" class="row">
 				<div class="col-md-12">
-                <button class="btn btn-danger" data-toggle="modal" data-target="#configLayout" type="submit">Buscar</button>
+                <button class="btn btn-danger" data-toggle="modal" data-target="#dadosPavimento" type="submit">Buscar</button>
 				</div>
 			</div>
 		</form> 
     </div>
 </div>
 
-<!-- <script src="exibe_input.js"></script> -->
-    <!-- // console.log("oi");
-    // function exibeInput(){
-    //     console.log("vai");
-    // if (document.getElementById("layout").value == "1")
-    // //   document.getElementById("layout2").visibility = hidden;
-    // //   document.getElementById("layout2").style.display = none;
-    //   let teste = document.getElementsByClassName("form-group col-md-4");
-    //   teste.innerHTML ="Hello"
-
-    //   document.getElementById("layout2").visibility = visible;
-// } -->

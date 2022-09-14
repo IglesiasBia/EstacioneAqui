@@ -51,10 +51,10 @@
     $resultado = mysqli_query($con, $sqlTicket);
 
     if($resultado){
-        header('Location: http://localhost:8080/estacione/estac3/pages/dash.php?page=form_att_cliente&msg=6');
+        header('Location: http://localhost:8080/estacione/estac3/pages/dash.php?page=busca_cliente_atualizar&msg=6');
         mysqli_close($con);
     }else{
-        header('Location: http://localhost:8080/estacione/estac3/pages/dash.php?page=form_att_cliente&msg=7');
+        header('Location: http://localhost:8080/estacione/estac3/pages/dash.php?page=busca_cliente_atualizar&msg=7');
     }
 
 ?>

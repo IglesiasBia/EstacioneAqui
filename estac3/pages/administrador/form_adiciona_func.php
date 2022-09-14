@@ -1,3 +1,9 @@
+<?php
+	// Somente nível administrador possui acesso
+  	$nivel_necessario = 2;
+    include "../base/testa_nivel.php";
+?>
+
 <div id="main" class="container-fluid">
  	<div id="top" class="row">
 		<div class="col-md-11">
@@ -45,20 +51,6 @@
 				<label for="status_func">Status</label><br>
 				<input type="radio" name="status_func" value="1"> Ativo
 				<input type="radio" name="status_func" value="0"> Inativo
-				<!-- <select class="form-control" name="status_func">
-					<option> --------- </option>
-					<option value="1">Ativo</option>
-					<option value="0">Inativo</option>
-				</select> -->
-			</div>
-            <!-- <div class="form-group col-md-6">
-                <label for="escolaridade">Escolaridade</label>
-                <select class="form-control" name="escolaridade" >
-                    <option value="F">Ensino Fundamental</option>
-                    <option value="M">Ensino Médio</option>
-                    <option value="S">Ensino Superior</option>
-                </select>
-		    </div> -->
 		</div>
 		<hr />
 		<div id="actions" class="row">

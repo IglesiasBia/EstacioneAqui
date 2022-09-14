@@ -5,7 +5,7 @@
 		</div>
 
 	</div>
-	<form action="?page=form_atualiza_vaga_cliente" method="post">
+	<form action="?page=form_atualiza_dados_cliente" method="post">
 		<!-- 1ª LINHA -->	
 		<div class="row"> 
 			<div class="form-group col-md-3">

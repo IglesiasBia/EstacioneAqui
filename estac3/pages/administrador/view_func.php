@@ -1,4 +1,8 @@
 <?php
+	// Somente nível administrador possui acesso
+	$nivel_necessario = 2;
+    include "../base/testa_nivel.php";
+
     $id = (int) $_GET["id"];
 	//Talvez esse sql precise de alteração
 	$sql = mysqli_query($con, "select * from funcionario 
@@ -68,9 +72,6 @@
 		<div class="col-md-12">
 			<a href="?page=lista_func" class="btn btn-dark">Voltar</a>
 				<?php echo "<a href=?page=form_att_func&id=".$row['id_func']." class='btn btn-danger'>Editar</a>";?>
-				<?php
-                //  echo "<a href=?page=excluir_cli&id=".$row['id']." class='btn btn-danger'>Excluir</a>";
-                 ?>
 		</div>
 	</div>
 </div>

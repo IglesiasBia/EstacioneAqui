@@ -28,7 +28,7 @@
         </li>
             <!-- Abrir parte de atualizar dados do estaci -->
         <li class="nav-item">
-          <a class="nav-link text-white click" id="btn"href="dash.php?page=form_att_cliente">
+          <a class="nav-link text-white click" id="btn"href="dash.php?page=busca_cliente_atualizar">
             <!-- <div class="text-white text-center me-2 d-flex align-items-center justify-content-center"> -->
               <!-- <i class="material-icons opacity-10">table_view</i> -->
               <img src="../assets/img/icons/carro.png" alt="" width="25rem">

@@ -1,9 +1,9 @@
 <?php
-    $placa = $_POST["placa_veic"];
+    $placa = strtoupper($_POST["placa_veic"]);
     $tipo = $_POST["tipo_veic"];
     $chave = $_POST["chave"];
-    $marca = $_POST["marca_veic"];
-    $modelo = $_POST["modelo_veic"];
+    $marca = strtoupper($_POST["marca_veic"]);
+    $modelo = strtoupper($_POST["modelo_veic"]);
 
     if($placa == "" || $tipo == "" || $chave == "" || $marca == "" || $modelo == ""){
         header('Location: http://localhost:8080/estacione/estac3/pages/dash.php?msg=dadosIncompletos');

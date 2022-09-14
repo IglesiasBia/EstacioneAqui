@@ -1,6 +1,8 @@
 <?php
-    //include "../../base/con_escola.php";
-    //include "../../base/con.php";
+	// Somente nível administrador possui acesso
+	$nivel_necessario = 2;
+	include "../base/testa_nivel.php";
+	
 	$id = (int) $_GET['id'];
 	$sql = mysqli_query($con, "select * from funcionario where id_func = '".$id."';");
 	$row = mysqli_fetch_array($sql);
@@ -65,26 +67,11 @@
 		</div>
 		<div class="form-group col-md-2">
 			<label for="nivel_func">Nível</label>
-			<!-- <select class="form-control" name="nivel_func">
-				<?php 
-                    // if($row["nivel_func"] == 1){
-                    //     //echo "<td>Funcionário Usuário</td>";
-					// 	echo "<option value=''>Funcionário Usuário</option>";
-                    // }else if($row["nivel_func"] == 2){
-                    //     //echo "<td>Administrador</td>";
-					// 	echo "<option value='1'>Administrador</option>";
-					// 	echo "<option value='3'>Funcionário não-usuário</option>";
-                    // }else if($row["nivel_func"] == 3){
-                    //     //echo "<td>Funcionário não-usuário</td>";
-					// 	echo "<option value=''>Funcionário não-usuário</option>";
-                    // }
-				?>
-			</select> -->
 			<!-- Estudar esse select -->
 			<select class="form-control" name="nivel_func">
 				<option value="1"<?php if (!(strcmp(1, htmlentities($row['nivel_func'], ENT_COMPAT, 'utf-8')))) {echo "SELECTED";} ?>>Funcionário Usuário</option>
 				<option value="2"<?php if (!(strcmp(2, htmlentities($row['nivel_func'], ENT_COMPAT, 'utf-8')))) {echo "SELECTED";} ?>>Administrador</option>
-				<option value="3"<?php if (!(strcmp(3, htmlentities($row['nivel_func'], ENT_COMPAT, 'utf-8')))) {echo "SELECTED";} ?>>Fncionário não usuário</option>		
+				<option value="3"<?php if (!(strcmp(3, htmlentities($row['nivel_func'], ENT_COMPAT, 'utf-8')))) {echo "SELECTED";} ?>>Funcionário não usuário</option>		
 			</select>
 
 		</div>
