@@ -39,7 +39,7 @@
         // let main = document.getElementsByClassName("navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl");
         // console.log(main);
         let elemento = document.getElementById("teste");
-        elemento.innerHTML+=`<td><button type='button' class='btn btn-success btnvaga' onclick="apagaVaga()" id='vaga`+contador+`' style="position: absolut">
+        elemento.innerHTML+=`<td><button type='button' class='btn --bs-gray-700 btnvaga' onclick="apagaVaga()" id='vaga`+contador+`' style="position: absolut">
         <img src='../../assets/img/icons/carlayout.png' width='30em'alt=''> 
         </button></td>`;
         // echo "<td><button type='button' class='btn btn-success btnvaga'>
@@ -57,14 +57,15 @@
         let botao = document.getElementById(id);
         let classe = botao.className;
         console.log(classe);
-        if(classe.includes('btn-success')){
-            botao.classList.remove('btn-success');
+        if(classe.includes('--bs-gray-700')){
+            botao.classList.remove('--bs-gray-700');
             // botao.classList.add('--bs-gray-700');
-            
+            botao.classList.add('btn-success');
             botao.style.backgroundColor = "gray";
         }else{
-            botao.classList.add('btn-success');
-            botao.style.backgroundColor = "#4CAF50";
+            botao.classList.remove('btn-success');
+            botao.classList.add('--bs-gray-700');
+            // botao.style.backgroundColor = "#4CAF50";
         }
         console.log(classe);
        
