@@ -24,8 +24,7 @@
 ?>
 
 
-
-
+<img src="./carlayout.png" alt="" style="display:block">
 <table>
 <tr>
     <div id="teste"> </div>
@@ -39,8 +38,10 @@
         // let main = document.getElementsByClassName("navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl");
         // console.log(main);
         let elemento = document.getElementById("teste");
-        elemento.innerHTML+=`<td><button type='button' class='btn --bs-gray-700 btnvaga' onclick="apagaVaga()" id='vaga`+contador+`' style="position: absolut">
+        elemento.innerHTML+=`<td><button type='button' class='btn btnvaga bs-gray-700' onclick="apagaVaga()" id='vaga`+contador+`' style="position: absolut">
+        <img src='./carlayout.png' width='30em'alt=''> 
         <img src='../../assets/img/icons/carlayout.png' width='30em'alt=''> 
+
         </button></td>`;
         // echo "<td><button type='button' class='btn btn-success btnvaga'>
         // <img src='../../assets/img/icons/carlayout.png' width='30em'alt=''> 
@@ -57,15 +58,18 @@
         let botao = document.getElementById(id);
         let classe = botao.className;
         console.log(classe);
-        if(classe.includes('--bs-gray-700')){
-            botao.classList.remove('--bs-gray-700');
-            // botao.classList.add('--bs-gray-700');
+        // Se for cinza
+        if(classe.includes('bs-gray-700')){
+            // Tira cinza
+            botao.classList.remove('bs-gray-700');
+            // Coloca verde
             botao.classList.add('btn-success');
-            botao.style.backgroundColor = "gray";
+            
         }else{
+            // Tira verde
             botao.classList.remove('btn-success');
-            botao.classList.add('--bs-gray-700');
-            // botao.style.backgroundColor = "#4CAF50";
+            // Coloca cinza
+            botao.classList.add('bs-gray-700');
         }
         console.log(classe);
        

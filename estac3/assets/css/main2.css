@@ -57,6 +57,14 @@ cardsbaixo{
 .btnvaga{
     margin: 0.5em;
 }
+
+.bs-gray-700{
+    color: #000;
+    background-color: #495057;
+    border-color: #495057;
+}
+
+
 .cardpadding{
     padding: 1em;
 }
