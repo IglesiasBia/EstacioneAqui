@@ -23,76 +23,112 @@
 // $contador = 1;
 ?>
 
-
-<img src="./carlayout.png" alt="" style="display:block">
 <table>
-<tr>
-    <div id="teste"> </div>
-<script>
-    let vagas = 234;
-    let contador = 1;
-    
-    while(contador <= vagas){
-        // console.log(screen.width);
+    <tr>
+        <div id="teste"> </div>
+        <script>
+            let vagas = 234;
+            let contador = 1;
 
-        // let main = document.getElementsByClassName("navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl");
-        // console.log(main);
-        let elemento = document.getElementById("teste");
-        elemento.innerHTML+=`<td><button type='button' class='btn btnvaga bs-gray-700' onclick="apagaVaga()" id='vaga`+contador+`' style="position: absolut">
-        <img src='./carlayout.png' width='30em'alt=''> 
-        <img src='../../assets/img/icons/carlayout.png' width='30em'alt=''> 
+            while (contador <= vagas) {
+                // console.log(screen.width);
 
-        </button></td>`;
-        // echo "<td><button type='button' class='btn btn-success btnvaga'>
-        // <img src='../../assets/img/icons/carlayout.png' width='30em'alt=''> 
-        // </button></td>";
+                let elemento = document.getElementById("teste");
+                elemento.innerHTML += `
+        <td>
+            <button type='button' class='btn btnvaga bs-gray-700' onclick="apagaVaga()" id='vaga` + contador + `' style="position: absolut">
+                <img src='../assets/img/icons/carlayout.png' width='30em'alt='' style="display: none" class="imgCarro">
+                <img src='../assets/img/bea.png' width='30em'alt='' style="display: block" class="imgLinha"> 
+            </button>
+        </td>`;
+                contador++;
 
-        contador++;
+            }
 
-     }
+            function apagaVaga() {
+                // Pega elemto que disparou o evento
+                let el = event.target || event.srcElement;
 
-     function apagaVaga(){
-        let el = event.target || event.srcElement;
-        let id = el.id;
-        console.log(id);
-        let botao = document.getElementById(id);
-        let classe = botao.className;
-        console.log(classe);
-        // Se for cinza
-        if(classe.includes('bs-gray-700')){
-            // Tira cinza
-            botao.classList.remove('bs-gray-700');
-            // Coloca verde
-            botao.classList.add('btn-success');
-            
-        }else{
-            // Tira verde
-            botao.classList.remove('btn-success');
-            // Coloca cinza
-            botao.classList.add('bs-gray-700');
-        }
-        console.log(classe);
-       
-        // botao.style.display = "none";
-     }
-   
-</script>
+                let classElemento = el.className;
 
 
+                // Se clicar na imagem e não no button entra aqui 
+                if (classElemento == "imgCarro" || classElemento == "imgLinha") {
+                    // Pega o elemnto pai da imagem
+                    let elementoPai = el.parentNode;
+                    console.log(elementoPai);
 
-    <?php
-    //  while($contador <= $vagas){
+                    let classElementoPai = elementoPai.className;
+                    // Se for cinza
+                    if (classElementoPai.includes('bs-gray-700')) {
+                        // Tira cinza
+                        elementoPai.classList.remove('bs-gray-700');
+                        // Coloca verde
+                        elementoPai.classList.add('btn-success');
+                        
 
-    //     echo "<td><button type='button' class='btn btn-success btnvaga'>
-    //     <img src='../../assets/img/icons/carlayout.png' width='30em'alt=''> 
-    //     </button></td>";
+                    } else {
+                        // Tira verde
+                        elementoPai.classList.remove('btn-success');
+                        // Coloca cinza
+                        elementoPai.classList.add('bs-gray-700');
+                    }
+                }
+                // let filho = el.children;
+                // console.log(filho);
+                
+                // Pega id desse elemento
+                let id = el.id;
+
+                console.log(id);
+
+                // Pega botão que possui esse id
+                let botao = document.getElementById(id);
+                // Pega classe desse botão
+                let classe = botao.className;
+
+                console.log(classe);
+
+                // Se for cinza
+                if (classe.includes('bs-gray-700')) {
+                    // Tira cinza
+                    botao.classList.remove('bs-gray-700');
+                    el.getElementsByClassName("imgLinha").display = 'none';
+                    // console.log(imgLinha);
+                    // imgLinha.style.display = 'none';
+                    // Coloca verde
+                    botao.classList.add('btn-success');
+                    el.getElementsByClassName("imgCarro").display = 'block';
+                    // console.log(imgCarro);
+                    // imgCarro.style.display = 'block';
+
+                } else {
+                    // Tira verde
+                    botao.classList.remove('btn-success');
+                    // Coloca cinza
+                    botao.classList.add('bs-gray-700');
+                }
+                console.log(classe);
+
+                // botao.style.display = "none";
+            }
+        </script>
 
 
 
-    //     if($contador)
-    //     $contador++;
-    //  }
-   
-    ?>
-</tr>
+        <?php
+        //  while($contador <= $vagas){
+
+        //     echo "<td><button type='button' class='btn btn-success btnvaga'>
+        //     <img src='../../assets/img/icons/carlayout.png' width='30em'alt=''> 
+        //     </button></td>";
+
+
+
+        //     if($contador)
+        //     $contador++;
+        //  }
+
+        ?>
+    </tr>
 </table>
