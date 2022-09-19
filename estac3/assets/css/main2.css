@@ -54,6 +54,15 @@ cardsbaixo{
     background: rgb(51, 49, 65);
     margin: 8px;
 }
+
+#teste{
+    background-color: aqua;
+    min-height: 720px;
+    max-height: 720px;
+    min-width: 1000px;
+    max-width: 1200px;
+}
+
 .btnvaga{
     margin: 0.5em;
 }
