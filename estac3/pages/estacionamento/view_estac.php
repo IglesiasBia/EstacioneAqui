@@ -75,7 +75,8 @@
                     <hr>
                     <button type="submit" class="btn btn-dark">Alterar</button>
                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#NovaVaga" > Adicionar nova vaga</button> 
-                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#alterarLayout">Alterar layout</button>   
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#alterarLayout">Alterar layout</button>  
+                    <a href="?page=layout" class="btn bg-gradient-danger fs-6 buttonfunc ">Layout Novo</a> 
                 </form>
     
 </div>

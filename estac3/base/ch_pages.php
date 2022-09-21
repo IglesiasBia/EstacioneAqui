@@ -73,6 +73,9 @@ if (isset($_GET["page"])) {
         case "layout":
             include "estacionamento/layout.php";
             break;
+        case "altera_layout_novo":
+            include "estacionamento/altera_layout_novo.php";
+            break;
             case "insere_dados_layout":
                 include "estacionamento/insere_dados_layout.php";
                 break;
