@@ -82,6 +82,12 @@ if (isset($_GET["page"])) {
         case "insere_setor_layout":
             include "insere_setor_layout.php";
             break;
+        case "gera_dados_espaco":
+            include "estacionamento/gera_dados_espaco.php";
+        break;
+        case "layout_teste":
+            include "estacionamento/layout_teste.php";
+            break;
 
             // Geral (funcionário e administrador)
             // Perfil

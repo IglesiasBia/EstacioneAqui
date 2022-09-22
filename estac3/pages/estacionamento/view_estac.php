@@ -76,6 +76,7 @@
                     <button type="submit" class="btn btn-dark">Alterar</button>
                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#NovaVaga" > Adicionar nova vaga</button> 
                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#alterarLayout">Alterar layout</button>  
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#pavimento">Layout Novo</button>  
                     <a href="?page=layout" class="btn bg-gradient-danger fs-6 buttonfunc ">Layout Novo</a> 
                 </form>
     
@@ -91,3 +92,7 @@
     <?php include "opcoes-layout.php"; ?>
 </div>  
 
+<!-- Modal para adicionar nova vaga -->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="pavimento">
+    <?php include "modal_pavimento.php"; ?>
+</div>
