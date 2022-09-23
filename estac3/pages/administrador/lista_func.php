@@ -33,7 +33,7 @@
                 echo "<th class='text-uppercase text-secondary fs-5 font-weight-bolder opacity-7 ps-2'>Nome do funcionário</th>";
                 echo "<th class='text-center text-uppercase text-secondary fs-5 font-weight-bolder opacity-7 d-none d-md-table-cell'>E-mail</th>";
                 echo "<th class='text-center text-uppercase text-secondary fs-5 font-weight-bolder opacity-7 d-none d-md-table-cell'>Nível</th>";
-                echo "<th class='text-center text-uppercase text-secondary fs-5 font-weight-bolder opacity-7 d-none d-md-table-cell'>Status</th>";
+                // echo "<th class='text-center text-uppercase text-secondary fs-5 font-weight-bolder opacity-7 d-none d-md-table-cell'>Status</th>";
                 echo "<th class='text-secondary opacity-7'></th>";
                 echo "</tr></thead><tbody>";
                
@@ -43,7 +43,7 @@
                   echo "<td>".$info['id_func']."</td>";
                   echo "<td>".$info['nome_func']."</td>";
                   echo "<td class='d-none d-md-table-cell'>".$info['email_func']."</td>";
-                  echo "<td class='d-none d-md-table-cell'>".$info['nivel_func']."</td>";
+                  // echo "<td class='d-none d-md-table-cell'>".$info['nivel_func']."</td>";
                   if($info["nivel_func"] == 1){
                     echo "<td class='d-none d-md-table-cell'>Funcionário Usuário</td>";
                   }else if($info["nivel_func"] == 2){
@@ -51,11 +51,11 @@
                   }else if($info["nivel_func"] == 3){
                       echo "<td class='d-none d-md-table-cell'>Funcionário não-usuário</td>";
                   }
-                  if($info['status_func'] == 1){
-                    echo "<td class='d-none d-md-table-cell'>Ativo</td>";
-                  }else if($info['status_func'] == 0){
-                    echo "<td class='d-none d-md-table-cell'>Inativo</td>";
-                  }
+                  // if($info['status_func'] == 1){
+                  //   echo "<td class='d-none d-md-table-cell'>Ativo</td>";
+                  // }else if($info['status_func'] == 0){
+                  //   echo "<td class='d-none d-md-table-cell'>Inativo</td>";
+                  // }
                   echo "<td><div class='btn-group btn-group-xs'>";
                   echo "<a class='btn btn-info btn-xs' href=?page=view_func&id=".$info['id_func']."> Detalhar </a>";
                   echo "<a class='btn btn-warning btn-xs' href=?page=form_att_func&id=".$info['id_func']."> Editar </a>";

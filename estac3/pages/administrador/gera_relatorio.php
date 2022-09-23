@@ -54,7 +54,8 @@
             
             echo "
             <div class='cabecalho'>
-            <div class='imgcab'><img src='../assets/img/logos/logo.png'></div>
+                <div class='row'>
+                    <div class='col-md-6 '><img src='../assets/img/logos/logo.png' width='100em'></div>
             <div class='titcab'>
                 Estacione Aqui
                 <br>

@@ -26,15 +26,20 @@
 ?>
 
 <div id="container-fluid py-4">
-            <form action="?page=atualiza_estac" method="post">
-                <div class="row">
-                <h3 class="page-header estactitle">Atualizar Registro do Estacionamento </h3>
-                </div>
+            
+        <div class="row">
+            <h3 class="page-header estactitle">Atualizar Registro do Estacionamento </h3>
+        </div>
+                
+<div class="row">
+	<div class="card">
+		<div class="cardperfil">
+            <form action="?page=atualiza_estac" method="post">   
                 <div class="row"> 
                     <div class="form-group col-md-4">
                         <p class="fs-4"><strong>ID</strong></p>
-                        <!-- <label for="id_estac">ID</label> -->
-                        <input type="text" class="form-control fs-4 estacdados" name="id_estac" value="<?php echo $row["id_estac"]; ?>" readonly>
+                            <!-- <label for="id_estac">ID</label> -->
+                        <input type="text" class="form-control fs-4 estacdados" style=" background-color: white;"name="id_estac" value="<?php echo $row["id_estac"]; ?>" readonly>
                     </div>
                     <div class="form-group col-md-4">
                         <p class="fs-4"><strong>Nome Estacionamento</strong></p>
@@ -46,19 +51,19 @@
                     </div>
 
                     </div>
-                <div class="row">
-                    <div class="form-group col-md-4">
-                    <p class="fs-4"><strong>Número do Estacionamento</strong></p>
-                        <input type="text" class="form-control fs-4 estacdados" name="num_estac" value="<?php echo $row["num_estac"]; ?>">
-                    </div>
-                    <div class="form-group col-md-4">
-                        <p class="fs-4"><strong>Preço do Estacionamento</strong></p>
-                        <input type="text" class="form-control fs-4 estacdados" name="preco_estac" value="<?php echo $row["preco_estac"]; ?>">
-                    </div>
-                    <div class="form-group col-md-4">
-                        <p class="fs-4"><strong>Fração por Hora</strong></p>
-                        <input type="text" class="form-control fs-4 estacdados" name="frac_hr_estac" value="<?php echo $row["frac_hr_estac"]; ?>">
-                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                        <p class="fs-4"><strong>Número do Estacionamento</strong></p>
+                            <input type="text" class="form-control fs-4 estacdados" name="num_estac" value="<?php echo $row["num_estac"]; ?>">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <p class="fs-4"><strong>Preço do Estacionamento</strong></p>
+                            <input type="text" class="form-control fs-4 estacdados" name="preco_estac" value="<?php echo $row["preco_estac"]; ?>">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <p class="fs-4"><strong>Fração por Hora</strong></p>
+                            <input type="text" class="form-control fs-4 estacdados" name="frac_hr_estac" value="<?php echo $row["frac_hr_estac"]; ?>">
+                        </div>
 
                     </div>
                     <div class="row">
@@ -82,8 +87,9 @@
 
                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#pavimento">Layout Novo</button>  
 
-                </form>
-    
+            </form>
+		</div>
+	</div>
 </div>
 
 <!-- Modal para adicionar nova vaga -->

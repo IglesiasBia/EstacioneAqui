@@ -55,16 +55,17 @@ cardsbaixo{
     margin: 8px;
 }
 
-#teste{
-    background-color: aqua;
+.teste{
+   
     min-height: 720px;
     max-height: 720px;
-    min-width: 1000px;
-    max-width: 1200px;
-}
+    min-width: 1000px; 
+    max-width: 1200px !important;
+} 
 
 .btnvaga{
     margin: 0.5em;
+    width: 6.5em;
 }
 
 .bs-gray-700{
@@ -72,7 +73,6 @@ cardsbaixo{
     background-color: #495057;
     border-color: #495057;
 }
-
 
 .cardpadding{
     padding: 1em;
@@ -82,8 +82,10 @@ cardsbaixo{
     width: 17em;
 }
 .selectrel{
-    width: 7em;
-    height: 2.8em;
+    padding: 0.3em;
+    background:none;
+    border-color:dimgray;
+    border-radius: 1em;
 }
 .cardperfil{
     padding: 2em;
@@ -97,7 +99,12 @@ cardsbaixo{
     position: absolute !important;
     z-index : 10000 !important;
 }
-
+input[type="date"]{
+    padding: 0.3em;
+    background:none;
+    border-color:dimgray;
+    border-radius: 1em;
+}
 
 #file{
     

@@ -39,7 +39,7 @@ echo '
         <td>
             <button type='button' class='btn btnvaga bs-gray-700' onclick="apagaVaga()" id='vaga` + contador + `'name='vaga` + contador + `' style="position: static">
                 <img src='../assets/img/icons/carlayout.png' width='30em'alt='' style="display: none" class="imgCarro" id="imgCarro` + contador + `" name="imgCarro` + contador + `">
-                <img src='../assets/img/bea.png' width='30em'alt='' style="display: block" class="imgLinha" id="imgLinha` + contador + `" name="` + contador + `">
+                <img src='../assets/img/icons/linha.png' width='30em'alt='' style="display: block" class="imgLinha" id="imgLinha` + contador + `" name="` + contador + `">
                 <p id="numeroVaga` + contador + `" name="numeroVaga` + contador + `" style="display: inline"></p>
             </button>
         </td>`;
@@ -267,8 +267,7 @@ echo '
 
 </script>
 
-</tr>
-    </table>
-    <tr><td><button type="submit" class="btn bg-gradient-danger w-100 my-4 mb-2">Salvar</button></td></tr>
-    
+        </tr>
+        <tr><td><button type="submit" class="btn bg-gradient-danger w-100 my-4 mb-2">Salvar</button></td></tr>
+    </table>   
 </form>
