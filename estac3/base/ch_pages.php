@@ -76,9 +76,6 @@ if (isset($_GET["page"])) {
         case "altera_layout_novo":
             include "estacionamento/altera_layout_novo.php";
             break;
-            case "insere_dados_layout":
-                include "estacionamento/insere_dados_layout.php";
-                break;
         case "insere_setor_layout":
             include "insere_setor_layout.php";
             break;
@@ -88,6 +85,9 @@ if (isset($_GET["page"])) {
         case "layout_teste":
             include "estacionamento/layout_teste.php";
             break;
+        case "altera_setor_tipo_vaga":
+            include "estacionamento/altera_setor_tipo_vaga.php";
+        break;
 
             // Geral (funcionário e administrador)
             // Perfil

@@ -71,13 +71,17 @@
                             <p class="fs-4"><strong>Preço Pernoite</strong></p>
                             <input type="text" class="form-control fs-4 estacdados" name="preco_pernoite" value="<?php echo $row["preco_pernoite"]; ?>">
                         </div>
+                        <div class="form-group col-md-4">
+                            <p class="fs-4"><strong>Quantidade de Pavimentos</strong></p>
+                            <input type="text" class="form-control fs-4 estacdados" name="quant_pavimento" value="<?php echo $row["quant_pavimento"]; ?>">
+                        </div>
                     </div>
                     <hr>
                     <button type="submit" class="btn btn-dark">Alterar</button>
                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#NovaVaga" > Adicionar nova vaga</button> 
-                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#alterarLayout">Alterar layout</button>  
+
                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#pavimento">Layout Novo</button>  
-                    <a href="?page=layout" class="btn bg-gradient-danger fs-6 buttonfunc ">Layout Novo</a> 
+
                 </form>
     
 </div>
@@ -87,10 +91,7 @@
     <?php include "form_add_vaga.php"; ?>
 </div>
 
-<!-- Modal para alterar layout -->
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="alterarLayout">
-    <?php include "opcoes-layout.php"; ?>
-</div>  
+
 
 <!-- Modal para adicionar nova vaga -->
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="pavimento">

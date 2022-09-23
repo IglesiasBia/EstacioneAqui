@@ -58,7 +58,7 @@
     <!-- FIM NAVBAR -->
 
     <!-- INICIO CONTENT -->
-    <div class="container-fluid py-4">
+    <div class="container-fluid py-4" id="conteudo">
           <?php 
             include "../base/mensagens.php";
             include "../base/con_escola.php";
