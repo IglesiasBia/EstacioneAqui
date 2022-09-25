@@ -88,6 +88,16 @@ if (isset($_GET["page"])) {
         case "altera_setor_tipo_vaga":
             include "estacionamento/altera_setor_tipo_vaga.php";
         break;
+        case "altera_setor":
+            include "estacionamento/altera_setor.php";
+        break;
+        case "form_altera_tipo_vaga":
+            include "estacionamento/form_altera_tipo_vaga.php";
+            break;
+            case "altera_tipo_vaga":
+            include "estacionamento/altera_tipo_vaga.php";
+            break;
+
 
             // Geral (funcionário e administrador)
             // Perfil

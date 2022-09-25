@@ -1,9 +1,9 @@
 <?php
 
-
-
 // echo "oi";
-$pavimentoAtual = $_POST["pavimentoAtual"];
+$pavimentoAtual = $_GET["id_pavimento"];
+// echo $pavimentoAtual;
+// $pavimentoAtual = $_POST["pavimentoAtual"];
 // echo $pavimentoAtual;
 $vagasExistentes = $_POST["vagasExistentes"];
 $rua = $_POST["rua"];
@@ -35,9 +35,11 @@ if($resultadoDadosPaviemento["num_vaga"] == null){
 }
 $contadorVagas = 0;
 $numVaga = 1;
+
 while($contadorVagas <count($arrayVagas)){
     $posicaoImgCarro = $arrayVagas[$contadorVagas];
     // echo $posicaoImgCarro;
+    // echo $numVaga;
     
     $numeroPosicaoImgCarro = str_replace("imgCarro","",$posicaoImgCarro);
     // echo $numeroPosicaoImgCarro;
@@ -49,7 +51,7 @@ while($contadorVagas <count($arrayVagas)){
     $idVaga = $resultadoPegaIdVagaAtual["id_vaga"];
 // echo $idVaga."<br>";
 
-    $sqlCriaVaga = "update vagas set status_vaga='0', pav_vaga='".$pavimentoAtual."', tipo_vaga='0', id_estac=1, setor_vaga='A',num_vaga='".$numVaga ."' where id_vaga=".$idVaga.";";
+    $sqlCriaVaga = "update vagas set status_vaga='0', pav_vaga='".$pavimentoAtual."', tipo_vaga='0', id_estac=1, setor_vaga='A',num_vaga='".$numeroPosicaoImgCarro ."' where id_vaga=".$idVaga.";";
     $resultadoCriaVaga = mysqli_query($con, $sqlCriaVaga);
 
     // echo $sqlCriaVaga ."<br>";

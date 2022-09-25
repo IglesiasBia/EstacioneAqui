@@ -1,14 +1,16 @@
 <?php
 
 $pavimentoAtual = $_GET["id_pavimento"];
-echo $pavimentoAtual;
+// echo $pavimentoAtual;
 // Pega a quantidade de pavimentos
 // $quantidadePavimentos = $_POST["quantidadePavimentos"];
 // echo $quantidadePavimentos;
 
 // Input escondido que vai estar com respotas de quantos pavimentos existem
 echo '
-<form action="?page=altera_layout_novo" method="post" >
+<form action="?page=altera_layout_novo&id_pavimento='.$pavimentoAtual.'" method="post" >
+    <h1>Pavimento ' . $pavimentoAtual . '</h1>
+    <p>Selecione onde há vagas</p>
     <table>
         <tr>
             <div id="teste">
@@ -20,9 +22,11 @@ echo '
 ?>
 
 <script>
-    // Pega do input escondido o seu value
-    let quantidadePavimento = document.getElementById("pavimentoAtual").value;
-    console.log(quantidadePavimento);
+    // Pega URL atual 
+    const parametrosUrl = new URLSearchParams(window.location.search);
+    console.log(parametrosUrl.get("id_pavimento"));
+    // Pega pavimento atual pela da URL
+    let quantidadePavimento = parametrosUrl.get("id_pavimento");
 
     // faz a página
     let divConteudo = document.getElementById("conteudo");
