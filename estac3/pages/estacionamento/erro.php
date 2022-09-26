@@ -14,13 +14,11 @@ echo '
             <tr>
                 <div id="teste">
                 
-                    <input type="text" id="vagasExistentes" name="vagasExistentes" style="display: none">
-                    <input type="text" id="rua" name="rua" style="display: none">
-                    <input type="text" id="inputSetorA" name="setorA" style="display: none">
-                    <input type="text" id="inputSetorB" name="setorB" style="display: none">
-                    <input type="text" id="inputSetorC" name="setorC" style="display: none">
-                    <input type="text" id="inputSetorD" name="setorD" style="display: none">
-                    <input type="text" id="inputSetorE" name="setorE" style="display: none">
+                    <input type="text" id="setorA" name="setorA" style="display: none">
+                    <input type="text" id="setorB" name="setorB" style="display: none">
+                    <input type="text" id="setorC" name="setorC" style="display: none">
+                    <input type="text" id="setorD" name="setorD" style="display: none">
+                    <input type="text" id="setorE" name="setorE" style="display: none">
                     <td>
                 
     ';
@@ -61,7 +59,7 @@ echo '
         </table>
         <tr>
             <td>
-                <button type="submit" class="btn bg-gradient-danger w-100 my-4 mb-2" onclick="salvaSetor()">Salvar</button>
+                <button type="submit" class="btn bg-gradient-danger w-100 my-4 mb-2">Salvar</button>
             </td>
         </tr>
 
@@ -91,19 +89,21 @@ echo '
             contador++;
         }
     }
-
+    let teste = document.getElementById("setorAtual");
+        console.log(teste.value)
     function defineSetor() {
         let elementoClicado = event.target || event.srcElement;
         let idElemento = elementoClicado.id;
 
         // Pega input invisível que contem o setor atual
         let inputSetorAtual = document.getElementById("setorAtual");
+        console.log(inputSetorAtual.value)
         // Pega input invisível que contem cor do setor atual
         let inputCorSetorAtual = document.getElementById("corSetorAtual");
         if (idElemento.includes("setor")) {
 
             // Pega setor atual
-            let setorAtual = idElemento.replace("setor", "");
+            let setorAtual = idElemento.replace("setor", "setorA");
             // Pega posição do setor atual no array
             let indexSetorAtual = setores.indexOf(setorAtual);
             // Pega cor do setor que possui o esmo index do setor
@@ -122,9 +122,6 @@ echo '
                 let buttonPeloId = document.getElementById(idElemento);
                 // Pega tag p filha do botao atual
                 let paragrafo = buttonPeloId.children[1];
-                // id parágrafo
-                let idParagrafo = paragrafo.id;
-                let numeroIdParagrafo = idParagrafo.replace("numeroVaga", "");
                 // Pega conteúdo da tag p
                 let textoP = paragrafo.innerText;
                 // Pega cor do setor atual pelo input invisível
@@ -134,25 +131,17 @@ echo '
                 const corBackground = window.getComputedStyle(buttonPeloId, null);
                 let corBackGroundButton = corBackground.getPropertyValue("background-color");
 
-                // Se texto do p for maior que 1 , background-color atual do button for diferente do background-color do setor atual e num da vaga for menor que 10
-                if (textoP.length > 1 && corBackGroundButton != "rgb(" + corAtual + ")" && numeroIdParagrafo < 10) {
+                // Se texto do p for maior que 1 e background-color atual do button for diferente do background-color do setor atual 
+                if (textoP.length > 1 && corBackGroundButton != "rgb(" + corAtual + ")") {
                     console.log("oi")
                     // Tira o setor anterio
                     paragrafo.innerHTML = textoP.slice(0, -1);
                     // Coloca novo setor
                     paragrafo.innerHTML += inputSetorAtual.value;
-                }else if(textoP.length > 2 && corBackGroundButton != "rgb(" + corAtual + ")" && numeroIdParagrafo >= 10){
-                  // Tira o setor anterio
-                  paragrafo.innerHTML = textoP.slice(0, -1);
-                    // Coloca novo setor
-                    paragrafo.innerHTML += inputSetorAtual.value;
                 }
                 // Se conteúdo for menor que dois caracteres entra aqui
                 // Caso o button for clicado duas vezes sem ter mudado o setor
-                if (textoP.length < 2 && numeroIdParagrafo < 10) {
-                    // Adiciona setor
-                    paragrafo.innerHTML += inputSetorAtual.value;
-                }else if(textoP.length < 3 && numeroIdParagrafo >= 10){
+                if (textoP.length < 2) {
                     // Adiciona setor
                     paragrafo.innerHTML += inputSetorAtual.value;
                 }
@@ -162,95 +151,78 @@ echo '
             }
 
             inputSetorAtual.value;
-            salvaSetor();
+           
         }
+        // salvaSetor();
     }
-
+    // let setorA = [];
+    // let setorB = [];
+    // let setorC = [];
+    // let setorD = [];
+    // let setorE = [];
 
     function salvaSetor() {
-        let setorA = [];
-        let setorB = [];
-        let setorC = [];
-        let setorD = [];
-        let setorE = [];
-        let espacos = 121;
-        let contadorEspacos = 1;
-        while (contadorEspacos <= espacos) {
-            let imgLinha = document.getElementById("imgLinha" + [contadorEspacos]);
-            if (imgLinha != null) {
-                console.log(imgLinha)
-                contadorEspacos++;
-            } else {
-                // Pega button na posição atual
-                console.log("vaga" + [contadorEspacos])
-                let buttonPeloId = document.getElementById("vaga" + [contadorEspacos]);
-                console.log(buttonPeloId)
-                // Pega background-color atual
-                const corBackground = window.getComputedStyle(buttonPeloId, null);
-                let corBackGroundButton = corBackground.getPropertyValue("background-color");
-                console.log(corBackGroundButton)
-                console.log("rgb(" + corSetor[1] + ")")
-                if (corBackGroundButton == "rgb(" + corSetor[0] + ")") {
-                    console.log("oi")
-                    setorA.push(contadorEspacos);
-                } else if (corBackGroundButton == "rgb(" + corSetor[1] + ")") {
-                    setorB.push(contadorEspacos);
+        // let espacos = 121;
+        // let contadorEspacos = 1;
+        // while (contadorEspacos <= espacos) {
+        //     let imgLinha = document.getElementById("imgLinha" + [contadorEspacos]);
+        //     if (imgLinha == null) {
+        //         contadorEspacos++;
+        //     } else {
+        //         // Pega button na posição atual
+        //         let buttonPeloId = document.getElementById("vaga" + [contadorEspacos]);
+        //         // Pega background-color atual
+        //         const corBackground = window.getComputedStyle(buttonPeloId, null);
+        //         let corBackGroundButton = corBackground.getPropertyValue("background-color");
+        //         console.log(corBackGroundButton)
+        //         if (corBackGroundButton == "rgb(" + corSetor[0] + ")") {
+        //             setorA.push(contadorEspacos);
+        //         } else if (corBackGroundButton == "rgb(" + corSetor[1] + ")") {
+        //             setorB.push(contadorEspacos);
 
-                } else if (corBackGroundButton == "rgb(" + corSetor[2] + ")") {
-                    setorC.push(contadorEspacos);
+        //         } else if (corBackGroundButton == "rgb(" + corSetor[2] + ")") {
+        //             setorC.push(contadorEspacos);
 
-                } else if (corBackGroundButton == "rgb(" + corSetor[3] + ")") {
-                    setorD.push(contadorEspacos);
+        //         } else if (corBackGroundButton == "rgb(" + corSetor[3] + ")") {
+        //             setorD.push(contadorEspacos);
 
-                } else if (corBackGroundButton == "rgb(" + corSetor[4] + ")") {
-                    setor.push(contadorEspacos);
+        //         } else if (corBackGroundButton == "rgb(" + corSetor[4] + ")") {
+        //             setorE.push(contadorEspacos);
 
-                }
-            }
-            // Muda value do input para o número da vaga que esta nesse setor
-            let inputSetorA = document.getElementById("inputSetorA");
+        //         }
+        //         // Muda value do input para o número da vaga que esta nesse setor
+        //         let inputSetorA = document.getElementById("setorA");
+        //         inputSetorA.value = setorA;
 
-            console.log("oi")
-            console.log(inputSetorA.value)
-            inputSetorA.value = setorA;
-            console.log(inputSetorA.value)
+        //         // Muda value do input para o número da vaga que esta nesse setor
+        //         let inputSetorB = document.getElementById("setorB");
+        //         inputSetorA.value = setorB;
 
-            // Muda value do input para o número da vaga que esta nesse setor
-            let inputSetorB = document.getElementById("inputSetorB");
-            inputSetorB.value = setorB;
+        //         // Muda value do input para o número da vaga que esta nesse setor
+        //         let inputSetorC = document.getElementById("setorC");
+        //         inputSetorA.value = setorC;
 
-            // Muda value do input para o número da vaga que esta nesse setor
-            let inputSetorC = document.getElementById("inputSetorC");
-            inputSetorC.value = setorC;
-            console.log(inputSetorC)
-            console.log(inputSetorC.value)
-            // Muda value do input para o número da vaga que esta nesse setor
-            // PAREI AQUI
-            // TODO: setor d e c nao estao funcionando
-            let inputSetorD = document.getElementById("inputSetorD");
-            inputSetorD.value = setorD;
+        //         // Muda value do input para o número da vaga que esta nesse setor
+        //         let inputSetorD = document.getElementById("setorD");
+        //         inputSetorA.value = setorD;
 
-            // let inputSetorD = document.getElementById("inputSetorD");
-            console.log(inputSetorD)
-            // inputSetorD.value = setorD;
-            console.log(inputSetorD.value)
+        //         // Muda value do input para o número da vaga que esta nesse setor
+        //         let inputSetorE = document.getElementById("setorE");
+        //         inputSetorA.value = setorE;
 
-            // Muda value do input para o número da vaga que esta nesse setor
-            let inputSetorE = document.getElementById("inputSetorE");
-            inputSetorE.value = setorE;
-            // // console.log(imgLinha);
-            // console.log(contadorEspacos);
+                
+        //         console.log(setorA);
+        //         console.log(setorB);
+        //         console.log(setorC);
+        //         console.log(setorD);
+        //         console.log(setorE);
+        //     }
+        //     console.log(imgLinha);
+        //     console.log(contadorEspacos);
 
-            console.log(setorA);
-            // console.log()
-            console.log(setorB);
-            console.log(setorC);
-            console.log(setorD);
-            console.log(setorE);
+        //     contadorEspacos++;
 
-            contadorEspacos++;
-
-        }
+        // }
     }
     console.log(document.getElementById("setorAtual").value);
 </script>
