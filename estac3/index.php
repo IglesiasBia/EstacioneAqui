@@ -25,6 +25,7 @@ include "base/ch_pages.php";
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
   <!-- CSS Files -->
   <link href="assets/css/main.css" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/main2.css">
 </head>
 
 <body class="bg-gray-200">
@@ -40,7 +41,7 @@ include "base/ch_pages.php";
             <div class="card z-index-0 fadeIn3 fadeInBottom">
               <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                 <div class="bg-gradient-danger shadow-danger border-radius-lg py-3 pe-1">
-                  <img src="assets/img/logos/logo.png" height="100px" class="imglogo">
+                  <img src="assets/img/logos/logo.png" height="100px" class="imglogin">
                   <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">Login</h4>
                 </div>
               </div>

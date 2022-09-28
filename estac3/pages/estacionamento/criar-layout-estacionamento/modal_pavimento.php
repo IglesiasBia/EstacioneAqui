@@ -7,7 +7,7 @@ echo '<input type="text" value="'.$resultadoQuantidadePavimento["quant_pavimento
 ?>
 
 <div class="modal-dialog modal-lg">
-	<div class="modal-content cardpadding">
+	<div class="modal-content cardpadding ">
 		<div id="top" class="row addvaga">
 			<div class="col-md-12">
 				<h2> Layout </h2>

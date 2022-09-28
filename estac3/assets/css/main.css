@@ -509,10 +509,6 @@ progress {
   display: none !important;
 }
 
-.imglogo{
-  margin-left: 8.5em;
-}
-
 .lead {
   font-size: 1.25rem;
   font-weight: 400;
@@ -3769,7 +3765,7 @@ fieldset:disabled .btn {
   color: #000;
   background-color: #fc9d26;
   border-color: #fb981a;
-  box-shadow: 0 0 0 0.2rem rgba(213, 119, 0, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(63, 63, 63, 0.5);
 }
 
 .btn-check:checked+.btn-warning,
@@ -3787,7 +3783,7 @@ fieldset:disabled .btn {
 .btn-warning:active:focus,
 .btn-warning.active:focus,
 .show>.btn-warning.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(213, 119, 0, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(66, 65, 62, 0.5);
 }
 
 .btn-warning:disabled,
@@ -4030,7 +4026,7 @@ fieldset:disabled .btn {
 
 .btn-check:focus+.btn-outline-secondary,
 .btn-outline-secondary:focus {
-  box-shadow: 0 0 0 0.2rem rgba( 128, 154, 0.5);
+  box-shadow: 0 0 0 0.2rem rgb(74, 75, 71);
 }
 
 .btn-check:checked+.btn-outline-secondary,

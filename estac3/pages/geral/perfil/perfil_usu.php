@@ -1,5 +1,4 @@
 <?php
-//Fazer um perfil para o usaurio
 //Ele pode atualizar sua senha
 $nome = $_SESSION['Usuario'];
 $id = $_SESSION['UsuarioID'];
@@ -18,9 +17,23 @@ $row2 = mysqli_fetch_array($sql2);
 			<div class="cardperfil">
 				<table class="table table-responsive">
         			<tr>
-          				<td rowspan="2" colspan="2">
-							<img src="../assets/img/bea.png" class="rounded-circle imgperfil">
-							</td>
+						<?php
+							if ($row['nome_func'] == "bia") {
+								echo "<td rowspan='2' colspan='2'>
+								<img src='../assets/img/bea.png' class='rounded-circle imgperfil'>
+								</td>";
+							} elseif ($row['nome_func'] ==  "Raphaela") {
+								echo "<td rowspan='2' colspan='2'>
+								<img src='../assets/img/rapha.png' class='rounded-circle imgperfil'>
+								</td>";
+							} elseif ($row['nome_func'] =="Lethicia") {
+								echo "<td rowspan='2' colspan='2'>
+								<img src='../assets/img/leth.png' class='rounded-circle imgperfil'>
+								</td>";
+							}
+						?>
+					
+          				
 						<td>
 							<p class="fs-4"><strong>ID</strong></p>
 							<p class="fs-4 estacdados"><?php echo $row['id_func']; ?></p>

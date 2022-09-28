@@ -1,4 +1,9 @@
 
+.imglogin{
+    margin-left: 8.5em;
+}
+
+
 .respnota{
     margin-left: -2em;
 }.col-md-1{
@@ -106,6 +111,10 @@ input[type="date"]{
     border-radius: 1em;
 }
 
+.imgrel{
+    height:5em;
+    width: 6em; 
+}
 #file{
     
     display: block !important;

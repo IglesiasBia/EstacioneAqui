@@ -9,29 +9,31 @@
 		<form action="?page=insere_vaga" method="post"> 
 			<!-- 1ª LINHA -->	
 			<div class="row"> 
-				<div class="form-group col-md-3">
-					<label for="pav_vaga">Pavimento</label>
-					<input type="text" class="form-control" name="pav_vaga">
+				<div class="form-group col-md-4">
+					<label for="pav_vaga" class="fs-4">Pavimento</label>
+					<input type="text" class="form-control fs-4" name="pav_vaga">
 				</div>
-				<div class="form-group col-md-3">
-					<label for="tipo_vaga">Tipo</label>
-					<select class="form-control" name="tipo_vaga">
-						<option> --------- </option>
-						<option value="1">Carro</option>
-						<option value="0">Motocicleta</option>
+				<div class="form-group col-md-4">
+					<label for="tipo_vaga" class="fs-4">Tipo</label>
+					<select class="form-control fs-4"  name="tipo_vaga">
+						<option class="fs-4"> --------- </option>
+						<option value="1" class="fs-4">Carro</option>
+						<option value="0" class="fs-4">Motocicleta</option>
 					</select>
 				</div>
-				<div class="form-group col-md-3">
-					<label for="setor_vaga">Setor Vaga</label>
-					<input type="text" class="form-control" name="setor_vaga">
+				<div class="form-group col-md-4">
+					<label for="setor_vaga" class="fs-4">Setor Vaga</label>
+					<input type="text" class="form-control fs-4" name="setor_vaga">
 				</div>
-				<div class="form-group col-md-3">
-					<label for="num_vaga">Número Vaga Inicial</label>
-					<input type="number" class="form-control" name="num_vaga_inicial" min="1">
+			</div>
+			<div class="row">
+				<div class="form-group col-md-4">
+					<label for="num_vaga" class="fs-4">Número Vaga Inicial</label>
+					<input type="number" class="form-control fs-4" name="num_vaga_inicial" min="1">
 				</div>
-				<div class="form-group col-md-3">
-					<label for="num_vaga">Número Vaga Final</label>
-					<input type="number" class="form-control" name="num_vaga_final" min="0">
+				<div class="form-group col-md-4">
+					<label for="num_vaga" class="fs-4">Número Vaga Final</label>
+					<input type="number" class="form-control fs-4" name="num_vaga_final" min="0">
 				</div>
 			</div>
 			<hr />

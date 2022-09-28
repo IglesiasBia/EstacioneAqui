@@ -5,9 +5,7 @@
                 © <script>
                   document.write(new Date().getFullYear())
                 </script>,
-                made with <i class="fa fa-heart" aria-hidden="true"></i> by
-                <a href="https://www.creative-tim.com" class="font-weight-bold text-white" target="_blank">Creative Tim</a>
-                for a better web.
+                projeto feito por <i class="fa fa-heart" aria-hidden="true"></i> 5bits
               </div>
             </div>
           </div>

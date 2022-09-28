@@ -40,18 +40,18 @@
         <!-- PRIMEIRA LINHA -->
         <div class="row">  
             <div class="form-group col-md-4">
-                <label for="id_cli">ID Cliente</label>
-                <input type="text" class="form-control" name="id_cli" value="<?php echo $veiculoCliente["id_cli"]; ?>" readonly>
+                <label for="id_cli" class="fs-4">ID Cliente</label>
+                <input type="text" class="form-control fs-4" name="id_cli" value="<?php echo $veiculoCliente["id_cli"]; ?>" readonly>
             </div>
             <!-- Fazer input nome e CPF só aparecerem se apertar um botão-->
             <!-- * Inserir CPF e nome  -->
             <div class="form-group col-md-4">
-                <label for="nome_cli">Nome Cliente</label>
-                <input type="text" class="form-control" name="nome_cli" placeholder="cliente não declarado" value="<?php echo $veiculoCliente["nome_cli"]; ?>">
+                <label for="nome_cli" class="fs-4">Nome Cliente</label>
+                <input type="text" class="form-control fs-4" name="nome_cli" placeholder="cliente não declarado" value="<?php echo $veiculoCliente["nome_cli"]; ?>">
             </div>
             <div class="form-group col-md-4">
-                <label for="cpf_cli">CPF</label>
-                <input type="text" class="form-control" name="cpf_cli" value="<?php echo $veiculoCliente["cpf_cli"]; ?>">
+                <label for="cpf_cli" class="fs-4">CPF</label>
+                <input type="text" class="form-control fs-4" name="cpf_cli" value="<?php echo $veiculoCliente["cpf_cli"]; ?>">
             </div>
         </div>
         
@@ -60,37 +60,37 @@
         <!-- SEGUNDA LINHA -->
         <div class="row"> 
             <div class="form-group col-md-4">
-                <label for="placa_veic">Placa</label>
-                <input type="text" class="form-control" name="placa_veic" value="<?php echo $veiculoCliente["placa_veic"]; ?>">
+                <label for="placa_veic"class="fs-4">Placa</label>
+                <input type="text" class="form-control fs-4" name="placa_veic" value="<?php echo $veiculoCliente["placa_veic"]; ?>">
             </div>
             <div class="form-group col-md-4">
-                <label for="tipo_veic">Tipo</label>
+                <label for="tipo_veic" class="fs-4">Tipo</label>
                 <?php
                     if($veiculoCliente["tipo_veic"] == 0){
-                        echo "<div class='form-group col-md-3'>";
-                        echo "<input type='radio' name='tipo_veic' value='0' checked>Motocicleta <br>";
-                        echo "<input type='radio' name='tipo_veic' value='1'>Carro";
+                        echo "<div class='form-group col-md-3 fs-5'>";
+                        echo "<input type='radio' name='tipo_veic' value='0'  class='fs-4'checked>Motocicleta <br>";
+                        echo "<input type='radio' name='tipo_veic' value='1' class='fs-4'>Carro";
                         echo "</div>";
                     }elseif($veiculoCliente["tipo_veic"] == 1){
-                        echo "<div class='form-group col-md-3'>";
-                        echo "<input type='radio' name='tipo_veic' value='0' >Motocicleta <br>";
-                        echo "<input type='radio' name='tipo_veic' value='1' checked>Carro";
+                        echo "<div class='form-group col-md-3 fs-5'>";
+                        echo "<input type='radio' name='tipo_veic' value='0'  class='fs-4'>Motocicleta <br>";
+                        echo "<input type='radio' name='tipo_veic' value='1'  class='fs-4' checked>Carro";
                         echo "</div>";
                     }
                 ?>
             </div>
             <div class="form-group col-md-4">
-                <label for="chave">Chave</label>
+                <label for="chave" class="fs-4">Chave</label>
                 <?php
                     if($veicTicket["chave"] == 0){
-                        echo "<div class='form-group col-md-3'>";
-                        echo "<input type='radio' name='chave' value='0' checked>Não deixou<br>";
-                        echo "<input type='radio' name='chave' value='1'>Deixou";
+                        echo "<div class='form-group col-md-3 fs-5'>";
+                        echo "<input type='radio' name='chave' value='0' class='fs-4' checked>Não deixou<br>";
+                        echo "<input type='radio' name='chave' value='1' class='fs-4'>Deixou";
                         echo "</div>";
                     }elseif($veicTicket["chave"] == 1){
-                        echo "<div class='form-group col-md-3'>";
-                        echo "<input type='radio' name='chave' value='0' >Não deixou<br>";
-                        echo "<input type='radio' name='chave' value='1' checked>Deixou";
+                        echo "<div class='form-group col-md-3 fs-5'>";
+                        echo "<input type='radio' name='chave' value='0' class='fs-4' >Não deixou<br>";
+                        echo "<input type='radio' name='chave' value='1' class='fs-4' checked>Deixou";
                         echo "</div>";
                     }
                 ?>
@@ -101,16 +101,16 @@
         <!-- TERCEIRA LINHA -->
         <div class="row"> 
             <div class="form-group col-md-4">
-                <label for="pav_vaga">Pavimento</label>
-                <input type="text" class="form-control" name="pav_vaga" value="<?php echo $vagasTicket["pav_vaga"]; ?>">
+                <label for="pav_vaga"class="fs-4" >Pavimento</label>
+                <input type="text" class="form-control fs-4" name="pav_vaga" value="<?php echo $vagasTicket["pav_vaga"]; ?>">
             </div>
             <div class="form-group col-md-4">
-                <label for="setor_vaga">Setor</label>
-                <input type="text" class="form-control" name="setor_vaga" value="<?php echo $vagasTicket["setor_vaga"]; ?>">
+                <label for="setor_vaga" class="fs-4">Setor</label>
+                <input type="text" class="form-control fs-4" name="setor_vaga" value="<?php echo $vagasTicket["setor_vaga"]; ?>">
             </div>
             <div class="form-group col-md-4">
                 <label for="num_vaga">Número</label>
-                <input type="text" class="form-control" name="num_vaga" value="<?php echo $vagasTicket["num_vaga"]; ?>">
+                <input type="text" class="form-control fs-4" name="num_vaga" value="<?php echo $vagasTicket["num_vaga"]; ?>">
             </div>
            
         </div>
@@ -120,25 +120,25 @@
         <div class="row"> 
             
             <div class="form-group col-md-4">
-                <label for="marca_veic">Marca</label>
-                <input type="text" class="form-control" name="marca_veic" value="<?php echo $veicTicket["marca_veic"]; ?>">
+                <label for="marca_veic" class="fs-4">Marca</label>
+                <input type="text" class="form-control fs-4" name="marca_veic" value="<?php echo $veicTicket["marca_veic"]; ?>">
             </div>
             <div class="form-group col-md-4">
-                <label for="modelo_veic">Modelo</label>
-                <input type="text" class="form-control" name="modelo_veic" value="<?php echo $veicTicket["modelo_veic"]; ?>">
+                <label for="modelo_veic" class="fs-4"> Modelo</label>
+                <input type="text" class="form-control fs-4" name="modelo_veic" value="<?php echo $veicTicket["modelo_veic"]; ?>">
             </div>
             <div class="form-group col-md-4">
-                <label for="status_pg">Status do Pagamento </label>
+                <label for="status_pg" class="fs-4">Status do Pagamento </label>
                 <?php
                     if($veicTicket["status_pg"] == 0){
-                        echo "<div class='form-group col-md-3'>";
-                        echo "<input type='radio' name='status_pg' value='0' checked>Não Pago<br>";
-                        echo "<input type='radio' name='status_pg' value='1'>Pago";
+                        echo "<div class='form-group col-md-3 fs-5'>";
+                        echo "<input type='radio' name='status_pg' value='0' class='fs-4' checked>Não Pago<br>";
+                        echo "<input type='radio' name='status_pg' value='1' class='fs-4'>Pago";
                         echo "</div>";
                     }elseif($veicTicket["status_pg"] == 1){
-                        echo "<div class='form-group col-md-3'>";
-                        echo "<input type='radio' name='status_pg' value='0' >Não Pago<br>";
-                        echo "<input type='radio' name='status_pg' value='1' checked>Pago";
+                        echo "<div class='form-group col-md-3 fs-5'>";
+                        echo "<input type='radio' name='status_pg' value='0' class='fs-4' >Não Pago<br>";
+                        echo "<input type='radio' name='status_pg' value='1' class='fs-4' checked>Pago";
                         echo "</div>";
                     }
                 ?>

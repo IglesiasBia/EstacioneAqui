@@ -53,15 +53,14 @@
             $sqlListaVeiculos = mysqli_query($con, "select * from ticket join veiculo on ticket.placa_veic = veiculo.placa_veic where status_pg=1 and hr_saida between '$dtInicio' and '$dtFinal';");
             
             echo "
-            <div class='cabecalho'>
-                <div class='row'>
-                    <div class='col-md-6 '><img src='../assets/img/logos/logo.png' width='100em'></div>
-            <div class='titcab'>
-                Estacione Aqui
-                <br>
-                Relatório de entrada/saída
-            </div>
-            </div>";
+                <div class='cabecalho'>
+                    <div class='row'>
+                        <h2> Relatório de Entrada/Saída de Veículos</h2>
+                    </div>
+                </div>
+                <hr>
+                ";
+
             // Cabecalho da tabela de relatório
             echo "<table class='table align-items-center mb-0'>";
             echo "<thead><tr>";
@@ -89,7 +88,7 @@
 
 
                 }
-            echo "</tr></tbody></table>";
+            echo "</tr></tbody></table><hr>";
 
         }
     }

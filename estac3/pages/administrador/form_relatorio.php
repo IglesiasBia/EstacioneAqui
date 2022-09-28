@@ -14,19 +14,19 @@
             <div class="row">
                 <div class="col-md-4">
                     <label class="fs-4"for="dt_inicio">Tipo Relatório:
-                        <select class="selectrel" name="tipoRelatorio" id="" required>
+                        <select class="selectrel" name="tipoRelatorio" required>
                             <option selected>Selecione</option>
                             <option value="fatura">Fatura</option>
                             <option value="quantidade">Quantidade de veículos</option>
                             <option value="faturaEQuantidade">Fatura e quantidade</option>
                             <option value="entradaSaida">Entrada/Saída</option>
-                        </select>
+                    </select>
                     </label>
                 </div>
     
                 <div class="col-md-4">
                     <label class="fs-4" for="dt_inicio">
-                        Data Inicio:
+                        Data Inicio: <br>
                         <input type="date" name="dt_inicio">
                     </label>
                     
@@ -34,7 +34,7 @@
         
                 <div class="col-md-4">
                     <label class="fs-4" for="dt_final">
-                        Data Final:
+                        Data Final: <br>
                         <input type="date" name="dt_final">
                     </label>
                 </div>
