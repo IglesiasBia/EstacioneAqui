@@ -1,6 +1,14 @@
 <div id="setor">
-    <input type="text" id="quantidadeSetor" style="display: block">
-    <button onclick="defineQuantidadeButtonSetor()" id="botaoQuantidadeSetor">vai</button>
+<label for="quantidadeSetor">Escolha a quantidade de setores:</label>
+<select name="quantidadeSetor" id="quantidadeSetor">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select>
+
+    <button onclick="defineQuantidadeButtonSetor()" id="botaoQuantidadeSetor" class='btn btnvaga btn-success'>Salvar</button>
     <input type="text" id="setorAtual" onclick="defineSetor()" style="display: none">
     <input type="text" id="corSetorAtual" onclick="defineSetor()" style="display: none">
 </div>

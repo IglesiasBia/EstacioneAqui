@@ -66,36 +66,30 @@ if (isset($_GET["page"])) {
         case "insere_vaga":
             include "estacionamento/insere_vaga.php";
             break;
-        // Layout
-        case "altera_layout":
-            include "estacionamento/altera_layout.php";
+            // Layout
+            // Parte escolher qauis espaços são vagas
+        case "layout_desenha_vagas":
+            include "estacionamento/criar-layout-estacionamento/form_layout_desenha_vagas.php";
             break;
-        case "layout":
-            include "estacionamento/layout.php";
+            // Insere no banaco as vagas
+        case "altera_layout_vagas":
+            include "estacionamento/criar-layout-estacionamento/altera_layout_vagas.php";
             break;
-        case "altera_layout_novo":
-            include "estacionamento/altera_layout_novo.php";
+            // Parte de escoolher os setores da vaga
+        case "form_altera_setor":
+            include "estacionamento/criar-layout-estacionamento/form_altera_setor.php";
             break;
-        case "insere_setor_layout":
-            include "insere_setor_layout.php";
-            break;
-        case "gera_dados_espaco":
-            include "estacionamento/gera_dados_espaco.php";
-        break;
-        case "layout_teste":
-            include "estacionamento/layout_teste.php";
-            break;
-        case "altera_setor_tipo_vaga":
-            include "estacionamento/altera_setor_tipo_vaga.php";
-        break;
+            // Insere os setores no banco
         case "altera_setor":
-            include "estacionamento/altera_setor.php";
-        break;
-        case "form_altera_tipo_vaga":
-            include "estacionamento/form_altera_tipo_vaga.php";
+            include "estacionamento/criar-layout-estacionamento/altera_setor.php";
             break;
-            case "altera_tipo_vaga":
-            include "estacionamento/altera_tipo_vaga.php";
+            // Parte que seleciona o tipo da vaga (carro ou moto)
+        case "form_altera_tipo_vaga":
+            include "estacionamento/criar-layout-estacionamento/form_altera_tipo_vaga.php";
+            break;
+            // Insere tipo vaga no banco
+        case "altera_tipo_vaga":
+            include "estacionamento/criar-layout-estacionamento/altera_tipo_vaga.php";
             break;
 
 

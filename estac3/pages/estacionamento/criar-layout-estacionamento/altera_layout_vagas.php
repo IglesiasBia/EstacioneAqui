@@ -2,17 +2,14 @@
 
 // echo "oi";
 $pavimentoAtual = $_GET["id_pavimento"];
-// echo $pavimentoAtual;
+echo $pavimentoAtual;
 // $pavimentoAtual = $_POST["pavimentoAtual"];
 // echo $pavimentoAtual;
 $vagasExistentes = $_POST["vagasExistentes"];
 $rua = $_POST["rua"];
 // echo $vagasExistentes. "<br>";
 $arrayVagas = explode(',',$vagasExistentes);
-// print_r($arrayVagas );
-// echo count($arrayVagas);
-// echo $arrayVagas[2];
-// echo $rua;
+
 
 $sqlDadosPavimento = mysqli_query($con, "select num_vaga from vagas where pav_vaga=".$pavimentoAtual);
 $resultadoDadosPaviemento = mysqli_fetch_array($sqlDadosPavimento);
@@ -59,4 +56,4 @@ while($contadorVagas <count($arrayVagas)){
     $numVaga++;
 }
 // echo "oi";
-header('Location: /estacione/estac3/pages/dash.php?page=altera_setor_tipo_vaga&id_pavimento='.$pavimentoAtual);
+header('Location: /estacione/estac3/pages/dash.php?page=form_altera_setor&id_pavimento='.$pavimentoAtual);

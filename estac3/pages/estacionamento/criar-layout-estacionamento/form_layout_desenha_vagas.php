@@ -1,14 +1,10 @@
 <?php
-
+// Pega id do pavimento atual
 $pavimentoAtual = $_GET["id_pavimento"];
-// echo $pavimentoAtual;
-// Pega a quantidade de pavimentos
-// $quantidadePavimentos = $_POST["quantidadePavimentos"];
-// echo $quantidadePavimentos;
-
+// TODO: Se pavimento já existir aparecer ele desde aqui e botào para limpar todo ele 
 // Input escondido que vai estar com respotas de quantos pavimentos existem
 echo '
-<form action="?page=altera_layout_novo&id_pavimento='.$pavimentoAtual.'" method="post" >
+<form action="?page=altera_layout_vagas&id_pavimento='.$pavimentoAtual.'" method="post" >
     <h1>Pavimento ' . $pavimentoAtual . '</h1>
     <p>Selecione onde há vagas</p>
     <table>
@@ -36,7 +32,6 @@ echo '
     let contador = 1;
 
     while (contador <= vagas) {
-        // console.log(screen.width);
 
         let elemento = document.getElementById("teste");
         elemento.innerHTML += `
@@ -51,7 +46,7 @@ echo '
 
     }
 
-    // let numeroVaga = 0;
+
     function apagaVaga() {
         // Pega elemento que disparou o evento
         let el = event.target || event.srcElement;
@@ -168,11 +163,6 @@ echo '
             // Se o usuário clicar no botão
             // Pega id do botão
             idBotao = document.getElementById("vaga" + c);
-            // console.log(idBotao);
-            // Pega class do botão
-
-            // let classElementoBotao = idBotao.className;
-            // console.log(classElementoBotao);
 
             // Verifica display da imagem do carro
             let botaoFilho = idBotao.children;
@@ -186,36 +176,27 @@ echo '
             // Se o usuário clicar na imagem
             // Pega elemento pelo id
             idElemento = document.getElementById("imgCarro" + c);
-            // console.log(idElemento);
+
             // Pega class do elemento
             classElemento = idElemento.className;
             // Verifica estilo display 
             const cssObj = window.getComputedStyle(idElemento, null);
             let displayImagem = cssObj.getPropertyValue("display");
-            // console.log(displayImagem)
 
             if (classElemento == "imgCarro" && displayImagem == "inline-block") {
 
-                // Pega o elemento pai da imagem
-                // let elementoPai = idElemento.parentNode;
-
-                // // Pega id do elemento pai
-                // let idElementoPai = elementoPai.id;
                 // Limpa o conteúdo de todos os parágrafos 
                 document.getElementById("numeroVaga" + c).textContent = "";
                 // Numera os parágrafos
                 document.getElementById("numeroVaga" + c).textContent = num++;
-
-                // console.log(elementoPai);
 
             } else if (idBotao.id == "vaga" + c && displayImagemBotao == "inline-block") {
 
-
-
                 // Limpa o conteúdo de todos os parágrafos 
                 document.getElementById("numeroVaga" + c).textContent = "";
                 // Numera os parágrafos
                 document.getElementById("numeroVaga" + c).textContent = num++;
+
             } else {
                 // Pega o elemento pai da imagem
                 let elementoPai = idElemento.parentNode;
@@ -226,21 +207,16 @@ echo '
                 document.getElementById("numeroVaga" + c).textContent = "";
             }
             c++;
-            criaEstacionamento()
+            criaEstacionamento();
 
         }
-
-
-        // numeroVaga++;
-
-
     }
 
     function criaEstacionamento() {
         let vagasExistentes = [];
         let rua = [];
         let cont = 1;
-        // Passa por tpdas as imagens
+        // Passa por todas as imagens
         while (cont <= vagas) {
             idElemento = document.getElementById("imgCarro" + cont);
             const displayEspaco = window.getComputedStyle(idElemento, null);
@@ -250,13 +226,11 @@ echo '
                 // Adciona vaga na posicão atual ao array
                 vagasExistentes.push("imgCarro" + cont);
             } else {
-                // Adciona espaco na posicão atual ao array
+                // Adiciona espaco na posição atual ao array
                 rua.push("imgCarro" + cont);
             }
             cont++;
         }
-        console.log(rua);
-        console.log(vagasExistentes);
 
         // Pega input
         let respostaVagasExistentes = document.getElementById("vagasExistentes");

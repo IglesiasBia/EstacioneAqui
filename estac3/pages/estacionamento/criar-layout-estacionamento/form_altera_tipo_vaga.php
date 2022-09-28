@@ -28,17 +28,68 @@ while ($resultadoPegaEspacos = mysqli_fetch_array($sqlPegaEspacos)) {
     if ($resultadoPegaEspacos["tipo_vaga"] == 0) {
         // Pega id do espaco atual
         $idVaga = $resultadoPegaEspacos["num_vaga"];
+        if($resultadoPegaEspacos["setor_vaga"] == "A"){
 
-        //Faz button aparecer na tela 
+            //Faz button aparecer na tela 
+    
+            echo " <button type='button' class='btn btnvaga btn-success' onclick='tipoVaga()' id='vaga" . $idVaga . "' name='vaga" . $idVaga . "'  style='position: static; background-color: rgb(0, 0, 255)'>";
+            // Imagem carro
+            echo "<img src='../assets/img/icons/carlayout.png' width='30em'alt='' style='display: block' class='imgCarro' id='imgCarro" . $idVaga . "' name='imgCarro" . $idVaga . "' onclick='tipoVaga()'>";
+            // Imagem moto
+            echo "<img src='../assets/img/bea.png' width='30em'alt='' style='display: none' class='imgMoto' id='imgMoto" . $idVaga . "' name='imgMoto" . $idVaga . "' onclick='tipoVaga()'>";
+            // Click me
+            echo "<p id='numeroVaga" . $numeroVaga . "' name='numeroVaga" . $idVaga . "' style='display: inline' onclick='tipoVaga()'>".$numeroVaga ."A</p>";
+            echo "</button>";
+        }elseif($resultadoPegaEspacos["setor_vaga"] == "B"){
 
-        echo " <button type='button' class='btn btnvaga btn-success' onclick='tipoVaga()' id='vaga" . $idVaga . "' name='vaga" . $idVaga . "'  style='position: static'>";
-        // Imagem carro
-        echo "<img src='../assets/img/icons/carlayout.png' width='30em'alt='' style='display: block' class='imgCarro' id='imgCarro" . $idVaga . "' name='imgCarro" . $idVaga . "' onclick='tipoVaga()'>";
-        // Imagem moto
-        echo "<img src='../assets/img/bea.png' width='30em'alt='' style='display: none' class='imgMoto' id='imgMoto" . $idVaga . "' name='imgMoto" . $idVaga . "' onclick='tipoVaga()'>";
-        // Click me
-        echo "<p id='numeroVaga" . $numeroVaga . "' name='numeroVaga" . $idVaga . "' style='display: inline' onclick='tipoVaga()'>$numeroVaga</p>";
-        echo "</button>";
+            //Faz button aparecer na tela 
+    
+            echo " <button type='button' class='btn btnvaga btn-success' onclick='tipoVaga()' id='vaga" . $idVaga . "' name='vaga" . $idVaga . "'  style='position: static; background-color: rgb(128, 0, 128)'>";
+            // Imagem carro
+            echo "<img src='../assets/img/icons/carlayout.png' width='30em'alt='' style='display: block' class='imgCarro' id='imgCarro" . $idVaga . "' name='imgCarro" . $idVaga . "' onclick='tipoVaga()'>";
+            // Imagem moto
+            echo "<img src='../assets/img/bea.png' width='30em'alt='' style='display: none' class='imgMoto' id='imgMoto" . $idVaga . "' name='imgMoto" . $idVaga . "' onclick='tipoVaga()'>";
+            // Click me
+            echo "<p id='numeroVaga" . $numeroVaga . "' name='numeroVaga" . $idVaga . "' style='display: inline' onclick='tipoVaga()'>".$numeroVaga ."B</p>";
+            echo "</button>";
+        }elseif($resultadoPegaEspacos["setor_vaga"] == "C"){
+
+            //Faz button aparecer na tela 
+    
+            echo " <button type='button' class='btn btnvaga btn-success' onclick='tipoVaga()' id='vaga" . $idVaga . "' name='vaga" . $idVaga . "'  style='position: static; background-color: rgb(186, 208, 0)'>";
+            // Imagem carro
+            echo "<img src='../assets/img/icons/carlayout.png' width='30em'alt='' style='display: block' class='imgCarro' id='imgCarro" . $idVaga . "' name='imgCarro" . $idVaga . "' onclick='tipoVaga()'>";
+            // Imagem moto
+            echo "<img src='../assets/img/bea.png' width='30em'alt='' style='display: none' class='imgMoto' id='imgMoto" . $idVaga . "' name='imgMoto" . $idVaga . "' onclick='tipoVaga()'>";
+            // Click me
+            echo "<p id='numeroVaga" . $numeroVaga . "' name='numeroVaga" . $idVaga . "' style='display: inline' onclick='tipoVaga()'>".$numeroVaga ."C</p>";
+            echo "</button>";
+        }elseif($resultadoPegaEspacos["setor_vaga"] == "D"){
+
+            //Faz button aparecer na tela 
+    
+            echo " <button type='button' class='btn btnvaga btn-success' onclick='tipoVaga()' id='vaga" . $idVaga . "' name='vaga" . $idVaga . "'  style='position: static; background-color: rgb(76, 146, 175)'>";
+            // Imagem carro
+            echo "<img src='../assets/img/icons/carlayout.png' width='30em'alt='' style='display: block' class='imgCarro' id='imgCarro" . $idVaga . "' name='imgCarro" . $idVaga . "' onclick='tipoVaga()'>";
+            // Imagem moto
+            echo "<img src='../assets/img/bea.png' width='30em'alt='' style='display: none' class='imgMoto' id='imgMoto" . $idVaga . "' name='imgMoto" . $idVaga . "' onclick='tipoVaga()'>";
+            // Click me
+            echo "<p id='numeroVaga" . $numeroVaga . "' name='numeroVaga" . $idVaga . "' style='display: inline' onclick='tipoVaga()'>".$numeroVaga ."D</p>";
+            echo "</button>";
+        }elseif($resultadoPegaEspacos["setor_vaga"] == "E"){
+
+            //Faz button aparecer na tela 
+    
+            echo " <button type='button' class='btn btnvaga btn-success' onclick='tipoVaga()' id='vaga" . $idVaga . "' name='vaga" . $idVaga . "'  style='position: static; background-color: rgb(208, 0, 170)'>";
+            // Imagem carro
+            echo "<img src='../assets/img/icons/carlayout.png' width='30em'alt='' style='display: block' class='imgCarro' id='imgCarro" . $idVaga . "' name='imgCarro" . $idVaga . "' onclick='tipoVaga()'>";
+            // Imagem moto
+            echo "<img src='../assets/img/bea.png' width='30em'alt='' style='display: none' class='imgMoto' id='imgMoto" . $idVaga . "' name='imgMoto" . $idVaga . "' onclick='tipoVaga()'>";
+            // Click me
+            echo "<p id='numeroVaga" . $numeroVaga . "' name='numeroVaga" . $idVaga . "' style='display: inline' onclick='tipoVaga()'>".$numeroVaga ."E</p>";
+            echo "</button>";
+        }
+
         $numeroVaga++;
     } else {
         $idVaga = $resultadoPegaEspacos["num_vaga"];
