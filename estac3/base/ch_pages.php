@@ -51,6 +51,12 @@ if (isset($_GET["page"])) {
             break;
 
             //CRUD Estacionamento  
+        case "lista_vagas":
+            include "estacionamento/lista_vagas.php";
+            break;
+        case "altera_vaga_cliente":
+            include "estacionamento/altera_vaga_cliente.php";
+            break;
         case "atualiza":
             include "atualiza.php";
             break;
