@@ -1,6 +1,6 @@
 <div id="setor">
 <label for="quantidadeSetor">Escolha a quantidade de setores:</label>
-<select name="quantidadeSetor" id="quantidadeSetor">
+<select name="quantidadeSetor" class="quantidadeSetor" id="quantidadeSetor">
   <option value="1">1</option>
   <option value="2">2</option>
   <option value="3">3</option>
@@ -8,7 +8,7 @@
   <option value="5">5</option>
 </select>
 
-    <button onclick="defineQuantidadeButtonSetor()" id="botaoQuantidadeSetor" class='btn btnvaga btn-success'>Salvar</button>
+    <button onclick="defineQuantidadeButtonSetor()" id="botaoQuantidadeSetor" class='btn  btn-success'>Salvar</button>
     <input type="text" id="setorAtual" onclick="defineSetor()" style="display: none">
     <input type="text" id="corSetorAtual" onclick="defineSetor()" style="display: none">
 </div>
@@ -79,7 +79,7 @@ echo '
 <script>
     var setores = ["A", "B", "C", "D", "E", "F"];
 
-    var corSetor = ["0, 0, 255", "128, 0, 128", "186, 208, 0", "76, 146, 175", "208, 0, 170"];
+    var corSetor = ["234, 110, 55", "242, 175, 48", "2, 115, 115", "123, 22, 54", "21, 136, 93"];
 
     function defineQuantidadeButtonSetor() {
 

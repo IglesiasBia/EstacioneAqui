@@ -55,7 +55,7 @@ echo '<form action="?page=altera_vaga_cliente&id_pavimento='.$pavimentoAtual.'" 
             }elseif($resultadoDadosEstacinamento["tipo_vaga"] == "1"){
                 echo "<td>";
                 echo "<button type='button' class='btn btnvaga btn-success' id='vaga".$numeroVaga."'name='vaga` ".$numeroVaga."`' style='position: static; ' onclick='alteraStatusVaga()'> ";
-                echo "<img src='../assets/img/bea.png' width='30em'alt='' class='imgCarro' >";
+                echo "<img src='../assets/img/icons/moto.png' width='30em'alt='' class='imgCarro' >";
                 // TODO
                 if($resultadoDadosEstacinamento["setor_vaga"] == "A"){
                     echo "<p  style='display: inline'>".$numeroVaga."A</p>";

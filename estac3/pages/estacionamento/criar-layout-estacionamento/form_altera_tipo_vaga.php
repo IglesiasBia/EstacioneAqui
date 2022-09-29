@@ -32,11 +32,11 @@ while ($resultadoPegaEspacos = mysqli_fetch_array($sqlPegaEspacos)) {
 
             //Faz button aparecer na tela 
     
-            echo " <button type='button' class='btn btnvaga btn-success' onclick='tipoVaga()' id='vaga" . $idVaga . "' name='vaga" . $idVaga . "'  style='position: static; background-color: rgb(0, 0, 255)'>";
+            echo " <button type='button' class='btn btnvaga btn-success' onclick='tipoVaga()' id='vaga" . $idVaga . "' name='vaga" . $idVaga . "'  style='position: static; background-color: rgb(234, 110, 55)'>";
             // Imagem carro
             echo "<img src='../assets/img/icons/carlayout.png' width='30em'alt='' style='display: block' class='imgCarro' id='imgCarro" . $idVaga . "' name='imgCarro" . $idVaga . "' onclick='tipoVaga()'>";
             // Imagem moto
-            echo "<img src='../assets/img/bea.png' width='30em'alt='' style='display: none' class='imgMoto' id='imgMoto" . $idVaga . "' name='imgMoto" . $idVaga . "' onclick='tipoVaga()'>";
+            echo "<img src='../assets/img/icons/moto.png' width='30em'alt='' style='display: none' class='imgMoto' id='imgMoto" . $idVaga . "' name='imgMoto" . $idVaga . "' onclick='tipoVaga()'>";
             // Click me
             echo "<p id='numeroVaga" . $numeroVaga . "' name='numeroVaga" . $idVaga . "' style='display: inline' onclick='tipoVaga()'>".$numeroVaga ."A</p>";
             echo "</button>";
@@ -44,11 +44,11 @@ while ($resultadoPegaEspacos = mysqli_fetch_array($sqlPegaEspacos)) {
 
             //Faz button aparecer na tela 
     
-            echo " <button type='button' class='btn btnvaga btn-success' onclick='tipoVaga()' id='vaga" . $idVaga . "' name='vaga" . $idVaga . "'  style='position: static; background-color: rgb(128, 0, 128)'>";
+            echo " <button type='button' class='btn btnvaga btn-success' onclick='tipoVaga()' id='vaga" . $idVaga . "' name='vaga" . $idVaga . "'  style='position: static; background-color: rgb(242, 175, 48)'>";
             // Imagem carro
             echo "<img src='../assets/img/icons/carlayout.png' width='30em'alt='' style='display: block' class='imgCarro' id='imgCarro" . $idVaga . "' name='imgCarro" . $idVaga . "' onclick='tipoVaga()'>";
             // Imagem moto
-            echo "<img src='../assets/img/bea.png' width='30em'alt='' style='display: none' class='imgMoto' id='imgMoto" . $idVaga . "' name='imgMoto" . $idVaga . "' onclick='tipoVaga()'>";
+            echo "<img src='../assets/img/icons/moto.png' width='30em'alt='' style='display: none' class='imgMoto' id='imgMoto" . $idVaga . "' name='imgMoto" . $idVaga . "' onclick='tipoVaga()'>";
             // Click me
             echo "<p id='numeroVaga" . $numeroVaga . "' name='numeroVaga" . $idVaga . "' style='display: inline' onclick='tipoVaga()'>".$numeroVaga ."B</p>";
             echo "</button>";
@@ -56,11 +56,11 @@ while ($resultadoPegaEspacos = mysqli_fetch_array($sqlPegaEspacos)) {
 
             //Faz button aparecer na tela 
     
-            echo " <button type='button' class='btn btnvaga btn-success' onclick='tipoVaga()' id='vaga" . $idVaga . "' name='vaga" . $idVaga . "'  style='position: static; background-color: rgb(186, 208, 0)'>";
+            echo " <button type='button' class='btn btnvaga btn-success' onclick='tipoVaga()' id='vaga" . $idVaga . "' name='vaga" . $idVaga . "'  style='position: static; background-color: rgb(2, 115, 115)'>";
             // Imagem carro
             echo "<img src='../assets/img/icons/carlayout.png' width='30em'alt='' style='display: block' class='imgCarro' id='imgCarro" . $idVaga . "' name='imgCarro" . $idVaga . "' onclick='tipoVaga()'>";
             // Imagem moto
-            echo "<img src='../assets/img/bea.png' width='30em'alt='' style='display: none' class='imgMoto' id='imgMoto" . $idVaga . "' name='imgMoto" . $idVaga . "' onclick='tipoVaga()'>";
+            echo "<img src='../assets/img/icons/moto.png' width='30em'alt='' style='display: none' class='imgMoto' id='imgMoto" . $idVaga . "' name='imgMoto" . $idVaga . "' onclick='tipoVaga()'>";
             // Click me
             echo "<p id='numeroVaga" . $numeroVaga . "' name='numeroVaga" . $idVaga . "' style='display: inline' onclick='tipoVaga()'>".$numeroVaga ."C</p>";
             echo "</button>";
@@ -68,11 +68,11 @@ while ($resultadoPegaEspacos = mysqli_fetch_array($sqlPegaEspacos)) {
 
             //Faz button aparecer na tela 
     
-            echo " <button type='button' class='btn btnvaga btn-success' onclick='tipoVaga()' id='vaga" . $idVaga . "' name='vaga" . $idVaga . "'  style='position: static; background-color: rgb(76, 146, 175)'>";
+            echo " <button type='button' class='btn btnvaga btn-success' onclick='tipoVaga()' id='vaga" . $idVaga . "' name='vaga" . $idVaga . "'  style='position: static; background-color: rgb(123, 22, 54)'>";
             // Imagem carro
             echo "<img src='../assets/img/icons/carlayout.png' width='30em'alt='' style='display: block' class='imgCarro' id='imgCarro" . $idVaga . "' name='imgCarro" . $idVaga . "' onclick='tipoVaga()'>";
             // Imagem moto
-            echo "<img src='../assets/img/bea.png' width='30em'alt='' style='display: none' class='imgMoto' id='imgMoto" . $idVaga . "' name='imgMoto" . $idVaga . "' onclick='tipoVaga()'>";
+            echo "<img src='../assets/img/icons/moto.png' width='30em'alt='' style='display: none' class='imgMoto' id='imgMoto" . $idVaga . "' name='imgMoto" . $idVaga . "' onclick='tipoVaga()'>";
             // Click me
             echo "<p id='numeroVaga" . $numeroVaga . "' name='numeroVaga" . $idVaga . "' style='display: inline' onclick='tipoVaga()'>".$numeroVaga ."D</p>";
             echo "</button>";
@@ -80,11 +80,11 @@ while ($resultadoPegaEspacos = mysqli_fetch_array($sqlPegaEspacos)) {
 
             //Faz button aparecer na tela 
     
-            echo " <button type='button' class='btn btnvaga btn-success' onclick='tipoVaga()' id='vaga" . $idVaga . "' name='vaga" . $idVaga . "'  style='position: static; background-color: rgb(208, 0, 170)'>";
+            echo " <button type='button' class='btn btnvaga btn-success' onclick='tipoVaga()' id='vaga" . $idVaga . "' name='vaga" . $idVaga . "'  style='position: static; background-color: rgb(21, 136, 93)'>";
             // Imagem carro
             echo "<img src='../assets/img/icons/carlayout.png' width='30em'alt='' style='display: block' class='imgCarro' id='imgCarro" . $idVaga . "' name='imgCarro" . $idVaga . "' onclick='tipoVaga()'>";
             // Imagem moto
-            echo "<img src='../assets/img/bea.png' width='30em'alt='' style='display: none' class='imgMoto' id='imgMoto" . $idVaga . "' name='imgMoto" . $idVaga . "' onclick='tipoVaga()'>";
+            echo "<img src='../assets/img/icons/moto.png' width='30em'alt='' style='display: none' class='imgMoto' id='imgMoto" . $idVaga . "' name='imgMoto" . $idVaga . "' onclick='tipoVaga()'>";
             // Click me
             echo "<p id='numeroVaga" . $numeroVaga . "' name='numeroVaga" . $idVaga . "' style='display: inline' onclick='tipoVaga()'>".$numeroVaga ."E</p>";
             echo "</button>";

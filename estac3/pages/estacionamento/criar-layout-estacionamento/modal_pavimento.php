@@ -33,10 +33,10 @@ echo '<input type="text" value="'.$resultadoQuantidadePavimento["quant_pavimento
 							if($resultadoDadosPavimento["pav_vaga"] != $contador){
 							// Cria link que redirecioa para atualizar layout
 								echo "
-								<a class='btn btn-success btn-xs' id='link".$contador."' href=?page=layout_desenha_vagas&id_pavimento=".$contador.">Pavimento ".$contador."</a></td>";
+								<a class='btn btn-danger btn-xs' id='link".$contador."' href=?page=layout_desenha_vagas&id_pavimento=".$contador.">Pavimento ".$contador."</a></td>";
 							}else{
 								echo "
-								<a class='btn btn-success btn-xs' id='link".$contador."' onclick='confirmaMudanca()'>Pavimento ".$contador."</a></td>";
+								<a class='btn btn-danger btn-xs' id='link".$contador."' onclick='confirmaMudanca()'>Pavimento ".$contador."</a></td>";
 								// echo "
 								// <a class='btn btn-success btn-xs sumir'  href=?page=layout_desenha_vagas&id_pavimento=".$contador."  onclick='confirmaMudanca()'>Pavimento ".$contador."</a></td>";
 							}

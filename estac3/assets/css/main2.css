@@ -92,6 +92,12 @@ cardsbaixo{
     border-color:dimgray;
     border-radius: 1em;
 }
+.quantidadeSetor{
+    padding: 0.3em;
+    background:none;
+    border-color:dimgray;
+    border-radius: 1em;   
+}
 .cardperfil{
     padding: 2em;
 }
