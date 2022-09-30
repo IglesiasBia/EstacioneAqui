@@ -1,12 +1,12 @@
 <div id="setor">
-<label for="quantidadeSetor">Escolha a quantidade de setores:</label>
-<select name="quantidadeSetor" class="quantidadeSetor" id="quantidadeSetor">
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
-</select>
+    <label for="quantidadeSetor" id="labelQuantidadeSetor">Escolha a quantidade de setores:</label>
+    <select name="quantidadeSetor" class="quantidadeSetor" id="quantidadeSetor">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
 
     <button onclick="defineQuantidadeButtonSetor()" id="botaoQuantidadeSetor" class='btn  btn-success'>Salvar</button>
     <input type="text" id="setorAtual" onclick="defineSetor()" style="display: none">
@@ -77,14 +77,16 @@ echo '
 ?>
 
 <script>
-    var setores = ["A", "B", "C", "D", "E", "F"];
+    var setores = ["A", "B", "C", "D", "E"];
 
-    var corSetor = ["234, 110, 55", "242, 175, 48", "2, 115, 115", "123, 22, 54", "21, 136, 93"];
+    var corSetor = ["126, 76, 175", "242, 175, 48", "2, 115, 115", "123, 22, 54", "29, 40, 210"];
 
     function defineQuantidadeButtonSetor() {
 
-        let inputQuantidadeSetor = document.getElementById("quantidadeSetor");
-        inputQuantidadeSetor.style.display = 'none';
+        let labelQuantidadeSetor = document.getElementById("labelQuantidadeSetor");
+        labelQuantidadeSetor.style.display = 'none';
+        let selectQuantidadeSetor = document.getElementById("quantidadeSetor");
+        selectQuantidadeSetor.style.display = 'none';
         let botaoQuantidadeSetor = document.getElementById("botaoQuantidadeSetor");
         botaoQuantidadeSetor.style.display = 'none';
 
@@ -103,7 +105,7 @@ echo '
     function defineSetor() {
         let elementoClicado = event.target || event.srcElement;
         let idElemento = elementoClicado.id;
-// console.log(idElemento)
+        // console.log(idElemento)
         // Pega input invisível que contem o setor atual
         let inputSetorAtual = document.getElementById("setorAtual");
         // Pega input invisível que contem cor do setor atual
@@ -151,9 +153,9 @@ echo '
                     paragrafo.innerHTML = textoP.slice(0, -1);
                     // Coloca novo setor
                     paragrafo.innerHTML += inputSetorAtual.value;
-                }else if(textoP.length > 2 && corBackGroundButton != "rgb(" + corAtual + ")" && numeroIdParagrafo >= 10){
-                  // Tira o setor anterio
-                  paragrafo.innerHTML = textoP.slice(0, -1);
+                } else if (textoP.length > 2 && corBackGroundButton != "rgb(" + corAtual + ")" && numeroIdParagrafo >= 10) {
+                    // Tira o setor anterio
+                    paragrafo.innerHTML = textoP.slice(0, -1);
                     // Coloca novo setor
                     paragrafo.innerHTML += inputSetorAtual.value;
                 }
@@ -162,10 +164,10 @@ echo '
                 if (textoP.length < 2 && numeroIdParagrafo < 10) {
                     // Adiciona setor
                     paragrafo.innerHTML += inputSetorAtual.value;
-                }else if(textoP.length < 3 && numeroIdParagrafo >= 10){
+                } else if (textoP.length < 3 && numeroIdParagrafo >= 10) {
                     // Adiciona setor
                     paragrafo.innerHTML += inputSetorAtual.value;
-                    
+
                 }
 
                 // Altera cor do button

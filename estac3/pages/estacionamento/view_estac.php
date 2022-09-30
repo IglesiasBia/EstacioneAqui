@@ -81,7 +81,7 @@
                     </div>
                     <hr>
                     <button type="submit" class="btn btn-dark">Alterar</button>
-                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#NovaVaga" > Adicionar nova vaga</button> 
+                    <!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#NovaVaga" > Adicionar nova vaga</button>  -->
 
                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#pavimento">Layout Novo</button>  
 

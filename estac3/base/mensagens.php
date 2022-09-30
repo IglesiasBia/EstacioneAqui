@@ -102,6 +102,28 @@
                 Insira uma vaga vazia.
                 <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">X</button></div>';
             break;
+            // Veículo enserido com sucesso na vaga
+            case "sucessoInserirVeiculoVaga":
+                echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                Veículo inserido com sucesso!
+                <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">X</button></div>';
+            break;
+            // Sobre veículo já estar na vaga
+            case "veiculoEstacionado":
+                echo '	<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                Esse veículo já está estacionado!
+                <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">X</button></div>';
+                break;
+            case "vagaIncompativel":
+                echo '	<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                Esse veículo é incompatível com vaga escolhida!
+                <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">X</button></div>';
+                break;
+                case "faltaDadosAlterarVaga":
+                    echo '	<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                   Preencha a placa do veículo e selecione uma vaga!
+                    <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">X</button></div>';
+                    break;
             // Login inválido 
             case 12:
                 echo '	<div class="alert alert-danger alert-dismissible fade show" role="alert">

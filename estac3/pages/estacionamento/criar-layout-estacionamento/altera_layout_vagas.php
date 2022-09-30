@@ -2,11 +2,11 @@
 
 // echo "oi";
 $pavimentoAtual = $_GET["id_pavimento"];
-echo $pavimentoAtual;
-// $pavimentoAtual = $_POST["pavimentoAtual"];
-// echo $pavimentoAtual;
+
 $vagasExistentes = $_POST["vagasExistentes"];
 $rua = $_POST["rua"];
+$arrayRua = explode(',',$rua);
+// echo $arrayRua[0];
 // echo $vagasExistentes. "<br>";
 $arrayVagas = explode(',',$vagasExistentes);
 
@@ -46,7 +46,8 @@ while($contadorVagas <count($arrayVagas)){
         
     $resultadoPegaIdVagaAtual = mysqli_fetch_array($sqlPegaIdVagaAtual);
     $idVaga = $resultadoPegaIdVagaAtual["id_vaga"];
-// echo $idVaga."<br>";
+
+    // echo $idVaga."<br>";
 
     $sqlCriaVaga = "update vagas set status_vaga='0', pav_vaga='".$pavimentoAtual."', tipo_vaga='0', id_estac=1, setor_vaga='A',num_vaga='".$numeroPosicaoImgCarro ."' where id_vaga=".$idVaga.";";
     $resultadoCriaVaga = mysqli_query($con, $sqlCriaVaga);
@@ -54,6 +55,24 @@ while($contadorVagas <count($arrayVagas)){
     // echo $sqlCriaVaga ."<br>";
     $contadorVagas++;
     $numVaga++;
+}
+
+$contadorRua = 0;
+$numRua = 1;
+while($contadorRua < count($arrayRua)){
+    $posicaoRua = $arrayRua[$contadorRua];
+    echo $posicaoRua;
+    $numeroPosicaoRua = str_replace("imgCarro","",$posicaoRua);
+    $sqlPegaIdRua = mysqli_query($con,"select id_vaga from vagas where num_vaga='".$numeroPosicaoRua ."' and pav_vaga='".$pavimentoAtual."';");
+            
+    $resultadoPegaIdRua = mysqli_fetch_array($sqlPegaIdRua);
+    $idRua = $resultadoPegaIdRua["id_vaga"];
+
+    // echo $idVaga."<br>";
+
+    $sqlCriaRua = "update vagas set status_vaga='3', pav_vaga='".$pavimentoAtual."', tipo_vaga='3', id_estac=1, setor_vaga='A',num_vaga='".$numeroPosicaoRua ."' where id_vaga=".$idRua.";";
+    $resultadoCriaVaga = mysqli_query($con, $sqlCriaRua);
+    $contadorRua++;
 }
 // echo "oi";
 header('Location: /estacione/estac3/pages/dash.php?page=form_altera_setor&id_pavimento='.$pavimentoAtual);

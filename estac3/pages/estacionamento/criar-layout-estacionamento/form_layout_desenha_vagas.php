@@ -1,20 +1,68 @@
+<script>
+    numeraVaga();
+</script>
 <?php
 // Pega id do pavimento atual
 $pavimentoAtual = $_GET["id_pavimento"];
-// TODO: Se pavimento já existir aparecer ele desde aqui e botào para limpar todo ele 
-// Input escondido que vai estar com respotas de quantos pavimentos existem
-echo '
-<form action="?page=altera_layout_vagas&id_pavimento='.$pavimentoAtual.'" method="post" >
-    <h1>Pavimento ' . $pavimentoAtual . '</h1>
-    <p>Selecione onde há vagas</p>
-    <table>
-        <tr>
-            <div id="teste">
-            <input type="text" value="' . $pavimentoAtual . '" name="pavimentoAtual" id="pavimentoAtual" style="display: none">
-                <input type="text" id="vagasExistentes" name="vagasExistentes" style="display: none">
-                <input type="text" id="rua" name="rua" style="display: none">
-            </div>
-';
+$sqlPegadadosEspacos = mysqli_query($con, "select * from vagas where pav_vaga='".$pavimentoAtual."';");
+if(mysqli_fetch_array($sqlPegadadosEspacos) == null){
+    
+    // TODO: Se pavimento já existir aparecer ele desde aqui e botào para limpar todo ele 
+    // Input escondido que vai estar com respotas de quantos pavimentos existem
+    echo '
+    <form action="?page=altera_layout_vagas&id_pavimento='.$pavimentoAtual.'" method="post" >
+        <h1>Pavimento ' . $pavimentoAtual . '</h1>
+        <p>Selecione onde há vagas</p>
+        <table>
+            <tr>
+                <div id="teste">
+                <input type="text" value="' . $pavimentoAtual . '" name="pavimentoAtual" id="pavimentoAtual" style="display: none">
+                    <input type="text" id="vagasExistentes" name="vagasExistentes" style="display: none">
+                    <input type="text" id="rua" name="rua" style="display: none">
+                </div>
+    ';
+}else{
+    // echo "oi";
+        // Input escondido que vai estar com respotas de quantos pavimentos existem
+        echo '
+        <form action="?page=altera_layout_vagas&id_pavimento='.$pavimentoAtual.'" method="post" >
+            <h1>Pavimento ' . $pavimentoAtual . '</h1>
+            <p>Selecione onde há vagas</p>
+            
+                <tr>
+                    <div id="atualizaLayout">
+                    <input type="text" value="' . $pavimentoAtual . '" name="pavimentoAtual" id="pavimentoAtual" style="display: none">
+                        <input type="text" id="vagasExistentes" name="vagasExistentes" style="display: none">
+                        <input type="text" id="rua" name="rua" style="display: none">';
+
+        $sqlPegaLayoutCriado = mysqli_query($con, "select * from vagas where pav_vaga='".$pavimentoAtual."';");
+        $contador = 1;
+        while($resultadoPegaLayoutCriado = mysqli_fetch_array($sqlPegaLayoutCriado)){
+       
+            if($resultadoPegaLayoutCriado["tipo_vaga"] != '3'){
+                echo "<td>
+                <button type='button' class='btn btnvaga btn-success' onclick='apagaVaga()' id='vaga" . $contador ."' name='vaga" .  $contador ."' style='position: static'>";
+                echo " <img src='../assets/img/icons/carlayout.png' width='30em'alt='' style='display: block' class='imgCarro' id='imgCarro" .  $contador ."' name='imgCarro" .  $contador ."'>";
+                echo   "<img src='../assets/img/icons/linha.png' width='30em'alt='' style='display: none' class='imgLinha' id='imgLinha" .  $contador ."' name='" .  $contador ."'>";
+                echo "
+                    <p id='numeroVaga" .  $contador ."' name='numeroVaga" .  $contador ."' style='display: inline'></p>
+                </button>
+            </td>";
+            }else{
+                echo "<td>
+                <button type='button' class='btn btnvaga bs-gray-700' onclick='apagaVaga()' id='vaga" . $contador ."' name='vaga" .  $contador ."' style='position: static'>";
+                echo " <img src='../assets/img/icons/carlayout.png' width='30em'alt='' style='display: none' class='imgCarro' id='imgCarro" .  $contador ."' name='imgCarro" .  $contador ."'>";
+                echo   "<img src='../assets/img/icons/linha.png' width='30em'alt='' style='display: block' class='imgLinha' id='imgLinha" .  $contador ."' name='" .  $contador ."'>";
+                echo "
+                    <p id='numeroVaga" .  $contador ."' name='numeroVaga" .  $contador ."' style='display: inline'></p>
+                </button>
+            </td>"; 
+            }
+// echo $contador;
+        $contador++;
+        }
+        // echo "</div></tr></table>";
+}
 ?>
 
 <script>
@@ -25,8 +73,8 @@ echo '
     let quantidadePavimento = parametrosUrl.get("id_pavimento");
 
     // faz a página
-    let divConteudo = document.getElementById("conteudo");
-    // divConteudo.innerHTML += ``;
+    // let divConteudo = document.getElementById("conteudo");
+    // // divConteudo.innerHTML += ``;
 
     let vagas = 121;
     let contador = 1;
@@ -110,7 +158,7 @@ echo '
 
             // Pega somente o número
             let numeroId = idElemento.replace("vaga", "");
-
+console.log(numeroId);
             // Pega botão que possui esse id
             let botao = document.getElementById(idElemento);
 
@@ -222,7 +270,7 @@ echo '
             const displayEspaco = window.getComputedStyle(idElemento, null);
             let displayEspacoImagem = displayEspaco.getPropertyValue("display");
             // Se a imagem do carro for visível entra aqui
-            if (displayEspacoImagem == "inline-block") {
+            if (displayEspacoImagem == "inline-block" || displayEspacoImagem == "block") {
                 // Adciona vaga na posicão atual ao array
                 vagasExistentes.push("imgCarro" + cont);
             } else {
@@ -242,7 +290,7 @@ echo '
         respostaRua.value = rua;
 
     }
-
+    
 </script>
 
         </tr>

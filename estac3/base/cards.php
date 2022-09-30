@@ -1,12 +1,15 @@
 <?php
   //Pega quantidade total de vagas do estacionamanto 
-  $sql = "select quant_vaga from estacionamento where id_estac ='1';";
-  $resultado = mysqli_query($con, $sql);
+  $sqlTotalVagas = "select tipo_vaga, 
+  count(*) as total_vagas 
+  from vagas 
+  where tipo_vaga != '3';";
+  $resultado = mysqli_query($con, $sqlTotalVagas);
   $row = mysqli_fetch_array($resultado);
 
   //Pega quantidade de vagas ocupadas
   $sql2 = "select status_vaga,
-    count(*) as qtd
+    count(*) as vagas_ocupadas
     from vagas WHERE status_vaga='1';";
   $resultado2 = mysqli_query($con, $sql2);
   $row2 = mysqli_fetch_array($resultado2);
@@ -24,7 +27,7 @@
           </div>
           <div class="text-end pt-1 textcard">
             <p class="mb-0 text-capitalize fs-4">Vagas Ocupadas</p>
-            <h4 class="mb-0"><?php echo $row2["qtd"] . "/" . $row["quant_vaga"]; ?></h4>
+            <h4 class="mb-0"><?php echo $row2["vagas_ocupadas"] . "/" . $row["total_vagas"]; ?></h4>
           </div>
         </div>
       </div>
@@ -60,8 +63,8 @@
                 <label class="fs-5" for="tipo_veic">Tipo</label>
                 <select class="form-control fs-5 selectcard" name="tipo_veic">
                   <option> --------- </option>
-                  <option value="1">Carro</option>
-                  <option value="0">Motocicleta</option>
+                  <option value="0">Carro</option>
+                  <option value="1">Motocicleta</option>
                 </select>
               </div>
               <div class="form-group col-md-4">

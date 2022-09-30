@@ -46,7 +46,7 @@
     from vagas
     join ticket
     on vagas.id_vaga = ticket.id_vaga
-    where ticket.placa_veic = '$placa';";
+    where ticket.placa_veic = '$placa' and status_pg='0';";
     $resultadoVagasTicket = mysqli_query($con, $sql3);
     $dadosVagasTicket = mysqli_fetch_array($resultadoVagasTicket);
 
@@ -73,15 +73,6 @@
     $hrSaidaFormat = strtotime($hrSaida);
     $hrSaidaFinal = date('d-m-y H:i:s', $hrSaidaFormat);
 
-    
-    
-    
-    // if($dadosTicket['status_pg'] == 0){
-    //     echo "<div class='row'><div class='col-md-2'><a class='btn btn-warning btn-xs' href=?page=pagar_ticket&id_ticket=".$idTicket."&preco_final=".$precoFinal."> Pagar </a></div>";
-    // }
-
-
-    // echo "<div class='col-md-2'><button class='btn btn-danger' type='submit'>Imprimir</button></div></div>";
     echo "<div class='row'> <div class='col-md-2 notatitulo'> <span> ESTACIONE AQUI </span> </div> </div>";
     echo "<div class='row'> <div class='col-md-2 text-secondary text-xs font-weight-bolder opacity-7'>ID</div> ";
     echo "<div class='col-md-2'>" . $dadosTicket['id_ticket'] . "</div></div>";
