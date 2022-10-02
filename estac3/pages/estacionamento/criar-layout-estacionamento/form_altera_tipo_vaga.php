@@ -6,13 +6,12 @@ echo '
     <form action="?page=altera_tipo_vaga&id_pavimento=' . $pavimentoAtual . '"" method="post" >
         <h1>Defina se a vaga é para motocicletas ou para carro</h1>
         <p>Basta clicar para alterar o tipo da vaga</p>
-        <table>
-            <tr>
-                <div id="teste">
+
+            <div class="grid-container" id="containerVagas"> 
                 
                     <input type="text" id="carroVaga" name="carroVaga" style="display: none">
                     <input type="text" id="motoVaga" name="motoVaga" style="display: none">
-                    <td>
+                   
                 
     ';
 // SQL que pega todos os epacos
@@ -31,7 +30,7 @@ while ($resultadoPegaEspacos = mysqli_fetch_array($sqlPegaEspacos)) {
         if($resultadoPegaEspacos["setor_vaga"] == "A"){
 
             //Faz button aparecer na tela 
-    
+            echo '<div class="grid-container" id="containerVagas">';
             echo " <button type='button' class='btn btnvaga btn-success' onclick='tipoVaga()' id='vaga" . $idVaga . "' name='vaga" . $idVaga . "'  style='position: static; background-color: rgb(126, 76, 175)'>";
             // Imagem carro
             echo "<img src='../assets/img/icons/carlayout.png' width='30em'alt='' style='display: block' class='imgCarro' id='imgCarro" . $idVaga . "' name='imgCarro" . $idVaga . "' onclick='tipoVaga()'>";
@@ -40,10 +39,11 @@ while ($resultadoPegaEspacos = mysqli_fetch_array($sqlPegaEspacos)) {
             // Click me
             echo "<p id='numeroVaga" . $numeroVaga . "' name='numeroVaga" . $idVaga . "' style='display: inline' onclick='tipoVaga()'>".$numeroVaga ."A</p>";
             echo "</button>";
+            echo "</div>";
         }elseif($resultadoPegaEspacos["setor_vaga"] == "B"){
 
             //Faz button aparecer na tela 
-    
+            echo '<div class="grid-container" id="containerVagas">';
             echo " <button type='button' class='btn btnvaga btn-success' onclick='tipoVaga()' id='vaga" . $idVaga . "' name='vaga" . $idVaga . "'  style='position: static; background-color: rgb(242, 175, 48)'>";
             // Imagem carro
             echo "<img src='../assets/img/icons/carlayout.png' width='30em'alt='' style='display: block' class='imgCarro' id='imgCarro" . $idVaga . "' name='imgCarro" . $idVaga . "' onclick='tipoVaga()'>";
@@ -52,10 +52,11 @@ while ($resultadoPegaEspacos = mysqli_fetch_array($sqlPegaEspacos)) {
             // Click me
             echo "<p id='numeroVaga" . $numeroVaga . "' name='numeroVaga" . $idVaga . "' style='display: inline' onclick='tipoVaga()'>".$numeroVaga ."B</p>";
             echo "</button>";
+            echo "</div>";
         }elseif($resultadoPegaEspacos["setor_vaga"] == "C"){
 
             //Faz button aparecer na tela 
-    
+            echo '<div class="grid-container" id="containerVagas">';
             echo " <button type='button' class='btn btnvaga btn-success' onclick='tipoVaga()' id='vaga" . $idVaga . "' name='vaga" . $idVaga . "'  style='position: static; background-color: rgb(2, 115, 115)'>";
             // Imagem carro
             echo "<img src='../assets/img/icons/carlayout.png' width='30em'alt='' style='display: block' class='imgCarro' id='imgCarro" . $idVaga . "' name='imgCarro" . $idVaga . "' onclick='tipoVaga()'>";
@@ -64,10 +65,11 @@ while ($resultadoPegaEspacos = mysqli_fetch_array($sqlPegaEspacos)) {
             // Click me
             echo "<p id='numeroVaga" . $numeroVaga . "' name='numeroVaga" . $idVaga . "' style='display: inline' onclick='tipoVaga()'>".$numeroVaga ."C</p>";
             echo "</button>";
+            echo "</div>";
         }elseif($resultadoPegaEspacos["setor_vaga"] == "D"){
 
             //Faz button aparecer na tela 
-    
+            echo '<div class="grid-container" id="containerVagas">';
             echo " <button type='button' class='btn btnvaga btn-success' onclick='tipoVaga()' id='vaga" . $idVaga . "' name='vaga" . $idVaga . "'  style='position: static; background-color: rgb(123, 22, 54)'>";
             // Imagem carro
             echo "<img src='../assets/img/icons/carlayout.png' width='30em'alt='' style='display: block' class='imgCarro' id='imgCarro" . $idVaga . "' name='imgCarro" . $idVaga . "' onclick='tipoVaga()'>";
@@ -76,10 +78,11 @@ while ($resultadoPegaEspacos = mysqli_fetch_array($sqlPegaEspacos)) {
             // Click me
             echo "<p id='numeroVaga" . $numeroVaga . "' name='numeroVaga" . $idVaga . "' style='display: inline' onclick='tipoVaga()'>".$numeroVaga ."D</p>";
             echo "</button>";
+            echo "</div>";
         }elseif($resultadoPegaEspacos["setor_vaga"] == "E"){
 
             //Faz button aparecer na tela 
-    
+            echo '<div class="grid-container" id="containerVagas">';
             echo " <button type='button' class='btn btnvaga btn-success' onclick='tipoVaga()' id='vaga" . $idVaga . "' name='vaga" . $idVaga . "'  style='position: static; background-color: rgb(29, 40, 210)'>";
             // Imagem carro
             echo "<img src='../assets/img/icons/carlayout.png' width='30em'alt='' style='display: block' class='imgCarro' id='imgCarro" . $idVaga . "' name='imgCarro" . $idVaga . "' onclick='tipoVaga()'>";
@@ -88,29 +91,28 @@ while ($resultadoPegaEspacos = mysqli_fetch_array($sqlPegaEspacos)) {
             // Click me
             echo "<p id='numeroVaga" . $numeroVaga . "' name='numeroVaga" . $idVaga . "' style='display: inline' onclick='tipoVaga()'>".$numeroVaga ."E</p>";
             echo "</button>";
+            echo "</div>";
         }
 
         $numeroVaga++;
     } else {
         $idVaga = $resultadoPegaEspacos["num_vaga"];
 
-
+        echo '<div class="grid-container" id="containerVagas">';
         echo " <button type='button' class='btn btnvaga bs-gray-700' ' id='vaga" . $idVaga . "' name='vaga" . $idVaga . "'  style='position: static'>";
         echo "<img src='../assets/img/icons/linha.png' width='30em'alt='' style='display: block' class='imgLinha' id='imgLinha" . $idVaga . "' name='imgLinha" . $idVaga . "'>";
         echo "</button>";
+        echo "</div>";
     }
 }
 
 echo '
-                    </td>
+
                 </div>
-            </tr>
-        </table>
-        <tr>
-            <td>
+
+
                 <button type="submit" class="btn bg-gradient-danger w-100 my-4 mb-2">Salvar</button>
-            </td>
-        </tr>
+
 
     </form>';
 ?>
@@ -211,7 +213,7 @@ echo '
     }
 
     function defineTipoVaga() {
-        let totalEspacos = 121;
+        let totalEspacos = 132;
         let vagaCarro = [];
         let motoVaga = [];
         // Pega inputs invisíveis que guardarão os dados 

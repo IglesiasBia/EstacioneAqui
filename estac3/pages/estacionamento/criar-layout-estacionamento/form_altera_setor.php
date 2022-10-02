@@ -18,9 +18,8 @@ $pavimentoAtual = $_GET["id_pavimento"];
 
 echo '
     <form action="?page=altera_setor&id_pavimento=' . $pavimentoAtual . '"" method="post" >
-        <table>
-            <tr>
-                <div id="teste">
+
+                <div class="grid-container" id="containerVagas"> 
                 
                     <input type="text" id="vagasExistentes" name="vagasExistentes" style="display: none">
                     <input type="text" id="rua" name="rua" style="display: none">
@@ -45,33 +44,33 @@ while ($resultadoPegaEspacos = mysqli_fetch_array($sqlPegaEspacos)) {
         $idVaga = $resultadoPegaEspacos["num_vaga"];
 
         //Faz button aparecer na tela 
-
+        echo '<div class="grid-container" id="containerVagas">';
         echo " <button type='button' class='btn btnvaga btn-success' onclick='defineSetor()' id='vaga" . $idVaga . "' name='vaga" . $idVaga . "'  style='position: static'>";
         echo "<img src='../assets/img/icons/carlayout.png' width='30em'alt='' style='display: block' class='imgCarro' id='imgCarro" . $idVaga . "' name='imgCarro" . $idVaga . "'  >";
 
         echo "<p id='numeroVaga" . $numeroVaga . "' name='numeroVaga" . $idVaga . "' style='display: inline'  >$numeroVaga</p>";
         echo "</button>";
+        echo "</div>";
         $numeroVaga++;
     } else {
         $idVaga = $resultadoPegaEspacos["num_vaga"];
-
+        echo '<div class="grid-container" id="containerVagas">';
 
         echo " <button type='button' class='btn btnvaga bs-gray-700'' onclick='defineSetor()' id='vaga" . $idVaga . "' name='vaga" . $idVaga . "'  style='position: static'>";
         echo "<img src='../assets/img/icons/linha.png' width='30em'alt='' style='display: block' class='imgLinha' id='imgLinha" . $idVaga . "' name='imgLinha" . $idVaga . "'>";
         echo "</button>";
+        echo "</div>";
     }
 }
 
 echo '
                     </td>
                 </div>
-            </tr>
-        </table>
-        <tr>
-            <td>
+
+
+
                 <button type="submit" class="btn bg-gradient-danger w-100 my-4 mb-2" onclick="salvaSetor()">Salvar</button>
-            </td>
-        </tr>
+
 
     </form>';
 ?>
@@ -187,7 +186,7 @@ echo '
         let setorC = [];
         let setorD = [];
         let setorE = [];
-        let espacos = 121;
+        let espacos = 132;
         let contadorEspacos = 1;
         while (contadorEspacos <= espacos) {
             let imgLinha = document.getElementById("imgLinha" + [contadorEspacos]);

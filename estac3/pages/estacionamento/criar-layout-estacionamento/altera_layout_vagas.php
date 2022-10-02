@@ -18,7 +18,7 @@ $resultadoDadosPaviemento = mysqli_fetch_array($sqlDadosPavimento);
 if($resultadoDadosPaviemento["num_vaga"] == null){
     
     $contadorEspaco = 1;
-    $espacosTotal = 121;
+    $espacosTotal = 132;
     // Enquanto houver espaco entra aqui
     while($contadorEspaco <= $espacosTotal){
         // sql para criar novo espaco

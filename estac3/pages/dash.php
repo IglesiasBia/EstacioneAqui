@@ -25,6 +25,8 @@
   <!-- CSS Files -->
   <link id="pagestyle" href="../assets/css/main.css" rel="stylesheet" />
   <link id="pagestyle" href="../assets/css/main2.css" rel="stylesheet" />
+  <link id="pagestyle" href="../assets/css/teste.css" rel="stylesheet" />
+  
 </head>
 
 <body class="g-sidenav-show bg-gray-200">

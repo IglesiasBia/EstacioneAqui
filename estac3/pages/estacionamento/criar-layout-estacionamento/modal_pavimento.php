@@ -31,12 +31,14 @@ echo '<input type="text" value="'.$resultadoQuantidadePavimento["quant_pavimento
 							// echo "select pav_vaga from vagas where pav_vaga = ".$contador.";";
 
 							if($resultadoDadosPavimento["pav_vaga"] != $contador){
-							// Cria link que redirecioa para atualizar layout
+							// Cria pavimento que redirecioa para atualizar layout
 								echo "
-								<a class='btn btn-danger btn-xs' id='link".$contador."' href=?page=layout_desenha_vagas&id_pavimento=".$contador.">Pavimento ".$contador."</a></td>";
+								<button class='btn btn-danger btn-xs' id='pavimento".$contador."' href=?page=layout_desenha_vagas&id_pavimento=".$contador." onclick='totalVagas()'>Pavimento ".$contador."</button></td>";
+
+								echo "<a class='btn btn-danger btn-xs' id='pavimento".$contador."' href=?page=layout_desenha_vagas&id_pavimento=".$contador.">Pavimento ".$contador."</a></td>";
 							}else{
 								echo "
-								<a class='btn btn-danger btn-xs' id='link".$contador."' onclick='confirmaMudanca()'>Pavimento ".$contador."</a></td>";
+								<a class='btn btn-danger btn-xs' id='pavimento".$contador."' onclick='confirmaMudanca()'>Pavimento ".$contador."</a></td>";
 								// echo "
 								// <a class='btn btn-success btn-xs sumir'  href=?page=layout_desenha_vagas&id_pavimento=".$contador."  onclick='confirmaMudanca()'>Pavimento ".$contador."</a></td>";
 							}
@@ -64,35 +66,40 @@ echo '<input type="text" value="'.$resultadoQuantidadePavimento["quant_pavimento
 		
 		let totalPavimento = document.getElementById("totalPavimento").value;
 		
-		let contadorLink = 1;
-		while(contadorLink <= totalPavimento){
-			let link = document.getElementById("link"+contadorLink);
-			link.style.display = "none";
-			contadorLink++;
+		let contadorpavimento = 1;
+		while(contadorpavimento <= totalPavimento){
+			let pavimento = document.getElementById("pavimento"+contadorpavimento);
+			pavimento.style.display = "none";
+			contadorpavimento++;
 		}
 
 		let paragrafo = document.getElementById("paragrafoConfirmacao");
 		paragrafo.style.display = "block";
 		// Limpa o parágrafo
 		paragrafo.innerText = "";
-		paragrafo.innerText += "Você realmente deseja alterar o pavimento " +idElementoCliacado.replace("link", " ") + "?";
+		paragrafo.innerText += "Você realmente deseja alterar o pavimento " +idElementoCliacado.replace("pavimento", " ") + "?";
 
 		let divButtons = document.getElementById("divButtons");
 
 		divButtons.innerHTML += '<button type="button" class="btn btn-danger" onclick="cancelaMudanca()" id="buttonCancela" style="display: inline-block;"> Não </button>';
-		divButtons.innerHTML += "<a class='btn btn-success btn-xs'  href=?page=layout_desenha_vagas&id_pavimento="+idElementoCliacado.replace("link", "")+" id='buttonConfirma' style='display: inline-block;'>Sim</a>"
-		console.log("href=?page=layout_desenha_vagas&id_pavimento="+idElementoCliacado.replace("link", ""));
+		divButtons.innerHTML += "<a class='btn btn-success btn-xs'  href=?page=layout_desenha_vagas&id_pavimento="+idElementoCliacado.replace("pavimento", "")+" id='buttonConfirma' style='display: inline-block;'>Sim</a>"
+		console.log("href=?page=layout_desenha_vagas&id_pavimento="+idElementoCliacado.replace("pavimento", ""));
+
+	}
+
+	// Fubcion que pga total de vagas e desenha linhas até o número final digitado
+	function totalVagas(){
 
 	}
 
 	function cancelaMudanca(){
 		let totalPavimento = document.getElementById("totalPavimento").value;
 		
-		let contadorLink = 1;
-		while(contadorLink <= totalPavimento){
-			let link = document.getElementById("link"+contadorLink);
-			link.style.display = "inline-block";
-			contadorLink++;
+		let contadorpavimento = 1;
+		while(contadorpavimento <= totalPavimento){
+			let pavimento = document.getElementById("pavimento"+contadorpavimento);
+			pavimento.style.display = "inline-block";
+			contadorpavimento++;
 		}
 
 		let paragrafo = document.getElementById("paragrafoConfirmacao");

@@ -22,10 +22,18 @@
 		</div> 
 			<!-- 1ª LINHA -->	
 			<?php 
-            // echo $modal; 
-				echo "Pavimento: $pavVaga <br>";
-				echo "Setor: $setorVaga <br>";
-				echo "Número: $numVaga";
+			
+			if($pavVaga == "0"){
+				echo "<p>Infelizmente não foi possível encontrar o veículo.</p>";
+			}else{
+				
+				echo "<p>O veículo de placa <strong>" . $placaVeic . "</strong> está estacionado no: </p>";
+				// echo $placaVeic;
+				// echo $modal; 
+					echo "Pavimento: $pavVaga <br>";
+					echo "Setor: $setorVaga <br>";
+					echo "Número: $numVaga";
+			}
 			?>
 			<hr />
 		</form> 

@@ -76,9 +76,17 @@ cardsbaixo{
     max-width: 1200px !important;
 } 
 
+.grid-container {
+    background-color: aqua;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+  }
+
 .btnvaga{
+    /* margin: 0.5em;
+    width: 6.5em; */
     margin: 0.5em;
-    width: 6.5em;
+    width: auto;
 }
 
 .bs-gray-700{

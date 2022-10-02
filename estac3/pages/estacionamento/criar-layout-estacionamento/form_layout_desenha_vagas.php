@@ -13,9 +13,8 @@ if(mysqli_fetch_array($sqlPegadadosEspacos) == null){
     <form action="?page=altera_layout_vagas&id_pavimento='.$pavimentoAtual.'" method="post" >
         <h1>Pavimento ' . $pavimentoAtual . '</h1>
         <p>Selecione onde há vagas</p>
-        <table>
-            <tr>
-                <div id="teste">
+
+                <div class="grid-container" id="containerVagas">
                 <input type="text" value="' . $pavimentoAtual . '" name="pavimentoAtual" id="pavimentoAtual" style="display: none">
                     <input type="text" id="vagasExistentes" name="vagasExistentes" style="display: none">
                     <input type="text" id="rua" name="rua" style="display: none">
@@ -76,20 +75,20 @@ if(mysqli_fetch_array($sqlPegadadosEspacos) == null){
     // let divConteudo = document.getElementById("conteudo");
     // // divConteudo.innerHTML += ``;
 
-    let vagas = 121;
+    let vagas = 132;
     let contador = 1;
 
     while (contador <= vagas) {
 
-        let elemento = document.getElementById("teste");
+        let elemento = document.getElementById("containerVagas");
         elemento.innerHTML += `
-        <td>
+        <div class='grid-item'>
             <button type='button' class='btn btnvaga bs-gray-700' onclick="apagaVaga()" id='vaga` + contador + `'name='vaga` + contador + `' style="position: static">
                 <img src='../assets/img/icons/carlayout.png' width='30em'alt='' style="display: none" class="imgCarro" id="imgCarro` + contador + `" name="imgCarro` + contador + `">
                 <img src='../assets/img/icons/linha.png' width='30em'alt='' style="display: block" class="imgLinha" id="imgLinha` + contador + `" name="` + contador + `">
                 <p id="numeroVaga` + contador + `" name="numeroVaga` + contador + `" style="display: inline"></p>
             </button>
-        </td>`;
+        </div>`;
         contador++;
 
     }

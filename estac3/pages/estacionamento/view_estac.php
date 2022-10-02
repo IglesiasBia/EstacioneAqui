@@ -75,7 +75,7 @@
                             <input type="text" class="form-control fs-4 estacdados" name="preco_pernoite" value="<?php echo $row["preco_pernoite"]; ?>">
                         </div>
                         <div class="form-group col-md-4">
-                            <p class="fs-4"><strong>Quantidade de Pavimentos</strong></p>
+                            <p class="fs-4"><strong>Quantidade de Pavimentos ou Seções</strong></p>
                             <input type="text" class="form-control fs-4 estacdados" name="quant_pavimento" value="<?php echo $row["quant_pavimento"]; ?>">
                         </div>
                     </div>
