@@ -5,12 +5,15 @@ $resultadoTipoVagaCarro = $_POST["carroVaga"];
 
 $resultadoTipoVagaMoto = $_POST["motoVaga"];
 
+echo $resultadoTipoVagaCarro."<br>";
+echo $resultadoTipoVagaMoto;
+
 // Transforma as strings em arrays
 $arrayTipoVagaCarro = explode(',', $resultadoTipoVagaCarro);
 
 $arrayTipoVagaMoto = explode(',', $resultadoTipoVagaMoto);
-echo count($arrayTipoVagaMoto);
-$sqlPegaVagas = mysqli_query($con, "select * from vagas where tipo_vaga != '3' and pav_vaga = '" . $pavimentoAtual . "' order by 'num_vaga';");
+// echo count($arrayTipoVagaMoto);
+$sqlPegaVagas = mysqli_query($con, "select * from vagas where tipo_vaga != '3' and tipo_vaga != '4' and pav_vaga = '" . $pavimentoAtual . "' order by 'num_vaga';");
 $resutadoPegaVagas = mysqli_fetch_array($sqlPegaVagas);
 
 // Se houver alguma vaga moto entra aqui
@@ -21,7 +24,7 @@ if ($resultadoTipoVagaMoto != "") {
     while ($contadorTamanhoArrayMoto <= count($arrayTipoVagaMoto)) {
         // Pega somente o numero da vaga carro atual
         $numeroVagaAtualMoto = str_replace("imgMoto", "", $arrayTipoVagaMoto[$contadorPosicaoArrayMoto]);
-        echo $numeroVagaAtualMoto;
+        // echo $numeroVagaAtualMoto;
         // Pega id pelo número da vaga
 
         $sqlPegaIdVaga = mysqli_query($con, "select id_vaga from vagas where num_vaga=" . $numeroVagaAtualMoto . " and pav_vaga = '" . $pavimentoAtual . "';");

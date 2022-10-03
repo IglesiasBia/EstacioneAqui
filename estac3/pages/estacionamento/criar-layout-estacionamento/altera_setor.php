@@ -7,6 +7,8 @@ $setorB = $_POST["setorB"];
 $setorC = $_POST["setorC"];
 $setorD = $_POST["setorD"];
 $setorE = $_POST["setorE"];
+echo $setorA."<br>";
+echo $setorE;
 
 
 // SETOR A

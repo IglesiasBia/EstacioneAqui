@@ -46,8 +46,8 @@ $respostaBuscaTicketNaoPago = mysqli_fetch_array($sqlBuscaTicketNaoPago);
             $hr_entrada = date('Y-m-d H:i:s ', time());  
         
             //Cria ticket
-            $sqlCriaTicket = "insert into ticket values(0,'$hr_entrada','$hr_entrada',0, '$chave', '$placa',0,0);";
-            echo $sqlCriaTicket;
+            $sqlCriaTicket = "insert into ticket values(0,'$hr_entrada','$hr_entrada',0, '$chave', '$placa',0,0,0);";
+            // echo $sqlCriaTicket;
             $resultadoCriaTicket = mysqli_query($con, $sqlCriaTicket);
         
         

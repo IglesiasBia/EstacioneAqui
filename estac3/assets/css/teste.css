@@ -1,6 +1,6 @@
 .grid-container {
   /* position: relative; */
-    background-color: pink;
+    /* background-color: red; */
     display: grid;
     /* min-width: 1000px; 
     max-width: 1200px ; */
@@ -10,6 +10,14 @@
     min-width: 1000px; 
     max-width: 1200px !important; */
   }
+
+
+  .btnvaga{
+    /* margin: 0.5em; */
+    width: 6.5em;
+    margin: 0.5em;
+    /* width: 10%; */
+}
 
   /* .grid-item{
     position: relative;

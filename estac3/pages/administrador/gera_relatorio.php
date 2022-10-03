@@ -93,6 +93,7 @@
         }
     }
     
+    
     // $sql = "select sum(valor_total_ticket) as credito_total,
     // count(id_ticket) as total_usuarios from ticket where hr_entrada like '$dtInicio%';";
     // $resultadoRelatorio = mysqli_query($con,$sql);

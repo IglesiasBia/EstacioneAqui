@@ -205,6 +205,11 @@ while ($contadorEspaco <= $totalEspacos) {
         echo "<img src='../assets/img/icons/linha.png' width='30em' class='imgLinha '>";
         echo "</button>";
         echo "</div>";
+    } elseif ($resultadoDadosEstacinamento["tipo_vaga"] == "4") {
+        echo "<div class='grid-item'>";
+        echo "<button type='button' class='btn btnvaga' id='vaga` + contador + `'name='vaga` " . $contadorEspaco . "`' style='position: static; ' disabled>";
+        echo "</button>";
+        echo "</div>";
     }
 
     $contadorEspaco++;

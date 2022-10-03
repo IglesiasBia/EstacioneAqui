@@ -50,7 +50,7 @@
       echo "<button type='button' class='btn btn-success btnvaga'>
             <img src='../assets/img/icons/carlayout.png' width='30em'alt=''> " . $dadosVaga["setor_vaga"] . $dadosVaga["num_vaga"] . "
             </button>";
-    } else {
+    } else if($resultadoPegaEspacos["tipo_vaga"] == 3) {
       echo "<button type='button' class='btn btn-danger btnvaga'>
                     <img src='../assets/img/icons/carlayout.png' width='30em'alt=''> " . $dadosVaga["setor_vaga"] . $dadosVaga["num_vaga"] . "
                       </button>";

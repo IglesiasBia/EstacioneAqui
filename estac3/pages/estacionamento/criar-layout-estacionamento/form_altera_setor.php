@@ -34,6 +34,10 @@ echo '
 // SQL que pega todos os epacos
 $sqlPegaEspacos = mysqli_query($con, "select * from vagas where pav_vaga='" . $pavimentoAtual . "' order by num_vaga");
 
+$sqlPegaUltimaVaga = mysqli_query($con, "select num_vaga from vagas where tipo_vaga !='3' and pav_vaga='" . $pavimentoAtual . "' ORDER BY num_vaga DESC LIMIT 1;");
+$resultadoUltimaVaga = mysqli_fetch_array($sqlPegaUltimaVaga);
+$totalEspacos = (intval($resultadoUltimaVaga["num_vaga"])/12)*12;
+// echo $totalEspacos;
 // Contador que vai fazer com que as vagas sejam numeradas corretamente
 $numeroVaga = 1;
 // Enquanto houver espacos fica nesse lopp
@@ -44,7 +48,7 @@ while ($resultadoPegaEspacos = mysqli_fetch_array($sqlPegaEspacos)) {
         $idVaga = $resultadoPegaEspacos["num_vaga"];
 
         //Faz button aparecer na tela 
-        echo '<div class="grid-container" id="containerVagas">';
+        echo '<div class="grid-item" id="containerVagas">';
         echo " <button type='button' class='btn btnvaga btn-success' onclick='defineSetor()' id='vaga" . $idVaga . "' name='vaga" . $idVaga . "'  style='position: static'>";
         echo "<img src='../assets/img/icons/carlayout.png' width='30em'alt='' style='display: block' class='imgCarro' id='imgCarro" . $idVaga . "' name='imgCarro" . $idVaga . "'  >";
 
@@ -52,12 +56,20 @@ while ($resultadoPegaEspacos = mysqli_fetch_array($sqlPegaEspacos)) {
         echo "</button>";
         echo "</div>";
         $numeroVaga++;
-    } else {
+    } else if($resultadoPegaEspacos["tipo_vaga"] == 3) {
         $idVaga = $resultadoPegaEspacos["num_vaga"];
-        echo '<div class="grid-container" id="containerVagas">';
+        echo '<div class="grid-item" id="containerVagas">';
 
         echo " <button type='button' class='btn btnvaga bs-gray-700'' onclick='defineSetor()' id='vaga" . $idVaga . "' name='vaga" . $idVaga . "'  style='position: static'>";
         echo "<img src='../assets/img/icons/linha.png' width='30em'alt='' style='display: block' class='imgLinha' id='imgLinha" . $idVaga . "' name='imgLinha" . $idVaga . "'>";
+        echo "</button>";
+        echo "</div>";
+    }elseif($resultadoPegaEspacos["tipo_vaga"] == 4){
+        $idVaga = $resultadoPegaEspacos["num_vaga"];
+        echo '<div class="grid-item" id="containerVagas">';
+
+        echo " <button type='button' class='btn btnvaga ' id='vaga" . $idVaga . "' name='vaga" . $idVaga . "'  style='position: static' disabled>";
+        echo "<img src='../assets/img/icons/linha.png' width='30em'alt='' style='display: none' class='imgLinha' id='imgLinha" . $idVaga . "' name='imgLinha" . $idVaga . "'>";
         echo "</button>";
         echo "</div>";
     }

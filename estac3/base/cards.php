@@ -112,7 +112,9 @@
             <div class="input-group mb-3">
               <input type="text" class="form-control fs-5" placeholder="Digite aqui" aria-describedby="basic-addon2" name="placa_veic">
             </div>
-            <button class="btn btn-danger" type="submit">Gerar</button>
+            <button class="btn btn-danger" data-toggle="modal" data-target="#formaPagamento" type="submit">Buscar</button>
+            <!-- modal_forma_pagamento.php -->
+            <!-- <button class="btn btn-danger" type="submit">Gerar</button> -->
           </form>
         </div>
       </div>

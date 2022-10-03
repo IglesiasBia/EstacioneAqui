@@ -1,5 +1,7 @@
 <?php
 
+use Mpdf\Shaper\Indic;
+
 if (isset($_GET["page"])) {
 
     switch ($_GET["page"]) {
@@ -18,7 +20,10 @@ if (isset($_GET["page"])) {
 
             //Administrador
         case "form_relatorio":
-            include "administrador/form_relatorio.php";
+            include "administrador/relatorios/form_relatorio.php";
+            break;
+        case "relatorio_pdf":
+            include "relatorio_pdf.php";
             break;
         case "gera_relatorio":
             include "administrador/gera_relatorio.php";
@@ -139,6 +144,9 @@ if (isset($_GET["page"])) {
 
 
             // Ticket
+        case "insere_forma_pagamento":
+include "geral/ticket/insere_forma_pagamento.php";
+break;
         case "faz_ticket":
             include "geral/ticket/faz_ticket.php";
             break;
