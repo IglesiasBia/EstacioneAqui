@@ -82,13 +82,6 @@ cardsbaixo{
     grid-template-columns: auto auto auto auto;
   } */
 
-.btnvaga{
-    /* margin: 0.5em;
-    width: 6.5em; */
-    margin: 0.5em;
-    width: 10%;
-}
-
 .bs-gray-700{
     color: #000;
     background-color: #495057;
@@ -142,6 +135,9 @@ input[type="date"]{
     display: block !important;
 
     
+}
+.funcatu{
+    padding: 1em;
 }
 
 

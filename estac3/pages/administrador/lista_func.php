@@ -40,16 +40,16 @@
                 while($info = mysqli_fetch_array($data_all)){ 
                   if($info["status_func"] == 1){
                   echo "<tr>";
-                  echo "<td>".$info['id_func']."</td>";
-                  echo "<td>".$info['nome_func']."</td>";
-                  echo "<td class='d-none d-md-table-cell'>".$info['email_func']."</td>";
+                  echo "<td class='fs-5'>".$info['id_func']."</td>";
+                  echo "<td class='fs-5'>".$info['nome_func']."</td>";
+                  echo "<td class='d-none d-md-table-cell fs-5'>".$info['email_func']."</td>";
                   // echo "<td class='d-none d-md-table-cell'>".$info['nivel_func']."</td>";
                   if($info["nivel_func"] == 1){
-                    echo "<td class='d-none d-md-table-cell'>Funcionário Usuário</td>";
+                    echo "<td class='d-none d-md-table-cell fs-5'>Funcionário Usuário</td>";
                   }else if($info["nivel_func"] == 2){
-                    echo "<td class='d-none d-md-table-cell'>Administrador</td>";
+                    echo "<td class='d-none d-md-table-cell fs-5'>Administrador</td>";
                   }else if($info["nivel_func"] == 3){
-                      echo "<td class='d-none d-md-table-cell'>Funcionário não-usuário</td>";
+                      echo "<td class='d-none d-md-table-cell fs-5'>Funcionário não-usuário</td>";
                   }
                   // if($info['status_func'] == 1){
                   //   echo "<td class='d-none d-md-table-cell'>Ativo</td>";
@@ -57,12 +57,14 @@
                   //   echo "<td class='d-none d-md-table-cell'>Inativo</td>";
                   // }
                   echo "<td><div class='btn-group btn-group-xs'>";
-                  echo "<a class='btn btn-info btn-xs' href=?page=view_func&id=".$info['id_func']."> Detalhar </a>";
-                  echo "<a class='btn btn-warning btn-xs' href=?page=form_att_func&id=".$info['id_func']."> Editar </a>";
+                  echo "<a class='btn btn-info btn-xs' href=?page=view_func&id=".$info['id_func']."> 
+                  <img src='../assets/img/icons/view.png' height='23em'>
+                  </a>";
+                  echo "<a class='btn btn-warning btn-xs' href=?page=form_att_func&id=".$info['id_func']."> <img src='../assets/img/icons/edit.png' height='23em'> </a>";
                   if($info['status_func'] == 1){
-                    echo "<a class='btn btn-danger btn-xs'  href=?page=att_status_func&id=".$info['id_func']."> Desativar </a>";
+                    echo "<a class='btn btn-danger btn-xs'  href=?page=att_status_func&id=".$info['id_func']."> <img src='../assets/img/icons/desativado.png' height='23em'> </a>";
                   }else if($info['status_func'] == 0){
-                    echo "<a class='btn btn-success btn-xs'  href=?page=att_status_func&id=".$info['id_func'].">&nbsp;&nbsp;&nbsp;Ativar&nbsp;&nbsp;</a></div></td>";
+                    echo "<a class='btn btn-success btn-xs'  href=?page=att_status_func&id=".$info['id_func'].">&nbsp;&nbsp;&nbsp;<img src='../assets/img/icons/verifica.png' height='21em'>&nbsp;&nbsp;</a></div></td>";
                   }
                 }
                 }
@@ -72,6 +74,7 @@
           </div>
         </div>
       </div>
+      
     </div>
       <!-- PAGINAÇÃO -->
       <div id="bottom" class="row">

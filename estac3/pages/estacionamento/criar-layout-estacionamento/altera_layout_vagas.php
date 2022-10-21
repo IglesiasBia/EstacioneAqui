@@ -28,7 +28,7 @@ if($resultadoDadosPaviemento["num_vaga"] == null){
         // sql para criar novo espaco
         $sqlGeraPavimento = "insert into vagas value (0, '3', '".$pavimentoAtual."', '3', 1, 'A', '".$contadorEspaco."');";
 
-        $resultadoSqlGeraPavimento == mysqli_query($con, $sqlGeraPavimento);
+        $resultadoSqlGeraPavimento = mysqli_query($con, $sqlGeraPavimento);
     
         $contadorEspaco++;
     }

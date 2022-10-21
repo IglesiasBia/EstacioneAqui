@@ -11,13 +11,17 @@
 	where funcionario.id_func = '".$id."';");
 	$row = mysqli_fetch_array($sql);
 ?>
-
-<div id="main" class="container-fluid">
+  <div class="row">
+    <div class="col-md-12 carddash">
+      <div class="card ">
+        <div class="card-body ">
+		<div id="main" class="container-fluid">
 	<h2 class="page-header">Visualizar registro do Usuário - <?php echo $id; ?> </h2>
 	<div class="row">
 		<div class="col-md-4">
 			<p class="fs-4"><strong>ID</strong></p>
 			<p class="fs-4"><?php echo $row['id_func'];?></p>
+			
 		</div>
 		<div class="col-md-4">
 			<p class="fs-4"><strong>Nome Completo</strong></p>
@@ -34,11 +38,11 @@
 			<p class="fs-4"><strong>Nível</strong></p>
 			<?php
 				if($row["nivel_func"] == 1){
-					echo "<td class='d-none d-md-table-cell fs-4'>Funcionário Usuário</td>";
+					echo "<td class='fs-4'>Funcionário Usuário</td>";
 				}else if($row["nivel_func"] == 2){
-					echo "<td class='d-none d-md-table-cell fs-4'>Administrador</td>";
+					echo "<td class='fs-4'>Administrador</td>";
 				}else if($row["nivel_func"] == 3){
-					echo "<td class='d-none d-md-table-cell fs-4'>Funcionário não-usuário</td>";
+					echo "<td class=' fs-4'>Funcionário não-usuário</td>";
 				}	
 			?>
 		</div>
@@ -75,3 +79,13 @@
 		</div>
 	</div>
 </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
