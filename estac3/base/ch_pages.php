@@ -150,6 +150,9 @@ break;
         case "faz_ticket":
             include "geral/ticket/faz_ticket.php";
             break;
+            case "modal_forma_pagamento":
+                include "geral/ticket/modal_forma_pagamento.php";
+                break;
         case "pagar_ticket":
             include "geral/ticket/pagar_ticket.php";
             break;

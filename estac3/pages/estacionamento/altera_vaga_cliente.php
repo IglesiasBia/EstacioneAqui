@@ -24,16 +24,16 @@ on veiculo.placa_veic = ticket.placa_veic
 where veiculo.placa_veic='".$placaVeic."' and ticket.status_pg='0';");
 $resultadoPegaTipoVeiculo = mysqli_fetch_array($sqlPegaTipoVeiculo);
 // Verifica se veículo já está estacionado
-
-if($respostaVerificaSeVeiculoJaEstaEstacionado["id_vaga"] != '0'){
+if($resultadoDadosVaga["tipo_vaga"] != $resultadoPegaTipoVeiculo["tipo_veic"]){
+    header("Location:  /estacione/estac3/pages/dash.php?page=lista_vagas&msg=vagaIncompativel&id_pavimento=".$pavimentoAtual);
+}
+elseif($respostaVerificaSeVeiculoJaEstaEstacionado["id_vaga"] != '0'){
     // echo "oi";
     // echo $respostaVerificaSeVeiculoJaEstaEstacionado["id_vaga"];
     header("Location:  /estacione/estac3/pages/dash.php?page=lista_vagas&msg=veiculoEstacionado&id_pavimento=".$pavimentoAtual);
 }
 // Verirfica se vaga é compatível com veículo
-elseif($resultadoDadosVaga["tipo_vaga"] != $resultadoPegaTipoVeiculo["tipo_veic"]){
-    header("Location:  /estacione/estac3/pages/dash.php?page=lista_vagas&msg=vagaIncompativel&id_pavimento=".$pavimentoAtual);
-}
+
 // Insere na vaga
 elseif($respostaVerificaSeVeiculoJaEstaEstacionado["id_vaga"] == 0){
 

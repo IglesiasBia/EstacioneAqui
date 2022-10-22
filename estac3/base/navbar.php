@@ -121,6 +121,35 @@
                 </ul>
               </div>
             </div>';
+    }elseif(str_contains($link, "dash.php?page=lista_vagas&id_pavimento=")){
+      echo '<div class="container-fluid py-1 px-3">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+                  <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
+                  <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Vagas</li>
+                </ol>
+                <h6 class="font-weight-bolder mb-0">Vagas</h6>
+              </nav>
+              <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+                <ul class="ms-md-auto pe-md-3 d-flex align-items-center">
+                  <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+                    <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+                      <div class="sidenav-toggler-inner">
+                        <i class="sidenav-toggler-line"></i>
+                        <i class="sidenav-toggler-line"></i>
+                        <i class="sidenav-toggler-line"></i>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="nav-item d-flex align-items-center">
+                    <a class="dropdown-item" href="../base/logout.php" data-target="#logoutModal">
+                      <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                      Logout
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>';
     }
   }elseif($_SESSION['UsuarioNivel'] == 2){
     if($link == "http://localhost:8080/estacione/estac3/pages/dash.php" || $link == "http://localhost:8080/estacione/estac3/pages/dash.php?page=busca_vaga_veic" || str_contains($link, "http://localhost:8080/estacione/estac3/pages/dash.php?msg=")){
@@ -384,8 +413,64 @@
                 </ul>
               </div>
             </div>';
+    }elseif(str_contains($link, "dash.php?page=lista_vagas&")){
+      echo '<div class="container-fluid py-1 px-3">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+                  <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
+                  <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Vagas</li>
+                </ol>
+                <h6 class="font-weight-bolder mb-0">Vagas</h6>
+              </nav>
+              <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+                <ul class="ms-md-auto pe-md-3 d-flex align-items-center">
+                  <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+                    <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+                      <div class="sidenav-toggler-inner">
+                        <i class="sidenav-toggler-line"></i>
+                        <i class="sidenav-toggler-line"></i>
+                        <i class="sidenav-toggler-line"></i>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="nav-item d-flex align-items-center">
+                    <a class="dropdown-item" href="../base/logout.php" data-target="#logoutModal">
+                      <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                      Logout
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>';
+    }
+    elseif(str_contains($link, "dash.php?page=layout_desenha_vagas&id_pavimento=") || str_contains($link, "dash.php?page=form_altera_setor&id_pavimento=")|| str_contains($link, "dash.php?page=form_altera_tipo_vaga&id_pavimento=")){
+      echo '<div class="container-fluid py-1 px-3">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+                  <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
+                  <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Criando Layout</li>
+                </ol>
+                <h6 class="font-weight-bolder mb-0">Criando Layout</h6>
+              </nav>
+              <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+                <ul class="ms-md-auto pe-md-3 d-flex align-items-center">
+                  <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+                    <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+                      <div class="sidenav-toggler-inner">
+                        <i class="sidenav-toggler-line"></i>
+                        <i class="sidenav-toggler-line"></i>
+                        <i class="sidenav-toggler-line"></i>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="nav-item d-flex align-items-center">
+                    <a class="dropdown-item" href="../base/logout.php" data-target="#logoutModal">
+                      <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                      Logout
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>';
     }
   }
-
-?>
-

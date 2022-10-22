@@ -23,7 +23,7 @@ echo '<form action="?page=altera_vaga_cliente&id_pavimento=' . $pavimentoAtual .
 <input type="text" style="display: none;" id="numeroVaga" name="numeroVaga">
 
 
-</form>
+
 <br>';
 
 echo'<div class="grid-container">';
@@ -155,6 +155,7 @@ echo "</div>";
 
 <div>
 <button type="submit" class="btn bg-gradient-danger w-100 my-4 mb-2">Salvar</button>
+</form>
 </div>
 <script>
     // var corSetor = ["126, 76, 175", "242, 175, 48", "2, 115, 115", "123, 22, 54", "29, 40, 210"

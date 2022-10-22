@@ -3,7 +3,7 @@
   $sqlTotalVagas = "select tipo_vaga, 
   count(*) as total_vagas 
   from vagas 
-  where tipo_vaga != '3';";
+  where tipo_vaga != '3' and tipo_vaga != '4' and id_vaga != '0';";
   $resultado = mysqli_query($con, $sqlTotalVagas);
   $row = mysqli_fetch_array($resultado);
 
@@ -107,7 +107,7 @@
     <div class="col-md-6 tres">
       <div class="card ">
         <div class="card-body">
-          <form action="?page=faz_ticket" method="post">
+          <form action="?page=modal_forma_pagamento" method="post">
             <h5 class="card-title fs-4">Digite a placa para gerar nota fiscal</h5>
             <div class="input-group mb-3">
               <input type="text" class="form-control fs-5" placeholder="Digite aqui" aria-describedby="basic-addon2" name="placa_veic">

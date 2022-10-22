@@ -37,7 +37,8 @@ if (mysqli_fetch_array($sqlPegadadosEspacos) == null) {
             <button type="button" class="btn btnvaga btn-success" onclick="alteraTipo()" id="tipoButtonVaga"><img src="../assets/img/icons/carlayout.png" width="30em" id="tipoImgVaga"></button>
             <button type="button" class="btn btnvaga bs-gray-700" onclick="alteraTipo()"  id="tipoButtonRua"><img src="../assets/img/icons/linha.png" width="30em" id="tipoImgRua"></button>
             <button type="button" class="btn btnvaga btn-dark" onclick="alteraTipo()" id="tipoNada">oi</button>
-                    <div class="grid-container" id="atualizaLayout">
+            <hr>        
+            <div class="grid-container" id="atualizaLayout">
                     <input type="text" value="' . $pavimentoAtual . '" name="pavimentoAtual" id="pavimentoAtual" style="display: none">
                         <input type="text" id="vagasExistentes" name="vagasExistentes" style="display: none">
                         <input type="text" id="rua" name="rua" style="display: none">
