@@ -15,7 +15,6 @@
   $row2 = mysqli_fetch_array($resultado2);
 
 ?>
-
 <div class="container">
   <div class="row">
     <div class="col-md-12 carddash">
@@ -113,8 +112,6 @@
               <input type="text" class="form-control fs-5" placeholder="Digite aqui" aria-describedby="basic-addon2" name="placa_veic">
             </div>
             <button class="btn btn-danger" data-toggle="modal" data-target="#formaPagamento" type="submit">Buscar</button>
-            <!-- modal_forma_pagamento.php -->
-            <!-- <button class="btn btn-danger" type="submit">Gerar</button> -->
           </form>
         </div>
       </div>

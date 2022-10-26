@@ -64,11 +64,11 @@
 		<label for="status_func" class="fs-4">Status</label><br>
 		<?php 
 			if($row["status_func"]== 1){
-				echo "<input type='radio' class='fs-4' name='status_func' value='1'  checked > Ativo ";
-				echo "<input type='radio' class='fs-4' name='status_func' value='0' > Inativo";
+				echo "<input type='radio' class='' name='status_func' value='1'  checked > <p class='fs-5'> Ativo</p> ";
+				echo "<input type='radio'  name='status_func' value='0' > <p class='fs-5'> Inativo</p>";
 			}elseif($row["status_func"]== 0){
-				echo "<input type='radio'  class='fs-4' name='status_func' value='1' > Ativo ";
-				echo "<input type='radio'  class='fs-4' name='status_func' value='0'  checked> Inativo";
+				echo "<input type='radio'  class='fs-4' name='status_func' value='1' > <p class='fs-5'> Ativo</p> ";
+				echo "<input type='radio'  class='fs-4' name='status_func' value='0'  checked> <p class='fs-5'> Inativo</p>";
 			}
 		?>
 	</div>

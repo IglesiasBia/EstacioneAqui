@@ -1,6 +1,5 @@
 <?php
-
-    $id = (int) $_GET['id'];
+     $id = (int) $_GET['id'];
 
     $sql = mysqli_query($con, "select * from funcionario where id_func = '".$id."';");
     $row = mysqli_fetch_array($sql);

@@ -79,13 +79,13 @@ $sqlAlteraValorFinal = mysqli_query($con, "update ticket set valor_total_ticket=
             <!-- 1ª LINHA -->
             <?php
 
-                echo "<div class='col-md-12'> O veículo de placa " . $placa . " deve " . $precoFinal . " reais</div>";
+                echo "<div class='col-md-12 fs-3'> O veículo de placa " . $placa . " deve " . $precoFinal . " reais</div>";
                 echo "<form action='?page=faz_ticket&placa_veic=".$placa ."' method='POST'>";
-                echo "<p>Selecione a forma de pagamento: ";
-                echo '<br><input type="radio" name="forma_pagamento" value="1"> Dinheiro<br>
-                <input type="radio" name="forma_pagamento" value="2"> Débito<br>
-                <input type="radio" name="forma_pagamento" value="3"> Crédito<br>';
-                echo '<button class="btn btn-danger"type="submit">Gerar</button>';
+                echo "<p class='fs-5'>Selecione a forma de pagamento: ";
+                echo '<br><input type="radio" name="forma_pagamento" value="1" class="fs-4"> Dinheiro<br>
+                <input type="radio" name="forma_pagamento" value="2" class="fs-4"> Débito<br>
+                <input type="radio" name="forma_pagamento" value="3" class="fs-4"> Crédito<br>';
+                echo '<button class="btn btn-danger fs-6"type="submit">Gerar</button>';
                 echo "</form>";
 
             ?>

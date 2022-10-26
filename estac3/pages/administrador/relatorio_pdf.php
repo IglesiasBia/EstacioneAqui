@@ -1,5 +1,4 @@
 <?php
-
     include("libpdf/mpdf.php"); 
 
     $header = "<div style='text-align:right;'>Página {PAGENO} de {nbpg}</div><hr>";
@@ -10,8 +9,6 @@
             Estacione Aqui
         </div>
     </div>";
-
-
     //$mpdf=new mPDF('utf-8', 'A4-L',size,fonte,10,10,10,10); 
 $mpdf=new mPDF('utf-8', 'A4-L',0,'',10,10,15,15); 
 // $mpdf->SetDisplayMode('fullpage'); 

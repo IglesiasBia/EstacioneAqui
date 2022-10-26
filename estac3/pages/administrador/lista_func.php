@@ -30,7 +30,7 @@
                 echo "<table class='table align-items-center mb-0'>";
                 echo "<thead><tr>";
                 echo "<th class='text-uppercase text-secondary fs-5 font-weight-bolder opacity-7'>ID</th>";
-                echo "<th class='text-uppercase text-secondary fs-5 font-weight-bolder opacity-7 ps-2'>Nome do funcionário</th>";
+                echo "<th class='text-uppercase text-secondary fs-5 font-weight-bolder opacity-7 ps-2'>Nome</th>";
                 echo "<th class='text-center text-uppercase text-secondary fs-5 font-weight-bolder opacity-7 d-none d-md-table-cell'>E-mail</th>";
                 echo "<th class='text-center text-uppercase text-secondary fs-5 font-weight-bolder opacity-7 d-none d-md-table-cell'>Nível</th>";
                 // echo "<th class='text-center text-uppercase text-secondary fs-5 font-weight-bolder opacity-7 d-none d-md-table-cell'>Status</th>";

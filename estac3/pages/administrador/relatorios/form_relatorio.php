@@ -23,15 +23,12 @@
                     </select>
                     </label>
                 </div>
-    
                 <div class="col-md-4">
                     <label class="fs-4" for="dt_inicio">
                         Data Inicio: <br>
                         <input type="date" name="dt_inicio">
                     </label>
-                    
                 </div>
-        
                 <div class="col-md-4">
                     <label class="fs-4" for="dt_final">
                         Data Final: <br>
@@ -40,11 +37,8 @@
                 </div>
             </div>
             <div class="row"><button type="submit" class="btn btn-danger btnrel">Gerar</button></div>
-
-		</div>
+        </div>
 	</div>
-
-    
 </form> 
             
 
