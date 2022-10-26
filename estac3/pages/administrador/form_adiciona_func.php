@@ -15,42 +15,42 @@ include "../base/testa_nivel.php";
 		<!-- 1ª LINHA -->
 		<div class="row">
 			<div class="form-group col-md-3">
-				<label for="nome_func">Nome Completo</label>
-				<input type="text" class="form-control" name="nome_func">
+				<label for="nome_func" class="fs-4">Nome Completo</label>
+				<input type="text" class="form-control fs-5" name="nome_func">
 			</div>
 			<div class="form-group col-md-3">
-				<label for="cpf_func">CPF</label>
-				<input type="text" class="form-control" name="cpf_func">
+				<label for="cpf_func " class="fs-4">CPF</label>
+				<input type="text" class="form-control fs-5" name="cpf_func">
 			</div>
 			<div class="form-group col-md-3">
-				<label for="nivel_func">Nível</label>
-				<select class="form-control" name="nivel_func" id="nivel_funcionario" onchange="dadosNivel()">
+				<label for="nivel_func " class="fs-4">Nível</label>
+				<select class="form-control fs-5" name="nivel_func" id="nivel_funcionario" onchange="dadosNivel()">
 					<option> --------- </option>
-					<option value="1">Funcionário Usuário</option>
-					<option value="2">Administrador</option>
-					<option value="3">Funcionário não usuário</option>
+					<option value="1" class="fs-5">Funcionário Usuário</option>
+					<option value="2" class="fs-5">Administrador</option>
+					<option value="3" class="fs-5">Funcionário não usuário</option>
 				</select>
 			</div>
 			<div class="form-group col-md-3">
-				<label for="status_func">Status</label><br>
-				<input type="radio" name="status_func" value="1"> Ativo
-				<input type="radio" name="status_func" value="0"> Inativo
+				<label for="status_func" class="fs-4">Status</label><br>
+				<input type="radio" name="status_func" value="1" class="fs-5"> Ativo
+				<input type="radio" name="status_func" value="0" class="fs-5">Inativo
 			</div>
 
 		</div>
 		<!-- 2ª LINHA -->
 		<div class="row">
 			<div class="form-group col-md-3" id="divEmail" style="display: none;">
-				<label for="email_func">E-mail</label>
-				<input type="text" class="form-control" name="email_func">
+				<label for="email_func" class="fs-4">E-mail</label>
+				<input type="text" class="form-control fs-5" name="email_func">
 			</div>
 			<div class="form-group col-md-3" id="divSenha" style="display: none;">
-				<label for="senha_usu">Senha</label>
-				<input type="text" class="form-control" name="senha_usu">
+				<label for="senha_usu" class="fs-4">Senha</label>
+				<input type="text" class="form-control fs-5" name="senha_usu">
 			</div>
 			<div class="form-group col-md-3" id="divUsuario" style="display: none;">
-				<label for="func_usu">Usuário</label>
-				<input type="text" class="form-control" name="func_usu">
+				<label for="func_usu" class="fs-4">Usuário</label>
+				<input type="text" class="form-control fs-5" name="func_usu">
 			</div>
 
 		</div>
