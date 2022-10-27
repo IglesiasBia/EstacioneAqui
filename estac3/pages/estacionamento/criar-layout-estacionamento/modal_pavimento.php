@@ -27,7 +27,8 @@ echo '<input type="text" value="' . $resultadoQuantidadePavimento["quant_pavimen
 						$sqlDadosPavimento = mysqli_query($con, "select pav_vaga from vagas where pav_vaga = ".$contador.";");
 						$resultadoDadosPavimento = mysqli_fetch_array($sqlDadosPavimento);
 
-						if($resultadoDadosPavimento["pav_vaga"] != $contador){
+					
+						if(isset($resultadoDadosPavimento["pav_vaga"] )== null|| $resultadoDadosPavimento["pav_vaga"] != $contador ){
 						// Cria pavimento que redirecioa para atualizar layout
 							echo "
 							<a class='btn btn-danger btn-xs' id='pavimento".$contador."' href=?page=layout_desenha_vagas&id_pavimento=".$contador." onclick='totalVagas()'>Pavimento ".$contador."</a></td>";

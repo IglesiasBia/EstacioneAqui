@@ -11,7 +11,7 @@
     //Pega o total de vagas para carro
     $sql2 = "select tipo_vaga, 
     count(*) as total_vagas_carro 
-    from vagas where tipo_vaga ='0';";
+    from vagas where tipo_vaga ='0' and id_vaga!=0;";
     $resultado2 = mysqli_query($con, $sql2);
     $row2 = mysqli_fetch_array($resultado2); 
 

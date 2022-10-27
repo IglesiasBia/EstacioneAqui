@@ -25,6 +25,7 @@
     $resultadoTicket = mysqli_query($con, $sql2);
     $dadosTicket = mysqli_fetch_array($resultadoTicket);
 
+    $precoFinal = $dadosTicket["valor_total_ticket"];
     //Pega os dados da vaga o veículo estava
     $sql3 = "select pav_vaga, setor_vaga, num_vaga
         from vagas
