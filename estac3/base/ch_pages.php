@@ -170,6 +170,10 @@ break;
         case "lista_vagas":
             include "lista_vagas.php";
             break;
+
+        case "teste_pdf":
+            include "administrador/relatorios/teste_pdf.php";
+            break;
         default:
             include "dash.php";
             break;

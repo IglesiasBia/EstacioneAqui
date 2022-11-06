@@ -7,6 +7,8 @@
     echo $dtInicio;
     echo $dtFinal;
 
+
+
     if($tipoRelatorio == "Selecione" || $dtInicio == "" || $dtFinal == ""){
         header("Location:  /estacione/estac3/pages/dash.php?page=form_relatorio&msg=16");
     }elseif($tipoRelatorio != "Selecione" && $dtInicio != "" && $dtFinal != ""){
