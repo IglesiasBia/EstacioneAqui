@@ -25,8 +25,8 @@ include "../base/testa_nivel.php";
                         </select>
                     </label>
                 </div>
-                <div id="selectStatusFunc" style="display:none;">
-                    <label class="fs-4" for="statusFunc">Tipo Relatório:
+                <div class="col-md-6" id="selectStatusFunc" style="display:none;">
+                    <label class="fs-4" for="statusFunc">Status dos funcionários:
                         <select class="selectrel" name="statusFunc" required>
                             <option selected>Selecione</option>
                             <option value="ativo">Ativo</option>
