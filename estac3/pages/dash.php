@@ -30,7 +30,11 @@
   <!-- mask -->
   <script type="text/javascript" src="js/jquery-1.2.6.pack.js"></script>
   <script type="text/javascript" src="js/jquery.maskedinput-1.1.4.pack.js"/></script>
-  
+  <script type="text/javascript">
+	$(document).ready(function(){
+		$("#cpf").mask("999.999.999-99");
+	});
+</script>
 </head>
 
 <body class="g-sidenav-show bg-gray-200">
