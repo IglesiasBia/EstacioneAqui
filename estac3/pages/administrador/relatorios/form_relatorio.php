@@ -22,11 +22,12 @@ include "../base/testa_nivel.php";
                             <option value="faturaEQuantidade">Fatura e quantidade</option>
                             <option value="entradaSaida">Entrada/Saída</option>
                             <option value="funcionarios">Funcionários</option>
-                        </select>
+                        </select> 
                     </label>
                 </div>
+                
                 <div class="col-md-6" id="selectStatusFunc" style="display:none;">
-                    <label class="fs-4" for="statusFunc">Status dos funcionários:
+                    <label class="fs-4" for="statusFunc">Status dos funcionários: <br>
                         <select class="selectrel" name="statusFunc" required>
                             <option selected>Selecione</option>
                             <option value="ativo">Ativo</option>
