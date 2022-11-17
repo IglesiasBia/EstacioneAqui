@@ -107,7 +107,7 @@
       <div class="card ">
         <div class="card-body">
           <form action="?page=modal_forma_pagamento" method="post">
-            <h5 class="card-title fs-4">Digite a placa para gerar nota fiscal</h5>
+            <h5 class="card-title fs-4">Digite a placa para gerar recibo</h5>
             <div class="input-group mb-3">
               <input type="text" class="form-control fs-5" placeholder="Digite aqui" aria-describedby="basic-addon2" name="placa_veic">
             </div>

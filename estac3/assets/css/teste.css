@@ -5,10 +5,8 @@
 
   }
 .btnvaga{
-    /* margin: 0.5em; */
     width: 6.5em;
     margin: 0.5em;
-    /* width: 10%; */
 }
 
 @media(max-width: 1400px){
