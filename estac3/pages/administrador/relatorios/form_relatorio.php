@@ -30,9 +30,9 @@ include "../base/testa_nivel.php";
                     <label class="fs-4" for="statusFunc">Status dos funcionários: <br>
                         <select class="selectrel" name="statusFunc" required>
                             <option selected>Selecione</option>
-                            <option value="ativo">Ativo</option>
-                            <option value="inativo">Inativo</option>
-                            <option value="ativoEInativo">Ativo Inativo</option>
+                            <option value="ativo">Ativos</option>
+                            <option value="inativo">Inativos</option>
+                            <option value="ativoEInativo">Ativos e Inativos</option>
                         </select>
                     </label>
                 </div>
