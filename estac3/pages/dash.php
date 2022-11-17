@@ -20,6 +20,7 @@
   <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <script src="./assets/js/maskinput.js"></script>
   <!-- Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
   <!-- CSS Files -->
@@ -27,14 +28,8 @@
   <link id="pagestyle" href="../assets/css/main2.css" rel="stylesheet"/>
   <link id="pagestyle" href="../assets/css/teste.css" rel="stylesheet"/>
 
-  <!-- mask -->
-  <script type="text/javascript" src="js/jquery-1.2.6.pack.js"></script>
-  <script type="text/javascript" src="js/jquery.maskedinput-1.1.4.pack.js"/></script>
-  <script type="text/javascript">
-	$(document).ready(function(){
-		$("#cpf").mask("999.999.999-99");
-	});
-</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
 </head>
 
 <body class="g-sidenav-show bg-gray-200">

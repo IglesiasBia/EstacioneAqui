@@ -1,7 +1,5 @@
 
-.imglogin{
-    margin-left: 8.5em;
-}
+
 
 
 .respnota{
@@ -110,6 +108,9 @@ cardsbaixo{
 .cardperfil{
     padding: 2em;
 }
+
+
+
 @media (max-width:900px) {
     .buttonfunc{
         margin-left: 70%;

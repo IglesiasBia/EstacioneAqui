@@ -20,7 +20,7 @@ include "../base/testa_nivel.php";
 			</div>
 			<div class="form-group col-md-3">
 				<label for="cpf_func " class="fs-4">CPF</label>
-				<input type="text" class="form-control fs-5" name="cpf_func" id="cpf">
+				<input type="text" class="form-control fs-5" name="cpf_func" id="inputcpf" autocomplete="off" maxlength="14">
 			</div>
 			<div class="form-group col-md-3">
 				<label for="nivel_func " class="fs-4">Nível</label>
@@ -63,7 +63,31 @@ include "../base/testa_nivel.php";
 		</div>
 	</form>
 </div>
+
+
 <script>
+const input = document.querySelector('inputcpf')
+input.addEventListener('keypress',() => {
+    let inputlength = input.value.length("inputcpf");
+
+    if(inputlength == 3||inputlength == 7){
+        input.value += ".";
+    } else if(inputlength == 11){
+		input.value += "-";
+	};
+});
+
+
+let inputlength = document.getElementById("inputcpf");
+if(inputlength == 3||inputlength == 7){
+        input.value += ".";
+    } else if(inputlength == 11){
+		input.value += "-";
+	};
+}
+
+
+
 	function dadosNivel() {
 		// Pega nível do funcionário
 		let nivelFuncionario = document.getElementById("nivel_funcionario");

@@ -809,9 +809,6 @@ function darkMode(el) {
   }
 };
 
-function mascara_cpf(){
-  var cpf = document.getElementById('cpf')
-  if(cpf.value.length == 3 || cpf.value.length == 7){
-    cpf.value += ".";
-  }
-}
+//expressao regular
+
+
