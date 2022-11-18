@@ -4,7 +4,7 @@ $nivel_necessario = 2;
 include "../base/testa_nivel.php";
 ?>
 <!-- <form action="?page=gera_relatorio" method="post"> -->
-<form action="http://localhost:8080/estacione/estac3/pages/administrador/relatorios/teste_pdf.php" method="post" target="_blank">
+<form action="http://localhost:80/estacione/estac3/pages/administrador/relatorios/teste_pdf.php" method="post" target="_blank">
     <!-- PRIMEIRA LINHA -->
 
 

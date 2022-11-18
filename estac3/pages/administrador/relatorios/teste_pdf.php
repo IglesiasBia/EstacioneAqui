@@ -15,6 +15,8 @@ $dtInicio = $_POST["dt_inicio"];
 $dtFinal = $_POST["dt_final"];
 
 
+$theadDados = "";
+$conteudo = "";
 
 // try{
 
@@ -49,7 +51,20 @@ $header .= "Estacione Aqui";
 
 
 if ($tipoRelatorio == "fatura") {
+    $header .= "<p>Período: " . date('d/m/Y', strtotime($dtInicio)) . " à " . date('d/m/Y', strtotime($dtFinal)). "</p>";
     $header .= "<hr>";
+
+    // Cabecalho da tabela de relatório
+    $theadDados = "<table class='table align-items-center mb-0'>";
+
+    $theadDados .= "<thead><tr>";
+    $theadDados .= "<th class='text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Dia</th>";
+    $theadDados .= "<th class='text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2'>Carros</th>";
+
+    $theadDados .= "<th class='text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 d-none d-md-table-cell'>Motocicletas</th>";
+    $theadDados .= "<th class='text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 d-none d-md-table-cell'>Total</th>";
+
+    $theadDados .= "</tr></thead><tbody>";
 } elseif ($tipoRelatorio == "quantidade") {
     $header .= "<p>Período: " . date('d/m/Y', strtotime($dtInicio)) . " à " . date('d/m/Y', strtotime($dtFinal)). "</p>";
     //TODO: NUMERO DA PAGINA
@@ -190,10 +205,11 @@ if ($tipoRelatorio == "entradaSaida") {
     }
 } elseif ($tipoRelatorio == "fatura") {
     $dataMomento = $dtInicio;
-    while ($dataMomento <= $dtFinal) {
 
+        
         // Pega fatura do dia
-        $sqlFaturaDia = "select valor_total_ticket from  ticket where hr_entrada BETWEEN '$dataMomento 00:00:00' and '$dataMomento 23:59:59';";
+        $sqlFaturaDia = "select valor_total_ticket from ticket where hr_entrada BETWEEN '2020-11-15 00:00:00' and '2022-11-15 23:59:59';";
+        
         $FaturaDia =  mysqli_query($con, $sqlFaturaDia);
         $resultadoFaturaDia = mysqli_fetch_array($FaturaDia);
 
@@ -208,7 +224,9 @@ if ($tipoRelatorio == "entradaSaida") {
         $sqlDataMomento = mysqli_query($con, "SELECT DATE_ADD('$dataMomento', INTERVAL 1 DAY) AS DAY;");
         $resutadoDataMomento = mysqli_fetch_array($sqlDataMomento);
         $dataMomento = $resutadoDataMomento["DAY"];
-    }
+
+        
+    
 } elseif ($tipoRelatorio == "quantidade") {
     $dataMomento = $dtInicio;
 
@@ -246,6 +264,7 @@ $theadDados .= "</tbody></table>";
 $dtInicio = $_POST['dt_inicio'];
 
 
-$html = $header .  $theadDados . $conteudo;
+$html = $header. $theadDados .$conteudo;
+
 $mpdf->WriteHTML($html);
 $mpdf->Output();
