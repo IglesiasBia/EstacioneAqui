@@ -172,7 +172,7 @@ break;
             break;
 
         case "teste_pdf":
-            include "administrador/relatorios/teste_pdf.php";
+            include "/estacione/estac3/pages/administrador/relatorios/teste_pdf.php";
             break;
         default:
             include "dash.php";

@@ -1,0 +1,10 @@
+tr:nth-child(even) {
+    background: #CCC
+}
+td{
+    text-align: center;
+    margin: 10px;
+}
+img, h1{
+    display: inline-block;
+}
