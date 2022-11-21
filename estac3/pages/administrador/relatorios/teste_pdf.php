@@ -49,7 +49,7 @@ if ($tipoRelatorio == "entradaSaida") {
 }
 
 
-$header = "<img src='../../../assets/img/logos/logo.png' height='100px' class='imglogin'>";
+// $header = "<img src='.../assets/img/logos/logo.png' height='100px' class='imglogin'>";
 $header .= "<h1>" . $conteudoHeader . " </h1>";
 $header .= "<h2>Estacione Aqui</h2>";
 
