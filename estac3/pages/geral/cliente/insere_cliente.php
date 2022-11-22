@@ -6,7 +6,7 @@
     $modelo = strtoupper($_POST["modelo_veic"]);
 
     if($placa == "" || $tipo == "" || $chave == "" || $marca == "" || $modelo == ""){
-        header('Location: http://localhost:8080/estacione/estac3/pages/dash.php?msg=dadosIncompletos');
+        header('Location: http://localhost/estacione/estac3/pages/dash.php?msg=dadosIncompletos');
     }
 
     // Cria um novo cliente
@@ -35,7 +35,7 @@
 $sqlBuscaTicketNaoPago = mysqli_query($con, "select * from ticket where placa_veic='$placa' and status_pg='0';");
 $respostaBuscaTicketNaoPago = mysqli_fetch_array($sqlBuscaTicketNaoPago);
     if($respostaBuscaTicketNaoPago != null){
-        header('Location: http://localhost:8080/estacione/estac3/pages/dash.php?msg=13');
+        header('Location: http://localhost/estacione/estac3/pages/dash.php?msg=13');
     }else{
 
         // Se o status_pg for pago insere dados no sistema 
@@ -52,7 +52,7 @@ $respostaBuscaTicketNaoPago = mysqli_fetch_array($sqlBuscaTicketNaoPago);
         
         
         if($resultadoCriaTicket){
-            header('Location: http://localhost:8080/estacione/estac3/pages/dash.php?msg=1');
+            header('Location: http://localhost/estacione/estac3/pages/dash.php?msg=1');
             mysqli_close($con);
         }else{
             echo "nao";

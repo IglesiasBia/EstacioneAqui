@@ -14,7 +14,7 @@
     // Se não existir um veículo com essa placa estacionado entra aqui 
     if ($resultadoIdTicket["id_ticket"] == "") {
 
-        header('Location: http://localhost:8080/estacione/estac3/pages/dash.php?msg=14');
+        header('Location: http://localhost/estacione/estac3/pages/dash.php?msg=14');
     }
 
    $sql2 = "select *
@@ -102,7 +102,7 @@
     echo "<div class='col-md-2'><button class='btn btn-danger' type='submit'>Imprimir</button></div></div>";
     if ($dadosTicket == 0) {
         echo $sql2;
-        header('Location: http://localhost:8080/estacione/estac3/pages/dash.php?msg=10');
+        header('Location: http://localhost/estacione/estac3/pages/dash.php?msg=10');
         mysqli_close($con);
     } else {
 

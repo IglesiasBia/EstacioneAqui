@@ -1382,7 +1382,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
   $link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
   if($_SESSION['UsuarioNivel'] == 1) {
-    if($link == "http://localhost:8080/estacione/estac3/pages/dash.php" || $link == "http://localhost:8080/estacione/estac3/pages/dash.php?page=busca_vaga_veic"){
+    if($link == "http://localhost/estacione/estac3/pages/dash.php" || $link == "http://localhost/estacione/estac3/pages/dash.php?page=busca_vaga_veic"){
       echo '<div class="container-fluid py-1 px-3">
               
               <nav aria-label="breadcrumb">
@@ -1413,7 +1413,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
                 </ul>
               </div>
             </div>';
-    }elseif($link == "http://localhost:8080/estacione/estac3/pages/dash.php?page=busca_cliente_atualizar" || $link == "http://localhost:8080/estacione/estac3/pages/dash.php?page=form_atualiza_dados_cliente"){
+    }elseif($link == "http://localhost/estacione/estac3/pages/dash.php?page=busca_cliente_atualizar" || $link == "http://localhost/estacione/estac3/pages/dash.php?page=form_atualiza_dados_cliente"){
       echo '<div class="container-fluid py-1 px-3">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
@@ -1442,7 +1442,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
                 </ul>
               </div>
             </div>';
-    }elseif($link == "http://localhost:8080/estacione/estac3/pages/dash.php?page=perfil_usu"){
+    }elseif($link == "http://localhost/estacione/estac3/pages/dash.php?page=perfil_usu"){
       echo '<div class="container-fluid py-1 px-3">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
@@ -1471,7 +1471,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
                 </ul>
               </div>
             </div>';
-    }elseif($link == "http://localhost:8080/estacione/estac3/pages/dash.php?page=form_altera_senha_usu"){
+    }elseif($link == "http://localhost/estacione/estac3/pages/dash.php?page=form_altera_senha_usu"){
       echo '<div class="container-fluid py-1 px-3">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
@@ -1531,7 +1531,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
             </div>';
     }
   }elseif($_SESSION['UsuarioNivel'] == 2){
-    if($link == "http://localhost:8080/estacione/estac3/pages/dash.php" || $link == "http://localhost:8080/estacione/estac3/pages/dash.php?page=busca_vaga_veic" || str_contains($link, "http://localhost:8080/estacione/estac3/pages/dash.php?msg=")){
+    if($link == "http://localhost/estacione/estac3/pages/dash.php" || $link == "http://localhost/estacione/estac3/pages/dash.php?page=busca_vaga_veic" || str_contains($link, "http://localhost/estacione/estac3/pages/dash.php?msg=")){
       echo '<div class="container-fluid py-1 px-3">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
@@ -1560,7 +1560,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
                 </ul>
               </div>
             </div>';
-    }elseif(str_contains($link, "http://localhost:8080/estacione/estac3/pages/dash.php?page=view_func&id=")){
+    }elseif(str_contains($link, "http://localhost/estacione/estac3/pages/dash.php?page=view_func&id=")){
       echo '<div class="container-fluid py-1 px-3">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
@@ -1589,7 +1589,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
                 </ul>
               </div>
             </div>';
-    }elseif(str_contains($link, "http://localhost:8080/estacione/estac3/pages/dash.php?page=form_att_func&id=")){
+    }elseif(str_contains($link, "http://localhost/estacione/estac3/pages/dash.php?page=form_att_func&id=")){
       echo '<div class="container-fluid py-1 px-3">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
@@ -1618,7 +1618,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
                 </ul>
               </div>
             </div>';
-    }elseif($link == "http://localhost:8080/estacione/estac3/pages/dash.php?page=view_estac"){
+    }elseif($link == "http://localhost/estacione/estac3/pages/dash.php?page=view_estac"){
       echo '<div class="container-fluid py-1 px-3">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
@@ -1647,7 +1647,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
                 </ul>
               </div>
             </div>';
-    }elseif(str_contains($link, "http://localhost:8080/estacione/estac3/pages/dash.php?page=lista_func") || str_contains($link, "http://localhost:8080/estacione/estac3/pages/dash.php?page=lista_func_inativo")){
+    }elseif(str_contains($link, "http://localhost/estacione/estac3/pages/dash.php?page=lista_func") || str_contains($link, "http://localhost/estacione/estac3/pages/dash.php?page=lista_func_inativo")){
       echo '<div class="container-fluid py-1 px-3">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
@@ -1676,7 +1676,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
                 </ul>
               </div>
             </div>';
-    }    elseif($link == "http://localhost:8080/estacione/estac3/pages/dash.php?page=busca_cliente_atualizar" || $link == "http://localhost:8080/estacione/estac3/pages/dash.php?page=form_atualiza_dados_cliente"){
+    }    elseif($link == "http://localhost/estacione/estac3/pages/dash.php?page=busca_cliente_atualizar" || $link == "http://localhost/estacione/estac3/pages/dash.php?page=form_atualiza_dados_cliente"){
       echo '<div class="container-fluid py-1 px-3">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
@@ -1705,7 +1705,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
                 </ul>
               </div>
             </div>';
-    }elseif($link == "http://localhost:8080/estacione/estac3/pages/dash.php?page=perfil_usu"){
+    }elseif($link == "http://localhost/estacione/estac3/pages/dash.php?page=perfil_usu"){
       echo '<div class="container-fluid py-1 px-3">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
@@ -1734,7 +1734,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
                 </ul>
               </div>
             </div>';
-    }elseif($link == "http://localhost:8080/estacione/estac3/pages/dash.php?page=form_add_vaga"){
+    }elseif($link == "http://localhost/estacione/estac3/pages/dash.php?page=form_add_vaga"){
       echo '<div class="container-fluid py-1 px-3">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
@@ -1763,7 +1763,7 @@ $con = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
                 </ul>
               </div>
             </div>';
-    }elseif($link == "http://localhost:8080/estacione/estac3/pages/dash.php?page=form_relatorio"){
+    }elseif($link == "http://localhost/estacione/estac3/pages/dash.php?page=form_relatorio"){
       echo '<div class="container-fluid py-1 px-3">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
@@ -4374,10 +4374,10 @@ $sqlTicket = "update ticket set id_vaga='$idVaga', status_pg='$statusPg'  where 
 $resultado = mysqli_query($con, $sqlTicket);
 
 if($resultado){
-    header('Location: http://localhost:8080/estacione/estac3/pages/dash.php?page=busca_cliente_atualizar&msg=6');
+    header('Location: http://localhost/estacione/estac3/pages/dash.php?page=busca_cliente_atualizar&msg=6');
     mysqli_close($con);
 }else{
-    header('Location: http://localhost:8080/estacione/estac3/pages/dash.php?page=busca_cliente_atualizar&msg=7');
+    header('Location: http://localhost/estacione/estac3/pages/dash.php?page=busca_cliente_atualizar&msg=7');
 }
 
 ?><?php
@@ -4444,7 +4444,7 @@ $('#resultadoBuscaVaga').modal('show');
     $vagasTicket = mysqli_fetch_array($resultadoVagasTicket);
 
     if($veiculoCliente == 0){
-        header('Location: http://localhost:8080/estacione/estac3/pages/dash.php?page=busca_cliente_atualizar&msg=3');
+        header('Location: http://localhost/estacione/estac3/pages/dash.php?page=busca_cliente_atualizar&msg=3');
         mysqli_close($con);
     }
 ?>
@@ -4602,7 +4602,7 @@ $marca = strtoupper($_POST["marca_veic"]);
 $modelo = strtoupper($_POST["modelo_veic"]);
 
 if($placa == "" || $tipo == "" || $chave == "" || $marca == "" || $modelo == ""){
-    header('Location: http://localhost:8080/estacione/estac3/pages/dash.php?msg=dadosIncompletos');
+    header('Location: http://localhost/estacione/estac3/pages/dash.php?msg=dadosIncompletos');
 }
 
 // Cria um novo cliente
@@ -4631,7 +4631,7 @@ if($resultadoExistePlaca["placa_veic"] == null){
 $sqlBuscaTicketNaoPago = mysqli_query($con, "select * from ticket where placa_veic='$placa' and status_pg='0';");
 $respostaBuscaTicketNaoPago = mysqli_fetch_array($sqlBuscaTicketNaoPago);
 if($respostaBuscaTicketNaoPago != null){
-    header('Location: http://localhost:8080/estacione/estac3/pages/dash.php?msg=13');
+    header('Location: http://localhost/estacione/estac3/pages/dash.php?msg=13');
 }else{
 
     // Se o status_pg for pago insere dados no sistema 
@@ -4648,7 +4648,7 @@ if($respostaBuscaTicketNaoPago != null){
     
     
     if($resultadoCriaTicket){
-        header('Location: http://localhost:8080/estacione/estac3/pages/dash.php?msg=1');
+        header('Location: http://localhost/estacione/estac3/pages/dash.php?msg=1');
         mysqli_close($con);
     }else{
         echo "nao";
@@ -4706,14 +4706,14 @@ $senha = $_POST["senha"];
 // copy($file, $dir);
 // Mensagem de erro se a senha for nula
 if($senha == ""){
-    header('Location: http://localhost:8080/estacione/estac3/pages/dash.php?page=perfil_usu&msg=senhaVazia');
+    header('Location: http://localhost/estacione/estac3/pages/dash.php?page=perfil_usu&msg=senhaVazia');
 }else{
     $sql = "update func_usu set senha_func='$senha' where id_func='$id';";
     echo $sql;
     $resultado = mysqli_query($con,$sql);
     
     if($resultado){
-        header('Location: http://localhost:8080/estacione/estac3/pages/dash.php?page=perfil_usu&msg=4');
+        header('Location: http://localhost/estacione/estac3/pages/dash.php?page=perfil_usu&msg=4');
     }
 }
 ?><div class="modal-dialog" role="document">
@@ -4942,7 +4942,7 @@ $row2 = mysqli_fetch_array($sql2);
             // Se não existir um veículo com essa placa estacionado entra aqui 
             if ($resultadoIdTicket["id_ticket"] == "") {
         
-                header('Location: http://localhost:8080/estacione/estac3/pages/dash.php?msg=14');
+                header('Location: http://localhost/estacione/estac3/pages/dash.php?msg=14');
             }
         
            $sql2 = "select *
@@ -5029,7 +5029,7 @@ $row2 = mysqli_fetch_array($sql2);
             echo "<div class='col-md-2'><button class='btn btn-danger' type='submit'>Imprimir</button></div></div>";
             if ($dadosTicket == 0) {
                 echo $sql2;
-                header('Location: http://localhost:8080/estacione/estac3/pages/dash.php?msg=10');
+                header('Location: http://localhost/estacione/estac3/pages/dash.php?msg=10');
                 mysqli_close($con);
             } else {
         
@@ -5171,7 +5171,7 @@ $row2 = mysqli_fetch_array($sql2);
         $sqlStatusVaga = mysqli_query($con, "update vagas set status_vaga=0 where id_vaga='$idVaga';");
     
         if($sqlAlteraStatusPg){
-            header("Location:http://localhost:8080/estacione/estac3/pages/dash.php?msg=15");
+            header("Location:http://localhost/estacione/estac3/pages/dash.php?msg=15");
         }
         
     
@@ -5212,7 +5212,7 @@ $row2 = mysqli_fetch_array($sql2);
         // Se não foe encontardo cliente com essa placa entra aqui
         if($veiculoCliente == 0){
             // Mensagem de erro
-            header('Location: http://localhost:8080/estacione/estac3/pages/dash.php?page=busca_cliente_atualizar&msg=10');
+            header('Location: http://localhost/estacione/estac3/pages/dash.php?page=busca_cliente_atualizar&msg=10');
             mysqli_close($con);
         }
     ?><!doctype html>
@@ -5347,16 +5347,16 @@ $row2 = mysqli_fetch_array($sql2);
               include "../base/con_escola.php";
               include "../base/ch_pages.php";
   
-              if($link == "http://localhost:8080/estacione/estac3/pages/dash.php?page=altera_layout"){
+              if($link == "http://localhost/estacione/estac3/pages/dash.php?page=altera_layout"){
                 include "./estacionamento/view_estac.php";
                 // include "../base/cards.php";
               }
               
               // Adiciona cards dependendo da URL
               $link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-              if(str_contains($link, "http://localhost:8080/estacione/estac3/pages/dash.php?msg=") || $link == "http://localhost:8080/estacione/estac3/pages/dash.php" || $link =="http://localhost:8080/estacione/estac3/pages/dash.php?page=busca_vaga_veic"){
+              if(str_contains($link, "http://localhost/estacione/estac3/pages/dash.php?msg=") || $link == "http://localhost/estacione/estac3/pages/dash.php" || $link =="http://localhost/estacione/estac3/pages/dash.php?page=busca_vaga_veic"){
                 include "../base/cards.php";
-              }elseif(str_contains($link, "http://localhost:8080/estacione/estac3/pages/dash.php?msg=") || $link =="http://localhost:8080/estacione/estac3/pages/dash.php?page=busca_vaga_veic" || $link == "http://localhost:8080/estacione/estac3/pages/dash.php"){
+              }elseif(str_contains($link, "http://localhost/estacione/estac3/pages/dash.php?msg=") || $link =="http://localhost/estacione/estac3/pages/dash.php?page=busca_vaga_veic" || $link == "http://localhost/estacione/estac3/pages/dash.php"){
                 include "../base/cards.php";
               }
             ?>

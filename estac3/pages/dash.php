@@ -69,7 +69,7 @@
             include "../base/con_escola.php";
             include "../base/ch_pages.php";
 
-            if($link == "http://localhost:8080/estacione/estac3/pages/dash.php?page=altera_layout"){
+            if($link == "http://localhost/estacione/estac3/pages/dash.php?page=altera_layout"){
               include "./estacionamento/view_estac.php";
               // include "../base/cards.php";
             }

@@ -15,7 +15,7 @@
     $sqlStatusVaga = mysqli_query($con, "update vagas set status_vaga=0 where id_vaga='$idVaga';");
 
     if($sqlAlteraStatusPg){
-        header("Location:http://localhost:8080/estacione/estac3/pages/dash.php?msg=15");
+        header("Location:http://localhost/estacione/estac3/pages/dash.php?msg=15");
     }
     
 

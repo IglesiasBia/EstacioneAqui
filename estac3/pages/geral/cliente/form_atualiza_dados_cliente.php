@@ -30,7 +30,7 @@
     $vagasTicket = mysqli_fetch_array($resultadoVagasTicket);
 
     if($veiculoCliente == 0){
-        header('Location: http://localhost:8080/estacione/estac3/pages/dash.php?page=busca_cliente_atualizar&msg=3');
+        header('Location: http://localhost/estacione/estac3/pages/dash.php?page=busca_cliente_atualizar&msg=3');
         mysqli_close($con);
     }
 ?>

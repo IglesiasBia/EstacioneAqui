@@ -33,7 +33,7 @@
     // Se não foe encontardo cliente com essa placa entra aqui
     if($veiculoCliente == 0){
         // Mensagem de erro
-        header('Location: http://localhost:8080/estacione/estac3/pages/dash.php?page=busca_cliente_atualizar&msg=10');
+        header('Location: http://localhost/estacione/estac3/pages/dash.php?page=busca_cliente_atualizar&msg=10');
         mysqli_close($con);
     }
 ?>

@@ -4,7 +4,7 @@ $placa = $_POST["placa_veic"];
 $sqlVerificaExistenciaVeiculo = mysqli_query($con, "select * from ticket where placa_veic='$placa' and status_pg=0;");
 $resultadoVerificaExistenciaVeiculo =mysqli_fetch_array($sqlVerificaExistenciaVeiculo);
 if($resultadoVerificaExistenciaVeiculo["id_ticket"]==""){
-    header('Location: http://localhost:8080/estacione/estac3/pages/dash.php?msg=14');
+    header('Location: http://localhost/estacione/estac3/pages/dash.php?msg=14');
 } 
 
 //Pega data e horário atual
