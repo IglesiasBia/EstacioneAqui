@@ -140,6 +140,15 @@ input[type="date"]{
 .funcatu{
     padding: 1em;
 }
-
+.btnplaca{
+    height: 1em;
+    width: 5em;
+}
+#inputvaga{
+    height: 3em;    
+}
+   #buttonsalva{
+    height: 3.5em;
+   }
 
 

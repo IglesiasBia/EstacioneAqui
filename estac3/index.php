@@ -28,7 +28,7 @@ include "base/ch_pages.php";
   <link href="assets/css/main2.css" rel="stylesheet" />
   <link href="assets/css/teste.css" rel="stylesheet" />
   
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>

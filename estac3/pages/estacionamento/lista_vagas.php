@@ -19,10 +19,13 @@ echo '<form action="?page=altera_vaga_cliente&id_pavimento=' . $pavimentoAtual .
 <h3>Digite a placa do veículo</h3>
 
 
-<input type="text" name="placaVeic">
+
 <input type="text" style="display: none;" id="numeroVaga" name="numeroVaga">
 
-
+<div class="input-group">
+    <input type="text" class="form-control" style="background-color:white;"id="inputvaga" name="placaVeic">
+    <button class="btn btn-danger" id="buttonsalva"type="submit" > salvar </button>
+</div>
 
 <br>';
 
@@ -153,10 +156,10 @@ while ($contadorEspaco <= $totalEspacos) {
 echo "</div>";
 ?>
 
-<div>
-<button type="submit" class="btn bg-gradient-danger w-100 my-4 mb-2">Salvar</button>
+
+
 </form>
-</div>
+
 <script>
     // var corSetor = ["126, 76, 175", "242, 175, 48", "2, 115, 115", "123, 22, 54", "29, 40, 210"
     function alteraStatusVaga() {

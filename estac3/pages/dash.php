@@ -21,6 +21,8 @@
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
   <script src="./assets/js/maskinput.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../assets/js/jquery.mask.js"></script>
   <!-- Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
   <!-- CSS Files -->
@@ -30,9 +32,11 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
  
+
+  
 </head>
 
-<body class="g-sidenav-show bg-gray-200">
+<body class=" bg-gray-200">
 
   <!-- INÍCIO SIDEBAR -->
   <aside class="sidenav navbar navbar-vertical border-radius-xl navbar-expand-xs  my-2 fixed-start ms-3 bg-gradient-dark" id="sidenav-main">
@@ -54,7 +58,7 @@
     <!-- FIM SIDEBAR -->
     
     <!-- INÍCIO NAVBAR -->
-    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
+    <nav class="navbar  navbar-expand-sm  shadow-none "  >
 
      <?php include "../base/navbar.php"; ?>
      
@@ -102,261 +106,261 @@
   <script>
     var ctx = document.getElementById("chart-bars").getContext("2d");
 
-    new Chart(ctx, {
-      type: "bar",
-      data: {
-        labels: ["M", "T", "W", "T", "F", "S", "S"],
-        datasets: [{
-          label: "Sales",
-          tension: 0.4,
-          borderWidth: 0,
-          borderRadius: 4,
-          borderSkipped: false,
-          backgroundColor: "rgba(255, 255, 255, .8)",
-          data: [50, 20, 10, 22, 50, 10, 40],
-          maxBarThickness: 6
-        }, ],
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-            display: false,
-          }
-        },
-        interaction: {
-          intersect: false,
-          mode: 'index',
-        },
-        scales: {
-          y: {
-            grid: {
-              drawBorder: false,
-              display: true,
-              drawOnChartArea: true,
-              drawTicks: false,
-              borderDash: [5, 5],
-              color: 'rgba(255, 255, 255, .2)'
-            },
-            ticks: {
-              suggestedMin: 0,
-              suggestedMax: 500,
-              beginAtZero: true,
-              padding: 10,
-              font: {
-                size: 14,
-                weight: 300,
-                family: "Roboto",
-                style: 'normal',
-                lineHeight: 2
-              },
-              color: "#fff"
-            },
-          },
-          x: {
-            grid: {
-              drawBorder: false,
-              display: true,
-              drawOnChartArea: true,
-              drawTicks: false,
-              borderDash: [5, 5],
-              color: 'rgba(255, 255, 255, .2)'
-            },
-            ticks: {
-              display: true,
-              color: '#f8f9fa',
-              padding: 10,
-              font: {
-                size: 14,
-                weight: 300,
-                family: "Roboto",
-                style: 'normal',
-                lineHeight: 2
-              },
-            }
-          },
-        },
-      },
-    });
+    var ctx = document.getElementById("chart-bars").getContext("2d");
 
-
-    var ctx2 = document.getElementById("chart-line").getContext("2d");
-
-    new Chart(ctx2, {
-      type: "line",
-      data: {
-        labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        datasets: [{
-          label: "Mobile apps",
-          tension: 0,
-          borderWidth: 0,
-          pointRadius: 5,
-          pointBackgroundColor: "rgba(255, 255, 255, .8)",
-          pointBorderColor: "transparent",
-          borderColor: "rgba(255, 255, 255, .8)",
-          borderColor: "rgba(255, 255, 255, .8)",
-          borderWidth: 4,
-          backgroundColor: "transparent",
-          fill: true,
-          data: [50, 40, 300, 320, 500, 350, 200, 230, 500],
-          maxBarThickness: 6
-
-        }],
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-            display: false,
-          }
-        },
-        interaction: {
-          intersect: false,
-          mode: 'index',
-        },
-        scales: {
-          y: {
-            grid: {
-              drawBorder: false,
-              display: true,
-              drawOnChartArea: true,
-              drawTicks: false,
-              borderDash: [5, 5],
-              color: 'rgba(255, 255, 255, .2)'
-            },
-            ticks: {
-              display: true,
-              color: '#f8f9fa',
-              padding: 10,
-              font: {
-                size: 14,
-                weight: 300,
-                family: "Roboto",
-                style: 'normal',
-                lineHeight: 2
-              },
-            }
-          },
-          x: {
-            grid: {
-              drawBorder: false,
-              display: false,
-              drawOnChartArea: false,
-              drawTicks: false,
-              borderDash: [5, 5]
-            },
-            ticks: {
-              display: true,
-              color: '#f8f9fa',
-              padding: 10,
-              font: {
-                size: 14,
-                weight: 300,
-                family: "Roboto",
-                style: 'normal',
-                lineHeight: 2
-              },
-            }
-          },
-        },
-      },
-    });
-
-    var ctx3 = document.getElementById("chart-line-tasks").getContext("2d");
-
-    new Chart(ctx3, {
-      type: "line",
-      data: {
-        labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        datasets: [{
-          label: "Mobile apps",
-          tension: 0,
-          borderWidth: 0,
-          pointRadius: 5,
-          pointBackgroundColor: "rgba(255, 255, 255, .8)",
-          pointBorderColor: "transparent",
-          borderColor: "rgba(255, 255, 255, .8)",
-          borderWidth: 4,
-          backgroundColor: "transparent",
-          fill: true,
-          data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
-          maxBarThickness: 6
-
-        }],
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-            display: false,
-          }
-        },
-        interaction: {
-          intersect: false,
-          mode: 'index',
-        },
-        scales: {
-          y: {
-            grid: {
-              drawBorder: false,
-              display: true,
-              drawOnChartArea: true,
-              drawTicks: false,
-              borderDash: [5, 5],
-              color: 'rgba(255, 255, 255, .2)'
-            },
-            ticks: {
-              display: true,
-              padding: 10,
-              color: '#f8f9fa',
-              font: {
-                size: 14,
-                weight: 300,
-                family: "Roboto",
-                style: 'normal',
-                lineHeight: 2
-              },
-            }
-          },
-          x: {
-            grid: {
-              drawBorder: false,
-              display: false,
-              drawOnChartArea: false,
-              drawTicks: false,
-              borderDash: [5, 5]
-            },
-            ticks: {
-              display: true,
-              color: '#f8f9fa',
-              padding: 10,
-              font: {
-                size: 14,
-                weight: 300,
-                family: "Roboto",
-                style: 'normal',
-                lineHeight: 2
-              },
-            }
-          },
-        },
-      },
-    });
-  </script>
-  <script>
-    var win = navigator.platform.indexOf('Win') > -1;
-    if (win && document.querySelector('#sidenav-scrollbar')) {
-      var options = {
-        damping: '0.5'
+new Chart(ctx, {
+  type: "bar",
+  data: {
+    labels: ["M", "T", "W", "T", "F", "S", "S"],
+    datasets: [{
+      label: "Sales",
+      tension: 0.4,
+      borderWidth: 0,
+      borderRadius: 4,
+      borderSkipped: false,
+      backgroundColor: "rgba(255, 255, 255, .8)",
+      data: [50, 20, 10, 22, 50, 10, 40],
+      maxBarThickness: 6
+    }, ],
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: false,
       }
-      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-    }
-    
-  </script>
-  
+    },
+    interaction: {
+      intersect: false,
+      mode: 'index',
+    },
+    scales: {
+      y: {
+        grid: {
+          drawBorder: false,
+          display: true,
+          drawOnChartArea: true,
+          drawTicks: false,
+          borderDash: [5, 5],
+          color: 'rgba(255, 255, 255, .2)'
+        },
+        ticks: {
+          suggestedMin: 0,
+          suggestedMax: 500,
+          beginAtZero: true,
+          padding: 10,
+          font: {
+            size: 14,
+            weight: 300,
+            family: "Roboto",
+            style: 'normal',
+            lineHeight: 2
+          },
+          color: "#fff"
+        },
+      },
+      x: {
+        grid: {
+          drawBorder: false,
+          display: true,
+          drawOnChartArea: true,
+          drawTicks: false,
+          borderDash: [5, 5],
+          color: 'rgba(255, 255, 255, .2)'
+        },
+        ticks: {
+          display: true,
+          color: '#f8f9fa',
+          padding: 10,
+          font: {
+            size: 14,
+            weight: 300,
+            family: "Roboto",
+            style: 'normal',
+            lineHeight: 2
+          },
+        }
+      },
+    },
+  },
+});
+
+
+var ctx2 = document.getElementById("chart-line").getContext("2d");
+
+new Chart(ctx2, {
+  type: "line",
+  data: {
+    labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    datasets: [{
+      label: "Mobile apps",
+      tension: 0,
+      borderWidth: 0,
+      pointRadius: 5,
+      pointBackgroundColor: "rgba(255, 255, 255, .8)",
+      pointBorderColor: "transparent",
+      borderColor: "rgba(255, 255, 255, .8)",
+      borderColor: "rgba(255, 255, 255, .8)",
+      borderWidth: 4,
+      backgroundColor: "transparent",
+      fill: true,
+      data: [50, 40, 300, 320, 500, 350, 200, 230, 500],
+      maxBarThickness: 6
+
+    }],
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: false,
+      }
+    },
+    interaction: {
+      intersect: false,
+      mode: 'index',
+    },
+    scales: {
+      y: {
+        grid: {
+          drawBorder: false,
+          display: true,
+          drawOnChartArea: true,
+          drawTicks: false,
+          borderDash: [5, 5],
+          color: 'rgba(255, 255, 255, .2)'
+        },
+        ticks: {
+          display: true,
+          color: '#f8f9fa',
+          padding: 10,
+          font: {
+            size: 14,
+            weight: 300,
+            family: "Roboto",
+            style: 'normal',
+            lineHeight: 2
+          },
+        }
+      },
+      x: {
+        grid: {
+          drawBorder: false,
+          display: false,
+          drawOnChartArea: false,
+          drawTicks: false,
+          borderDash: [5, 5]
+        },
+        ticks: {
+          display: true,
+          color: '#f8f9fa',
+          padding: 10,
+          font: {
+            size: 14,
+            weight: 300,
+            family: "Roboto",
+            style: 'normal',
+            lineHeight: 2
+          },
+        }
+      },
+    },
+  },
+});
+
+var ctx3 = document.getElementById("chart-line-tasks").getContext("2d");
+
+new Chart(ctx3, {
+  type: "line",
+  data: {
+    labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    datasets: [{
+      label: "Mobile apps",
+      tension: 0,
+      borderWidth: 0,
+      pointRadius: 5,
+      pointBackgroundColor: "rgba(255, 255, 255, .8)",
+      pointBorderColor: "transparent",
+      borderColor: "rgba(255, 255, 255, .8)",
+      borderWidth: 4,
+      backgroundColor: "transparent",
+      fill: true,
+      data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
+      maxBarThickness: 6
+
+    }],
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: false,
+      }
+    },
+    interaction: {
+      intersect: false,
+      mode: 'index',
+    },
+    scales: {
+      y: {
+        grid: {
+          drawBorder: false,
+          display: true,
+          drawOnChartArea: true,
+          drawTicks: false,
+          borderDash: [5, 5],
+          color: 'rgba(255, 255, 255, .2)'
+        },
+        ticks: {
+          display: true,
+          padding: 10,
+          color: '#f8f9fa',
+          font: {
+            size: 14,
+            weight: 300,
+            family: "Roboto",
+            style: 'normal',
+            lineHeight: 2
+          },
+        }
+      },
+      x: {
+        grid: {
+          drawBorder: false,
+          display: false,
+          drawOnChartArea: false,
+          drawTicks: false,
+          borderDash: [5, 5]
+        },
+        ticks: {
+          display: true,
+          color: '#f8f9fa',
+          padding: 10,
+          font: {
+            size: 14,
+            weight: 300,
+            family: "Roboto",
+            style: 'normal',
+            lineHeight: 2
+          },
+        }
+      },
+    },
+  },
+});
+</script>
+<script>
+var win = navigator.platform.indexOf('Win') > -1;
+if (win && document.querySelector('#sidenav-scrollbar')) {
+  var options = {
+    damping: '0.5'
+  }
+  Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+}
+</script>
   
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
@@ -368,6 +372,18 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <script src="./estacionamento/exibe_input.js"></script>
   <!-- <script src="./estacionamento/exibe_input.js"></script> -->
+
+
+
+
+ 
+  <script type="text/javascript">
+
+    $(document).ready(function(){
+      $('#cpf').mask('000.000.000-00');
+    });
+
+    <script>
 </body>
 </html>
 

@@ -18,15 +18,15 @@ $row2 = mysqli_fetch_array($sql2);
 				<table class="table table-responsive">
         			<tr>
 						<?php
-							if ($row['nome_func'] == "bia") {
+							if ($row['nome_func'] == "Beatriz Iglesias dos Santos") {
 								echo "<td rowspan='2' colspan='2'>
 								<img src='../assets/img/bea.png' class='rounded-circle imgperfil'>
 								</td>";
-							} elseif ($row['nome_func'] ==  "Raphaela") {
+							} elseif ($row['nome_func'] ==  "Raphaela Goulart de Moraes") {
 								echo "<td rowspan='2' colspan='2'>
 								<img src='../assets/img/rapha.png' class='rounded-circle imgperfil'>
 								</td>";
-							} elseif ($row['nome_func'] =="Lethicia") {
+							} elseif ($row['nome_func'] =="Lethicia Ferreira Alves") {
 								echo "<td rowspan='2' colspan='2'>
 								<img src='../assets/img/leth.png' class='rounded-circle imgperfil'>
 								</td>";
