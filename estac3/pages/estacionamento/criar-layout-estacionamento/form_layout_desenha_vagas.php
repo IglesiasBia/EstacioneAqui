@@ -36,7 +36,7 @@ if (mysqli_fetch_array($sqlPegadadosEspacos) == null) {
             <p>Selecione onde há vagas</p>
             <button type="button" class="btn btnvaga btn-success" onclick="alteraTipo()" id="tipoButtonVaga"><img src="../assets/img/icons/carlayout.png" width="30em" id="tipoImgVaga"></button>
             <button type="button" class="btn btnvaga bs-gray-700" onclick="alteraTipo()"  id="tipoButtonRua"><img src="../assets/img/icons/linha.png" width="30em" id="tipoImgRua"></button>
-            <button type="button" class="btn btnvaga btn-dark" onclick="alteraTipo()" id="tipoNada">oi</button>
+            <button type="button" class="btn btnvaga btn-dark " onclick="alteraTipo()" id="tipoNada" style=" height: 49px;"></button>
             <hr>        
             <div class="grid-container" id="atualizaLayout">
                     <input type="text" value="' . $pavimentoAtual . '" name="pavimentoAtual" id="pavimentoAtual" style="display: none">
@@ -69,7 +69,7 @@ if (mysqli_fetch_array($sqlPegadadosEspacos) == null) {
             </div>";
         } elseif ($resultadoPegaLayoutCriado["tipo_vaga"] == '4') {
             echo "<div class='grid-item'>
-                <button type='button' class='btn btnvaga btn-dark' onclick='alteraTipo()' id='vaga" . $contador . "' name='vaga" .  $contador . "' style='position: static; min-height:50px'>";
+                <button type='button' class='btn btnvaga btn-dark' onclick='alteraTipo()' id='vaga" . $contador . "' name='nada" .  $contador . "' style='position: static; min-height:50px'>";
             echo " <img src='../assets/img/icons/carlayout.png' width='30em'alt='' style='display: none' class='imgCarro' id='imgCarro" .  $contador . "' name='imgCarro" .  $contador . "'>";
             echo   "<img src='../assets/img/icons/linha.png' width='30em'alt='' style='display: none' class='imgLinha' id='imgLinha" .  $contador . "' name='" .  $contador . "'>";
             echo "

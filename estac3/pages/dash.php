@@ -76,9 +76,13 @@
             
             // Adiciona cards dependendo da URL
             $link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-            if(str_contains($link, "http://localhost:8080/estacione/estac3/pages/dash.php?msg=") || $link == "http://localhost:8080/estacione/estac3/pages/dash.php" || $link =="http://localhost:8080/estacione/estac3/pages/dash.php?page=busca_vaga_veic"){
+            if(strpos($link, "?page") && !str_contains($link,"/estacione/estac3/pages/dash.php?page=busca_vaga_veic")){
+
+            }
+            elseif(str_contains($link, "/estacione/estac3/pages/dash.php?msg=") || str_contains($link, "/estacione/estac3/pages/dash.php") || str_contains($link,"/estacione/estac3/pages/dash.php?page=busca_vaga_veic")){
               include "../base/cards.php";
-            }elseif(str_contains($link, "http://localhost:8080/estacione/estac3/pages/dash.php?msg=") || $link =="http://localhost:8080/estacione/estac3/pages/dash.php?page=busca_vaga_veic" || $link == "http://localhost:8080/estacione/estac3/pages/dash.php"){
+
+            }elseif(str_contains($link, "/estacione/estac3/pages/dash.php?msg=") || str_contains($link,"/estacione/estac3/pages/dash.php?page=busca_vaga_veic") || str_contains($link,"/estacione/estac3/pages/dash.php")){
               include "../base/cards.php";
             }
           ?>
