@@ -29,7 +29,7 @@ echo '<form action="?page=altera_vaga_cliente&id_pavimento=' . $pavimentoAtual .
 
 <br>';
 
-echo'<div class="grid-container">';
+echo '<div class="grid-container">';
 
 
 $totalEspacos = 132;
@@ -40,7 +40,7 @@ while ($contadorEspaco <= $totalEspacos) {
     $sqlPegaDadosEstacinamento = mysqli_query($con, "select * from vagas where num_vaga=" . $contadorEspaco . " and pav_vaga='" . $pavimentoAtual . "';");
     $resultadoDadosEstacinamento = mysqli_fetch_array($sqlPegaDadosEstacinamento);
 
-// var corSetor = ["126, 76, 175", "242, 175, 48", "2, 115, 115", "123, 22, 54", "29, 40, 210"
+    // var corSetor = ["126, 76, 175", "242, 175, 48", "2, 115, 115", "123, 22, 54", "29, 40, 210"
     // echo "oi";
     if ($resultadoDadosEstacinamento["tipo_vaga"] == "0") {
         // TODO
@@ -48,42 +48,42 @@ while ($contadorEspaco <= $totalEspacos) {
             echo "<div class='grid-item'>";
             echo "<button type='button' class='btn btnvaga btn-success' id='vaga" . $contadorEspaco . "'name='vaga` " . $numeroVaga . "`' style='position: static; background-color: rgb(126, 76, 175)' onclick='alteraStatusVaga()' >";
             echo "<img src='../assets/img/icons/carlayout.png' width='30em'alt='' class='imgCarro' >";
-            echo "<p id='vagaCarro".$numeroVaga."' style='display: inline'>" . $numeroVaga . "A</p>";
+            echo "<p id='vagaCarro" . $numeroVaga . "' style='display: inline'>" . $numeroVaga . "A</p>";
             echo "</button>";
             echo "</div>";
         } elseif ($resultadoDadosEstacinamento["setor_vaga"] == "B" && $resultadoDadosEstacinamento["status_vaga"] == "0") {
             echo "<div class='grid-item'>";
             echo "<button type='button' class='btn btnvaga btn-success' id='vaga" . $contadorEspaco . "'name='vaga` " . $numeroVaga . "`' style='position: static; background-color: rgb(242, 175, 48)' onclick='alteraStatusVaga()' >";
             echo "<img src='../assets/img/icons/carlayout.png' width='30em'alt='' class='imgCarro' >";
-            echo "<p id='vagaCarro".$numeroVaga."' style='display: inline'>" . $numeroVaga . "B</p>";
+            echo "<p id='vagaCarro" . $numeroVaga . "' style='display: inline'>" . $numeroVaga . "B</p>";
             echo "</button>";
             echo "</div>";
         } elseif ($resultadoDadosEstacinamento["setor_vaga"] == "C" && $resultadoDadosEstacinamento["status_vaga"] == "0") {
             echo "<div class='grid-item'>";
             echo "<button type='button' class='btn btnvaga btn-success' id='vaga" . $contadorEspaco . "'name='vaga` " . $numeroVaga . "`' style='position: static; background-color: rgb(2, 115, 115)' onclick='alteraStatusVaga()' >";
             echo "<img src='../assets/img/icons/carlayout.png' width='30em'alt='' class='imgCarro' >";
-            echo "<p id='vagaCarro".$numeroVaga."' style='display: inline'>" . $numeroVaga . "C</p>";
+            echo "<p id='vagaCarro" . $numeroVaga . "' style='display: inline'>" . $numeroVaga . "C</p>";
             echo "</button>";
             echo "</div>";
         } elseif ($resultadoDadosEstacinamento["setor_vaga"] == "D" && $resultadoDadosEstacinamento["status_vaga"] == "0") {
             echo "<div class='grid-item'>";
             echo "<button type='button' class='btn btnvaga btn-success' id='vaga" . $contadorEspaco . "'name='vaga` " . $numeroVaga . "`' style='position: static; background-color: rgb(123, 22, 54)' onclick='alteraStatusVaga()' >";
             echo "<img src='../assets/img/icons/carlayout.png' width='30em'alt='' class='imgCarro' >";
-            echo "<p id='vagaCarro".$numeroVaga."' style='display: inline'>" . $numeroVaga . "D</p>";
+            echo "<p id='vagaCarro" . $numeroVaga . "' style='display: inline'>" . $numeroVaga . "D</p>";
             echo "</button>";
             echo "</div>";
         } elseif ($resultadoDadosEstacinamento["setor_vaga"] == "E" && $resultadoDadosEstacinamento["status_vaga"] == "0") {
             echo "<div class='grid-item'>";
             echo "<button type='button' class='btn btnvaga btn-success' id='vaga" . $contadorEspaco . "'name='vaga` " . $numeroVaga . "`' style='position: static; background-color: rgb(29, 40, 210)' onclick='alteraStatusVaga()' >";
             echo "<img src='../assets/img/icons/carlayout.png' width='30em'alt='' class='imgCarro' >";
-            echo "<p id='vagaCarro".$numeroVaga."' style='display: inline'>" . $numeroVaga . "E</p>";
+            echo "<p id='vagaCarro" . $numeroVaga . "' style='display: inline'>" . $numeroVaga . "E</p>";
             echo "</button>";
             echo "</div>";
-        }else{
+        } else {
             echo "<div class='grid-item'>";
             echo "<button type='button' class='btn btnvaga btn-danger' id='vaga" . $contadorEspaco . "'name='vaga` " . $numeroVaga . "`' style='position: static;' >";
             echo "<img src='../assets/img/icons/carlayout.png' width='30em'alt='' class='imgCarro' >";
-            echo "<p id='vagaCarro".$numeroVaga."' style='display: inline'>" . $numeroVaga . $resultadoDadosEstacinamento["setor_vaga"]. "</p>";
+            echo "<p id='vagaCarro" . $numeroVaga . "' style='display: inline'>" . $numeroVaga . $resultadoDadosEstacinamento["setor_vaga"] . "</p>";
             echo "</button>";
             echo "</div>";
         }
@@ -96,10 +96,9 @@ while ($contadorEspaco <= $totalEspacos) {
             echo "<div class='grid-item'>";
             echo "<button type='button' class='btn btnvaga btn-success' id='vaga" . $numeroVaga . "'name='vaga` " . $numeroVaga . "`' style='position: static; background-color: rgb(126, 76, 175)' onclick='alteraStatusVaga()' >";
             echo "<img src='../assets/img/icons/moto.png' width='30em'alt='' class='imgCarro' >";
-            echo "<p id='vagaMoto".$numeroVaga."' style='display: inline'>" . $numeroVaga . "A</p>";
+            echo "<p id='vagaMoto" . $numeroVaga . "' style='display: inline'>" . $numeroVaga . "A</p>";
             echo "</button>";
             echo "</div>";
-
         } elseif ($resultadoDadosEstacinamento["setor_vaga"] == "B" && $resultadoDadosEstacinamento["status_vaga"] == "0") {
             echo "<div class='grid-item'>";
             echo "<button type='button' class='btn btnvaga btn-success' id='vaga" . $contadorEspaco . "'name='vaga` " . $numeroVaga . "`' style='position: static; background-color: rgb(242, 175, 48)' onclick='alteraStatusVaga()' >";
@@ -111,28 +110,28 @@ while ($contadorEspaco <= $totalEspacos) {
             echo "<div class='grid-item'>";
             echo "<button type='button' class='btn btnvaga btn-success' id='vaga" . $contadorEspaco . "'name='vaga` " . $numeroVaga . "`' style='position: static; background-color: rgb(2, 115, 115)' onclick='alteraStatusVaga()' >";
             echo "<img src='../assets/img/icons/moto.png' width='30em'alt='' class='imgCarro' >";
-            echo "<p id='vagaMoto".$numeroVaga."' style='display: inline'>" . $numeroVaga . "C</p>";
+            echo "<p id='vagaMoto" . $numeroVaga . "' style='display: inline'>" . $numeroVaga . "C</p>";
             echo "</button>";
             echo "</div>";
         } elseif ($resultadoDadosEstacinamento["setor_vaga"] == "D" && $resultadoDadosEstacinamento["status_vaga"] == "0") {
             echo "<div class='grid-item'>";
             echo "<button type='button' class='btn btnvaga btn-success' id='vaga" . $contadorEspaco . "'name='vaga` " . $numeroVaga . "`' style='position: static; background-color: rgb(123, 22, 54)' onclick='alteraStatusVaga()' >";
             echo "<img src='../assets/img/icons/moto.png' width='30em'alt='' class='imgCarro' >";
-            echo "<p id='vagaMoto".$numeroVaga."' style='display: inline'>" . $numeroVaga . "D</p>";
+            echo "<p id='vagaMoto" . $numeroVaga . "' style='display: inline'>" . $numeroVaga . "D</p>";
             echo "</button>";
             echo "</div>";
         } elseif ($resultadoDadosEstacinamento["setor_vaga"] == "E" && $resultadoDadosEstacinamento["status_vaga"] == "0") {
             echo "<div class='grid-item'>";
             echo "<button type='button' class='btn btnvaga btn-success' id='vaga" . $contadorEspaco . "'name='vaga` " . $numeroVaga . "`' style='position: static; background-color: rgb(29, 40, 210)' onclick='alteraStatusVaga()' >";
             echo "<img src='../assets/img/icons/moto.png' width='30em'alt='' class='imgCarro' >";
-            echo "<p id='vagaMoto".$numeroVaga."' style='display: inline'>" . $numeroVaga . "C</p>";
+            echo "<p id='vagaMoto" . $numeroVaga . "' style='display: inline'>" . $numeroVaga . "C</p>";
             echo "</button>";
             echo "</div>";
-        }else{
+        } else {
             echo "<div class='grid-item'>";
             echo "<button type='button' class='btn btnvaga btn-danger' id='vaga" . $contadorEspaco . "'name='vaga` " . $numeroVaga . "`' style='position: static;' >";
             echo "<img src='../assets/img/icons/moto.png' width='30em'alt='' class='imgCarro' >";
-            echo "<p id='vagaMoto".$numeroVaga."' style='display: inline'>" . $numeroVaga . $resultadoDadosEstacinamento["setor_vaga"]. "</p>";
+            echo "<p id='vagaMoto" . $numeroVaga . "' style='display: inline'>" . $numeroVaga . $resultadoDadosEstacinamento["setor_vaga"] . "</p>";
             echo "</button>";
             echo "</div>";
         }
@@ -161,41 +160,84 @@ echo "</div>";
 </form>
 
 <script>
+    let vagaMarcada = false;
     // var corSetor = ["126, 76, 175", "242, 175, 48", "2, 115, 115", "123, 22, 54", "29, 40, 210"
     function alteraStatusVaga() {
         console.log("oi")
+
         let elementoClicado = event.target || event.srcElement;
         let buttonClass = elementoClicado.className;
         let buttonClicado = document.getElementById(elementoClicado.id);
         let paragrafo = buttonClicado.children[1];
         let conteudoParagrafo = document.getElementById(paragrafo.id).textContent;
 
-        console.log(paragrafo);
-        if (buttonClass.includes("btn-success")) {
-            buttonClicado.removeAttribute("style");
-            buttonClicado.classList.remove("btn-success");
-            buttonClicado.classList.add("btn-danger");
-        }else if(conteudoParagrafo.includes("A")){
-            buttonClicado.style.backgroundColor = "rgb(126, 76, 175)"
-            buttonClicado.classList.remove("btn-danger");
-            buttonClicado.classList.add("btn-success");
-        }else if(conteudoParagrafo.includes("B")){
-            buttonClicado.style.backgroundColor = "rgb(242, 175, 48)"
-            buttonClicado.classList.remove("btn-danger");
-            buttonClicado.classList.add("btn-success");
-        } else if(conteudoParagrafo.includes("C")){
-            buttonClicado.style.backgroundColor = "rgb(2, 115, 115)"
-            buttonClicado.classList.remove("btn-danger");
-            buttonClicado.classList.add("btn-success");
-        } else if(conteudoParagrafo.includes("D")){
-            buttonClicado.style.backgroundColor = "rgb(123, 22, 54)"
-            buttonClicado.classList.remove("btn-danger");
-            buttonClicado.classList.add("btn-success");
-        } else if(conteudoParagrafo.includes("E")){
-            buttonClicado.style.backgroundColor = "rgb(29, 40, 210)"
-            buttonClicado.classList.remove("btn-danger");
-            buttonClicado.classList.add("btn-success");
-        } 
+        if (vagaMarcada == false) {
+            vagaMarcada = true
+            console.log(vagaMarcada)
+            // console.log(paragrafo);
+            if (buttonClass.includes("btn-success")) {
+                buttonClicado.removeAttribute("style");
+                buttonClicado.classList.remove("btn-success");
+                buttonClicado.classList.add("btn-danger");
+            } else if (conteudoParagrafo.includes("A")) {
+                buttonClicado.style.backgroundColor = "rgb(126, 76, 175)"
+                buttonClicado.classList.remove("btn-danger");
+                buttonClicado.classList.add("btn-success");
+            } else if (conteudoParagrafo.includes("B")) {
+                buttonClicado.style.backgroundColor = "rgb(242, 175, 48)"
+                buttonClicado.classList.remove("btn-danger");
+                buttonClicado.classList.add("btn-success");
+            } else if (conteudoParagrafo.includes("C")) {
+                buttonClicado.style.backgroundColor = "rgb(2, 115, 115)"
+                buttonClicado.classList.remove("btn-danger");
+                buttonClicado.classList.add("btn-success");
+            } else if (conteudoParagrafo.includes("D")) {
+                buttonClicado.style.backgroundColor = "rgb(123, 22, 54)"
+                buttonClicado.classList.remove("btn-danger");
+                buttonClicado.classList.add("btn-success");
+            } else if (conteudoParagrafo.includes("E")) {
+                buttonClicado.style.backgroundColor = "rgb(29, 40, 210)"
+                buttonClicado.classList.remove("btn-danger");
+                buttonClicado.classList.add("btn-success");
+            }
+
+        }else if(vagaMarcada == true){
+            console.log(vagaMarcada)
+            if(buttonClass.includes("btn-danger")){
+                vagaMarcada = false
+
+                if (conteudoParagrafo.includes("A")) {
+                   buttonClicado.style.backgroundColor = "rgb(126, 76, 175)"
+                   buttonClicado.classList.remove("btn-danger");
+                   buttonClicado.classList.add("btn-success");
+               } else if (conteudoParagrafo.includes("B")) {
+                   buttonClicado.style.backgroundColor = "rgb(242, 175, 48)"
+                   buttonClicado.classList.remove("btn-danger");
+                   buttonClicado.classList.add("btn-success");
+               } else if (conteudoParagrafo.includes("C")) {
+                   buttonClicado.style.backgroundColor = "rgb(2, 115, 115)"
+                   buttonClicado.classList.remove("btn-danger");
+                   buttonClicado.classList.add("btn-success");
+               } else if (conteudoParagrafo.includes("D")) {
+                   buttonClicado.style.backgroundColor = "rgb(123, 22, 54)"
+                   buttonClicado.classList.remove("btn-danger");
+                   buttonClicado.classList.add("btn-success");
+               } else if (conteudoParagrafo.includes("E")) {
+                   buttonClicado.style.backgroundColor = "rgb(29, 40, 210)"
+                   buttonClicado.classList.remove("btn-danger");
+                   buttonClicado.classList.add("btn-success");
+               }
+            }
+            // if (buttonClass.includes("btn-danger")) {
+                
+            //     console.log(vagaMarcada)
+            //     buttonClicado.removeAttribute("style");
+            //     buttonClicado.classList.remove("btn-danger");
+            //     buttonClicado.classList.add("btn-success");
+            // }
+        }
+
+
 
         let inputNumeroVaga = document.getElementById("numeroVaga");
         inputNumeroVaga.value = elementoClicado.id.replace("vaga", "");
