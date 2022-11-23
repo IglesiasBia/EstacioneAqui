@@ -47,9 +47,9 @@
     echo "<div class='row'> <div class='col-md-2 text-secondary text-xs font-weight-bolder opacity-7'>ID</div> ";
     echo "<div class='col-md-2'>" . $dadosTicket['id_ticket'] . "</div></div>";
     echo "<div class='row'> <div class='col-md-2 text-secondary text-xxs font-weight-bolder opacity-7 '>HORA ENTRADA</div> ";
-    echo "<div class='col-md-2'>" . $dadosTicket["hr_entrada"] . "</div></div>";
+    echo "<div class='col-md-2'>" . date('d/m/Y h:m:s', strtotime($dadosTicket["hr_entrada"])) . "</div></div>";
     echo "<div class='row'> <div class='col-md-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Hora Saída</div> ";
-    echo "<div class='col-md-2'>" . $dadosTicket["hr_saida"] . "</div></div>";
+    echo "<div class='col-md-2'>" . date('d/m/Y h:m:s', strtotime($dadosTicket["hr_saida"])) . "</div></div>";
     echo "<div class='row'><div class='col-md-12'>-----------------------------------------------------------------------------------</div></div>";
     echo "<div class='row'><div class='col-md-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Placa</div>";
     echo "<div class='col-md-2'>" . $dadosTicket['placa_veic'] . "</div></div>";
@@ -94,12 +94,11 @@
 
     echo "<div class='col-md-2'>" . $dadosTicket['valor_total_ticket'] . "</div></div>";
 
-
     echo "</tr></thead><tbody>";
     if ($dadosTicket['status_pg'] == 0) {
         echo "<div class='row'><div class='col-md-2'><a class='btn btn-warning btn-xs' href=?page=pagar_ticket&id_ticket=" . $idTicket . "&preco_final=" . $precoFinal . "> Pagar </a></div>";
     }
-    echo "<div class='col-md-2'><button class='btn btn-danger' type='submit'>Imprimir</button></div></div>";
+    echo "<div class='col-md-2'><a class='btn btn-danger btn-xs' href='http://localhost/estacione/estac3/pages/administrador/relatorios/gera_pdf_ticket.php?placa_veic=$placa' target='_blank'> Imprimir </a></div></div>";
     if ($dadosTicket == 0) {
         echo $sql2;
         header('Location: http://localhost/estacione/estac3/pages/dash.php?msg=10');

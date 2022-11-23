@@ -145,14 +145,14 @@ if (isset($_GET["page"])) {
 
             // Ticket
         case "insere_forma_pagamento":
-include "geral/ticket/insere_forma_pagamento.php";
-break;
+            include "geral/ticket/insere_forma_pagamento.php";
+            break;
         case "faz_ticket":
             include "geral/ticket/faz_ticket.php";
             break;
-            case "modal_forma_pagamento":
-                include "geral/ticket/modal_forma_pagamento.php";
-                break;
+        case "modal_forma_pagamento":
+            include "geral/ticket/modal_forma_pagamento.php";
+            break;
         case "pagar_ticket":
             include "geral/ticket/pagar_ticket.php";
             break;
@@ -171,8 +171,8 @@ break;
             include "lista_vagas.php";
             break;
 
-        case "teste_pdf":
-            include "/estacione/estac3/pages/administrador/relatorios/teste_pdf.php";
+        case "relatorio_pdf.php":
+            include "/estacione/estac3/pages/administrador/relatorios/relatorio_pdf.php.php";
             break;
         default:
             include "dash.php";

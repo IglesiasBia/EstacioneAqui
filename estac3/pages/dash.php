@@ -383,7 +383,7 @@ if (win && document.querySelector('#sidenav-scrollbar')) {
       $('#cpf').mask('000.000.000-00');
     });
 
-    <script>
+    </script>
 </body>
 </html>
 
