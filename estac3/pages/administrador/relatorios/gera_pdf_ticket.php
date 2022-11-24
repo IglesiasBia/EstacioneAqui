@@ -59,30 +59,30 @@ $conteudo .= "<table class='table align-items-center mb-0'>";
 
 $conteudo .="<tr>";
 $conteudo .="<td>";
-$conteudo.= "<div class='row'> <div class='col-md-2 text-secondary text-xs font-weight-bolder opacity-7'>ID</div> ";
+$conteudo.= "<div class='row'> <div class='col-md-6 text-secondary text-xs font-weight-bolder opacity-7'>ID</div> ";
 $conteudo .="</td>";
 $conteudo .="<td>";
-$conteudo .= "<div class='col-md-2'>" . $dadosTicket['id_ticket'] . "</div></div>";
-$conteudo .="</td>";
-$conteudo .="</tr>";
-
-
-$conteudo .="<tr>";
-$conteudo .="<td>";
-$conteudo.= "<div class='row'> <div class='col-md-2 text-secondary text-xxs font-weight-bolder opacity-7 '>HORA ENTRADA</div> ";
-$conteudo .="</td>";
-$conteudo .="<td>";
-$conteudo .= "<div class='col-md-2'>" .  date('d/m/Y h:m:s', strtotime($dadosTicket["hr_entrada"])) . "</div></div>";
+$conteudo .= "<div class='col-md-6'>" . $dadosTicket['id_ticket'] . "</div></div>";
 $conteudo .="</td>";
 $conteudo .="</tr>";
 
 
 $conteudo .="<tr>";
 $conteudo .="<td>";
-$conteudo.= "<div class='row'> <div class='col-md-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Hora Saída</div> ";
+$conteudo.= "<div class='row'> <div class='col-md-6 text-secondary text-xxs font-weight-bolder opacity-7 '>HORA ENTRADA</div> ";
 $conteudo .="</td>";
 $conteudo .="<td>";
-$conteudo .=  "<div class='col-md-2'>" . date('d/m/Y h:m:s', strtotime($dadosTicket["hr_saida"])) . "</div></div>";
+$conteudo .= "<div class='col-md-6'>" .  date('d/m/Y h:m:s', strtotime($dadosTicket["hr_entrada"])) . "</div></div>";
+$conteudo .="</td>";
+$conteudo .="</tr>";
+
+
+$conteudo .="<tr>";
+$conteudo .="<td>";
+$conteudo.= "<div class='row'> <div class='col-md-6 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Hora Saída</div> ";
+$conteudo .="</td>";
+$conteudo .="<td>";
+$conteudo .=  "<div class='col-md-6'>" . date('d/m/Y h:m:s', strtotime($dadosTicket["hr_saida"])) . "</div></div>";
 
 $conteudo .="</td>";
 $conteudo .="</tr>";
@@ -95,84 +95,84 @@ $conteudo .="</tr>";
 
 $conteudo .="<tr>";
 $conteudo .="<td>";
-$conteudo.= "<div class='row'><div class='col-md-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Placa</div>";
+$conteudo.= "<div class='row'><div class='col-md-6 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Placa</div>";
 $conteudo .="</td>";
 $conteudo .="<td>";
-$conteudo .=  "<div class='col-md-2'>" . $dadosTicket['placa_veic'] . "</div></div>";
-$conteudo .="</td>";
-$conteudo .="</tr>";
-
-
-$conteudo .="<tr>";
-$conteudo .="<td>";
-$conteudo.= "<div class='row'><div class='col-md-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Marca</div>";
-$conteudo .="</td>";
-$conteudo .="<td>";
-$conteudo .=  "<div class='col-md-2'>" . $dadosCliVeic['marca_veic'] . "</div></div>";
+$conteudo .=  "<div class='col-md-6'>" . $dadosTicket['placa_veic'] . "</div></div>";
 $conteudo .="</td>";
 $conteudo .="</tr>";
 
 
 $conteudo .="<tr>";
 $conteudo .="<td>";
-$conteudo.=  "<div class='row'><div class='col-md-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Modelo</div>";
+$conteudo.= "<div class='row'><div class='col-md-6 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Marca</div>";
 $conteudo .="</td>";
 $conteudo .="<td>";
-$conteudo .= "<div class='col-md-2'>" . $dadosCliVeic['modelo_veic'] . "</div></div>";
-$conteudo .="</td>";
-$conteudo .="</tr>";
-
-
-$conteudo .="<tr>";
-$conteudo .="<td>";
-$conteudo.= "<div class='row'><div class='col-md-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Pavimento</div>";
-$conteudo .="</td>";
-$conteudo .="<td>";
-$conteudo .=  "<div class='col-md-2'>" . $dadosVagasTicket['pav_vaga'] . "</div></div>";
-echo "<div class='row'><div class='col-md-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Vaga</div>";
+$conteudo .=  "<div class='col-md-6'>" . $dadosCliVeic['marca_veic'] . "</div></div>";
 $conteudo .="</td>";
 $conteudo .="</tr>";
 
 
 $conteudo .="<tr>";
 $conteudo .="<td>";
-$conteudo.= "<div class='row'><div class='col-md-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Marca</div>";
+$conteudo.=  "<div class='row'><div class='col-md-6 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Modelo</div>";
 $conteudo .="</td>";
 $conteudo .="<td>";
-$conteudo .=  "<div class='col-md-2'>" . $dadosCliVeic['marca_veic'] . "</div></div>";
+$conteudo .= "<div class='col-md-6'>" . $dadosCliVeic['modelo_veic'] . "</div></div>";
 $conteudo .="</td>";
 $conteudo .="</tr>";
 
 
 $conteudo .="<tr>";
 $conteudo .="<td>";
-$conteudo.= "<div class='row'><div class='col-md-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Vaga</div>";
+$conteudo.= "<div class='row'><div class='col-md-6 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Pavimento</div>";
 $conteudo .="</td>";
 $conteudo .="<td>";
-$conteudo .=  "<div class='col-md-2'>" . $dadosVagasTicket['setor_vaga']. $dadosVagasTicket['num_vaga'] . "</div></div>";
+$conteudo .=  "<div class='col-md-6'>" . $dadosVagasTicket['pav_vaga'] . "</div></div>";
+echo "<div class='row'><div class='col-md-6 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Vaga</div>";
+$conteudo .="</td>";
+$conteudo .="</tr>";
+
+
+$conteudo .="<tr>";
+$conteudo .="<td>";
+$conteudo.= "<div class='row'><div class='col-md-6 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Marca</div>";
+$conteudo .="</td>";
+$conteudo .="<td>";
+$conteudo .=  "<div class='col-md-6'>" . $dadosCliVeic['marca_veic'] . "</div></div>";
+$conteudo .="</td>";
+$conteudo .="</tr>";
+
+
+$conteudo .="<tr>";
+$conteudo .="<td>";
+$conteudo.= "<div class='row'><div class='col-md-6 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Vaga</div>";
+$conteudo .="</td>";
+$conteudo .="<td>";
+$conteudo .=  "<div class='col-md-6'>" . $dadosVagasTicket['setor_vaga']. $dadosVagasTicket['num_vaga'] . "</div></div>";
 $conteudo .="</td>";
 $conteudo .="</tr>";
 
 
 if ($dadosCliVeic['cpf_cli'] != 0) {
-    $conteudo .= "<div class='row'><div class='col-md-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Nome</div>";
-    $conteudo .= "<div class='col-md-2'>" . $dadosCliVeic['nome_cli'] . "</div></div>";
-    $conteudo .= "<div class='row'><div class='col-md-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>CPF</div>";
-    $conteudo .= "<div class='col-md-2'>" . $dadosCliVeic['cpf_cli'] . "</div></div>";
+    $conteudo .= "<div class='row'><div class='col-md-6 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Nome</div>";
+    $conteudo .= "<div class='col-md-6'>" . $dadosCliVeic['nome_cli'] . "</div></div>";
+    $conteudo .= "<div class='row'><div class='col-md-6 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>CPF</div>";
+    $conteudo .= "<div class='col-md-6'>" . $dadosCliVeic['cpf_cli'] . "</div></div>";
 }
 
 
 $conteudo .="<tr>";
 $conteudo .="<td>";
-$conteudo.= "<div class='row'><div class='col-md-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Forma Pagamento</div>";
+$conteudo.= "<div class='row'><div class='col-md-6 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Forma Pagamento</div>";
 $conteudo .="</td>";
 $conteudo .="<td>";
 if($dadosTicket["forma_pagamento"] == 1){
-    $conteudo .=  "<div class='col-md-2'>Dinheiro </div>";
+    $conteudo .=  "<div class='col-md-6'>Dinheiro </div>";
 }elseif($dadosTicket["forma_pagamento"] == 2){
-    $conteudo .=  "<div class='col-md-2'>Débito </div>";
+    $conteudo .=  "<div class='col-md-6'>Débito </div>";
 }else{
-    $conteudo .=  "<div class='col-md-2'>Crédito </div>";
+    $conteudo .=  "<div class='col-md-6'>Crédito </div>";
 }
 $conteudo .="</td>";
 $conteudo .="</tr>";
@@ -180,13 +180,13 @@ $conteudo .="</tr>";
 
 $conteudo .="<tr>";
 $conteudo .="<td>";
-$conteudo.= "<div class='row'><div class='col-md-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Status Pagamento</div>";
+$conteudo.= "<div class='row'><div class='col-md-6 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7'>Status Pagamento</div>";
 $conteudo .="</td>";
 $conteudo .="<td>";
 if ($dadosTicket['status_pg'] == 0) {
-    $conteudo .= "<div class='col-md-2'> Não Pago</div>";
+    $conteudo .= "<div class='col-md-6'> Não Pago</div>";
 } else {
-    $conteudo .= "<div class='col-md-2'> Pago</div></div>";
+    $conteudo .= "<div class='col-md-6'> Pago</div></div>";
 }
 $conteudo .="</td>";
 $conteudo .="</tr>";
@@ -194,10 +194,10 @@ $conteudo .="</tr>";
 
 $conteudo .="<tr>";
 $conteudo .="<td>";
-$conteudo.= "<div class='row'><div class='col-md-2 text-uppercase  text-sm font-weight-bolder '>Valor Total</div>";
+$conteudo.= "<div class='row'><div class='col-md-6 text-uppercase  text-sm font-weight-bolder '>Valor Total</div>";
 $conteudo .="</td>";
 $conteudo .="<td>";
-$conteudo .=  "<div class='col-md-2'>" . $dadosTicket['valor_total_ticket'] . "</div></div>";
+$conteudo .=  "<div class='col-md-6'>" . $dadosTicket['valor_total_ticket'] . "</div></div>";
 $conteudo .="</td>";
 $conteudo .="</tr>";
 

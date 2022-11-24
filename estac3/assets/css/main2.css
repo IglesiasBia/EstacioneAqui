@@ -145,7 +145,8 @@ input[type="date"]{
     width: 5em;
 }
 #inputvaga{
-    height: 3em;    
+    height: 3em; 
+    width: 2em;   
 }
    #buttonsalva{
     height: 3.5em;

@@ -45,7 +45,7 @@
                     </div>
                     <div class="form-group col-md-4">
                         <p class="fs-4"><strong>CNPJ</strong></p>
-                        <input type="text" class="form-control fs-4 estacdados" name="cnpj_estac" value="<?php echo $row["cnpj_estac"]; ?>">
+                        <input type="text" class="form-control fs-4 estacdados" id="cnpj" name="cnpj_estac" value="<?php echo $row["cnpj_estac"]; ?>">
                     </div>
 
                     </div>
@@ -56,11 +56,11 @@
                         </div>
                         <div class="form-group col-md-4">
                             <p class="fs-4"><strong>Preço do Estacionamento</strong></p>
-                            <input type="text" class="form-control fs-4 estacdados" name="preco_estac" value="<?php echo $row["preco_estac"]; ?>">
+                            <input type="text" class="form-control fs-4 estacdados" id="dinheiro"name="preco_estac" value="<?php echo $row["preco_estac"]; ?>">
                         </div>
                         <div class="form-group col-md-4">
                             <p class="fs-4"><strong>Fração por Hora</strong></p>
-                            <input type="text" class="form-control fs-4 estacdados" name="frac_hr_estac" value="<?php echo $row["frac_hr_estac"]; ?>">
+                            <input type="text" class="form-control fs-4 estacdados" id="dinheiro2" name="frac_hr_estac" value="<?php echo $row["frac_hr_estac"]; ?>">
                         </div>
 
                     </div>
@@ -72,7 +72,7 @@
                         </div>
                         <div class="form-group col-md-4">
                             <p class="fs-4"><strong>Preço Pernoite</strong></p>
-                            <input type="text" class="form-control fs-4 estacdados" name="preco_pernoite" value="<?php echo $row["preco_pernoite"]; ?>">
+                            <input type="text" class="form-control fs-4 estacdados" id="dinheiro3" name="preco_pernoite" value="<?php echo $row["preco_pernoite"]; ?>">
                         </div>
                         <div class="form-group col-md-4">
                             <p class="fs-4"><strong>Quantidade de Pavimentos ou Seções</strong></p>
@@ -101,3 +101,15 @@
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="pavimento">
     <?php include "criar-layout-estacionamento/modal_pavimento.php"; ?>
 </div>
+
+<script>
+
+		$("#cep").mask("99999-999");
+
+		$("#cnpj").mask("99.999.999/9999-99");
+
+        $('#dinheiro').mask('000.000.000.000.000,00', { reverse:true});
+        $('#dinheiro2').mask("$000.000,00" , { reverse:true});
+        
+       
+	</script>

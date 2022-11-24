@@ -46,7 +46,7 @@ $row2 = mysqli_fetch_array($sql2);
         			<tr>
           				<td>
 							<p class="fs-4"><strong>CPF</strong></p>
-							<p class="fs-4 estacdados"><?php echo $row['cpf_func']; ?></p>
+							<p class="fs-4 estacdados" ><?php echo $row['cpf_func']; ?></p>
 						</td>
           				<td>
 							<p class="fs-4"><strong>E-mail</strong></p>
@@ -101,7 +101,22 @@ $row2 = mysqli_fetch_array($sql2);
 
 
 
+<!-- <script>
+		$("#telefone").mask("(99) 99999-9999");
 
+		$("#cep").mask("99999-999");
+
+		$("#cpf").mask("999.999.999-99");
+
+		$("#cnpj").mask("99.999.999/9999-99");
+
+		$("#data").mask("99/99/9999");
+
+        $('#dinheiro').mask("#.##0,00" , { reverse:true});
+        $('#dinheiro2').mask("#.##0,00" , { reverse:true});
+        $('#dinheiro3').mask("#.##0,00" , { reverse:true});
+       
+	</script> -->
 			
 			
 			

@@ -92,7 +92,7 @@
     echo "<div class='row'><div class='col-md-12'>-----------------------------------------------------------------------------------</div></div>";
     echo "<div class='row'><div class='col-md-2 text-uppercase  text-sm font-weight-bolder '>Valor Total</div>";
 
-    echo "<div class='col-md-2'>" . $dadosTicket['valor_total_ticket'] . "</div></div>";
+    echo "<div class='col-md-2' id='dinheiro'>" . $dadosTicket['valor_total_ticket'] . "</div></div>";
 
     echo "</tr></thead><tbody>";
     if ($dadosTicket['status_pg'] == 0) {
@@ -109,3 +109,18 @@
     }
     echo "</div>";
 ?>
+<script>
+		$("#telefone").mask("(99) 99999-9999");
+
+		$("#cep").mask("99999-999");
+
+		$("#cpf").mask("999.999.999-99");
+
+		$("#cnpj").mask("99.999.999/9999-99");
+
+		$("#data").mask("99/99/9999");
+
+        $('#dinheiro').mask("#.##000.000.000.000,00" , { reverse:true});
+       
+       
+	</script>

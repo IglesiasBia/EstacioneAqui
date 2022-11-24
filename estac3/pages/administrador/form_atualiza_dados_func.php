@@ -42,7 +42,7 @@
 	</div>
 	<div class="form-group col-md-4">
 		<label for="cpf_func" class="fs-4">CPF</label>
-		<input type="text" class="form-control fs-4" name="cpf_func" value="<?php echo $row["cpf_func"]; ?>">
+		<input type="text" class="form-control fs-4" name="cpf_func" id="cpf"value="<?php echo $row["cpf_func"]; ?>">
 	</div>
 </div>
 
@@ -98,12 +98,19 @@
     </div>
 </div>
 
-<!-- <div class="row">
-    <div class="col-md-12 carddash">
-      	<div class="card ">
-        	<div class="card-body ">
-    
-        	</div>
-      	</div>
-    </div>
-</div> -->
+<script>
+		$("#telefone").mask("(99) 99999-9999");
+
+		$("#cep").mask("99999-999");
+
+		$("#cpf").mask("999.999.999-99");
+
+		$("#cnpj").mask("99.999.999/9999-99");
+
+		$("#data").mask("99/99/9999");
+
+        $('#dinheiro').mask("#.##0,00" , { reverse:true});
+        $('#dinheiro2').mask("#.##0,00" , { reverse:true});
+        $('#dinheiro3').mask("#.##0,00" , { reverse:true});
+       
+	</script>

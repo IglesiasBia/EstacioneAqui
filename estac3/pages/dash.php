@@ -103,6 +103,13 @@
   <script src="./assets/js/plugins/perfect-scrollbar.min.js"></script>
   <script src="./assets/js/plugins/smooth-scrollbar.min.js"></script>
   <script src="./assets/js/plugins/chartjs.min.js"></script>
+  
+  <script src="./assets/js/jquery-3.3.1.min.js" type="text/javascript" ></script>
+	<script src="./assets/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="./assets/js/jquery.inputmask.bundle.js" type="text/javascript"></script>
+	<script src="./assets/js/jquery_maskmoney.js" type="text/javascript"></script>
+	<script src="./assets/js/script_mask.js" type="text/javascript"></script>
+  <script src="./assets/js/maskinput.js" type="text/javascript"></script>
   <script>
     var ctx = document.getElementById("chart-bars").getContext("2d");
 
