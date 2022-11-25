@@ -384,13 +384,13 @@ if (win && document.querySelector('#sidenav-scrollbar')) {
 
 
  
-  <script type="text/javascript">
+  <!-- <script type="text/javascript">
 
-    $(document).ready(function(){
-      $('#cpf').mask('000.000.000-00');
-    });
+    // $(document).ready(function(){
+    //   $('#cpf').mask('000.000.000-00');
+    // });
 
-    </script>
+    </script> -->
 </body>
 </html>
 

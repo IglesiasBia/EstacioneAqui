@@ -43,35 +43,36 @@
             <div class="row">
               <div class="col-md-4">
                 <label class="fs-5" for="placa_veic">Placa</label>
-                <input type="text" class="form-control fs-5" name="placa_veic" minlength="7" maxlength="8">
+                <input type="text" class="form-control fs-5" name="placa_veic" minlength="7" maxlength="8" required
+              >
               </div>
 
               <div class=" col-md-4">
                 <label class="fs-5" for="marca_veic">Marca</label>
-                <input type="text" class="form-control fs-5" aria-describedby="basic-addon2" name="marca_veic">
+                <input type="text" class="form-control fs-5" aria-describedby="basic-addon2" name="marca_veic" required>
               </div>
 
               <div class="col-md-4">
                 <label class="fs-5" for="modelo_veic">Modelo</label>
-                <input type="text" class="form-control fs-5" aria-describedby="basic-addon2" name="modelo_veic">
+                <input type="text" class="form-control fs-5" aria-describedby="basic-addon2" name="modelo_veic" required>
               </div>
             </div>
 
             <div class="row">
               <div class="form-group col-md-4">
                 <label class="fs-5" for="tipo_veic">Tipo</label>
-                <select class="form-control fs-5 selectcard" name="tipo_veic">
+                <select class="form-control fs-5 selectcard" name="tipo_veic"  required >
                   <option> --------- </option>
-                  <option value="0">Carro</option>
-                  <option value="1">Motocicleta</option>
+                  <option value="0"required>Carro</option>
+                  <option value="1"required>Motocicleta</option>
                 </select>
               </div>
               <div class="form-group col-md-4">
                 <label class="fs-5" for="chave">Deixou Chave:</label>
-                <select class="form-control fs-5 selectcard" name="chave">
+                <select class="form-control fs-5 selectcard" name="chave" required>
                   <option> --------- </option>
-                  <option value="1">Sim</option>
-                  <option value="0">Não</option>
+                  <option value="1" required>Sim</option>
+                  <option value="0" required>Não</option>
                 </select>
               </div>
 
@@ -85,6 +86,7 @@
       </div>
     </div>
   </div>
+
 
   <div class="row">
 

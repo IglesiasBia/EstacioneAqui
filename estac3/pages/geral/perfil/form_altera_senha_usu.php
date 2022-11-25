@@ -13,8 +13,8 @@
 			<div class="form-group col-md-3">
 				<label for="senha">Nova senha</label>
 				<input type="text" class="form-control" name="senha">
-        <label for="file">Nova foto de perfil</label>
-        <input id="uploadImage" type="file" name="foto" id="file" type="hidden">
+        <!-- <label for="file">Nova foto de perfil</label>
+        <input id="uploadImage" type="file" name="foto" id="file" type="hidden"> -->
 			</div>
 
 			<hr />

@@ -48,6 +48,7 @@
                             <input type="text" class="form-control fs-4" name="id_cli" value="<?php echo $veiculoCliente["id_cli"]; ?>" readonly style=" background-color: white;">
                         </div>
                         <!-- Fazer input nome e CPF só aparecerem se apertar um botão-->
+                        
                         <!-- * Inserir CPF e nome  -->
                         <div class="form-group col-md-4">
                             <label for="nome_cli" class="fs-4">Nome Cliente</label>
@@ -55,7 +56,7 @@
                         </div>
                         <div class="form-group col-md-4">
                             <label for="cpf_cli" class="fs-4">CPF</label>
-                            <input type="text" class="form-control fs-4" name="cpf_cli" value="<?php echo $veiculoCliente["cpf_cli"]; ?>">
+                            <input type="text" class="form-control fs-4" name="cpf_cli" id="cpf" value="<?php echo $veiculoCliente["cpf_cli"]; ?>">
                         </div>
                     </div>
         
@@ -80,6 +81,11 @@
                                         echo "<input type='radio' name='tipo_veic' value='0'  class='fs-5'>Moto<br>";
                                         echo "<input type='radio' name='tipo_veic' value='1'  class='fs-4' checked>Carro";
                                         echo "</div>";
+                                    }else{
+                                        echo "<div class='form-group col-md-3 fs-5'>";
+                                        echo "<input type='radio' name='tipo_veic' value='0'  class='fs-5'>Moto<br>";
+                                        echo "<input type='radio' name='tipo_veic' value='1'  class='fs-4' >Carro";
+                                        echo "</div>";
                                     }
                                 ?>
                         </div>
@@ -96,7 +102,12 @@
                                         echo "<input type='radio' name='chave' value='0' class='fs-4' >Não deixou<br>";
                                         echo "<input type='radio' name='chave' value='1' class='fs-4' checked>Deixou";
                                         echo "</div>";
-                                    }   
+                                    }else{
+                                        echo "<div class='form-group col-md-3 fs-5'>";
+                                        echo "<input type='radio' name='chave' value='0' class='fs-4' >Não deixou<br>";
+                                        echo "<input type='radio' name='chave' value='1' class='fs-4' >Deixou";
+                                        echo "</div>";
+                                    } 
                                 ?>
                         </div>
                     </div>
@@ -157,3 +168,6 @@
     </div>
   </div>
 </div>
+<script>
+   $("#cpf").mask("999.999.999-99");
+</script>

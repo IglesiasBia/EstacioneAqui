@@ -1,11 +1,12 @@
 $(document).ready(function(){
-	$('#nr_processo').inputmask("9999/999999");
+	$('#nr_processo').inputmask("9999/999999")
+	
 });
 
 
 
 
-/*Máscara de MOEDA com InputMask
+//Máscara de MOEDA com InputMask
  $(document).ready(function(){
     $("#moeda_im").inputmask( 'currency',{
 		"autoUnmask": true,
@@ -19,4 +20,4 @@ $(document).ready(function(){
 		unmaskAsNumber: true
 	});
 });
-*/
+

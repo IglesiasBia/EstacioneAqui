@@ -42,7 +42,7 @@
 	</div>
 	<div class="form-group col-md-4">
 		<label for="cpf_func" class="fs-4">CPF</label>
-		<input type="text" class="form-control fs-4" name="cpf_func" id="cpf"value="<?php echo $row["cpf_func"]; ?>">
+		<input type="text" class="form-control fs-4" name="cpf_func" id="cpf" value="<?php echo $row["cpf_func"]; ?>">
 	</div>
 </div>
 
@@ -99,9 +99,7 @@
 </div>
 
 <script>
-		$("#telefone").mask("(99) 99999-9999");
-
-		$("#cep").mask("99999-999");
+		
 
 		$("#cpf").mask("999.999.999-99");
 

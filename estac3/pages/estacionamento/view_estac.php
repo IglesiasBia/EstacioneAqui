@@ -45,7 +45,7 @@
                     </div>
                     <div class="form-group col-md-4">
                         <p class="fs-4"><strong>CNPJ</strong></p>
-                        <input type="text" class="form-control fs-4 estacdados" id="cnpj" name="cnpj_estac" value="<?php echo $row["cnpj_estac"]; ?>">
+                        <input type="text" class="form-control fs-4 estacdados" onchange="cnpjMask()" id="cnpj" name="cnpj_estac" value="<?php echo $row["cnpj_estac"]; ?>">
                     </div>
 
                     </div>
@@ -56,11 +56,11 @@
                         </div>
                         <div class="form-group col-md-4">
                             <p class="fs-4"><strong>Preço do Estacionamento</strong></p>
-                            <input type="text" class="form-control fs-4 estacdados" id="dinheiro"name="preco_estac" value="<?php echo $row["preco_estac"]; ?>">
+                            <input type="text" class="form-control fs-4 estacdados" id="moeda_im"name="preco_estac" value="<?php echo $row["preco_estac"]; ?>">
                         </div>
                         <div class="form-group col-md-4">
                             <p class="fs-4"><strong>Fração por Hora</strong></p>
-                            <input type="text" class="form-control fs-4 estacdados" id="dinheiro2" name="frac_hr_estac" value="<?php echo $row["frac_hr_estac"]; ?>">
+                            <input type="text" class="form-control fs-4 estacdados" id="moeda_im" name="frac_hr_estac" value="<?php echo $row["frac_hr_estac"]; ?>">
                         </div>
 
                     </div>
@@ -72,7 +72,7 @@
                         </div>
                         <div class="form-group col-md-4">
                             <p class="fs-4"><strong>Preço Pernoite</strong></p>
-                            <input type="text" class="form-control fs-4 estacdados" id="dinheiro3" name="preco_pernoite" value="<?php echo $row["preco_pernoite"]; ?>">
+                            <input type="text" class="form-control fs-4 estacdados" id="moeda_im" name="preco_pernoite" value="<?php echo $row["preco_pernoite"]; ?>">
                         </div>
                         <div class="form-group col-md-4">
                             <p class="fs-4"><strong>Quantidade de Pavimentos ou Seções</strong></p>
@@ -103,13 +103,37 @@
 </div>
 
 <script>
+// function cnpjMask(){
+//     var cnpj = document.getElementById("cnpj").value;
+//     var cnpjTamanho = cnpj.length;
+    
+//     if(cnpjTamanho >5){
+//         // cnpj = cnpj +".";
+//         cnpj1 = cnpj.substring(0,2);
+//         cnpj1 = cnpj1 + ".";
+//         document.getElementById("cnpj").value = cnpj1;
+//     }else 
+//     if(cnpjTamanho == 5){
+//         cnpj1 = cnpj.substring(0,2);
+//         cnpj1 = cnpj1 + ".";
+//         cnpj2 = cnpj.substring(2,6);
+//         cnpj2 = cnpj1 + cnpj2 + ".";
+//         console.log(cnpj2)
+//         document.getElementById("cnpj").value = cnpj2;
+//     }
+    
 
-		$("#cep").mask("99999-999");
+
+//     // console.log(cnpj);
+//     // console.log("oi");
+
+// }
+        $(".cpf").mask("999.999.999-99");
 
 		$("#cnpj").mask("99.999.999/9999-99");
 
-        $('#dinheiro').mask('000.000.000.000.000,00', { reverse:true});
-        $('#dinheiro2').mask("$000.000,00" , { reverse:true});
+        $('.dinheiro').mask('000.000.000.000.000,00', { reverse:true});
+        $('.dinheiro2').mask("$000.000,00" , { reverse:true});
         
-       
+     
 	</script>

@@ -218,7 +218,7 @@ if ($tipoRelatorio == "entradaSaida") {
     while ($dataMomento <= $dtFinal) {
 
         // Pega fatura do dia
-        $sqlFaturaDia = "select valor_total_ticket from  ticket where hr_entrada BETWEEN '$dataMomento 00:00:00' and '$dataMomento 23:59:59';";
+        $sqlFaturaDia = "select sum(valor_total_ticket) as valor_total from  ticket where hr_entrada BETWEEN '$dataMomento 00:00:00' and '$dataMomento 23:59:59';";
         $FaturaDia =  mysqli_query($con, $sqlFaturaDia);
         $resultadoFaturaDia = mysqli_fetch_array($FaturaDia);
 
@@ -230,7 +230,9 @@ if ($tipoRelatorio == "entradaSaida") {
         $conteudo .= $dataFormatada . "</td>";
 
         $conteudo .= "<td class='d-none d-md-table-cell'>";
-        $conteudo .= $resultadoFaturaDia["valor_total_ticket"] == '' ? "R$ " . 0  : "R$ " . $resultadoFaturaDia["valor_total_ticket"];
+
+        $conteudo .= $resultadoFaturaDia["valor_total"] == '' ? "R$ " . 0  : "R$ " . $resultadoFaturaDia["valor_total"];
+
 
         $conteudo .=  "</td></tr>";
 

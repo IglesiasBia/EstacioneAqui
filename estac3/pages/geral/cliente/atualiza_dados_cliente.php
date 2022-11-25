@@ -47,7 +47,7 @@
     $resultadoAtulizaStatusVaga = mysqli_query($con,$sqlAtulizaStatusVaga);
 
     //Atualiza tabela ticket
-    $sqlTicket = "update ticket set id_vaga='$idVaga', status_pg='$statusPg'  where placa_veic='$placa';";
+    $sqlTicket = "update ticket set id_vaga='$idVaga', status_pg='$statusPg', chave='$chave'  where placa_veic='$placa';";
     $resultado = mysqli_query($con, $sqlTicket);
 
     if($resultado){
